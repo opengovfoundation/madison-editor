@@ -1,0 +1,15 @@
+
+<h1>Documents</h1>
+
+<div ng-controller="DocumentListController">
+	<form ng-submit="createDocument()">
+		<input type="submit" name="submit" value="Create New Document" />
+	</form>
+
+	<ul class="documents-list">
+		<li ng-repeat="doc in documents" class="document">
+			<span class="document__title"><a href="#/documents/{{doc.slug}}">{{doc.title}}</a></span>
+			<span class="document__date-updated">Updated {{ doc.updated_at | date : 'medium' }}</span>
+		</li>
+	</ul>
+</div>
