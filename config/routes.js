@@ -66,6 +66,7 @@ module.exports.routes = {
   'get /api/docs/': 'DocumentController.index',
   'post /api/docs/': 'DocumentController.post',
   'get /api/docs/:slug': 'DocumentController.get',
+  'put /api/docs/:slug': 'DocumentController.put',
 
 
 };

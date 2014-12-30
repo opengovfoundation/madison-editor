@@ -2,6 +2,8 @@ var etherpad_client = require('etherpad-lite-client');
 var Promise = require('sails/node_modules/waterline/node_modules/bluebird');
 var Uuid = require('uuid');
 
+// TODO : user validation.
+
 module.exports = {
   /**
    * list() - list all docs
@@ -63,6 +65,27 @@ module.exports = {
         document: document
       });
     });
-  }
+  },
+  put: function(req, res) {
+    Document.findOne({slug: req.param('slug')}).exec(function(error, document) {
+      if(document){
+        // Todo: error checking.
+        var newDoc = req.param('document');
+        for(param in newDoc) {
+          document[param] = newDoc[param];
+        }
+        document.save();
+      }
+      else {
+        return res.json({
+          error: error,
+          document: document
+        });
+      }
+
+
+    });
+  },
+
 
 };
