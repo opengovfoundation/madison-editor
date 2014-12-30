@@ -2,7 +2,9 @@ module.exports = function (grunt) {
 	grunt.config.set('compass', {
 		prod: {
 			options: {
-				importPath: ['bower_components/bootstrap-sass-official/assets/stylesheets/'],
+				importPath: [
+					'assets/bower_components/bootstrap-sass-official/assets/stylesheets/',
+				],
 				sassDir: 'assets/scss',
 				cssDir: 'assets/css',
 				environment: 'prod'
@@ -10,7 +12,9 @@ module.exports = function (grunt) {
 		},
 		dev: {
 			options: {
-				importPath: ['bower_components/bootstrap-sass-official/assets/stylesheets/'],
+				importPath: [
+					'assets/bower_components/bootstrap-sass-official/assets/stylesheets/',
+				],
 				sassDir: 'assets/scss',
 				cssDir: 'assets/css'
 			}

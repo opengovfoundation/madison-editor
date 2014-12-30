@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module("myApp.documents", []);
+var app = angular.module("myApp.documents", ['xeditable']);
 
 //OPTIONAL! Set socket URL!
 // app.config(['$sailsProvider', function ($sailsProvider) {
@@ -9,11 +9,11 @@ var app = angular.module("myApp.documents", []);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/documents', {
-    templateUrl: 'documents/list.html',
+    templateUrl: 'app/documents/list.html',
     controller: 'DocumentListController'
   });
   $routeProvider.when('/documents/:slug', {
-    templateUrl: 'documents/detail.html',
+    templateUrl: 'app/documents/detail.html',
     controller: 'DocumentDetailController'
   });
 }]);
@@ -49,8 +49,26 @@ app.controller("DocumentDetailController", function ($scope, $http, $routeParams
   $http.get("/api/docs/" + $routeParams.slug)
     .success(function (data) {
       $scope.document = data.document;
+
+      // Watch for changes to the title.
+      $scope.$watch('document.title', function(newVal, oldVal) {
+        if (newVal !== oldVal) {
+          console.log('value changed!', newVal, oldVal);
+          $http.put("/api/docs/" + $scope.document.slug, {document: {title: newVal}})
+            .success(function (data) {
+              console.log(data);
+            })
+            .error(function (data) {
+              alert('Houston, we got a problem!');
+            });
+        }
+      });
     })
     .error(function (data) {
       alert('Houston, we got a problem!');
     });
+});
+
+app.run(function(editableOptions) {
+  editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
 });
