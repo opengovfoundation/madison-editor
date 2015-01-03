@@ -6,3 +6,75 @@ $icon-font-path: '/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 body {
 	margin-top: 50px;
 }
+
+.delete-document {
+	@include single-transition(all, 0.5s);
+	display: inline-block;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+
+	max-width: 28px;
+	height: 27px;
+	overflow: hidden;
+
+	.delete-confirm {
+		display: none;
+		white-space: nowrap;
+	}
+	.delete-document-button {
+		display: inline-block;
+	}
+}
+
+.delete-document.open {
+	max-width: 300px;
+
+	.delete-confirm {
+		line-height: 27px;
+		margin-left: 6px;
+		display: inline;
+	}
+	.delete-document-button {
+		display: none;
+	}
+}
+
+.delete-document-button {
+	@extend .btn;
+	@extend .glyphicon;
+	@extend .glyphicon-trash;
+	padding: 5px 7px;
+	font-size: 12px;
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	top: 0;
+	&:hover {
+		background-color: #999;
+	}
+}
+
+.button {
+	@extend .btn;
+}
+
+.icon-button-small {
+	padding: 1px 4px;
+	vertical-align: top;
+	span {
+		display: none;
+	}
+}
+
+.button-save {
+	@extend .btn-success;
+	@extend .glyphicon;
+	@extend .icon-button-small;
+	@extend .glyphicon-ok;
+}
+.button-cancel {
+	@extend .btn-danger;
+	@extend .glyphicon;
+	@extend .icon-button-small;
+	@extend .glyphicon-remove;
+}
