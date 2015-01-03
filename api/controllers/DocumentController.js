@@ -60,6 +60,9 @@ module.exports = {
     }
 
     Document.create(doc, function(error, document) {
+      // Create the etherpad for this document.
+      EtherpadService.createPad(doc.slug);
+
       return res.json({
         error: error,
         document: document
