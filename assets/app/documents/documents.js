@@ -63,8 +63,28 @@ app.controller("DocumentListController", function ($scope, $http, $routeParams, 
   }
 
   $scope.deleteDocument = function(doc) {
-    // Do document deletion here.
+
     $scope.closeDeleteConfirm(doc);
+
+    $http.delete("/api/docs/" + doc.slug)
+      .success(function (data) {
+        // We've successfully deleted the document from the server.
+        // Now we need to find that document and remove it from the page.
+        var idx = 0;
+        for(idx in $scope.documents) {
+          var currentDoc = $scope.documents[idx];
+          if(currentDoc === doc) {
+            break;
+          }
+        }
+
+        $scope.documents.splice(idx, 1);
+      })
+      .error(function (data) {
+        alert('Houston, we got a problem!');
+      });
+
+
   }
 
 });

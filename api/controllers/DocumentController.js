@@ -85,10 +85,18 @@ module.exports = {
           document: document
         });
       }
-
-
     });
   },
+  delete: function(req, res) {
+    // Todo: error checking.
+    Document.destroy({slug: req.param('slug')}).exec(function(error) {
+        // Delete the etherpad for this document.
+        EtherpadService.deletePad(req.param('slug'));
 
+        return res.json({
+          error: error
+        });
+    });
+  }
 
 };
