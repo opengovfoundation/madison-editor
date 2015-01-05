@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module("myApp.documents", ['xeditable']);
+var app = angular.module("myApp.documents", ['xeditable', 'myApp.config']);
 
 //OPTIONAL! Set socket URL!
 // app.config(['$sailsProvider', function ($sailsProvider) {
@@ -20,7 +20,6 @@ app.config(['$routeProvider', function($routeProvider) {
 
 app.controller("DocumentListController", function ($scope, $http, $routeParams, $location) {
   $scope.documents = [];
-  console.log('list');
   $http.get("/api/docs/")
     .success(function (data) {
       $scope.documents = data.documents;
@@ -44,7 +43,6 @@ app.controller("DocumentListController", function ($scope, $http, $routeParams, 
 
     $http.post("/api/docs/", doc)
       .success(function (data) {
-        console.log(data.document, data.document.slug);
         $location.path('/documents/' + data.document.slug);
       })
       .error(function (data) {
@@ -83,14 +81,11 @@ app.controller("DocumentListController", function ($scope, $http, $routeParams, 
       .error(function (data) {
         alert('Houston, we got a problem!');
       });
-
-
   }
 
 });
 
 app.controller("DocumentDetailController", function ($scope, $http, $routeParams) {
-  console.log('detail');
   $http.get("/api/docs/" + $routeParams.slug)
     .success(function (data) {
       $scope.document = data.document;
@@ -98,10 +93,9 @@ app.controller("DocumentDetailController", function ($scope, $http, $routeParams
       // Watch for changes to the title.
       $scope.$watch('document.title', function(newVal, oldVal) {
         if (newVal !== oldVal) {
-          console.log('value changed!', newVal, oldVal);
           $http.put("/api/docs/" + $scope.document.slug, {document: {title: newVal}})
             .success(function (data) {
-              console.log(data);
+              // Do nothing?
             })
             .error(function (data) {
               alert('Houston, we got a problem!');

@@ -5,7 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   // 'ngResource',
   'myApp.documents',
-]).
-config(['$routeProvider', function($routeProvider) {
+  'myApp.config'
+])
+.config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/documents'});
-}]);
+}])
