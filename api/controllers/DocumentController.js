@@ -61,7 +61,7 @@ module.exports = {
 
     Document.create(doc, function(error, document) {
       // Create the etherpad for this document.
-      EtherpadService.createPad(doc.slug);
+      EtherpadService.createPad({padID: document.slug});
 
       return res.json({
         error: error,
@@ -91,7 +91,7 @@ module.exports = {
     // Todo: error checking.
     Document.destroy({slug: req.param('slug')}).exec(function(error) {
         // Delete the etherpad for this document.
-        EtherpadService.deletePad(req.param('slug'));
+        EtherpadService.deletePad({padID: req.param('slug')});
 
         return res.json({
           error: error
