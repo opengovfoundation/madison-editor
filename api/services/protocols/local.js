@@ -24,7 +24,7 @@ var validator = require('validator');
  */
 exports.register = function (req, res, next) {
   var email    = req.param('email')
-    , username = req.param('username')
+    // , username = req.param('username')
     , password = req.param('password');
 
   if (!email) {
@@ -32,10 +32,10 @@ exports.register = function (req, res, next) {
     return next(new Error('No email was entered.'));
   }
 
-  if (!username) {
-    req.flash('error', 'Error.Passport.Username.Missing');
-    return next(new Error('No username was entered.'));
-  }
+  // if (!username) {
+  //   req.flash('error', 'Error.Passport.Username.Missing');
+  //   return next(new Error('No username was entered.'));
+  // }
 
   if (!password) {
     req.flash('error', 'Error.Passport.Password.Missing');
@@ -43,8 +43,8 @@ exports.register = function (req, res, next) {
   }
 
   User.create({
-    username : username
-  , email    : email
+    // username : username,
+    email    : email
   }, function (err, user) {
     if (err) {
       if (err.code === 'E_VALIDATION') {
@@ -119,7 +119,7 @@ exports.connect = function (req, res, next) {
 /**
  * Validate a login request
  *
- * Looks up a user using the supplied identifier (email or username) and then
+ * Looks up a user using the supplied identifier (email) and then
  * attempts to find a local Passport associated with the user. If a Passport is
  * found, its password is checked against the password supplied in the form.
  *
@@ -132,12 +132,12 @@ exports.login = function (req, identifier, password, next) {
   var isEmail = validator.isEmail(identifier)
     , query   = {};
 
-  if (isEmail) {
+  // if (isEmail) {
     query.email = identifier;
-  }
-  else {
-    query.username = identifier;
-  }
+  // }
+  // else {
+  //   query.username = identifier;
+  // }
 
   User.findOne(query, function (err, user) {
     if (err) {
@@ -145,27 +145,28 @@ exports.login = function (req, identifier, password, next) {
     }
 
     if (!user) {
-      if (isEmail) {
-        req.flash('error', 'Error.Passport.Email.NotFound');
-      } else {
-        req.flash('error', 'Error.Passport.Username.NotFound');
-      }
+      // if (isEmail) {
+        //req.flash('error', 'Error.Passport.Email.NotFound');
+        console.log('Error.Passport.Email.NotFound');
+      // } else {
+        // req.flash('error', 'Error.Passport.Username.NotFound');
+      // }
 
       return next(null, false);
     }
-
     Passport.findOne({
       protocol : 'local'
     , user     : user.id
     }, function (err, passport) {
       if (passport) {
-        passport.validatePassword(password, function (err, res) {
+        user.validatePassword(password, function (err, res) {
           if (err) {
             return next(err);
           }
 
           if (!res) {
-            req.flash('error', 'Error.Passport.Password.Wrong');
+            //req.flash('error', 'Error.Passport.Password.Wrong');
+            console.log('Error.Passport.Password.Wrong');
             return next(null, false);
           } else {
             return next(null, user);
@@ -173,7 +174,8 @@ exports.login = function (req, identifier, password, next) {
         });
       }
       else {
-        req.flash('error', 'Error.Passport.Password.NotSet');
+        //req.flash('error', 'Error.Passport.Password.NotSet');
+        console.log('Error.Passport.Password.NotSet');
         return next(null, false);
       }
     });

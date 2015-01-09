@@ -41,12 +41,6 @@ var Passport = {
     // party service (e.g. 'oauth', 'oauth2', 'openid').
     protocol: { type: 'alphanumeric', required: true },
 
-    // Local field: Password
-    //
-    // When the local strategy is employed, a password will be used as the
-    // means of authentication along with either a username or an email.
-    password: { type: 'string', minLength: 8 },
-
     // Provider fields: Provider, identifer and tokens
     //
     // "provider" is the name of the third-party auth service in all lowercase
@@ -70,16 +64,6 @@ var Passport = {
     // For more information on associations in Waterline, check out:
     // https://github.com/balderdashy/waterline
     user: { model: 'User', required: true },
-
-    /**
-     * Validate password used by the local strategy.
-     *
-     * @param {string}   password The password to validate
-     * @param {Function} next
-     */
-    validatePassword: function (password, next) {
-      bcrypt.compare(password, this.password, next);
-    }
 
   },
 

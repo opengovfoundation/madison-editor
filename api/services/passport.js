@@ -284,7 +284,8 @@ passport.loadStrategies = function () {
     if (key === 'local') {
       // Since we need to allow users to login using both usernames as well as
       // emails, we'll set the username field to something more generic.
-      _.extend(options, { usernameField: 'identifier' });
+      // NOPE.
+      _.extend(options, { usernameField: 'email' });
 
       // Only load the local strategy if it's enabled in the config
       if (strategies.local) {
@@ -342,6 +343,7 @@ passport.disconnect = function (req, res, next) {
       user     : user.id
     }, function (err, passport) {
       if (err) {
+              console.log('passport error', err);
         return next(err);
       }
 

@@ -151,14 +151,18 @@ var AuthController = {
       }
     }
 
+    function error(err, user) {
+      return res.badRequest({error: err.message});
+    }
+
     passport.callback(req, res, function (err, user) {
       if (err) {
-        return tryAgain();
+        return error(err);
       }
 
       req.login(user, function (err) {
         if (err) {
-          return tryAgain();
+          return error(err, user);
         }
 
         // Upon successful login, send the user to the homepage were req.user

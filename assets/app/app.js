@@ -4,9 +4,13 @@
 angular.module('myApp', [
   'ngRoute',
   // 'ngResource',
+  'myApp.config',
   'myApp.documents',
-  'myApp.config'
+  'myApp.auth'
 ])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/documents'});
 }])
+.config(['$httpProvider', function($httpProvider) {
+    $httpProvider.interceptors.push('authInterceptor');
+}]);
