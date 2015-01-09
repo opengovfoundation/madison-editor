@@ -38,7 +38,7 @@ module.exports = {
     });
 
   },
-  get: function(req, res) {
+  find: function(req, res) {
     Document.findOne({slug: req.param('slug')}).exec(function(error, document) {
       return res.json({
         error: false,
@@ -46,7 +46,7 @@ module.exports = {
       });
     });
   },
-  post: function(req, res) {
+  create: function(req, res) {
     var doc = req.param('document');
     if(!doc)
     {
@@ -69,7 +69,7 @@ module.exports = {
       });
     });
   },
-  put: function(req, res) {
+  update: function(req, res) {
     Document.findOne({slug: req.param('slug')}).exec(function(error, document) {
       if(document){
         // Todo: error checking.
@@ -87,7 +87,7 @@ module.exports = {
       }
     });
   },
-  delete: function(req, res) {
+  destroy: function(req, res) {
     // Todo: error checking.
     Document.destroy({slug: req.param('slug')}).exec(function(error) {
         // Delete the etherpad for this document.

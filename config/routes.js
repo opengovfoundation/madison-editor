@@ -64,10 +64,10 @@ module.exports.routes = {
    * Docs
    */
   'get /api/docs/': 'DocumentController.index',
-  'post /api/docs/': 'DocumentController.post',
-  'get /api/docs/:slug': 'DocumentController.get',
-  'put /api/docs/:slug': 'DocumentController.put',
-  'delete /api/docs/:slug': 'DocumentController.delete',
+  'get /api/docs/:slug': 'DocumentController.find',
+  'post /api/docs/': 'DocumentController.create',
+  'put /api/docs/:slug': 'DocumentController.update',
+  'delete /api/docs/:slug': 'DocumentController.destroy',
 
 
 };
