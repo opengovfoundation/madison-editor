@@ -19,7 +19,6 @@ var User = {
      * @param {Function} next
      */
     validatePassword: function (password, next) {
-      console.log(password, this.password);
       bcrypt.compare(password, this.password, next);
     }
   },

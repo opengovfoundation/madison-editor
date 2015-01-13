@@ -28,8 +28,8 @@ exports.register = function (req, res, next) {
     , password = req.param('password');
 
   if (!email) {
-    req.flash('error', 'Error.Passport.Email.Missing');
-    return next(new Error('No email was entered.'));
+    // req.flash('error', 'Error.Passport.Email.Missing');
+    return next(new Error('Error.Passport.Email.Missing'));
   }
 
   // if (!username) {
@@ -47,13 +47,13 @@ exports.register = function (req, res, next) {
     email    : email
   }, function (err, user) {
     if (err) {
-      if (err.code === 'E_VALIDATION') {
-        if (err.invalidAttributes.email) {
-          req.flash('error', 'Error.Passport.Email.Exists');
-        } else {
-          req.flash('error', 'Error.Passport.User.Exists');
-        }
-      }
+      // if (err.code === 'E_VALIDATION') {
+      //   if (err.invalidAttributes.email) {
+      //     req.flash('error', 'Error.Passport.Email.Exists');
+      //   } else {
+      //     req.flash('error', 'Error.Passport.User.Exists');
+      //   }
+      // }
 
       return next(err);
     }
@@ -64,9 +64,9 @@ exports.register = function (req, res, next) {
     , user     : user.id
     }, function (err, passport) {
       if (err) {
-        if (err.code === 'E_VALIDATION') {
-          req.flash('error', 'Error.Passport.Password.Invalid');
-        }
+        // if (err.code === 'E_VALIDATION') {
+        //   req.flash('error', 'Error.Passport.Password.Invalid');
+        // }
 
         return user.destroy(function (destroyErr) {
           next(destroyErr || err);
@@ -147,12 +147,11 @@ exports.login = function (req, identifier, password, next) {
     if (!user) {
       // if (isEmail) {
         //req.flash('error', 'Error.Passport.Email.NotFound');
-        console.log('Error.Passport.Email.NotFound');
       // } else {
         // req.flash('error', 'Error.Passport.Username.NotFound');
       // }
 
-      return next(null, false);
+      return next(new Error('Error.Passport.Email.NotFound'), false);
     }
     Passport.findOne({
       protocol : 'local'
@@ -166,8 +165,7 @@ exports.login = function (req, identifier, password, next) {
 
           if (!res) {
             //req.flash('error', 'Error.Passport.Password.Wrong');
-            console.log('Error.Passport.Password.Wrong');
-            return next(null, false);
+            return next(new Error('Error.Passport.Password.Wrong'), false);
           } else {
             return next(null, user);
           }
@@ -175,8 +173,7 @@ exports.login = function (req, identifier, password, next) {
       }
       else {
         //req.flash('error', 'Error.Passport.Password.NotSet');
-        console.log('Error.Passport.Password.NotSet');
-        return next(null, false);
+        return next(new Error('Error.Passport.Password.NotSet'), false);
       }
     });
   });

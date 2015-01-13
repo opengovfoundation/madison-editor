@@ -1,5 +1,6 @@
+'use strict';
+
 angular.module('myApp').factory('authInterceptor', ['$location', function($location) {
-	console.log('intercepted');
 	var authInterceptor = {
 		responseError: function(response) {
 			console.log('Responder', response);

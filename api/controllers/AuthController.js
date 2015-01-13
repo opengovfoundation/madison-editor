@@ -152,7 +152,7 @@ var AuthController = {
     }
 
     function error(err, user) {
-      return res.badRequest({error: err.message});
+      return res.badRequest(err.message);
     }
 
     passport.callback(req, res, function (err, user) {
@@ -165,9 +165,13 @@ var AuthController = {
           return error(err, user);
         }
 
-        // Upon successful login, send the user to the homepage were req.user
-        // will available.
-        res.redirect('/');
+        // Upon successful login, send a 200 OK.
+        // Also send the user's data.
+        var response_object = {user: user};
+        // But not the password.
+        delete response_object.user.password;
+
+        res.ok(response_object);
       });
     });
   },
