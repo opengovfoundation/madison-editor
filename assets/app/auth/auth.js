@@ -13,7 +13,7 @@ app.config(['$routeProvider', function($routeProvider) {
   });
 }]);
 
-app.controller('AuthLoginController', function($scope, $cookies, $http, $location) {
+app.controller('AuthLoginController', function($scope, $rootScope, $http, $location) {
   $scope.login = {};
 
   $scope.doLogin = function(){
@@ -32,7 +32,7 @@ app.controller('AuthLoginController', function($scope, $cookies, $http, $locatio
   };
 });
 
-app.controller('AuthLogoutController', function($scope, $cookies, $http, $location) {
+app.controller('AuthLogoutController', function($scope, $rootScope, $http, $location) {
 
   var logout = function(){
     $location.url('/');

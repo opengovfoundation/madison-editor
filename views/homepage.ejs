@@ -14,7 +14,7 @@
         <li class="active"><a href="#">Home</a></li>
         <li ng-show="user.id"><a href="#/documents">Documents</a></li>
       </ul>
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" ng-show="user.id">
         <li><a href="#/logout">Logout</a></li>
       </ul>
     </div><!--/.nav-collapse -->

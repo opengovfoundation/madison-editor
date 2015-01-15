@@ -51,6 +51,10 @@ module.exports.policies = {
 
   '*': [ 'passport' ],
 
+  UserController: {
+    'me': 'sessionAuth'
+  },
+
   DocumentController: {
     '*': 'sessionAuth'
   }

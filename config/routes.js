@@ -61,6 +61,12 @@ module.exports.routes = {
   'get /auth/:provider/:action': 'AuthController.callback',
 
   /**
+   * Users
+   */
+
+  'get /api/users/me': 'UserController.me',
+
+  /**
    * Docs
    */
   'get /api/docs/': 'DocumentController.index',

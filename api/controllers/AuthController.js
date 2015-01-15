@@ -5,7 +5,7 @@
  * should look. It currently includes the minimum amount of functionality for
  * the basics of Passport.js to work.
  */
-var AuthController = {
+module.exports = {
   /**
    * Render the login page
    *
@@ -186,5 +186,3 @@ var AuthController = {
     passport.disconnect(req, res);
   }
 };
-
-module.exports = AuthController;
