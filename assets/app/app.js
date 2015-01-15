@@ -27,7 +27,7 @@ angular.element(document).ready(function() {
   var $http = initInjector.get("$http");
 
   // Get data about our user.
-  $http.get('/api/users/me')
+  $http.get('/api/users/current')
     .success(function(data) {
       user = data;
     })

@@ -64,7 +64,8 @@ module.exports.routes = {
    * Users
    */
 
-  'get /api/users/me': 'UserController.me',
+  'get /api/users/current': 'UserController.findCurrent',
+  'put /api/users/current': 'UserController.updateCurrent',
 
   /**
    * Docs

@@ -8,8 +8,8 @@ var User = {
 
   attributes: {
     //username  : { type: 'string', unique: true },
-    email     : { type: 'email',  unique: true },
-    password  : { type: 'string' },
+    email     : { type: 'email', unique: true },
+    password  : { type: 'string', protected: true },
     //passports : { collection: 'Passport', via: 'user' },
 
     /**

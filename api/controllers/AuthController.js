@@ -167,11 +167,7 @@ module.exports = {
 
         // Upon successful login, send a 200 OK.
         // Also send the user's data.
-        var response_object = {user: user};
-        // But not the password.
-        delete response_object.user.password;
-
-        res.ok(response_object);
+        return res.ok(user.toJSON());
       });
     });
   },
