@@ -22,7 +22,7 @@ app.controller('AuthLoginController', function($scope, $rootScope, $http, $locat
       password: $scope.login.password
     })
     .success(function(data){
-      $rootScope.user = data.user;
+      $rootScope.user = data;
       console.log('Login data', data);
       $location.url('/');
     })

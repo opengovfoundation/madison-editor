@@ -1,4 +1,4 @@
-<div ng-controller="DocumentDetailController">
+<div ng-controller="DocumentDetailController" ngCloak class="ngCloak">
 	<h1 editable-text="document.title">{{ document.title }}</h1>
 
 	<iframe src="{{ document.slug | etherpadUrl }}" style="width: 100%; height: 600px;"></iframe>
