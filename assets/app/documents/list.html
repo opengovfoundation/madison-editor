@@ -22,9 +22,9 @@
 					Updated {{ doc.updated_at | date : 'medium' }}
 			</span>
 			<span class="delete-document" ng-class="{open: deleteConfirmOpen[doc.id]}">
-				<button type="button" class="delete-document-button"
+				<button type="button" class="button-delete"
 					ng-click="openDeleteConfirm(doc)"></button>
-				<span class="delete-confirm">
+				<span class="confirm-delete">
 					Delete this document?
 					<button class="button button-save" type="submit"
 						ng-click="deleteDocument(doc)">

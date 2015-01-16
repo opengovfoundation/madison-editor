@@ -64,50 +64,11 @@ body {
 	@extend .glyphicon-remove;
 }
 
-
-/**
- * 3 Section Styles
- */
-
-// 3.1 Document Styles
-
-.delete-document {
-	@include single-transition(all, 0.5s);
-	display: inline-block;
-	border-radius: 4px;
-	border: 1px solid #ccc;
-
-	max-width: 28px;
-	height: 27px;
-	overflow: hidden;
-
-	.delete-confirm {
-		display: none;
-		white-space: nowrap;
-	}
-	.delete-document-button {
-		display: inline-block;
-	}
-}
-
-.delete-document.open {
-	max-width: 300px;
-
-	.delete-confirm {
-		line-height: 27px;
-		margin-left: 6px;
-		display: inline;
-	}
-	.delete-document-button {
-		display: none;
-	}
-}
-
-.delete-document-button {
+.button-delete {
 	@extend .btn;
 	@extend .glyphicon;
 	@extend .glyphicon-trash;
-	padding: 5px 7px;
+	padding: 5px 7px 5px 5px; // Ugh, pixelpushing.
 	font-size: 12px;
 	background: transparent;
 	border: none;
@@ -116,4 +77,48 @@ body {
 	&:hover {
 		background-color: #999;
 	}
+}
+
+// Delete button auto-expand confirmation thing
+
+@mixin button-confirm-delete {
+	@include single-transition(all, 0.5s);
+	display: inline-block;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	max-width: 28px;
+	height: 27px;
+	overflow: hidden;
+	vertical-align: middle;
+
+	.confirm-delete {
+		display: none;
+		white-space: nowrap;
+		line-height: 27px;
+		margin-left: 6px;
+	}
+	.button-delete {
+		display: inline-block;
+	}
+
+	&.open {
+		max-width: 300px;
+
+		.confirm-delete {
+			display: inline-block;
+		}
+		.button-delete {
+			display: none;
+		}
+	}
+}
+
+/**
+ * 3 Section Styles
+ */
+
+// 3.1 Document Styles
+
+.delete-document {
+	@include button-confirm-delete;
 }

@@ -357,10 +357,10 @@ th {
   }
 
   /* line 83, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_print.scss */
-  .btn > .caret, .button > .caret, .delete-document-button > .caret,
+  .btn > .caret, .button > .caret, .button-delete > .caret,
   .dropup > .btn > .caret,
   .dropup > .button > .caret,
-  .dropup > .delete-document-button > .caret {
+  .dropup > .button-delete > .caret {
     border-top-color: #000 !important;
   }
 
@@ -392,7 +392,7 @@ th {
 }
 
 /* line 21, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_glyphicons.scss */
-.glyphicon, .button-save, .button-cancel, .delete-document-button {
+.glyphicon, .button-save, .button-cancel, .button-delete {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -531,7 +531,7 @@ th {
 }
 
 /* line 60, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_glyphicons.scss */
-.glyphicon-trash:before, .delete-document-button:before {
+.glyphicon-trash:before, .button-delete:before {
   content: "\e020";
 }
 
@@ -3581,25 +3581,25 @@ input[type="search"] {
   .input-group-sm > input[type="date"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="date"].btn,
   .input-group-sm > .input-group-btn > input[type="date"].button,
-  .input-group-sm > .input-group-btn > input[type="date"].delete-document-button,
+  .input-group-sm > .input-group-btn > input[type="date"].button-delete,
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
   .input-group-sm > input[type="time"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="time"].btn,
   .input-group-sm > .input-group-btn > input[type="time"].button,
-  .input-group-sm > .input-group-btn > input[type="time"].delete-document-button,
+  .input-group-sm > .input-group-btn > input[type="time"].button-delete,
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
   .input-group-sm > input[type="datetime-local"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].button,
-  .input-group-sm > .input-group-btn > input[type="datetime-local"].delete-document-button,
+  .input-group-sm > .input-group-btn > input[type="datetime-local"].button-delete,
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
   .input-group-sm > input[type="month"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="month"].btn,
   .input-group-sm > .input-group-btn > input[type="month"].button,
-  .input-group-sm > .input-group-btn > input[type="month"].delete-document-button {
+  .input-group-sm > .input-group-btn > input[type="month"].button-delete {
     line-height: 30px;
   }
 
@@ -3608,25 +3608,25 @@ input[type="search"] {
   .input-group-lg > input[type="date"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="date"].btn,
   .input-group-lg > .input-group-btn > input[type="date"].button,
-  .input-group-lg > .input-group-btn > input[type="date"].delete-document-button,
+  .input-group-lg > .input-group-btn > input[type="date"].button-delete,
   input[type="time"].input-lg,
   .input-group-lg > input[type="time"].form-control,
   .input-group-lg > input[type="time"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="time"].btn,
   .input-group-lg > .input-group-btn > input[type="time"].button,
-  .input-group-lg > .input-group-btn > input[type="time"].delete-document-button,
+  .input-group-lg > .input-group-btn > input[type="time"].button-delete,
   input[type="datetime-local"].input-lg,
   .input-group-lg > input[type="datetime-local"].form-control,
   .input-group-lg > input[type="datetime-local"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].button,
-  .input-group-lg > .input-group-btn > input[type="datetime-local"].delete-document-button,
+  .input-group-lg > .input-group-btn > input[type="datetime-local"].button-delete,
   input[type="month"].input-lg,
   .input-group-lg > input[type="month"].form-control,
   .input-group-lg > input[type="month"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="month"].btn,
   .input-group-lg > .input-group-btn > input[type="month"].button,
-  .input-group-lg > .input-group-btn > input[type="month"].delete-document-button {
+  .input-group-lg > .input-group-btn > input[type="month"].button-delete {
     line-height: 46px;
   }
 }
@@ -3720,11 +3720,11 @@ input[type="checkbox"] {
 .input-group-lg > .form-control-static.input-group-addon,
 .input-group-lg > .input-group-btn > .form-control-static.btn,
 .input-group-lg > .input-group-btn > .form-control-static.button,
-.input-group-lg > .input-group-btn > .form-control-static.delete-document-button, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
+.input-group-lg > .input-group-btn > .form-control-static.button-delete, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
 .input-group-sm > .form-control-static.input-group-addon,
 .input-group-sm > .input-group-btn > .form-control-static.btn,
 .input-group-sm > .input-group-btn > .form-control-static.button,
-.input-group-sm > .input-group-btn > .form-control-static.delete-document-button {
+.input-group-sm > .input-group-btn > .form-control-static.button-delete {
   padding-left: 0;
   padding-right: 0;
 }
@@ -3734,7 +3734,7 @@ input[type="checkbox"] {
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
 .input-group-sm > .input-group-btn > .button,
-.input-group-sm > .input-group-btn > .delete-document-button, .form-group-sm .form-control {
+.input-group-sm > .input-group-btn > .button-delete, .form-group-sm .form-control {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -3747,7 +3747,7 @@ select.input-sm, .input-group-sm > select.form-control,
 .input-group-sm > select.input-group-addon,
 .input-group-sm > .input-group-btn > select.btn,
 .input-group-sm > .input-group-btn > select.button,
-.input-group-sm > .input-group-btn > select.delete-document-button, .form-group-sm .form-control {
+.input-group-sm > .input-group-btn > select.button-delete, .form-group-sm .form-control {
   height: 30px;
   line-height: 30px;
 }
@@ -3757,13 +3757,13 @@ textarea.input-sm, .input-group-sm > textarea.form-control,
 .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-btn > textarea.btn,
 .input-group-sm > .input-group-btn > textarea.button,
-.input-group-sm > .input-group-btn > textarea.delete-document-button, .form-group-sm .form-control,
+.input-group-sm > .input-group-btn > textarea.button-delete, .form-group-sm .form-control,
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
 .input-group-sm > select[multiple].input-group-addon,
 .input-group-sm > .input-group-btn > select[multiple].btn,
 .input-group-sm > .input-group-btn > select[multiple].button,
-.input-group-sm > .input-group-btn > select[multiple].delete-document-button, .form-group-sm .form-control {
+.input-group-sm > .input-group-btn > select[multiple].button-delete, .form-group-sm .form-control {
   height: auto;
 }
 
@@ -3772,7 +3772,7 @@ select[multiple].input-sm,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
 .input-group-lg > .input-group-btn > .button,
-.input-group-lg > .input-group-btn > .delete-document-button, .form-group-lg .form-control {
+.input-group-lg > .input-group-btn > .button-delete, .form-group-lg .form-control {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -3785,7 +3785,7 @@ select.input-lg, .input-group-lg > select.form-control,
 .input-group-lg > select.input-group-addon,
 .input-group-lg > .input-group-btn > select.btn,
 .input-group-lg > .input-group-btn > select.button,
-.input-group-lg > .input-group-btn > select.delete-document-button, .form-group-lg .form-control {
+.input-group-lg > .input-group-btn > select.button-delete, .form-group-lg .form-control {
   height: 46px;
   line-height: 46px;
 }
@@ -3795,13 +3795,13 @@ textarea.input-lg, .input-group-lg > textarea.form-control,
 .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-btn > textarea.btn,
 .input-group-lg > .input-group-btn > textarea.button,
-.input-group-lg > .input-group-btn > textarea.delete-document-button, .form-group-lg .form-control,
+.input-group-lg > .input-group-btn > textarea.button-delete, .form-group-lg .form-control,
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
 .input-group-lg > select[multiple].input-group-addon,
 .input-group-lg > .input-group-btn > select[multiple].btn,
 .input-group-lg > .input-group-btn > select[multiple].button,
-.input-group-lg > .input-group-btn > select[multiple].delete-document-button, .form-group-lg .form-control {
+.input-group-lg > .input-group-btn > select[multiple].button-delete, .form-group-lg .form-control {
   height: auto;
 }
 
@@ -3833,7 +3833,7 @@ select[multiple].input-lg,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 .input-group-lg > .input-group-btn > .button + .form-control-feedback,
-.input-group-lg > .input-group-btn > .delete-document-button + .form-control-feedback {
+.input-group-lg > .input-group-btn > .button-delete + .form-control-feedback {
   width: 46px;
   height: 46px;
   line-height: 46px;
@@ -3844,7 +3844,7 @@ select[multiple].input-lg,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 .input-group-sm > .input-group-btn > .button + .form-control-feedback,
-.input-group-sm > .input-group-btn > .delete-document-button + .form-control-feedback {
+.input-group-sm > .input-group-btn > .button-delete + .form-control-feedback {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -4079,7 +4079,7 @@ select[multiple].input-lg,
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn, .button, .delete-document-button {
+.btn, .button, .button-delete {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -4100,25 +4100,25 @@ select[multiple].input-lg,
   user-select: none;
 }
 /* line 26, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:focus, .button:focus, .delete-document-button:focus, .btn.focus, .focus.button, .focus.delete-document-button, .btn:active:focus, .button:active:focus, .delete-document-button:active:focus, .btn:active.focus, .button:active.focus, .delete-document-button:active.focus, .btn.active:focus, .active.button:focus, .active.delete-document-button:focus, .btn.active.focus, .active.focus.button, .active.focus.delete-document-button {
+.btn:focus, .button:focus, .button-delete:focus, .btn.focus, .focus.button, .focus.button-delete, .btn:active:focus, .button:active:focus, .button-delete:active:focus, .btn:active.focus, .button:active.focus, .button-delete:active.focus, .btn.active:focus, .active.button:focus, .active.button-delete:focus, .btn.active.focus, .active.focus.button, .active.focus.button-delete {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 /* line 32, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:hover, .button:hover, .delete-document-button:hover, .btn:focus, .button:focus, .delete-document-button:focus, .btn.focus, .focus.button, .focus.delete-document-button {
+.btn:hover, .button:hover, .button-delete:hover, .btn:focus, .button:focus, .button-delete:focus, .btn.focus, .focus.button, .focus.button-delete {
   color: #333333;
   text-decoration: none;
 }
 /* line 39, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:active, .button:active, .delete-document-button:active, .btn.active, .active.button, .active.delete-document-button {
+.btn:active, .button:active, .button-delete:active, .btn.active, .active.button, .active.button-delete {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 /* line 46, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn.disabled, .disabled.button, .disabled.delete-document-button, .btn[disabled], [disabled].button, [disabled].delete-document-button, fieldset[disabled] .btn, fieldset[disabled] .button, fieldset[disabled] .delete-document-button {
+.btn.disabled, .disabled.button, .disabled.button-delete, .btn[disabled], [disabled].button, [disabled].button-delete, fieldset[disabled] .btn, fieldset[disabled] .button, fieldset[disabled] .button-delete {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -4318,7 +4318,7 @@ select[multiple].input-lg,
 }
 
 /* line 127, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .button, .btn-group-lg > .delete-document-button {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .button, .btn-group-lg > .button-delete {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
@@ -4326,7 +4326,7 @@ select[multiple].input-lg,
 }
 
 /* line 131, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button, .btn-group-sm > .delete-document-button {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button, .btn-group-sm > .button-delete {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
@@ -4334,7 +4334,7 @@ select[multiple].input-lg,
 }
 
 /* line 135, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-xs, .btn-group-xs > .btn, .btn-group-xs > .button, .btn-group-xs > .delete-document-button {
+.btn-xs, .btn-group-xs > .btn, .btn-group-xs > .button, .btn-group-xs > .button-delete {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -4582,38 +4582,38 @@ tbody.collapse.in {
   vertical-align: middle;
 }
 /* line 11, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn, .btn-group > .button, .btn-group > .delete-document-button,
+.btn-group > .btn, .btn-group > .button, .btn-group > .button-delete,
 .btn-group-vertical > .btn,
 .btn-group-vertical > .button,
-.btn-group-vertical > .delete-document-button {
+.btn-group-vertical > .button-delete {
   position: relative;
   float: left;
 }
 /* line 15, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:hover, .btn-group > .button:hover, .btn-group > .delete-document-button:hover, .btn-group > .btn:focus, .btn-group > .button:focus, .btn-group > .delete-document-button:focus, .btn-group > .btn:active, .btn-group > .button:active, .btn-group > .delete-document-button:active, .btn-group > .btn.active, .btn-group > .active.button, .btn-group > .active.delete-document-button,
+.btn-group > .btn:hover, .btn-group > .button:hover, .btn-group > .button-delete:hover, .btn-group > .btn:focus, .btn-group > .button:focus, .btn-group > .button-delete:focus, .btn-group > .btn:active, .btn-group > .button:active, .btn-group > .button-delete:active, .btn-group > .btn.active, .btn-group > .active.button, .btn-group > .active.button-delete,
 .btn-group-vertical > .btn:hover,
 .btn-group-vertical > .button:hover,
-.btn-group-vertical > .delete-document-button:hover,
+.btn-group-vertical > .button-delete:hover,
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > .button:focus,
-.btn-group-vertical > .delete-document-button:focus,
+.btn-group-vertical > .button-delete:focus,
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > .button:active,
-.btn-group-vertical > .delete-document-button:active,
+.btn-group-vertical > .button-delete:active,
 .btn-group-vertical > .btn.active,
 .btn-group-vertical > .active.button,
-.btn-group-vertical > .active.delete-document-button {
+.btn-group-vertical > .active.button-delete {
   z-index: 2;
 }
 
 /* line 26, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group .btn + .btn, .btn-group .button + .btn, .btn-group .delete-document-button + .btn, .btn-group .btn + .button, .btn-group .button + .button, .btn-group .delete-document-button + .button, .btn-group .btn + .delete-document-button, .btn-group .button + .delete-document-button, .btn-group .delete-document-button + .delete-document-button,
+.btn-group .btn + .btn, .btn-group .button + .btn, .btn-group .button-delete + .btn, .btn-group .btn + .button, .btn-group .button + .button, .btn-group .button-delete + .button, .btn-group .btn + .button-delete, .btn-group .button + .button-delete, .btn-group .button-delete + .button-delete,
 .btn-group .btn + .btn-group,
 .btn-group .button + .btn-group,
-.btn-group .delete-document-button + .btn-group,
+.btn-group .button-delete + .btn-group,
 .btn-group .btn-group + .btn,
 .btn-group .btn-group + .button,
-.btn-group .btn-group + .delete-document-button,
+.btn-group .btn-group + .button-delete,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px;
 }
@@ -4637,29 +4637,29 @@ tbody.collapse.in {
   float: left;
 }
 /* line 43, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-toolbar > .btn, .btn-toolbar > .button, .btn-toolbar > .delete-document-button,
+.btn-toolbar > .btn, .btn-toolbar > .button, .btn-toolbar > .button-delete,
 .btn-toolbar > .btn-group,
 .btn-toolbar > .input-group {
   margin-left: 5px;
 }
 
 /* line 50, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .delete-document-button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button-delete:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
 /* line 55, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child, .btn-group > .button:first-child, .btn-group > .delete-document-button:first-child {
+.btn-group > .btn:first-child, .btn-group > .button:first-child, .btn-group > .button-delete:first-child {
   margin-left: 0;
 }
 /* line 57, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .delete-document-button:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button-delete:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 /* line 62, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:last-child:not(:first-child), .btn-group > .button:last-child:not(:first-child), .btn-group > .delete-document-button:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .button:last-child:not(:first-child), .btn-group > .button-delete:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -4671,19 +4671,19 @@ tbody.collapse.in {
 }
 
 /* line 71, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group > .btn-group:not(:first-child):not(:last-child) > .delete-document-button {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button-delete {
   border-radius: 0;
 }
 
 /* line 75, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > .button:last-child, .btn-group > .btn-group:first-child > .delete-document-button:last-child,
+.btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > .button:last-child, .btn-group > .btn-group:first-child > .button-delete:last-child,
 .btn-group > .btn-group:first-child > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 /* line 80, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:last-child > .btn:first-child, .btn-group > .btn-group:last-child > .button:first-child, .btn-group > .btn-group:last-child > .delete-document-button:first-child {
+.btn-group > .btn-group:last-child > .btn:first-child, .btn-group > .btn-group:last-child > .button:first-child, .btn-group > .btn-group:last-child > .button-delete:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4695,13 +4695,13 @@ tbody.collapse.in {
 }
 
 /* line 104, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn + .dropdown-toggle, .btn-group > .button + .dropdown-toggle, .btn-group > .delete-document-button + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, .btn-group > .button + .dropdown-toggle, .btn-group > .button-delete + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
 }
 
 /* line 108, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .button + .dropdown-toggle, .btn-group-lg.btn-group > .delete-document-button + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .button + .dropdown-toggle, .btn-group-lg.btn-group > .button-delete + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -4718,27 +4718,27 @@ tbody.collapse.in {
 }
 
 /* line 126, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn .caret, .button .caret, .delete-document-button .caret {
+.btn .caret, .button .caret, .button-delete .caret {
   margin-left: 0;
 }
 
 /* line 130, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .button .caret, .btn-group-lg > .delete-document-button .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .button .caret, .btn-group-lg > .button-delete .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0;
 }
 
 /* line 135, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .button .caret, .dropup .btn-group-lg > .delete-document-button .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .button .caret, .dropup .btn-group-lg > .button-delete .caret {
   border-width: 0 5px 5px;
 }
 
 /* line 144, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn, .btn-group-vertical > .button, .btn-group-vertical > .delete-document-button,
+.btn-group-vertical > .btn, .btn-group-vertical > .button, .btn-group-vertical > .button-delete,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn,
 .btn-group-vertical > .btn-group > .button,
-.btn-group-vertical > .btn-group > .delete-document-button {
+.btn-group-vertical > .btn-group > .button-delete {
   display: block;
   float: none;
   width: 100%;
@@ -4754,53 +4754,53 @@ tbody.collapse.in {
   clear: both;
 }
 /* line 156, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .button, .btn-group-vertical > .btn-group > .delete-document-button {
+.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .button, .btn-group-vertical > .btn-group > .button-delete {
   float: none;
 }
 /* line 161, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn + .btn, .btn-group-vertical > .button + .btn, .btn-group-vertical > .delete-document-button + .btn, .btn-group-vertical > .btn + .button, .btn-group-vertical > .button + .button, .btn-group-vertical > .delete-document-button + .button, .btn-group-vertical > .btn + .delete-document-button, .btn-group-vertical > .button + .delete-document-button, .btn-group-vertical > .delete-document-button + .delete-document-button,
+.btn-group-vertical > .btn + .btn, .btn-group-vertical > .button + .btn, .btn-group-vertical > .button-delete + .btn, .btn-group-vertical > .btn + .button, .btn-group-vertical > .button + .button, .btn-group-vertical > .button-delete + .button, .btn-group-vertical > .btn + .button-delete, .btn-group-vertical > .button + .button-delete, .btn-group-vertical > .button-delete + .button-delete,
 .btn-group-vertical > .btn + .btn-group,
 .btn-group-vertical > .button + .btn-group,
-.btn-group-vertical > .delete-document-button + .btn-group,
+.btn-group-vertical > .button-delete + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
 .btn-group-vertical > .btn-group + .button,
-.btn-group-vertical > .btn-group + .delete-document-button,
+.btn-group-vertical > .btn-group + .button-delete,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0;
 }
 
 /* line 171, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .button:not(:first-child):not(:last-child), .btn-group-vertical > .delete-document-button:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .button:not(:first-child):not(:last-child), .btn-group-vertical > .button-delete:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 /* line 174, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .button:first-child:not(:last-child), .btn-group-vertical > .delete-document-button:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .button:first-child:not(:last-child), .btn-group-vertical > .button-delete:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 /* line 178, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .button:last-child:not(:first-child), .btn-group-vertical > .delete-document-button:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .button:last-child:not(:first-child), .btn-group-vertical > .button-delete:last-child:not(:first-child) {
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
 /* line 183, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .delete-document-button {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button-delete {
   border-radius: 0;
 }
 
 /* line 187, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .delete-document-button:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button-delete:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 /* line 192, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .delete-document-button:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button-delete:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4813,14 +4813,14 @@ tbody.collapse.in {
   border-collapse: separate;
 }
 /* line 205, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-justified > .btn, .btn-group-justified > .button, .btn-group-justified > .delete-document-button,
+.btn-group-justified > .btn, .btn-group-justified > .button, .btn-group-justified > .button-delete,
 .btn-group-justified > .btn-group {
   float: none;
   display: table-cell;
   width: 1%;
 }
 /* line 211, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .button, .btn-group-justified > .btn-group .delete-document-button {
+.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .button, .btn-group-justified > .btn-group .button-delete {
   width: 100%;
 }
 /* line 215, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
@@ -4829,16 +4829,16 @@ tbody.collapse.in {
 }
 
 /* line 236, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-[data-toggle="buttons"] > .btn input[type="radio"], [data-toggle="buttons"] > .button input[type="radio"], [data-toggle="buttons"] > .delete-document-button input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="radio"], [data-toggle="buttons"] > .button input[type="radio"], [data-toggle="buttons"] > .button-delete input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
 [data-toggle="buttons"] > .button input[type="checkbox"],
-[data-toggle="buttons"] > .delete-document-button input[type="checkbox"],
+[data-toggle="buttons"] > .button-delete input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .button input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .delete-document-button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .button-delete input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .button input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .delete-document-button input[type="checkbox"] {
+[data-toggle="buttons"] > .btn-group > .button-delete input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
@@ -4925,17 +4925,17 @@ tbody.collapse.in {
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .button,
-.input-group-btn:first-child > .delete-document-button,
+.input-group-btn:first-child > .button-delete,
 .input-group-btn:first-child > .btn-group > .btn,
 .input-group-btn:first-child > .btn-group > .button,
-.input-group-btn:first-child > .btn-group > .delete-document-button,
+.input-group-btn:first-child > .btn-group > .button-delete,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .delete-document-button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .button-delete:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
 .input-group-btn:last-child > .btn-group:not(:last-child) > .button,
-.input-group-btn:last-child > .btn-group:not(:last-child) > .delete-document-button {
+.input-group-btn:last-child > .btn-group:not(:last-child) > .button-delete {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -4950,17 +4950,17 @@ tbody.collapse.in {
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .button,
-.input-group-btn:last-child > .delete-document-button,
+.input-group-btn:last-child > .button-delete,
 .input-group-btn:last-child > .btn-group > .btn,
 .input-group-btn:last-child > .btn-group > .button,
-.input-group-btn:last-child > .btn-group > .delete-document-button,
+.input-group-btn:last-child > .btn-group > .button-delete,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child),
 .input-group-btn:first-child > .button:not(:first-child),
-.input-group-btn:first-child > .delete-document-button:not(:first-child),
+.input-group-btn:first-child > .button-delete:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
 .input-group-btn:first-child > .btn-group:not(:first-child) > .button,
-.input-group-btn:first-child > .btn-group:not(:first-child) > .delete-document-button {
+.input-group-btn:first-child > .btn-group:not(:first-child) > .button-delete {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4977,24 +4977,24 @@ tbody.collapse.in {
   white-space: nowrap;
 }
 /* line 140, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn, .input-group-btn > .button, .input-group-btn > .delete-document-button {
+.input-group-btn > .btn, .input-group-btn > .button, .input-group-btn > .button-delete {
   position: relative;
 }
 /* line 142, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn + .btn, .input-group-btn > .button + .btn, .input-group-btn > .delete-document-button + .btn, .input-group-btn > .btn + .button, .input-group-btn > .button + .button, .input-group-btn > .delete-document-button + .button, .input-group-btn > .btn + .delete-document-button, .input-group-btn > .button + .delete-document-button, .input-group-btn > .delete-document-button + .delete-document-button {
+.input-group-btn > .btn + .btn, .input-group-btn > .button + .btn, .input-group-btn > .button-delete + .btn, .input-group-btn > .btn + .button, .input-group-btn > .button + .button, .input-group-btn > .button-delete + .button, .input-group-btn > .btn + .button-delete, .input-group-btn > .button + .button-delete, .input-group-btn > .button-delete + .button-delete {
   margin-left: -1px;
 }
 /* line 146, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn:hover, .input-group-btn > .button:hover, .input-group-btn > .delete-document-button:hover, .input-group-btn > .btn:focus, .input-group-btn > .button:focus, .input-group-btn > .delete-document-button:focus, .input-group-btn > .btn:active, .input-group-btn > .button:active, .input-group-btn > .delete-document-button:active {
+.input-group-btn > .btn:hover, .input-group-btn > .button:hover, .input-group-btn > .button-delete:hover, .input-group-btn > .btn:focus, .input-group-btn > .button:focus, .input-group-btn > .button-delete:focus, .input-group-btn > .btn:active, .input-group-btn > .button:active, .input-group-btn > .button-delete:active {
   z-index: 2;
 }
 /* line 155, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn:first-child > .btn, .input-group-btn:first-child > .button, .input-group-btn:first-child > .delete-document-button,
+.input-group-btn:first-child > .btn, .input-group-btn:first-child > .button, .input-group-btn:first-child > .button-delete,
 .input-group-btn:first-child > .btn-group {
   margin-right: -1px;
 }
 /* line 161, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn:last-child > .btn, .input-group-btn:last-child > .button, .input-group-btn:last-child > .delete-document-button,
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .button, .input-group-btn:last-child > .button-delete,
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
 }
@@ -5584,12 +5584,12 @@ tbody.collapse.in {
   margin-bottom: 8px;
 }
 /* line 346, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.button, .btn-group-sm > .navbar-btn.delete-document-button {
+.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.button, .btn-group-sm > .navbar-btn.button-delete {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 /* line 349, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .btn-group-xs > .navbar-btn.button, .btn-group-xs > .navbar-btn.delete-document-button {
+.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .btn-group-xs > .navbar-btn.button, .btn-group-xs > .navbar-btn.button-delete {
   margin-top: 14px;
   margin-bottom: 14px;
 }
@@ -6037,7 +6037,7 @@ tbody.collapse.in {
   display: none;
 }
 /* line 25, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_labels.scss */
-.btn .label, .button .label, .delete-document-button .label {
+.btn .label, .button .label, .button-delete .label {
   position: relative;
   top: -1px;
 }
@@ -6123,12 +6123,12 @@ a.label:hover, a.label:focus {
   display: none;
 }
 /* line 27, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_badges.scss */
-.btn .badge, .button .badge, .delete-document-button .badge {
+.btn .badge, .button .badge, .button-delete .badge {
   position: relative;
   top: -1px;
 }
 /* line 31, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_badges.scss */
-.btn-xs .badge, .btn-group-xs > .btn .badge, .btn-group-xs > .button .badge, .btn-group-xs > .delete-document-button .badge {
+.btn-xs .badge, .btn-group-xs > .btn .badge, .btn-group-xs > .button .badge, .btn-group-xs > .button-delete .badge {
   top: 0;
   padding: 1px 5px;
 }
@@ -7336,12 +7336,12 @@ button.close {
   clear: both;
 }
 /* line 108, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_modals.scss */
-.modal-footer .btn + .btn, .modal-footer .button + .btn, .modal-footer .delete-document-button + .btn, .modal-footer .btn + .button, .modal-footer .button + .button, .modal-footer .delete-document-button + .button, .modal-footer .btn + .delete-document-button, .modal-footer .button + .delete-document-button, .modal-footer .delete-document-button + .delete-document-button {
+.modal-footer .btn + .btn, .modal-footer .button + .btn, .modal-footer .button-delete + .btn, .modal-footer .btn + .button, .modal-footer .button + .button, .modal-footer .button-delete + .button, .modal-footer .btn + .button-delete, .modal-footer .button + .button-delete, .modal-footer .button-delete + .button-delete {
   margin-left: 5px;
   margin-bottom: 0;
 }
 /* line 113, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_modals.scss */
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .button + .btn, .modal-footer .btn-group .delete-document-button + .btn, .modal-footer .btn-group .btn + .button, .modal-footer .btn-group .button + .button, .modal-footer .btn-group .delete-document-button + .button, .modal-footer .btn-group .btn + .delete-document-button, .modal-footer .btn-group .button + .delete-document-button, .modal-footer .btn-group .delete-document-button + .delete-document-button {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .button + .btn, .modal-footer .btn-group .button-delete + .btn, .modal-footer .btn-group .btn + .button, .modal-footer .btn-group .button + .button, .modal-footer .btn-group .button-delete + .button, .modal-footer .btn-group .btn + .button-delete, .modal-footer .btn-group .button + .button-delete, .modal-footer .btn-group .button-delete + .button-delete {
   margin-left: -1px;
 }
 /* line 117, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_modals.scss */
@@ -7866,7 +7866,7 @@ button.close {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 /* line 226, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_carousel.scss */
-.carousel-caption .btn, .carousel-caption .button, .carousel-caption .delete-document-button {
+.carousel-caption .btn, .carousel-caption .button, .carousel-caption .button-delete {
   text-shadow: none;
 }
 
@@ -8271,10 +8271,24 @@ body {
   display: none;
 }
 
+/* line 67, ../scss/app.scss */
+.button-delete {
+  padding: 5px 7px 5px 5px;
+  font-size: 12px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  top: 0;
+}
+/* line 77, ../scss/app.scss */
+.button-delete:hover {
+  background-color: #999;
+}
+
 /**
  * 3 Section Styles
  */
-/* line 74, ../scss/app.scss */
+/* line 122, ../scss/app.scss */
 .delete-document {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -8285,42 +8299,28 @@ body {
   max-width: 28px;
   height: 27px;
   overflow: hidden;
+  vertical-align: middle;
 }
-/* line 84, ../scss/app.scss */
-.delete-document .delete-confirm {
+/* line 94, ../scss/app.scss */
+.delete-document .confirm-delete {
   display: none;
   white-space: nowrap;
+  line-height: 27px;
+  margin-left: 6px;
 }
-/* line 88, ../scss/app.scss */
-.delete-document .delete-document-button {
+/* line 100, ../scss/app.scss */
+.delete-document .button-delete {
   display: inline-block;
 }
-
-/* line 93, ../scss/app.scss */
+/* line 104, ../scss/app.scss */
 .delete-document.open {
   max-width: 300px;
 }
-/* line 96, ../scss/app.scss */
-.delete-document.open .delete-confirm {
-  line-height: 27px;
-  margin-left: 6px;
-  display: inline;
+/* line 107, ../scss/app.scss */
+.delete-document.open .confirm-delete {
+  display: inline-block;
 }
-/* line 101, ../scss/app.scss */
-.delete-document.open .delete-document-button {
+/* line 110, ../scss/app.scss */
+.delete-document.open .button-delete {
   display: none;
-}
-
-/* line 106, ../scss/app.scss */
-.delete-document-button {
-  padding: 5px 7px;
-  font-size: 12px;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  top: 0;
-}
-/* line 116, ../scss/app.scss */
-.delete-document-button:hover {
-  background-color: #999;
 }
