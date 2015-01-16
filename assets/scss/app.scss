@@ -1,11 +1,75 @@
+/*****************************************************************************
+ * Table of Contents
+ *
+ * 1 Settings / Imports
+ *   1.1 Default Settings
+ *   1.2 Imports
+ * 2 Main Styles
+ *   2.1 Global Styles
+ *   2.2 Reusable Elements
+ *     2.2.1 Buttons
+ * 3 Section Styles
+ *   3.1 Document Styles
+ ****************************************************************************/
+
+/**
+ * 1 Settings / Imports
+ */
+
+// 1.1 Default Settings
+
 $icon-font-path: '/bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
+
+// 1.2 Imports
 
 @import "compass";
 @import "bootstrap";
 
+
+/**
+ * 2 Main Styles
+ */
+
+// 2.1 Global Styles
+
 body {
 	margin-top: 50px;
 }
+
+// 2.2 Reusable Elements
+
+// 2.2.1 Buttons
+.button {
+	@extend .btn;
+}
+
+.icon-button-small {
+	padding: 1px 4px;
+	vertical-align: top;
+	span {
+		display: none;
+	}
+}
+
+.button-save {
+	@extend .btn-success;
+	@extend .glyphicon;
+	@extend .icon-button-small;
+	@extend .glyphicon-ok;
+}
+.button-cancel {
+	@extend .btn-danger;
+	@extend .glyphicon;
+	@extend .icon-button-small;
+	@extend .glyphicon-remove;
+}
+
+
+/**
+ * 3 Section Styles
+ */
+
+// 3.1 Document Styles
 
 .delete-document {
 	@include single-transition(all, 0.5s);
@@ -52,29 +116,4 @@ body {
 	&:hover {
 		background-color: #999;
 	}
-}
-
-.button {
-	@extend .btn;
-}
-
-.icon-button-small {
-	padding: 1px 4px;
-	vertical-align: top;
-	span {
-		display: none;
-	}
-}
-
-.button-save {
-	@extend .btn-success;
-	@extend .glyphicon;
-	@extend .icon-button-small;
-	@extend .glyphicon-ok;
-}
-.button-cancel {
-	@extend .btn-danger;
-	@extend .glyphicon;
-	@extend .icon-button-small;
-	@extend .glyphicon-remove;
 }
