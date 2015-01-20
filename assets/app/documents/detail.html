@@ -1,5 +1,5 @@
-<div ng-controller="DocumentDetailController" ngCloak class="ngCloak">
-	<h1 editable-text="document.title">{{ document.title }}</h1>
+<div ng-controller="DocumentDetailController" ng-cloak class="document-detail">
+	<h3 editable-text="document.title">{{ document.title }} <button class="button-edit">Edit Title</button></h3>
 
 	<iframe src="{{ document.slug | etherpadUrl }}" style="width: 100%; height: 600px;"></iframe>
 </div>
