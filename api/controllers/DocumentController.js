@@ -19,7 +19,6 @@ module.exports = {
     ]).spread(function(documents, count) {
       // Get all of our results.
       return res.json({
-        error: false,
         page: page,
         limit: limit,
         count: count,
