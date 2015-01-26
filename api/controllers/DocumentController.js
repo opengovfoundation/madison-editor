@@ -1,7 +1,3 @@
-var etherpad_client = require('etherpad-lite-client');
-var Promise = require('sails/node_modules/waterline/node_modules/bluebird');
-var Uuid = require('uuid');
-
 // TODO : user validation.
 
 module.exports = {
@@ -32,9 +28,7 @@ module.exports = {
     }).catch(function(error) {
       // Handle any errors - this occurs on
       // the *first* error.
-      return res.json({
-        error: error
-      });
+      return res.badRequest(error);
     });
 
   },

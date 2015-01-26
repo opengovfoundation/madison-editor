@@ -1,8 +1,8 @@
 {
-  "name": "admin",
+  "name": "madison-editor",
   "private": true,
-  "version": "0.0.0",
-  "description": "a Sails application",
+  "version": "0.1.0",
+  "description": "A Sails + Angular document editor, powered by Etherpad",
   "keywords": [],
   "dependencies": {
     "bcryptjs": "^2.1.0",
@@ -32,15 +32,23 @@
     "uuid": "~2.0.1",
     "validator": "^3.27.0"
   },
+  "devDependencies": {
+    "istanbul": "~0.3.5",
+    "mocha": "~2.1.0",
+    "rewire": "~2.1.4",
+    "sinon": "~1.12.2"
+  },
   "scripts": {
     "start": "node app.js",
-    "debug": "node debug app.js"
+    "debug": "node debug app.js",
+    "test": "node node_modules/mocha/bin/mocha test/**/*.js",
+    "cover": "istanbul cover -x '**/config/**' node_modules/mocha/bin/_mocha -- test/**/*.js"
   },
   "main": "app.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/krues8dr/admin.git"
   },
-  "author": "krues8dr",
-  "license": ""
+  "author": "OpenGov Foundation",
+  "license": "Apache-2.0"
 }
