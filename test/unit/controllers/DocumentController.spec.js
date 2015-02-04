@@ -73,6 +73,7 @@ describe('DocumentController', function() {
           'defaults to page = 1');
         assert(request.param.calledWith('limit', null),
           'defaults to limit = null');
+
         done();
       });
 
@@ -84,12 +85,15 @@ describe('DocumentController', function() {
       var countTestResult = Math.floor((Math.random() * 10));
       var findTestResult = Math.floor((Math.random() * 10));
 
-      DocumentController.index(request, response).then(function(findResult, countResult) {
+      DocumentController.index(request, response)
+        .finally(function(findResult, countResult) {
         assert(Document.find.called, 'calls Document.find()');
         assert(Document.count.called, 'calls Document.count()');
         assert(response.json.called, 'calls response.json');
-        assert(response.json.args[0][0].count === countTestResult, 'Gets the right count');
-        assert(response.json.args[0][0].documents === findTestResult, 'Gets the right documents');
+        assert(response.json.args[0][0].count === countTestResult,
+          'Gets the right count');
+        assert(response.json.args[0][0].documents === findTestResult,
+          'Gets the right documents');
 
         done();
       });
