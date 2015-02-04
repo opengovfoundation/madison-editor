@@ -52,20 +52,26 @@ describe('DocumentController', function() {
       request = {
         param: sinon.spy()
       };
+      // The response calls done() when it's done.
       response = {
         badRequest: function() {
+          response.done();
         },
         json: function() {
+          response.done();
         }
       };
       sinon.spy(response, 'badRequest');
       sinon.spy(response, 'json');
 
+      // Setup our controller for testing.
       DocumentController = require(path('/controllers/DocumentController'));
     });
 
 
     it('should use good defaults for pagination', function (done) {
+      // Set this instance's done method.
+      response.done = done;
 
       DocumentController.index(request, response);
 
@@ -76,21 +82,49 @@ describe('DocumentController', function() {
         'defaults to page = 1');
       assert(request.param.calledWith('limit', null),
         'defaults to limit = null');
-
-      done();
     });
 
     it('should call find & count', function (done) {
+      // Set this instance's done method.
+      response.done = done;
 
-      DocumentController.index(request, response);
+      DocumentController.index(request, response).finally(function() {
+        assert(Document.find.called, 'calls Document.find()');
+        assert(Document.count.called, 'calls Document.count()');
+        assert(response.json.called, 'calls response.json');
+
+      });
 
       findPromise.resolve();
       countPromise.resolve();
+    });
 
-      assert(global.Document.find.called, 'calls Document.find()');
-      assert(Document.count.called, 'calls Document.count()');
+    it('should send a badRequest on find error', function (done) {
+      // Set this instance's done method.
+      response.done = done;
 
-      done();
+      DocumentController.index(request, response).finally(function() {
+        assert(Document.find.called, 'calls Document.find()');
+        assert(Document.count.called, 'calls Document.count()');
+        assert(response.badRequest.called, 'calls response.badRequest');
+      });
+
+      findPromise.reject();
+      countPromise.resolve();
+    });
+
+    it('should send a badRequest on count error', function (done) {
+      // Set this instance's done method.
+      response.done = done;
+
+      DocumentController.index(request, response).finally(function() {
+        assert(Document.find.called, 'calls Document.find()');
+        assert(Document.count.called, 'calls Document.count()');
+        assert(response.badRequest.called, 'calls response.badRequest');
+      });
+
+      findPromise.resolve();
+      countPromise.reject();
     });
   });
 

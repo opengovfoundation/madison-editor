@@ -2,7 +2,7 @@
 
 module.exports = {
   /**
-   * list() - list all docs
+   * index() - list all documents.
    */
   index: function(req, res) {
 
@@ -10,7 +10,8 @@ module.exports = {
     var limit=req.param('limit',null);
 
     // Use a promise to get both queries in parallel.
-    Promise.all([
+    // We return the promise so we can test this.
+    return Promise.all([
       Document.find().paginate({
         page: page,
         limit: limit
@@ -29,8 +30,10 @@ module.exports = {
       // the *first* error.
       return res.badRequest(error);
     });
-
   },
+  /**
+   * find() - find a single document by its slug.
+   */
   find: function(req, res) {
     Document.findOne({slug: req.param('slug')}).exec(function(error, document) {
       return res.json({
@@ -39,6 +42,9 @@ module.exports = {
       });
     });
   },
+  /**
+   * create() - create a new document.
+   */
   create: function(req, res) {
     var doc = req.param('document');
     if(!doc)
@@ -62,6 +68,9 @@ module.exports = {
       });
     });
   },
+  /**
+   * update() - edit a document.
+   */
   update: function(req, res) {
     Document.findOne({slug: req.param('slug')}).exec(function(error, document) {
       if(document){
@@ -80,6 +89,9 @@ module.exports = {
       }
     });
   },
+  /**
+   * destroy() - remove a document.
+   */
   destroy: function(req, res) {
     // Todo: error checking.
     Document.destroy({slug: req.param('slug')}).exec(function(error) {
