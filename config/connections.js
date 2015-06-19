@@ -40,16 +40,13 @@ module.exports.connections = {
   * Run: npm install sails-mysql                                             *
   *                                                                          *
   ***************************************************************************/
-  mysqlServer: {
-    adapter: 'sails-mysql',
-    host: 'localhost',
-    // user: 'etherpad',
-    // password: 'MovWfw5x',
-    // database: 'etherpaddb'
-    database: 'madison2db',
-    user: 'madison2',
-    password: 'tEqVmXNf'
-  },
+  // mysqlServer: {
+  //   adapter: 'sails-mysql',
+  //   host: 'localhost',
+  //   database: 'database',
+  //   user: 'username',
+  //   password: 'password'
+  // },
 
   /***************************************************************************
   *                                                                          *
@@ -91,10 +88,10 @@ module.exports.connections = {
   * More adapters: https://github.com/balderdashy/sails                      *
   *                                                                          *
   ***************************************************************************/
-  etherpad: {
-    apikey: 'f2de2049028098f9b51c662d7a0803b9411966792f83dfb836c1c365f4260c12',
-    host: 'localhost',
-    port: '9001'
-  }
+  // etherpad: {
+  //   apikey: 'apikey',
+  //   host: 'localhost',
+  //   port: '9001'
+  // }
 
 };
