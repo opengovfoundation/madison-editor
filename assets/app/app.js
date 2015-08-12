@@ -4,6 +4,7 @@ var user;
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
+  'angular-growl',
   'ngRoute',
   // 'ngResource',
   'myApp.config',
@@ -15,6 +16,9 @@ angular.module('myApp', [
 }])
 .config(['$httpProvider', function($httpProvider) {
   $httpProvider.interceptors.push('authInterceptor');
+}])
+.config(['growlProvider', function(growlProvider) {
+  growlProvider.globalTimeToLive(5000);
 }])
 .run(function($rootScope) {
     $rootScope.user = user;

@@ -16,7 +16,8 @@
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
   'css/**/*.css',
-  'bower_components/angular-xeditable/dist/css/xeditable.css'
+  'bower_components/angular-xeditable/dist/css/xeditable.css',
+  'bower_components/angular-growl-v2/build/angular-growl.min.css'
 ];
 
 
@@ -37,6 +38,7 @@ var jsFilesToInject = [
   'bower_components/angular-route/angular-route.js',
   'bower_components/angular-sails/dist/angular-sails.min.js',
   'bower_components/angular-xeditable/dist/js/xeditable.min.js',
+  'bower_components/angular-growl-v2/build/angular-growl.min.js',
   'app/**/*.js',
 ];
 

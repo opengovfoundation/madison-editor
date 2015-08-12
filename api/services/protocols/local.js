@@ -153,11 +153,11 @@ exports.login = function (req, identifier, password, next) {
 
       return next(new Error('Error.Passport.Email.NotFound'), false);
     }
-    Passport.findOne({
-      protocol : 'local'
-    , user     : user.id
-    }, function (err, passport) {
-      if (passport) {
+    // Passport.findOne({
+    //   protocol : 'local'
+    // , user     : user.id
+    // }, function (err, passport) {
+    //   if (passport) {
         user.validatePassword(password, function (err, res) {
           if (err) {
             return next(err);
@@ -165,16 +165,17 @@ exports.login = function (req, identifier, password, next) {
 
           if (!res) {
             //req.flash('error', 'Error.Passport.Password.Wrong');
+
             return next(new Error('Error.Passport.Password.Wrong'), false);
           } else {
             return next(null, user);
           }
         });
-      }
-      else {
-        //req.flash('error', 'Error.Passport.Password.NotSet');
-        return next(new Error('Error.Passport.Password.NotSet'), false);
-      }
-    });
+    //   }
+    //   else {
+    //     //req.flash('error', 'Error.Passport.Password.NotSet');
+    //     return next(new Error('Error.Passport.Password.NotSet'), false);
+    //   }
+    // });
   });
 };
