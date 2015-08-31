@@ -6,23 +6,24 @@ module.exports = {
    */
   index: function(req, res) {
 
+    if(!req.session || !req.session.user || !req.session.user.id) {
+      return res.badRequest('Unauthorized.');
+    }
+
     var page=req.param('page',1);
     var limit=req.param('limit',null);
 
     // Use a promise to get both queries in parallel.
     // We return the promise so we can test this.
     return Promise.all([
-      Document.find().paginate({
-        page: page,
-        limit: limit
-      }),
-      Document.count()
+      Document.findByUser(req.session.user.id, page, limit),
+      Document.countByUser(req.session.user.id)
     ]).spread(function(documents, count) {
       // Get all of our results.
       return res.json({
         page: page,
         limit: limit,
-        count: count,
+        count: count.count,
         documents: documents
       });
     }).catch(function(error) {
@@ -35,11 +36,17 @@ module.exports = {
    * find() - find a single document by its slug.
    */
   find: function(req, res) {
-    Document.findOne({slug: req.param('slug')}).exec(function(error, document) {
+    if(!req.session || !req.session.user || !req.session.user.id) {
+      return res.badRequest('Unauthorized.');
+    }
+
+    Document.getByUser(req.param('slug'), req.session.user.id).then(function(document) {
       return res.json({
         error: false,
-        document: document
+        document: document[0]
       });
+    }).catch(function(error) {
+      return res.badRequest(error);
     });
   },
   /**

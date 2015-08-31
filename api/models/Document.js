@@ -37,5 +37,54 @@ module.exports = {
   beforeUpdate:function(values,next) {
       values.updateDate= new Date();
       next();
+  },
+
+  findByUser: function(userId, page, limit) {
+
+    var query = 'SELECT *, docs.id as id FROM ' + this.tableName +
+      ' LEFT JOIN doc_user ON docs.id = doc_user.doc_id' +
+      ' LEFT JOIN doc_group ON docs.id = doc_group.doc_id' +
+      ' LEFT JOIN group_members ON group_members.group_id = doc_group.group_id' +
+      ' WHERE (doc_user.user_id = ' + userId +
+      ' OR group_members.user_id = ' + userId + ')' +
+      ' ORDER BY docs.updated_at DESC';
+
+    if(limit && page) {
+      var offset = limit * (page - 1);
+      query += ' LIMIT ' + offset + ', ' + limit;
+    }
+
+    var documentQuery = Promise.promisify(this.query);
+    return documentQuery(query);
+  },
+
+  countByUser: function(userId)
+  {
+    var query = 'SELECT COUNT(*) AS count FROM ' + this.tableName +
+      ' LEFT JOIN doc_user ON docs.id = doc_user.doc_id' +
+      ' LEFT JOIN doc_group ON docs.id = doc_group.doc_id' +
+      ' LEFT JOIN group_members ON group_members.group_id = doc_group.group_id' +
+      ' WHERE (doc_user.user_id = ' + userId +
+      ' OR group_members.user_id = ' + userId + ')';
+
+    var countQuery = Promise.promisify(this.query);
+
+    return countQuery(query);
+  },
+
+  getByUser: function(slug, userId) {
+    slug = slug.replace(/[^a-zA-Z0-9\-_]/, '');
+
+    var query = 'SELECT *, docs.id as id FROM ' + this.tableName +
+      ' LEFT JOIN doc_user ON docs.id = doc_user.doc_id' +
+      ' LEFT JOIN doc_group ON docs.id = doc_group.doc_id' +
+      ' LEFT JOIN group_members ON group_members.group_id = doc_group.group_id' +
+      ' WHERE docs.slug = "' + slug + '" AND' +
+      ' (doc_user.user_id = ' + userId +
+      ' OR group_members.user_id = ' + userId + ')' +
+      ' ORDER BY docs.updated_at DESC';
+
+    var documentQuery = Promise.promisify(this.query);
+    return documentQuery(query);
   }
 };
