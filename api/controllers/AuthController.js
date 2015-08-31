@@ -68,8 +68,12 @@ module.exports = {
    * @param {Object} res
    */
   logout: function (req, res) {
+    // Do passport logout.
     req.logout();
-    res.redirect('/');
+    // Destroy our session.
+    req.session.destroy();
+    // Return true.
+    res.ok();
   },
 
   /**

@@ -33,7 +33,12 @@ app.controller('AuthLoginController', ['$scope', '$rootScope', '$http', '$locati
       else {
         $rootScope.user = data;
         console.log('Login data', data);
-        $location.url('/');
+        var url = '/';
+        if($rootScope.returnTo)
+        {
+          url = $rootScope.returnTo;
+        }
+        $location.url(url);
       }
     })
     .error(function(){
@@ -45,14 +50,14 @@ app.controller('AuthLoginController', ['$scope', '$rootScope', '$http', '$locati
   };
 }]);
 
-app.controller('AuthLogoutController', function($scope, $rootScope, $http, $location) {
+app.controller('AuthLogoutController', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location) {
 
   var logout = function(){
-    $location.url('/');
     delete $rootScope.user;
+    $location.url('/');
   };
 
   $http.get('/logout')
     .success(logout)
     .error(logout);
-});
+}]);
