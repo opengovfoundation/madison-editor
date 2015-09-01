@@ -49,8 +49,14 @@ module.exports.http = {
     ],
 
     sessionOverride: function (req, res, next) {
-      var session = require('../api/middleware/sessionOverride')(sails.config.session);
-      session(req, res, next);
+      // Only handle sessions on calls to the API.
+      if(req.originalUrl.search(/^\/api\//) !== -1) {
+        var session = require('../api/middleware/sessionOverride')(sails.config.session);
+        session(req, res, next);
+      }
+      else {
+        next();
+      }
     },
 
   /****************************************************************************
