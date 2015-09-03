@@ -30,7 +30,10 @@ module.exports = function (req, res, next) {
       if(req.session && req.session.passport && !req.session.user) {
         req.session.user = req.session.passport.user;
       }
-      if(req.user && !req.locals.user) {
+      if(req.user && !(req.locals && req.locals.user)) {
+        if(!req.locals) {
+          req.locals = {};
+        }
         // Make the user available throughout the frontend
         res.locals.user = req.user;
       }
