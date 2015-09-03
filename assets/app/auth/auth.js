@@ -20,7 +20,7 @@ app.controller('AuthLoginController', ['$scope', '$rootScope', '$http', '$locati
   $scope.error = false;
 
   $scope.doLogin = function(){
-    $http.post('/auth/local', {
+    $http.post('/api/auth/local', {
       email: $scope.login.email,
       password: $scope.login.password
     })
@@ -57,7 +57,7 @@ app.controller('AuthLogoutController', ['$scope', '$rootScope', '$http', '$locat
     $location.url('/');
   };
 
-  $http.get('/logout')
+  $http.get('/api/logout')
     .success(logout)
     .error(logout);
 }]);

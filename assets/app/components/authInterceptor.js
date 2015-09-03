@@ -3,7 +3,6 @@
 angular.module('myApp').factory('authInterceptor', ['$location', '$rootScope', function($location, $rootScope) {
   var authInterceptor = {
     responseError: function(response) {
-      console.log('Responder', response);
       if (response.status === 401 || response.status === 403) {
         if($location.path() !== '/login')
         {
