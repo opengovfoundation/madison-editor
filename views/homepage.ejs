@@ -1,25 +1,27 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<header id="header-main" class="navbar" role="navigation">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Madison Editor</a>
+    <div class="row">
+      <nav class="navbar-header ">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand logo-madison navbar-brand link-home" href="/" title="myMadison.io Home">
+          <span class="level"></span>MyMadison<span class="dot-io">.io</span>
+        </a>
+      </nav>
+      <nav class="nav nav-main navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#">About</a></li>
+          <li ng-hide="!user" ng-cloak><a href="#/documents">Documents</a></li>
+          <li ng-hide="!user" ng-cloak><a href="#/logout">Logout</a></li>
+        </ul>
+      </nav><!--/.navbar-collapse -->
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="#">About</a></li>
-      </ul>
-      <ul class="nav navbar-nav" ng-hide="!user.id" ng-cloak>
-        <li><a href="#/documents">Documents</a></li>
-        <li><a href="#/logout">Logout</a></li>
-      </ul>
-    </div><!--/.nav-collapse -->
   </div>
-</nav>
+</header>
 
 <div class="container">
   <div growl></div>
