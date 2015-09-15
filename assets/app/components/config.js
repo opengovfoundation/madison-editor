@@ -1,7 +1,7 @@
 'use strict';
 
 // Configuration goes here.
-var app = angular.module('myApp.config', []);
+var app = angular.module('madisonEditor.config', []);
 app.factory('config', function() {
   return {
     etherpad: {
