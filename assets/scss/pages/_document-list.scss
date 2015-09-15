@@ -1,0 +1,14 @@
+.documents-list {
+  @extend .col-md-24;
+}
+
+.document__delete {
+  @include button-confirm-delete;
+}
+
+// Hide the date column on narrow displays.
+.document__date-updated {
+  @include breakpoint(0 $screen-md-min) {
+    display: none;
+  }
+}
