@@ -9,8 +9,7 @@ angular.module('madisonEditor', [
   // 'ngResource',
   'madisonEditor.config',
   'madisonEditor.documents',
-  'madisonEditor.auth',
-  'madisonEditor.directives'
+  'madisonEditor.auth'
 ])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/documents'});
