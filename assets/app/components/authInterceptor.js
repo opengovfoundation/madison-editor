@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp').factory('authInterceptor', ['$location', '$rootScope', function($location, $rootScope) {
+angular.module('madisonEditor').factory('authInterceptor', ['$location', '$rootScope', function($location, $rootScope) {
   var authInterceptor = {
     responseError: function(response) {
       if (response.status === 401 || response.status === 403) {

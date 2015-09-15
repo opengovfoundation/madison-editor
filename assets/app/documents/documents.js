@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module("myApp.documents", ['xeditable', 'myApp.config']);
+var app = angular.module("madisonEditor.documents", ['madisonEditor.config']);
 
 //OPTIONAL! Set socket URL!
 // app.config(['$sailsProvider', function ($sailsProvider) {
@@ -106,8 +106,4 @@ app.controller("DocumentDetailController", function ($scope, $http, $routeParams
     .error(function (data) {
       alert('Houston, we got a problem!');
     });
-});
-
-app.run(function(editableOptions) {
-  editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
 });

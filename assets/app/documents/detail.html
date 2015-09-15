@@ -1,5 +1,19 @@
 <div ng-controller="DocumentDetailController" ng-cloak class="document-detail">
-	<h3 editable-text="document.title">{{ document.title }} <button class="button-edit">Edit Title</button></h3>
+  <header class="doc-meta">
+    <div class="error" ng-show="form.errors.general">
+      {{ form.errors.general }}
+    </div>
+    <fieldset>
+      <label for="doc.title">Title</label>
+      <input id="doc.title" ng-model="document.title" />
+      <span class="error" ng-show="form.errors.title">{{ form.errors.title }}</span>
+    </fieldset>
+    <fieldset>
+      <label for="doc.slug">Url</label>
+      https://mymadison.io/docs/<input ng-model="document.slug" />
+      <span class="error" ng-show="form.errors.slug">{{ form.errors.slug }}</span>
+    </fieldset>
+  </header>
 
 	<iframe src="{{ document.slug | etherpadUrl }}" style="width: 100%; height: 600px;"></iframe>
 </div>

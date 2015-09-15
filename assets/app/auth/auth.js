@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module("myApp.auth", []);
+var app = angular.module("madisonEditor.auth", []);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/login', {
