@@ -2,17 +2,6 @@
 
 var app = angular.module("madisonEditor.auth", []);
 
-app.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/login', {
-    templateUrl: 'app/auth/login.html',
-    controller: 'AuthLoginController'
-  });
-  $routeProvider.when('/logout', {
-    template: ' ',
-    controller: 'AuthLogoutController'
-  });
-}]);
-
 app.controller('AuthLoginController', ['$scope', '$rootScope', '$http', '$location', 'growl',
   function($scope, $rootScope, $http, $location, growl) {
 

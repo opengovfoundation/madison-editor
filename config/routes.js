@@ -76,5 +76,8 @@ module.exports.routes = {
   'put /api/docs/:slug': 'DocumentController.update',
   'delete /api/docs/:slug': 'DocumentController.destroy',
 
-
+  'get /*': {
+    skipAssets: true,
+    view: 'homepage'
+  }
 };

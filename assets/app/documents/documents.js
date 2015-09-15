@@ -7,17 +7,6 @@ var app = angular.module("madisonEditor.documents", ['madisonEditor.config']);
 //     $sailsProvider.url = 'http://localhost:1337';
 // }]);
 
-app.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/documents', {
-    templateUrl: 'app/documents/list.html',
-    controller: 'DocumentListController'
-  });
-  $routeProvider.when('/documents/:slug', {
-    templateUrl: 'app/documents/detail.html',
-    controller: 'DocumentDetailController'
-  });
-}]);
-
 app.controller("DocumentListController", function ($scope, $http, $routeParams, $location) {
   $scope.documents = [];
   $http.get("/api/docs/")
