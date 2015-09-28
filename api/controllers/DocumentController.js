@@ -1,5 +1,3 @@
-// TODO : user validation.
-
 module.exports = {
   /**
    * index() - list all documents.

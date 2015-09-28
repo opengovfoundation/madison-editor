@@ -2,13 +2,17 @@
 
 var app = angular.module("madisonEditor.auth", []);
 
-app.controller('AuthLoginController', ['$scope', '$rootScope', '$http', '$location', 'growl',
-  function($scope, $rootScope, $http, $location, growl) {
+app.controller('AuthLoginController',
+  ['$scope', '$rootScope', '$http', '$location', 'growl', 'growlMessages',
+  function($scope, $rootScope, $http, $location, growl, growlMessages) {
 
   $scope.login = {};
   $scope.error = false;
 
   $scope.doLogin = function(){
+    // Clear messages.
+    growlMessages.destroyAllMessages();
+
     $http.post('/api/auth/local', {
       email: $scope.login.email,
       password: $scope.login.password
@@ -39,7 +43,9 @@ app.controller('AuthLoginController', ['$scope', '$rootScope', '$http', '$locati
   };
 }]);
 
-app.controller('AuthLogoutController', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location) {
+app.controller('AuthLogoutController',
+  ['$scope', '$rootScope', '$http', '$location',
+  function($scope, $rootScope, $http, $location) {
 
   var logout = function(){
     delete $rootScope.user;
