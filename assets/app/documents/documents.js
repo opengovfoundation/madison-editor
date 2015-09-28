@@ -7,7 +7,10 @@ var app = angular.module("madisonEditor.documents", ['madisonEditor.config']);
 //     $sailsProvider.url = 'http://localhost:1337';
 // }]);
 
-app.controller("DocumentListController", function ($scope, $http, $routeParams, $location) {
+app.controller("DocumentListController", [
+  '$scope', '$http', '$routeParams', '$location', 'growl', 'growlMessages',
+  function ($scope, $http, $routeParams, $location, growl, growlMessages) {
+
   $scope.documents = [];
   $http.get("/api/docs/")
     .success(function (data) {
@@ -72,27 +75,32 @@ app.controller("DocumentListController", function ($scope, $http, $routeParams, 
       });
   }
 
-});
+}]);
 
-app.controller("DocumentDetailController", function ($scope, $http, $routeParams) {
-  $http.get("/api/docs/" + $routeParams.slug)
+app.controller("DocumentDetailController",
+  ['$scope', '$http', '$routeParams', '$location', 'growl', 'growlMessages',
+  function ($scope, $http, $routeParams, $location, growl, growlMessages) {
+
+  $http.get("/api/docs/" + $routeParams.id)
     .success(function (data) {
+      console.log('found it!', data);
       $scope.document = data.document;
 
-      // Watch for changes to the title.
-      $scope.$watch('document.title', function(newVal, oldVal) {
+      // Watch for changes to the document.
+      $scope.$watch('document', function(newVal, oldVal) {
         if (newVal !== oldVal) {
-          $http.put("/api/docs/" + $scope.document.slug, {document: {title: newVal}})
-            .success(function (data) {
-              // Do nothing?
-            })
-            .error(function (data) {
-              alert('Houston, we got a problem!');
-            });
+          console.log('document changed', newVal, oldVal);
+          // $http.put("/api/docs/" + $scope.document.id, {document: {title: newVal}})
+          //   .success(function (data) {
+          //     // Growl: saved
+          //   })
+          //   .error(function (data) {
+          //     alert('Houston, we got a problem!');
+          //   });
         }
       });
     })
     .error(function (data) {
       alert('Houston, we got a problem!');
     });
-});
+}]);

@@ -33,3 +33,7 @@
   @extend .table;
   @extend .table-striped;
 }
+
+.create-document {
+  margin-bottom: $line-height-computed;
+}

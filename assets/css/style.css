@@ -12540,6 +12540,11 @@ section.login {
   }
 }
 
+/* line 37, ../scss/pages/_document-list.scss */
+.create-document {
+  margin-bottom: 1.625rem;
+}
+
 /* line 1, ../scss/pages/_edit-document.scss */
 .public-link {
   float: right;

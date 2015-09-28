@@ -74,15 +74,17 @@ module.exports = {
       DocUser.create({
         user_id: req.session.user.id,
         doc_id: document.id
+      }, function(error, doc_user) {
+        // Create the etherpad for this document.
+        EtherpadService.createPad({padID: document.id});
+
+        return res.json({
+          error: error,
+          document: document
+        });
       });
 
-      // Create the etherpad for this document.
-      EtherpadService.createPad({padID: document.id});
 
-      return res.json({
-        error: error,
-        document: document
-      });
     });
   },
   /**
