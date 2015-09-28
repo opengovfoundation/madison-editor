@@ -59,13 +59,15 @@ label {
 .button {
     @extend .btn;
     border: none;
-    font-size: 1.05rem;
-    @extend %medium-size;
-    padding: 0 10px;
 
     span {
         @extend .screen-hidden;
     }
+}
+
+td .button {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .action-button {
@@ -78,14 +80,6 @@ label {
     text-transform: uppercase;
 }
 
-.icon-button-small {
-    padding: 1px 4px;
-    vertical-align: top;
-    span {
-        display: none;
-    }
-}
-
 .button-confirm {
     @extend .btn-success;
     @extend .fa;
@@ -96,6 +90,7 @@ label {
     @extend .btn-danger;
     @extend .fa;
     @extend .fa-remove;
+    top: 0;
 }
 
 .button-delete {

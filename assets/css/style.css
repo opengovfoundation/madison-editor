@@ -3069,12 +3069,13 @@ th {
   }
 
   /* line 91, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_print.scss */
-  .table {
+  .table, .documents-list {
     border-collapse: collapse !important;
   }
   /* line 94, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_print.scss */
-  .table td,
-  .table th {
+  .table td, .documents-list td,
+  .table th,
+  .documents-list th {
     background-color: #fff !important;
   }
 
@@ -5841,43 +5842,53 @@ th {
 }
 
 /* line 22, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table {
+.table, .documents-list {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1.625rem;
 }
 /* line 31, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table > thead > tr > th,
+.table > thead > tr > th, .documents-list > thead > tr > th,
 .table > thead > tr > td,
+.documents-list > thead > tr > td,
 .table > tbody > tr > th,
+.documents-list > tbody > tr > th,
 .table > tbody > tr > td,
+.documents-list > tbody > tr > td,
 .table > tfoot > tr > th,
-.table > tfoot > tr > td {
+.documents-list > tfoot > tr > th,
+.table > tfoot > tr > td,
+.documents-list > tfoot > tr > td {
   padding: 1rem;
   line-height: 1.625;
   vertical-align: top;
   border-top: 1px solid #ddd;
 }
 /* line 41, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table > thead > tr > th {
+.table > thead > tr > th, .documents-list > thead > tr > th {
   vertical-align: bottom;
   border-bottom: 2px solid #ddd;
 }
 /* line 50, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table > caption + thead > tr:first-child > th,
+.table > caption + thead > tr:first-child > th, .documents-list > caption + thead > tr:first-child > th,
 .table > caption + thead > tr:first-child > td,
+.documents-list > caption + thead > tr:first-child > td,
 .table > colgroup + thead > tr:first-child > th,
+.documents-list > colgroup + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > td,
+.documents-list > colgroup + thead > tr:first-child > td,
 .table > thead:first-child > tr:first-child > th,
-.table > thead:first-child > tr:first-child > td {
+.documents-list > thead:first-child > tr:first-child > th,
+.table > thead:first-child > tr:first-child > td,
+.documents-list > thead:first-child > tr:first-child > td {
   border-top: 0;
 }
 /* line 57, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table > tbody + tbody {
+.table > tbody + tbody, .documents-list > tbody + tbody {
   border-top: 2px solid #ddd;
 }
 /* line 62, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table .table {
+.table .table, .documents-list .table, .table .documents-list, .documents-list .documents-list {
   background-color: #fff;
 }
 
@@ -5911,7 +5922,7 @@ th {
 }
 
 /* line 114, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table-striped > tbody > tr:nth-of-type(odd) {
+.table-striped > tbody > tr:nth-of-type(odd), .documents-list > tbody > tr:nth-of-type(odd) {
   background-color: #f9f9f9;
 }
 
@@ -5936,16 +5947,25 @@ table th[class*="col-"] {
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_table-row.scss */
-.table > thead > tr > td.active,
-.table > thead > tr > th.active, .table > thead > tr.active > td, .table > thead > tr.active > th,
+.table > thead > tr > td.active, .documents-list > thead > tr > td.active,
+.table > thead > tr > th.active,
+.documents-list > thead > tr > th.active, .table > thead > tr.active > td, .documents-list > thead > tr.active > td, .table > thead > tr.active > th, .documents-list > thead > tr.active > th,
 .table > tbody > tr > td.active,
+.documents-list > tbody > tr > td.active,
 .table > tbody > tr > th.active,
+.documents-list > tbody > tr > th.active,
 .table > tbody > tr.active > td,
+.documents-list > tbody > tr.active > td,
 .table > tbody > tr.active > th,
+.documents-list > tbody > tr.active > th,
 .table > tfoot > tr > td.active,
+.documents-list > tfoot > tr > td.active,
 .table > tfoot > tr > th.active,
+.documents-list > tfoot > tr > th.active,
 .table > tfoot > tr.active > td,
-.table > tfoot > tr.active > th {
+.documents-list > tfoot > tr.active > td,
+.table > tfoot > tr.active > th,
+.documents-list > tfoot > tr.active > th {
   background-color: #f5f5f5;
 }
 
@@ -5956,16 +5976,25 @@ table th[class*="col-"] {
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_table-row.scss */
-.table > thead > tr > td.success,
-.table > thead > tr > th.success, .table > thead > tr.success > td, .table > thead > tr.success > th,
+.table > thead > tr > td.success, .documents-list > thead > tr > td.success,
+.table > thead > tr > th.success,
+.documents-list > thead > tr > th.success, .table > thead > tr.success > td, .documents-list > thead > tr.success > td, .table > thead > tr.success > th, .documents-list > thead > tr.success > th,
 .table > tbody > tr > td.success,
+.documents-list > tbody > tr > td.success,
 .table > tbody > tr > th.success,
+.documents-list > tbody > tr > th.success,
 .table > tbody > tr.success > td,
+.documents-list > tbody > tr.success > td,
 .table > tbody > tr.success > th,
+.documents-list > tbody > tr.success > th,
 .table > tfoot > tr > td.success,
+.documents-list > tfoot > tr > td.success,
 .table > tfoot > tr > th.success,
+.documents-list > tfoot > tr > th.success,
 .table > tfoot > tr.success > td,
-.table > tfoot > tr.success > th {
+.documents-list > tfoot > tr.success > td,
+.table > tfoot > tr.success > th,
+.documents-list > tfoot > tr.success > th {
   background-color: #dff0d8;
 }
 
@@ -5976,16 +6005,25 @@ table th[class*="col-"] {
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_table-row.scss */
-.table > thead > tr > td.info,
-.table > thead > tr > th.info, .table > thead > tr.info > td, .table > thead > tr.info > th,
+.table > thead > tr > td.info, .documents-list > thead > tr > td.info,
+.table > thead > tr > th.info,
+.documents-list > thead > tr > th.info, .table > thead > tr.info > td, .documents-list > thead > tr.info > td, .table > thead > tr.info > th, .documents-list > thead > tr.info > th,
 .table > tbody > tr > td.info,
+.documents-list > tbody > tr > td.info,
 .table > tbody > tr > th.info,
+.documents-list > tbody > tr > th.info,
 .table > tbody > tr.info > td,
+.documents-list > tbody > tr.info > td,
 .table > tbody > tr.info > th,
+.documents-list > tbody > tr.info > th,
 .table > tfoot > tr > td.info,
+.documents-list > tfoot > tr > td.info,
 .table > tfoot > tr > th.info,
+.documents-list > tfoot > tr > th.info,
 .table > tfoot > tr.info > td,
-.table > tfoot > tr.info > th {
+.documents-list > tfoot > tr.info > td,
+.table > tfoot > tr.info > th,
+.documents-list > tfoot > tr.info > th {
   background-color: #d9edf7;
 }
 
@@ -5996,16 +6034,25 @@ table th[class*="col-"] {
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_table-row.scss */
-.table > thead > tr > td.warning,
-.table > thead > tr > th.warning, .table > thead > tr.warning > td, .table > thead > tr.warning > th,
+.table > thead > tr > td.warning, .documents-list > thead > tr > td.warning,
+.table > thead > tr > th.warning,
+.documents-list > thead > tr > th.warning, .table > thead > tr.warning > td, .documents-list > thead > tr.warning > td, .table > thead > tr.warning > th, .documents-list > thead > tr.warning > th,
 .table > tbody > tr > td.warning,
+.documents-list > tbody > tr > td.warning,
 .table > tbody > tr > th.warning,
+.documents-list > tbody > tr > th.warning,
 .table > tbody > tr.warning > td,
+.documents-list > tbody > tr.warning > td,
 .table > tbody > tr.warning > th,
+.documents-list > tbody > tr.warning > th,
 .table > tfoot > tr > td.warning,
+.documents-list > tfoot > tr > td.warning,
 .table > tfoot > tr > th.warning,
+.documents-list > tfoot > tr > th.warning,
 .table > tfoot > tr.warning > td,
-.table > tfoot > tr.warning > th {
+.documents-list > tfoot > tr.warning > td,
+.table > tfoot > tr.warning > th,
+.documents-list > tfoot > tr.warning > th {
   background-color: #fcf8e3;
 }
 
@@ -6016,16 +6063,25 @@ table th[class*="col-"] {
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_table-row.scss */
-.table > thead > tr > td.danger,
-.table > thead > tr > th.danger, .table > thead > tr.danger > td, .table > thead > tr.danger > th,
+.table > thead > tr > td.danger, .documents-list > thead > tr > td.danger,
+.table > thead > tr > th.danger,
+.documents-list > thead > tr > th.danger, .table > thead > tr.danger > td, .documents-list > thead > tr.danger > td, .table > thead > tr.danger > th, .documents-list > thead > tr.danger > th,
 .table > tbody > tr > td.danger,
+.documents-list > tbody > tr > td.danger,
 .table > tbody > tr > th.danger,
+.documents-list > tbody > tr > th.danger,
 .table > tbody > tr.danger > td,
+.documents-list > tbody > tr.danger > td,
 .table > tbody > tr.danger > th,
+.documents-list > tbody > tr.danger > th,
 .table > tfoot > tr > td.danger,
+.documents-list > tfoot > tr > td.danger,
 .table > tfoot > tr > th.danger,
+.documents-list > tfoot > tr > th.danger,
 .table > tfoot > tr.danger > td,
-.table > tfoot > tr.danger > th {
+.documents-list > tfoot > tr.danger > td,
+.table > tfoot > tr.danger > th,
+.documents-list > tfoot > tr.danger > th {
   background-color: #f2dede;
 }
 
@@ -6050,16 +6106,21 @@ table th[class*="col-"] {
     border: 1px solid #ddd;
   }
   /* line 183, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-  .table-responsive > .table {
+  .table-responsive > .table, .table-responsive > .documents-list {
     margin-bottom: 0;
   }
   /* line 191, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-  .table-responsive > .table > thead > tr > th,
+  .table-responsive > .table > thead > tr > th, .table-responsive > .documents-list > thead > tr > th,
   .table-responsive > .table > thead > tr > td,
+  .table-responsive > .documents-list > thead > tr > td,
   .table-responsive > .table > tbody > tr > th,
+  .table-responsive > .documents-list > tbody > tr > th,
   .table-responsive > .table > tbody > tr > td,
+  .table-responsive > .documents-list > tbody > tr > td,
   .table-responsive > .table > tfoot > tr > th,
-  .table-responsive > .table > tfoot > tr > td {
+  .table-responsive > .documents-list > tfoot > tr > th,
+  .table-responsive > .table > tfoot > tr > td,
+  .table-responsive > .documents-list > tfoot > tr > td {
     white-space: nowrap;
   }
   /* line 200, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
@@ -7163,7 +7224,7 @@ select[multiple].input-lg,
 }
 
 /* line 131, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button, .btn-group-sm > .login-button, .home-feature .btn-group-sm > .read-button, .search-form .btn-group-sm > .search-button, .btn-group-sm > .create-document-button, .btn-group-sm > .save-document-button, .btn-group-sm > .button-delete, .btn-group-sm > .button-edit {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button, .btn-group-sm > .login-button, .home-feature .btn-group-sm > .read-button, .search-form .btn-group-sm > .search-button, .btn-group-sm > .create-document-button, .btn-group-sm > .save-document-button, .btn-group-sm > .button-delete, .btn-group-sm > .button-edit, .document__delete .button-confirm, .document__delete .button-delete, .document__delete .button-cancel {
   padding: 0.5rem 10px;
   font-size: 0.85rem;
   line-height: 2;
@@ -8575,7 +8636,7 @@ tbody.collapse.in, tbody.in.navbar-nav {
   margin-bottom: 0.3125rem;
 }
 /* line 347, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.button, .btn-group-sm > .navbar-btn.login-button, .home-feature .btn-group-sm > .navbar-btn.read-button, .search-form .btn-group-sm > .navbar-btn.search-button, .btn-group-sm > .navbar-btn.create-document-button, .btn-group-sm > .navbar-btn.save-document-button, .btn-group-sm > .navbar-btn.button-delete, .btn-group-sm > .navbar-btn.button-edit {
+.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.button, .btn-group-sm > .navbar-btn.login-button, .home-feature .btn-group-sm > .navbar-btn.read-button, .search-form .btn-group-sm > .navbar-btn.search-button, .btn-group-sm > .navbar-btn.create-document-button, .btn-group-sm > .navbar-btn.save-document-button, .btn-group-sm > .navbar-btn.button-delete, .btn-group-sm > .navbar-btn.button-edit, .document__delete .navbar-btn.button-confirm, .document__delete .navbar-btn.button-delete, .document__delete .navbar-btn.button-cancel {
   margin-top: 0.625rem;
   margin-bottom: 0.625rem;
 }
@@ -9795,100 +9856,142 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 
 /* line 104, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table,
+.panel > .table, .panel > .documents-list,
 .panel > .table-responsive > .table,
-.panel > .panel-collapse > .table {
+.panel > .table-responsive > .documents-list,
+.panel > .panel-collapse > .table,
+.panel > .panel-collapse > .documents-list {
   margin-bottom: 0;
 }
 /* line 109, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table caption,
+.panel > .table caption, .panel > .documents-list caption,
 .panel > .table-responsive > .table caption,
-.panel > .panel-collapse > .table caption {
+.panel > .table-responsive > .documents-list caption,
+.panel > .panel-collapse > .table caption,
+.panel > .panel-collapse > .documents-list caption {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 /* line 115, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child,
-.panel > .table-responsive:first-child > .table:first-child {
+.panel > .table:first-child, .panel > .documents-list:first-child,
+.panel > .table-responsive:first-child > .table:first-child,
+.panel > .table-responsive:first-child > .documents-list:first-child {
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
 }
 /* line 121, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table:first-child > thead:first-child > tr:first-child, .panel > .documents-list:first-child > thead:first-child > tr:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child,
+.panel > .documents-list:first-child > tbody:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+.panel > .table-responsive:first-child > .documents-list:first-child > thead:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 /* line 125, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > thead:first-child > tr:first-child td:first-child, .panel > .documents-list:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .documents-list:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .documents-list:first-child > tbody:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.panel > .documents-list:first-child > tbody:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .documents-list:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .documents-list:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+.panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child th:first-child {
   border-top-left-radius: 6px;
 }
 /* line 129, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > thead:first-child > tr:first-child td:last-child, .panel > .documents-list:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .documents-list:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .documents-list:first-child > tbody:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.panel > .documents-list:first-child > tbody:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .documents-list:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .documents-list:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+.panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child th:last-child {
   border-top-right-radius: 6px;
 }
 /* line 137, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child,
-.panel > .table-responsive:last-child > .table:last-child {
+.panel > .table:last-child, .panel > .documents-list:last-child,
+.panel > .table-responsive:last-child > .table:last-child,
+.panel > .table-responsive:last-child > .documents-list:last-child {
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
 }
 /* line 143, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child, .panel > .documents-list:last-child > tbody:last-child > tr:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child,
+.panel > .documents-list:last-child > tfoot:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+.panel > .table-responsive:last-child > .documents-list:last-child > tbody:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 /* line 147, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child, .panel > .documents-list:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .documents-list:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .documents-list:last-child > tfoot:last-child > tr:last-child td:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.panel > .documents-list:last-child > tfoot:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .documents-list:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .documents-list:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+.panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child th:first-child {
   border-bottom-left-radius: 6px;
 }
 /* line 151, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child, .panel > .documents-list:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .documents-list:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .documents-list:last-child > tfoot:last-child > tr:last-child td:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.panel > .documents-list:last-child > tfoot:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .documents-list:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .documents-list:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+.panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child th:last-child {
   border-bottom-right-radius: 6px;
 }
 /* line 158, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .panel-body + .table,
+.panel > .panel-body + .table, .panel > .panel-body + .documents-list,
 .panel > .panel-body + .table-responsive,
 .panel > .table + .panel-body,
+.panel > .documents-list + .panel-body,
 .panel > .table-responsive + .panel-body {
   border-top: 1px solid #ddd;
 }
 /* line 164, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table > tbody:first-child > tr:first-child th,
-.panel > .table > tbody:first-child > tr:first-child td {
+.panel > .table > tbody:first-child > tr:first-child th, .panel > .documents-list > tbody:first-child > tr:first-child th,
+.panel > .table > tbody:first-child > tr:first-child td,
+.panel > .documents-list > tbody:first-child > tr:first-child td {
   border-top: 0;
 }
 /* line 168, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
@@ -10813,12 +10916,17 @@ hr {
 }
 
 /* line 75, ../scss/mixins/_bootstrap-overrides.scss */
-.table > thead > tr > th,
+.table > thead > tr > th, .documents-list > thead > tr > th,
 .table > thead > tr > td,
+.documents-list > thead > tr > td,
 .table > tbody > tr > th,
+.documents-list > tbody > tr > th,
 .table > tbody > tr > td,
+.documents-list > tbody > tr > td,
 .table > tfoot > tr > th,
-.table > tfoot > tr > td {
+.documents-list > tfoot > tr > th,
+.table > tfoot > tr > td,
+.documents-list > tfoot > tr > td {
   padding: 0 1rem;
   line-height: calc(1.625rem - 1px);
   font-size: 0.85rem;
@@ -11368,7 +11476,7 @@ label {
 
 /* Buttons. */
 /* line 53, ../scss/modules/_forms.scss */
-.button, .login-button, .home-feature .read-button, .search-form .search-button, .create-document-button, .save-document-button, .search-form .text-search input {
+.search-form .text-search input {
   line-height: 2.4375rem;
   margin-top: 0.40625rem;
   margin-bottom: 0.40625rem;
@@ -11377,37 +11485,36 @@ label {
 /* line 59, ../scss/modules/_forms.scss */
 .button, .login-button, .home-feature .read-button, .search-form .search-button, .create-document-button, .save-document-button {
   border: none;
-  font-size: 1.05rem;
-  padding: 0 10px;
 }
 
-/* line 71, ../scss/modules/_forms.scss */
+/* line 68, ../scss/modules/_forms.scss */
+td .button, td .login-button, td .home-feature .read-button, .home-feature td .read-button, td .search-form .search-button, .search-form td .search-button, td .create-document-button, td .save-document-button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 73, ../scss/modules/_forms.scss */
 .action-button, .login-button, .home-feature .read-button, .search-form .search-button, .doc-support-button, .create-document-button, .save-document-button {
   text-transform: uppercase;
 }
 
-/* line 76, ../scss/modules/_forms.scss */
+/* line 78, ../scss/modules/_forms.scss */
 .reject-button, .doc-oppose-button {
   text-transform: uppercase;
 }
 
-/* line 81, ../scss/modules/_forms.scss */
-.icon-button-small {
-  padding: 1px 4px;
-  vertical-align: top;
-}
-/* line 84, ../scss/modules/_forms.scss */
-.icon-button-small span {
-  display: none;
+/* line 89, ../scss/modules/_forms.scss */
+.button-cancel {
+  top: 0;
 }
 
-/* line 101, ../scss/modules/_forms.scss */
+/* line 96, ../scss/modules/_forms.scss */
 .button-delete {
   color: #4a4f51;
   font-size: 1.25rem;
 }
 
-/* line 109, ../scss/modules/_forms.scss */
+/* line 104, ../scss/modules/_forms.scss */
 .button-edit {
   overflow: hidden;
 }
@@ -12385,7 +12492,12 @@ section.login {
   margin-top: 3rem;
 }
 
-/* line 119, ../scss/modules/_forms.scss */
+/* line 4, ../scss/pages/_document-list.scss */
+.documents-list .document__title {
+  vertical-align: middle;
+}
+
+/* line 114, ../scss/modules/_forms.scss */
 .document__delete .confirm-delete {
   -webkit-transition: all 0.4s cubic-bezier(0.62, 0.28, 0.23, 0.99);
   -o-transition: all 0.4s cubic-bezier(0.62, 0.28, 0.23, 0.99);
@@ -12396,22 +12508,33 @@ section.login {
   margin-left: 6px;
   display: inline-block;
 }
-/* line 128, ../scss/modules/_forms.scss */
+/* line 123, ../scss/modules/_forms.scss */
 .document__delete .button-delete {
   vertical-align: top;
 }
-/* line 133, ../scss/modules/_forms.scss */
+/* line 128, ../scss/modules/_forms.scss */
 .document__delete.open .confirm-delete {
   display: inline-block;
   max-width: 300px;
 }
-/* line 137, ../scss/modules/_forms.scss */
+/* line 132, ../scss/modules/_forms.scss */
 .document__delete.open .button-delete {
   display: none;
 }
+/* line 12, ../scss/pages/_document-list.scss */
+.document__delete .button-confirm, .document__delete .button-delete, .document__delete .button-cancel {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1.2rem;
+}
+/* line 20, ../scss/pages/_document-list.scss */
+.document__delete .button-delete {
+  font-size: 1.2rem;
+}
 
 @media (min-width: 0) and (max-width: 992px) {
-  /* line 10, ../scss/pages/_document-list.scss */
+  /* line 26, ../scss/pages/_document-list.scss */
   .document__date-updated {
     display: none;
   }

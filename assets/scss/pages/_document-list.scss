@@ -1,9 +1,25 @@
 .documents-list {
   @extend .col-md-24;
+
+  .document__title {
+      vertical-align: middle;
+  }
 }
 
 .document__delete {
   @include button-confirm-delete;
+
+  .button-confirm, .button-delete, .button-cancel {
+    @extend .btn-sm;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    line-height: 1.2rem;
+  }
+
+  .button-delete {
+    font-size: 1.2rem;
+  }
 }
 
 // Hide the date column on narrow displays.
@@ -11,4 +27,9 @@
   @include breakpoint(0 $screen-md-min) {
     display: none;
   }
+}
+
+.documents-list {
+  @extend .table;
+  @extend .table-striped;
 }
