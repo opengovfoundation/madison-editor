@@ -40,7 +40,12 @@ module.exports = {
       return res.badRequest('Unauthorized.');
     }
 
-    Document.getByUser(req.param('slug'), req.session.user.id).then(function(document) {
+    var isNumeric = /^\d+$/;
+    if(!isNumeric.test(req.session.user.id) || !isNumeric.test(req.param('id'))) {
+      return res.badRequest('Id is not valid.');
+    }
+
+    Document.getByUser(req.param('id'), req.session.user.id).then(function(document) {
       return res.json({
         error: false,
         document: document[0]
@@ -66,8 +71,13 @@ module.exports = {
     }
 
     Document.create(doc, function(error, document) {
+      DocUser.create({
+        user_id: req.session.user.id,
+        doc_id: document.id
+      });
+
       // Create the etherpad for this document.
-      EtherpadService.createPad({padID: document.slug});
+      EtherpadService.createPad({padID: document.id});
 
       return res.json({
         error: error,
@@ -79,7 +89,10 @@ module.exports = {
    * update() - edit a document.
    */
   update: function(req, res) {
-    Document.findOne({slug: req.param('slug')}).exec(function(error, document) {
+
+
+
+    Document.findOne({id: req.param('id')}).exec(function(error, document) {
       if(document){
         // Todo: error checking.
         var newDoc = req.param('document');
@@ -101,9 +114,9 @@ module.exports = {
    */
   destroy: function(req, res) {
     // Todo: error checking.
-    Document.destroy({slug: req.param('slug')}).exec(function(error) {
+    Document.destroy({id: req.param('id')}).exec(function(error) {
         // Delete the etherpad for this document.
-        EtherpadService.deletePad({padID: req.param('slug')});
+        EtherpadService.deletePad({padID: req.param('id')});
 
         return res.json({
           error: error

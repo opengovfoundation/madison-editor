@@ -21,7 +21,7 @@ app.controller('AuthLoginController', ['$scope', '$rootScope', '$http', '$locati
       }
       else {
         $rootScope.user = data;
-        console.log('Login data', data);
+
         var url = '/';
         if($rootScope.returnTo)
         {

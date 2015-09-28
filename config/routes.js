@@ -71,10 +71,10 @@ module.exports.routes = {
    * Docs
    */
   'get /api/docs/': 'DocumentController.index',
-  'get /api/docs/:slug': 'DocumentController.find',
+  'get /api/docs/:id': 'DocumentController.find',
   'post /api/docs/': 'DocumentController.create',
-  'put /api/docs/:slug': 'DocumentController.update',
-  'delete /api/docs/:slug': 'DocumentController.destroy',
+  'put /api/docs/:id': 'DocumentController.update',
+  'delete /api/docs/:id': 'DocumentController.destroy',
 
   'get /*': {
     skipAssets: true,

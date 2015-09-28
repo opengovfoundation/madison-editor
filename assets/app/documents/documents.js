@@ -32,7 +32,7 @@ app.controller("DocumentListController", function ($scope, $http, $routeParams, 
 
     $http.post("/api/docs/", doc)
       .success(function (data) {
-        $location.path('/documents/' + data.document.slug);
+        $location.path('/documents/' + data.document.id);
       })
       .error(function (data) {
         alert('Houston, we got a problem!');
@@ -53,7 +53,7 @@ app.controller("DocumentListController", function ($scope, $http, $routeParams, 
 
     $scope.closeDeleteConfirm(doc);
 
-    $http.delete("/api/docs/" + doc.slug)
+    $http.delete("/api/docs/" + doc.id)
       .success(function (data) {
         // We've successfully deleted the document from the server.
         // Now we need to find that document and remove it from the page.

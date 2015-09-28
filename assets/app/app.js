@@ -25,7 +25,7 @@ angular.module('madisonEditor', [
     templateUrl: '/app/documents/list.html',
     controller: 'DocumentListController'
   })
-  .when('/documents/:slug', {
+  .when('/documents/:id', {
     templateUrl: '/app/documents/detail.html',
     controller: 'DocumentDetailController'
   })
