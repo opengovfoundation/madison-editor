@@ -39,6 +39,8 @@ var jsFilesToInject = [
   'bower_components/angular-sails/dist/angular-sails.min.js',
   'bower_components/angular-xeditable/dist/js/xeditable.min.js',
   'bower_components/angular-growl-v2/build/angular-growl.min.js',
+  'bower_components/angular-translate/angular-translate.min.js',
+  'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
   'app/**/*.js',
 ];
 

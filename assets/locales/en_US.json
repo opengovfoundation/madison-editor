@@ -1,0 +1,12 @@
+{
+  "menu.nav.about": "About",
+  "menu.nav.documents": "Documents",
+  "menu.nav.logout": "Logout",
+  "form.state.saved": "Saved",
+  "form.state.unsaved": "Unsaved",
+  "form.document.labels.title": "Title",
+  "form.document.labels.url": "URL",
+  "form.document.errors.title.required": "This field is required.",
+  "form.document.errors.slug.required": "This field is required.",
+  "form.document.errors.slug.unique": "The URL must be unique, and this url is already in use."
+}
