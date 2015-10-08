@@ -2,11 +2,24 @@
   "menu.nav.about": "About",
   "menu.nav.documents": "Documents",
   "menu.nav.logout": "Logout",
+
   "form.state.saved": "Saved",
   "form.state.unsaved": "Unsaved",
+  "form.action.save": "Save",
+  "form.action.cancel": "Cancel",
+  "form.action.delete": "Delete",
+  "form.action.confirm_message": "Are you sure?",
+
+  "documents.list.heading.title": "Title",
+  "documents.list.heading.updated": "Last Updated",
+  "documents.list.heading.delete": "Delete",
+  "documents.list.create": "Create Document",
+  "documents.list.delete": "Delete Document",
+
   "form.document.labels.title": "Title",
-  "form.document.labels.url": "URL",
   "form.document.errors.title.required": "This field is required.",
+
+  "form.document.labels.url": "URL",
   "form.document.errors.slug.required": "This field is required.",
   "form.document.errors.slug.unique": "The URL must be unique, and this url is already in use."
 }

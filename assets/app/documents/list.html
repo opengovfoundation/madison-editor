@@ -1,24 +1,24 @@
 
-<h1>Documents</h1>
+<h1>{{ "menu.nav.documents" | translate }}</h1>
 
 <div ng-controller="DocumentListController" ng-cloak>
   <div class="create-document">
     <button
       ng-click="showCreateForm()"
-      ng-show="!showForm">Create Document</button>
+      ng-show="!showForm">{{ "documents.list.create" | translate }}</button>
     <form ng-submit="createDocument()"
       ng-show="showForm">
       <input type="text" name="title" ng-model="title" />
-      <button name="submit"/>Go</button>
+      <button name="submit"/>{{ "documents.list.go" | translate }}</button>
     </form>
   </div>
 
   <table class="documents-list">
     <thead>
       <tr>
-        <th class="document__title">Name</th>
-        <th class="document__date-updated">Last Updated</th>
-        <th class="document__delete">Delete</th>
+        <th class="document__title">{{ "documents.list.heading.title" | translate }}</th>
+        <th class="document__date-updated">{{ "documents.list.heading.updated" | translate }}</th>
+        <th class="document__delete">{{ "documents.list.heading.delete" | translate }}</th>
       </tr>
     </thead>
     <tbody>
@@ -31,15 +31,15 @@
         </td>
         <td class="document__delete" ng-class="{open: deleteConfirmOpen[doc.id]}">
           <button type="button" class="button button-delete"
-            ng-click="openDeleteConfirm(doc)"><span>delete document</span></button>
+            ng-click="openDeleteConfirm(doc)"><span>{{ "documents.list.delete" | translate }}</span></button>
           <div class="confirm-delete">
-            Are you sure?
+            {{ "form.action.confirm_message" | translate }}
             <button class="button button-confirm" type="submit"
               ng-click="deleteDocument(doc)" title="delete document">
-              <span>delete</span></button>
+              <span>{{ "form.action.delete" | translate }}</span></button>
             <button class="button button-cancel" type="button"
               ng-click="closeDeleteConfirm(doc)" title="cancel">
-              <span>cancel</span></button>
+              <span>{{ "form.action.cancel" | translate }}</span></button>
           </div>
         </td>
       </tr>
