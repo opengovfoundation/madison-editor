@@ -90,16 +90,20 @@ module.exports = {
    */
   update: function(req, res) {
 
-
-
     Document.findOne({id: req.param('id')}).exec(function(error, document) {
       if(document){
         // Todo: error checking.
         var newDoc = req.param('document');
+
         for(param in newDoc) {
           document[param] = newDoc[param];
         }
-        document.save();
+        document.save(function(error, result) {
+          res.json({
+            error: error,
+            result: result
+          });
+        });
       }
       else {
         return res.json({

@@ -4,10 +4,13 @@ module.exports = {
 
   attributes: {
     title: {
-      type: 'string'
+      type: 'string',
+      required: true
     },
     slug: {
-      type: 'string'
+      type: 'string',
+      required: true,
+      alphanumericdashed: true
     },
     shortname: {
       type: 'string'

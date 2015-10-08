@@ -1,17 +1,22 @@
 <div ng-controller="DocumentDetailController" ng-cloak class="document-detail">
   <header class="doc-meta">
+
+    <div ng-if="dirty">{{ "form.state.unsaved" | translate }}</div>
+    <div ng-if="!dirty">{{ "form.state.saved" | translate }}</div>
+
     <div class="error" ng-show="form.errors.general">
       {{ form.errors.general }}
     </div>
+
     <fieldset>
-      <label for="doc.title">Title</label>
+      <label for="doc.title">{{ "form.document.labels.title" | translate }}</label>
       <input id="doc.title" ng-model="document.title" />
-      <span class="error" ng-show="form.errors.title">{{ form.errors.title }}</span>
+      <span class="error" ng-show="form.errors.title">{{ form.errors.title | translate }}</span>
     </fieldset>
     <fieldset>
-      <label for="doc.slug">Url</label>
+      <label for="doc.slug">{{ "form.document.labels.url" | translate }}</label>
       https://mymadison.io/docs/<input ng-model="document.slug" />
-      <span class="error" ng-show="form.errors.slug">{{ form.errors.slug }}</span>
+      <span class="error" ng-show="form.errors.slug">{{ form.errors.slug | translate }}</span>
     </fieldset>
   </header>
 

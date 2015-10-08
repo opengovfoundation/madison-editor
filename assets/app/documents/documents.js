@@ -78,29 +78,85 @@ app.controller("DocumentListController", [
 }]);
 
 app.controller("DocumentDetailController",
-  ['$scope', '$http', '$routeParams', '$location', 'growl', 'growlMessages',
-  function ($scope, $http, $routeParams, $location, growl, growlMessages) {
+  ['$scope', '$http', '$routeParams', '$location', '$timeout', '$filter', 'growl', 'growlMessages',
+  function ($scope, $http, $routeParams, $location, $timeout, $filter, growl, growlMessages) {
+    $scope.form = {
+      errors: {}
+    };
+    $scope.dirty = false;
 
-  $http.get("/api/docs/" + $routeParams.id)
-    .success(function (data) {
-      console.log('found it!', data);
-      $scope.document = data.document;
+    // Does the actual saving.
+    var saveUpdates = function(newDocument, b, c) {
+      console.log('save', newDocument, b, c);
+      $http.put("/api/docs/" + $scope.document.id, {document: newDocument})
+        .success(function (data) {
+          if(data.error) {
+            $scope.form.errors = parseErrors(data.error);
 
-      // Watch for changes to the document.
-      $scope.$watch('document', function(newVal, oldVal) {
-        if (newVal !== oldVal) {
-          console.log('document changed', newVal, oldVal);
-          // $http.put("/api/docs/" + $scope.document.id, {document: {title: newVal}})
-          //   .success(function (data) {
-          //     // Growl: saved
-          //   })
-          //   .error(function (data) {
-          //     alert('Houston, we got a problem!');
-          //   });
+            console.log($scope.form.errors);
+          }
+          else {
+            $scope.dirty = false;
+          }
+        })
+        .error(function (data) {
+          console.log(data);
+          alert('Houston, we got a problem!');
+        });
+    };
+
+    // Parse errors from the api into something usable.
+    var parseErrors = function(errors) {
+      var errorList = {};
+      for(var field in errors.invalidAttributes) {
+        for(var idx in errors.invalidAttributes[field]) {
+          var error = errors.invalidAttributes[field][idx];
+
+          if(field == 'docs_slug_unique') {
+            field = 'slug';
+          }
+
+          if(!errorList[field]) {
+            errorList[field] = [];
+          }
+
+          // We push on the rule name for translation.
+          errorList[field].push( "form.document.errors." + field + "." + error.rule );
         }
+      }
+
+      for(var field in errorList) {
+        errorList[field] = errorList[field].join("<br>");
+      }
+
+      return errorList;
+    }
+
+    // Debounce wrapper for updates.
+    var timeout;
+    var debounceSaveUpdates = function(newDocument, oldDocument) {
+      if (newDocument !== oldDocument) {
+        console.log('changed doc', newDocument);
+
+        $scope.dirty = true;
+        console.log('timeout', timeout);
+        if (timeout) {
+          $timeout.cancel(timeout)
+        }
+        timeout = $timeout(saveUpdates.bind(null, newDocument), 1000, true);
+        console.log('timeout', timeout);
+      }
+    };
+
+    $http.get("/api/docs/" + $routeParams.id)
+      .success(function (data) {
+        $scope.document = data.document;
+
+        // Watch for changes to the entire document.
+        $scope.$watch('document', debounceSaveUpdates, true);
+      })
+      .error(function (data) {
+        alert('Houston, we got a problem!');
       });
-    })
-    .error(function (data) {
-      alert('Houston, we got a problem!');
-    });
-}]);
+  }
+]);
