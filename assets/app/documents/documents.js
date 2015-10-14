@@ -20,25 +20,30 @@ app.controller("DocumentListController", [
       alert('Houston, we got a problem!');
     });
 
-  $scope.showForm = false;
   $scope.title = 'Untitled Document';
+
+  $scope.showForm = false;
   $scope.showCreateForm = function(){
     $scope.showForm = true;
   };
+  $scope.hideCreateForm = function(){
+    $scope.showForm = false;
+  };
 
   $scope.newDocument = '';
-  $scope.createDocument = function(){
+  $scope.createDocument = function(type){
     if(!$scope.title){
       $scope.title = 'Untitled Document';
     }
-    var doc = {document: {'title': $scope.title}};
+    var doc = {document: {'title': $scope.title, 'type': type}};
 
     $http.post("/api/docs/", doc)
       .success(function (data) {
         $location.path('/documents/' + data.document.id);
       })
       .error(function (data) {
-        alert('Houston, we got a problem!');
+        // TODO -
+        // growl.error(data.error);
       });
   }
 

@@ -37,3 +37,36 @@
 .create-document {
   margin-bottom: $line-height-computed;
 }
+
+.document-types {
+  border: 2px solid $light-grey;
+  border-radius: 5px;
+  background-color: $lightest-grey;
+  padding: 10px 20px 20px;
+}
+
+.document-type {
+  display: inline-block;
+  text-align: center;
+  width: 130px;
+  padding: 15px 10px;
+
+  border-radius: 5px;
+  border: 4px solid transparent;
+  @include standard-transition(all, 0.25s);
+
+  color: $black;
+
+  &:hover {
+    background-color: rgba($blue, 0.1);
+    border-color: $blue;
+  }
+}
+  .document-type__icon {
+    @extend .fa;
+    @extend .fa-file-text-o;
+    display: block;
+    text-align: center;
+    font-size: $line-height-computed * 2;
+    margin-bottom: 10px;
+  }

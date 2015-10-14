@@ -32,7 +32,7 @@
   font-style: normal;
 }
 /* line 4, ../bower_components/font-awesome/scss/_core.scss */
-.fa, .loading, .popup-close, .button-confirm, .button-cancel, .button-delete, .button-edit, .thumbs-up, .thumbs-down, .flag, .annotation-group .annotation-group-statistics, .rss-link {
+.fa, .loading, .popup-close, .button-confirm, .button-cancel, .button-delete, .button-edit, .save-status .icon, .save-status .saved, .save-status .saving, .save-status .unsaved, .thumbs-up, .thumbs-down, .flag, .annotation-group .annotation-group-statistics, .rss-link, .document-type__icon {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -117,11 +117,11 @@
 }
 
 /* line 14, ../bower_components/font-awesome/scss/_bordered-pulled.scss */
-.fa.pull-left, .pull-left.loading, .pull-left.popup-close, .pull-left.button-confirm, .pull-left.button-cancel, .pull-left.button-delete, .pull-left.button-edit, .pull-left.thumbs-up, .pull-left.thumbs-down, .pull-left.flag, .annotation-group .pull-left.annotation-group-statistics, .pull-left.rss-link {
+.fa.pull-left, .pull-left.loading, .pull-left.popup-close, .pull-left.button-confirm, .pull-left.button-cancel, .pull-left.button-delete, .pull-left.button-edit, .save-status .pull-left.icon, .save-status .pull-left.saved, .save-status .pull-left.saving, .save-status .pull-left.unsaved, .pull-left.thumbs-up, .pull-left.thumbs-down, .pull-left.flag, .annotation-group .pull-left.annotation-group-statistics, .pull-left.rss-link, .pull-left.document-type__icon {
   margin-right: .3em;
 }
 /* line 15, ../bower_components/font-awesome/scss/_bordered-pulled.scss */
-.fa.pull-right, .pull-right.loading, .pull-right.popup-close, .pull-right.button-confirm, .pull-right.button-cancel, .pull-right.button-delete, .pull-right.button-edit, .pull-right.thumbs-up, .pull-right.thumbs-down, .pull-right.flag, .annotation-group .pull-right.annotation-group-statistics, .pull-right.rss-link {
+.fa.pull-right, .pull-right.loading, .pull-right.popup-close, .pull-right.button-confirm, .pull-right.button-cancel, .pull-right.button-delete, .pull-right.button-edit, .save-status .pull-right.icon, .save-status .pull-right.saved, .save-status .pull-right.saving, .save-status .pull-right.unsaved, .pull-right.thumbs-up, .pull-right.thumbs-down, .pull-right.flag, .annotation-group .pull-right.annotation-group-statistics, .pull-right.rss-link, .pull-right.document-type__icon {
   margin-left: .3em;
 }
 
@@ -229,7 +229,7 @@
 }
 
 /* line 20, ../bower_components/font-awesome/scss/_stacked.scss */
-.fa-inverse, .rss-link:before {
+.fa-inverse, .save-status .saved:before, .save-status .saving:before, .save-status .unsaved:before, .rss-link:before {
   color: #fff;
 }
 
@@ -296,7 +296,7 @@
 }
 
 /* line 16, ../bower_components/font-awesome/scss/_icons.scss */
-.fa-check:before, .button-confirm:before {
+.fa-check:before, .button-confirm:before, .save-status .saved:before {
   content: "";
 }
 
@@ -705,7 +705,7 @@
 }
 
 /* line 104, ../bower_components/font-awesome/scss/_icons.scss */
-.fa-arrow-up:before {
+.fa-arrow-up:before, .save-status .saving:before {
   content: "";
 }
 
@@ -1101,7 +1101,7 @@
 }
 
 /* line 188, ../bower_components/font-awesome/scss/_icons.scss */
-.fa-cloud:before {
+.fa-cloud:before, .save-status .icon:before {
   content: "";
 }
 
@@ -1359,7 +1359,7 @@
 }
 
 /* line 250, ../bower_components/font-awesome/scss/_icons.scss */
-.fa-file-text-o:before {
+.fa-file-text-o:before, .document-type__icon:before {
   content: "";
 }
 
@@ -1600,7 +1600,7 @@
 }
 
 /* line 303, ../bower_components/font-awesome/scss/_icons.scss */
-.fa-exclamation:before {
+.fa-exclamation:before, .save-status .unsaved:before {
   content: "";
 }
 
@@ -3050,14 +3050,13 @@ th {
   }
 
   /* line 83, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_print.scss */
-  .btn > .caret, .button > .caret, .login-button > .caret, .home-feature .read-button > .caret, .search-form .search-button > .caret, .create-document-button > .caret, .save-document-button > .caret, .button-delete > .caret, .button-edit > .caret,
+  .btn > .caret, .button > .caret, .login-button > .caret, .home-feature .read-button > .caret, .search-form .search-button > .caret, .create-document-button > .caret, .button-delete > .caret, .button-edit > .caret,
   .dropup > .btn > .caret,
   .dropup > .button > .caret,
   .dropup > .login-button > .caret,
   .home-feature .dropup > .read-button > .caret,
   .search-form .dropup > .search-button > .caret,
   .dropup > .create-document-button > .caret,
-  .dropup > .save-document-button > .caret,
   .dropup > .button-delete > .caret,
   .dropup > .button-edit > .caret {
     border-top-color: #000 !important;
@@ -6306,7 +6305,6 @@ input[type="search"] {
   .home-feature .input-group-sm > .input-group-btn > input[type="date"].read-button,
   .search-form .input-group-sm > .input-group-btn > input[type="date"].search-button,
   .input-group-sm > .input-group-btn > input[type="date"].create-document-button,
-  .input-group-sm > .input-group-btn > input[type="date"].save-document-button,
   .input-group-sm > .input-group-btn > input[type="date"].button-delete,
   .input-group-sm > .input-group-btn > input[type="date"].button-edit, .input-group-sm input[type="date"],
   input[type="time"].input-sm,
@@ -6318,7 +6316,6 @@ input[type="search"] {
   .home-feature .input-group-sm > .input-group-btn > input[type="time"].read-button,
   .search-form .input-group-sm > .input-group-btn > input[type="time"].search-button,
   .input-group-sm > .input-group-btn > input[type="time"].create-document-button,
-  .input-group-sm > .input-group-btn > input[type="time"].save-document-button,
   .input-group-sm > .input-group-btn > input[type="time"].button-delete,
   .input-group-sm > .input-group-btn > input[type="time"].button-edit, .input-group-sm
   input[type="time"],
@@ -6331,7 +6328,6 @@ input[type="search"] {
   .home-feature .input-group-sm > .input-group-btn > input[type="datetime-local"].read-button,
   .search-form .input-group-sm > .input-group-btn > input[type="datetime-local"].search-button,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].create-document-button,
-  .input-group-sm > .input-group-btn > input[type="datetime-local"].save-document-button,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].button-delete,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].button-edit, .input-group-sm
   input[type="datetime-local"],
@@ -6344,7 +6340,6 @@ input[type="search"] {
   .home-feature .input-group-sm > .input-group-btn > input[type="month"].read-button,
   .search-form .input-group-sm > .input-group-btn > input[type="month"].search-button,
   .input-group-sm > .input-group-btn > input[type="month"].create-document-button,
-  .input-group-sm > .input-group-btn > input[type="month"].save-document-button,
   .input-group-sm > .input-group-btn > input[type="month"].button-delete,
   .input-group-sm > .input-group-btn > input[type="month"].button-edit, .input-group-sm
   input[type="month"] {
@@ -6359,7 +6354,6 @@ input[type="search"] {
   .home-feature .input-group-lg > .input-group-btn > input[type="date"].read-button,
   .search-form .input-group-lg > .input-group-btn > input[type="date"].search-button,
   .input-group-lg > .input-group-btn > input[type="date"].create-document-button,
-  .input-group-lg > .input-group-btn > input[type="date"].save-document-button,
   .input-group-lg > .input-group-btn > input[type="date"].button-delete,
   .input-group-lg > .input-group-btn > input[type="date"].button-edit, .input-group-lg input[type="date"],
   input[type="time"].input-lg,
@@ -6371,7 +6365,6 @@ input[type="search"] {
   .home-feature .input-group-lg > .input-group-btn > input[type="time"].read-button,
   .search-form .input-group-lg > .input-group-btn > input[type="time"].search-button,
   .input-group-lg > .input-group-btn > input[type="time"].create-document-button,
-  .input-group-lg > .input-group-btn > input[type="time"].save-document-button,
   .input-group-lg > .input-group-btn > input[type="time"].button-delete,
   .input-group-lg > .input-group-btn > input[type="time"].button-edit, .input-group-lg
   input[type="time"],
@@ -6384,7 +6377,6 @@ input[type="search"] {
   .home-feature .input-group-lg > .input-group-btn > input[type="datetime-local"].read-button,
   .search-form .input-group-lg > .input-group-btn > input[type="datetime-local"].search-button,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].create-document-button,
-  .input-group-lg > .input-group-btn > input[type="datetime-local"].save-document-button,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].button-delete,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].button-edit, .input-group-lg
   input[type="datetime-local"],
@@ -6397,7 +6389,6 @@ input[type="search"] {
   .home-feature .input-group-lg > .input-group-btn > input[type="month"].read-button,
   .search-form .input-group-lg > .input-group-btn > input[type="month"].search-button,
   .input-group-lg > .input-group-btn > input[type="month"].create-document-button,
-  .input-group-lg > .input-group-btn > input[type="month"].save-document-button,
   .input-group-lg > .input-group-btn > input[type="month"].button-delete,
   .input-group-lg > .input-group-btn > input[type="month"].button-edit, .input-group-lg
   input[type="month"] {
@@ -6498,7 +6489,6 @@ input[type="checkbox"] {
 .home-feature .input-group-lg > .input-group-btn > .form-control-static.read-button,
 .search-form .input-group-lg > .input-group-btn > .form-control-static.search-button,
 .input-group-lg > .input-group-btn > .form-control-static.create-document-button,
-.input-group-lg > .input-group-btn > .form-control-static.save-document-button,
 .input-group-lg > .input-group-btn > .form-control-static.button-delete,
 .input-group-lg > .input-group-btn > .form-control-static.button-edit, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
 .input-group-sm > .form-control-static.input-group-addon,
@@ -6508,7 +6498,6 @@ input[type="checkbox"] {
 .home-feature .input-group-sm > .input-group-btn > .form-control-static.read-button,
 .search-form .input-group-sm > .input-group-btn > .form-control-static.search-button,
 .input-group-sm > .input-group-btn > .form-control-static.create-document-button,
-.input-group-sm > .input-group-btn > .form-control-static.save-document-button,
 .input-group-sm > .input-group-btn > .form-control-static.button-delete,
 .input-group-sm > .input-group-btn > .form-control-static.button-edit {
   padding-left: 0;
@@ -6524,7 +6513,6 @@ input[type="checkbox"] {
 .home-feature .input-group-sm > .input-group-btn > .read-button,
 .search-form .input-group-sm > .input-group-btn > .search-button,
 .input-group-sm > .input-group-btn > .create-document-button,
-.input-group-sm > .input-group-btn > .save-document-button,
 .input-group-sm > .input-group-btn > .button-delete,
 .input-group-sm > .input-group-btn > .button-edit {
   height: 2rem;
@@ -6543,7 +6531,6 @@ select.input-sm, .input-group-sm > select.form-control,
 .home-feature .input-group-sm > .input-group-btn > select.read-button,
 .search-form .input-group-sm > .input-group-btn > select.search-button,
 .input-group-sm > .input-group-btn > select.create-document-button,
-.input-group-sm > .input-group-btn > select.save-document-button,
 .input-group-sm > .input-group-btn > select.button-delete,
 .input-group-sm > .input-group-btn > select.button-edit {
   height: 2rem;
@@ -6559,7 +6546,6 @@ textarea.input-sm, .input-group-sm > textarea.form-control,
 .home-feature .input-group-sm > .input-group-btn > textarea.read-button,
 .search-form .input-group-sm > .input-group-btn > textarea.search-button,
 .input-group-sm > .input-group-btn > textarea.create-document-button,
-.input-group-sm > .input-group-btn > textarea.save-document-button,
 .input-group-sm > .input-group-btn > textarea.button-delete,
 .input-group-sm > .input-group-btn > textarea.button-edit,
 select[multiple].input-sm,
@@ -6571,7 +6557,6 @@ select[multiple].input-sm,
 .home-feature .input-group-sm > .input-group-btn > select[multiple].read-button,
 .search-form .input-group-sm > .input-group-btn > select[multiple].search-button,
 .input-group-sm > .input-group-btn > select[multiple].create-document-button,
-.input-group-sm > .input-group-btn > select[multiple].save-document-button,
 .input-group-sm > .input-group-btn > select[multiple].button-delete,
 .input-group-sm > .input-group-btn > select[multiple].button-edit {
   height: auto;
@@ -6612,7 +6597,6 @@ select[multiple].input-sm,
 .home-feature .input-group-lg > .input-group-btn > .read-button,
 .search-form .input-group-lg > .input-group-btn > .search-button,
 .input-group-lg > .input-group-btn > .create-document-button,
-.input-group-lg > .input-group-btn > .save-document-button,
 .input-group-lg > .input-group-btn > .button-delete,
 .input-group-lg > .input-group-btn > .button-edit {
   height: 5rem;
@@ -6631,7 +6615,6 @@ select.input-lg, .input-group-lg > select.form-control,
 .home-feature .input-group-lg > .input-group-btn > select.read-button,
 .search-form .input-group-lg > .input-group-btn > select.search-button,
 .input-group-lg > .input-group-btn > select.create-document-button,
-.input-group-lg > .input-group-btn > select.save-document-button,
 .input-group-lg > .input-group-btn > select.button-delete,
 .input-group-lg > .input-group-btn > select.button-edit {
   height: 5rem;
@@ -6647,7 +6630,6 @@ textarea.input-lg, .input-group-lg > textarea.form-control,
 .home-feature .input-group-lg > .input-group-btn > textarea.read-button,
 .search-form .input-group-lg > .input-group-btn > textarea.search-button,
 .input-group-lg > .input-group-btn > textarea.create-document-button,
-.input-group-lg > .input-group-btn > textarea.save-document-button,
 .input-group-lg > .input-group-btn > textarea.button-delete,
 .input-group-lg > .input-group-btn > textarea.button-edit,
 select[multiple].input-lg,
@@ -6659,7 +6641,6 @@ select[multiple].input-lg,
 .home-feature .input-group-lg > .input-group-btn > select[multiple].read-button,
 .search-form .input-group-lg > .input-group-btn > select[multiple].search-button,
 .input-group-lg > .input-group-btn > select[multiple].create-document-button,
-.input-group-lg > .input-group-btn > select[multiple].save-document-button,
 .input-group-lg > .input-group-btn > select[multiple].button-delete,
 .input-group-lg > .input-group-btn > select[multiple].button-edit {
   height: auto;
@@ -6723,7 +6704,6 @@ select[multiple].input-lg,
 .home-feature .input-group-lg > .input-group-btn > .read-button + .form-control-feedback,
 .search-form .input-group-lg > .input-group-btn > .search-button + .form-control-feedback,
 .input-group-lg > .input-group-btn > .create-document-button + .form-control-feedback,
-.input-group-lg > .input-group-btn > .save-document-button + .form-control-feedback,
 .input-group-lg > .input-group-btn > .button-delete + .form-control-feedback,
 .input-group-lg > .input-group-btn > .button-edit + .form-control-feedback {
   width: 5rem;
@@ -6740,7 +6720,6 @@ select[multiple].input-lg,
 .home-feature .input-group-sm > .input-group-btn > .read-button + .form-control-feedback,
 .search-form .input-group-sm > .input-group-btn > .search-button + .form-control-feedback,
 .input-group-sm > .input-group-btn > .create-document-button + .form-control-feedback,
-.input-group-sm > .input-group-btn > .save-document-button + .form-control-feedback,
 .input-group-sm > .input-group-btn > .button-delete + .form-control-feedback,
 .input-group-sm > .input-group-btn > .button-edit + .form-control-feedback {
   width: 2rem;
@@ -6977,7 +6956,7 @@ select[multiple].input-lg,
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn, .button, .login-button, .home-feature .read-button, .search-form .search-button, .create-document-button, .save-document-button, .button-delete, .button-edit {
+.btn, .button, .login-button, .home-feature .read-button, .search-form .search-button, .create-document-button, .button-delete, .button-edit {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -6998,25 +6977,25 @@ select[multiple].input-lg,
   user-select: none;
 }
 /* line 26, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:focus, .button:focus, .login-button:focus, .home-feature .read-button:focus, .search-form .search-button:focus, .create-document-button:focus, .save-document-button:focus, .button-delete:focus, .button-edit:focus, .btn.focus, .focus.button, .focus.login-button, .home-feature .focus.read-button, .search-form .focus.search-button, .focus.create-document-button, .focus.save-document-button, .focus.button-delete, .focus.button-edit, .btn:active:focus, .button:active:focus, .login-button:active:focus, .home-feature .read-button:active:focus, .search-form .search-button:active:focus, .create-document-button:active:focus, .save-document-button:active:focus, .button-delete:active:focus, .button-edit:active:focus, .btn:active.focus, .button:active.focus, .login-button:active.focus, .home-feature .read-button:active.focus, .search-form .search-button:active.focus, .create-document-button:active.focus, .save-document-button:active.focus, .button-delete:active.focus, .button-edit:active.focus, .btn.active:focus, .active.button:focus, .active.login-button:focus, .home-feature .active.read-button:focus, .search-form .active.search-button:focus, .active.create-document-button:focus, .active.save-document-button:focus, .active.button-delete:focus, .active.button-edit:focus, .btn.active.focus, .active.focus.button, .active.focus.login-button, .home-feature .active.focus.read-button, .search-form .active.focus.search-button, .active.focus.create-document-button, .active.focus.save-document-button, .active.focus.button-delete, .active.focus.button-edit {
+.btn:focus, .button:focus, .login-button:focus, .home-feature .read-button:focus, .search-form .search-button:focus, .create-document-button:focus, .button-delete:focus, .button-edit:focus, .btn.focus, .focus.button, .focus.login-button, .home-feature .focus.read-button, .search-form .focus.search-button, .focus.create-document-button, .focus.button-delete, .focus.button-edit, .btn:active:focus, .button:active:focus, .login-button:active:focus, .home-feature .read-button:active:focus, .search-form .search-button:active:focus, .create-document-button:active:focus, .button-delete:active:focus, .button-edit:active:focus, .btn:active.focus, .button:active.focus, .login-button:active.focus, .home-feature .read-button:active.focus, .search-form .search-button:active.focus, .create-document-button:active.focus, .button-delete:active.focus, .button-edit:active.focus, .btn.active:focus, .active.button:focus, .active.login-button:focus, .home-feature .active.read-button:focus, .search-form .active.search-button:focus, .active.create-document-button:focus, .active.button-delete:focus, .active.button-edit:focus, .btn.active.focus, .active.focus.button, .active.focus.login-button, .home-feature .active.focus.read-button, .search-form .active.focus.search-button, .active.focus.create-document-button, .active.focus.button-delete, .active.focus.button-edit {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 /* line 32, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:hover, .button:hover, .login-button:hover, .home-feature .read-button:hover, .search-form .search-button:hover, .create-document-button:hover, .save-document-button:hover, .button-delete:hover, .button-edit:hover, .btn:focus, .button:focus, .login-button:focus, .home-feature .read-button:focus, .search-form .search-button:focus, .create-document-button:focus, .save-document-button:focus, .button-delete:focus, .button-edit:focus, .btn.focus, .focus.button, .focus.login-button, .home-feature .focus.read-button, .search-form .focus.search-button, .focus.create-document-button, .focus.save-document-button, .focus.button-delete, .focus.button-edit {
+.btn:hover, .button:hover, .login-button:hover, .home-feature .read-button:hover, .search-form .search-button:hover, .create-document-button:hover, .button-delete:hover, .button-edit:hover, .btn:focus, .button:focus, .login-button:focus, .home-feature .read-button:focus, .search-form .search-button:focus, .create-document-button:focus, .button-delete:focus, .button-edit:focus, .btn.focus, .focus.button, .focus.login-button, .home-feature .focus.read-button, .search-form .focus.search-button, .focus.create-document-button, .focus.button-delete, .focus.button-edit {
   color: #333;
   text-decoration: none;
 }
 /* line 39, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:active, .button:active, .login-button:active, .home-feature .read-button:active, .search-form .search-button:active, .create-document-button:active, .save-document-button:active, .button-delete:active, .button-edit:active, .btn.active, .active.button, .active.login-button, .home-feature .active.read-button, .search-form .active.search-button, .active.create-document-button, .active.save-document-button, .active.button-delete, .active.button-edit {
+.btn:active, .button:active, .login-button:active, .home-feature .read-button:active, .search-form .search-button:active, .create-document-button:active, .button-delete:active, .button-edit:active, .btn.active, .active.button, .active.login-button, .home-feature .active.read-button, .search-form .active.search-button, .active.create-document-button, .active.button-delete, .active.button-edit {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 /* line 46, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn.disabled, .disabled.button, .disabled.login-button, .home-feature .disabled.read-button, .search-form .disabled.search-button, .disabled.create-document-button, .disabled.save-document-button, .disabled.button-delete, .disabled.button-edit, .btn[disabled], [disabled].button, [disabled].login-button, .home-feature [disabled].read-button, .search-form [disabled].search-button, [disabled].create-document-button, [disabled].save-document-button, [disabled].button-delete, [disabled].button-edit, fieldset[disabled] .btn, fieldset[disabled] .button, fieldset[disabled] .login-button, fieldset[disabled] .home-feature .read-button, .home-feature fieldset[disabled] .read-button, fieldset[disabled] .search-form .search-button, .search-form fieldset[disabled] .search-button, fieldset[disabled] .create-document-button, fieldset[disabled] .save-document-button, fieldset[disabled] .button-delete, fieldset[disabled] .button-edit {
+.btn.disabled, .disabled.button, .disabled.login-button, .home-feature .disabled.read-button, .search-form .disabled.search-button, .disabled.create-document-button, .disabled.button-delete, .disabled.button-edit, .btn[disabled], [disabled].button, [disabled].login-button, .home-feature [disabled].read-button, .search-form [disabled].search-button, [disabled].create-document-button, [disabled].button-delete, [disabled].button-edit, fieldset[disabled] .btn, fieldset[disabled] .button, fieldset[disabled] .login-button, fieldset[disabled] .home-feature .read-button, .home-feature fieldset[disabled] .read-button, fieldset[disabled] .search-form .search-button, .search-form fieldset[disabled] .search-button, fieldset[disabled] .create-document-button, fieldset[disabled] .button-delete, fieldset[disabled] .button-edit {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -7053,28 +7032,28 @@ select[multiple].input-lg,
 }
 
 /* line 63, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-primary, .action-button, .login-button, .home-feature .read-button, .search-form .search-button, .doc-support-button, .create-document-button, .save-document-button, .oauth-login:hover {
+.btn-primary, .action-button, .login-button, .home-feature .read-button, .search-form .search-button, .doc-support-button, .create-document-button, .oauth-login:hover {
   color: #fff;
   background-color: #00cae5;
   border-color: transparent;
 }
 /* line 11, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-primary:hover, .action-button:hover, .login-button:hover, .home-feature .read-button:hover, .search-form .search-button:hover, .doc-support-button:hover, .create-document-button:hover, .save-document-button:hover, .oauth-login:hover, .btn-primary:focus, .action-button:focus, .login-button:focus, .home-feature .read-button:focus, .search-form .search-button:focus, .doc-support-button:focus, .create-document-button:focus, .save-document-button:focus, .oauth-login:focus:hover, .btn-primary.focus, .focus.action-button, .focus.login-button, .home-feature .focus.read-button, .search-form .focus.search-button, .focus.doc-support-button, .focus.create-document-button, .focus.save-document-button, .focus.oauth-login:hover, .btn-primary:active, .action-button:active, .login-button:active, .home-feature .read-button:active, .search-form .search-button:active, .doc-support-button:active, .create-document-button:active, .save-document-button:active, .oauth-login:active:hover, .btn-primary.active, .active.action-button, .active.login-button, .home-feature .active.read-button, .search-form .active.search-button, .active.doc-support-button, .active.create-document-button, .active.save-document-button, .active.oauth-login:hover, .open > .btn-primary.dropdown-toggle, .open > .dropdown-toggle.action-button, .open > .dropdown-toggle.login-button, .home-feature .open > .dropdown-toggle.read-button, .search-form .open > .dropdown-toggle.search-button, .open > .dropdown-toggle.doc-support-button, .open > .dropdown-toggle.create-document-button, .open > .dropdown-toggle.save-document-button, .open > .dropdown-toggle.oauth-login:hover {
+.btn-primary:hover, .action-button:hover, .login-button:hover, .home-feature .read-button:hover, .search-form .search-button:hover, .doc-support-button:hover, .create-document-button:hover, .oauth-login:hover, .btn-primary:focus, .action-button:focus, .login-button:focus, .home-feature .read-button:focus, .search-form .search-button:focus, .doc-support-button:focus, .create-document-button:focus, .oauth-login:focus:hover, .btn-primary.focus, .focus.action-button, .focus.login-button, .home-feature .focus.read-button, .search-form .focus.search-button, .focus.doc-support-button, .focus.create-document-button, .focus.oauth-login:hover, .btn-primary:active, .action-button:active, .login-button:active, .home-feature .read-button:active, .search-form .search-button:active, .doc-support-button:active, .create-document-button:active, .oauth-login:active:hover, .btn-primary.active, .active.action-button, .active.login-button, .home-feature .active.read-button, .search-form .active.search-button, .active.doc-support-button, .active.create-document-button, .active.oauth-login:hover, .open > .btn-primary.dropdown-toggle, .open > .dropdown-toggle.action-button, .open > .dropdown-toggle.login-button, .home-feature .open > .dropdown-toggle.read-button, .search-form .open > .dropdown-toggle.search-button, .open > .dropdown-toggle.doc-support-button, .open > .dropdown-toggle.create-document-button, .open > .dropdown-toggle.oauth-login:hover {
   color: #fff;
   background-color: #009db2;
   border-color: transparent;
 }
 /* line 21, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-primary:active, .action-button:active, .login-button:active, .home-feature .read-button:active, .search-form .search-button:active, .doc-support-button:active, .create-document-button:active, .save-document-button:active, .oauth-login:active:hover, .btn-primary.active, .active.action-button, .active.login-button, .home-feature .active.read-button, .search-form .active.search-button, .active.doc-support-button, .active.create-document-button, .active.save-document-button, .active.oauth-login:hover, .open > .btn-primary.dropdown-toggle, .open > .dropdown-toggle.action-button, .open > .dropdown-toggle.login-button, .home-feature .open > .dropdown-toggle.read-button, .search-form .open > .dropdown-toggle.search-button, .open > .dropdown-toggle.doc-support-button, .open > .dropdown-toggle.create-document-button, .open > .dropdown-toggle.save-document-button, .open > .dropdown-toggle.oauth-login:hover {
+.btn-primary:active, .action-button:active, .login-button:active, .home-feature .read-button:active, .search-form .search-button:active, .doc-support-button:active, .create-document-button:active, .oauth-login:active:hover, .btn-primary.active, .active.action-button, .active.login-button, .home-feature .active.read-button, .search-form .active.search-button, .active.doc-support-button, .active.create-document-button, .active.oauth-login:hover, .open > .btn-primary.dropdown-toggle, .open > .dropdown-toggle.action-button, .open > .dropdown-toggle.login-button, .home-feature .open > .dropdown-toggle.read-button, .search-form .open > .dropdown-toggle.search-button, .open > .dropdown-toggle.doc-support-button, .open > .dropdown-toggle.create-document-button, .open > .dropdown-toggle.oauth-login:hover {
   background-image: none;
 }
 /* line 29, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-primary.disabled, .disabled.action-button, .disabled.login-button, .home-feature .disabled.read-button, .search-form .disabled.search-button, .disabled.doc-support-button, .disabled.create-document-button, .disabled.save-document-button, .disabled.oauth-login:hover, .btn-primary.disabled:hover, .disabled.action-button:hover, .disabled.login-button:hover, .home-feature .disabled.read-button:hover, .search-form .disabled.search-button:hover, .disabled.doc-support-button:hover, .disabled.create-document-button:hover, .disabled.save-document-button:hover, .disabled.oauth-login:hover, .btn-primary.disabled:focus, .disabled.action-button:focus, .disabled.login-button:focus, .home-feature .disabled.read-button:focus, .search-form .disabled.search-button:focus, .disabled.doc-support-button:focus, .disabled.create-document-button:focus, .disabled.save-document-button:focus, .disabled.oauth-login:focus:hover, .btn-primary.disabled.focus, .disabled.focus.action-button, .disabled.focus.login-button, .home-feature .disabled.focus.read-button, .search-form .disabled.focus.search-button, .disabled.focus.doc-support-button, .disabled.focus.create-document-button, .disabled.focus.save-document-button, .disabled.focus.oauth-login:hover, .btn-primary.disabled:active, .disabled.action-button:active, .disabled.login-button:active, .home-feature .disabled.read-button:active, .search-form .disabled.search-button:active, .disabled.doc-support-button:active, .disabled.create-document-button:active, .disabled.save-document-button:active, .disabled.oauth-login:active:hover, .btn-primary.disabled.active, .disabled.active.action-button, .disabled.active.login-button, .home-feature .disabled.active.read-button, .search-form .disabled.active.search-button, .disabled.active.doc-support-button, .disabled.active.create-document-button, .disabled.active.save-document-button, .disabled.active.oauth-login:hover, .btn-primary[disabled], [disabled].action-button, [disabled].login-button, .home-feature [disabled].read-button, .search-form [disabled].search-button, [disabled].doc-support-button, [disabled].create-document-button, [disabled].save-document-button, [disabled].oauth-login:hover, .btn-primary[disabled]:hover, [disabled].action-button:hover, [disabled].login-button:hover, .home-feature [disabled].read-button:hover, .search-form [disabled].search-button:hover, [disabled].doc-support-button:hover, [disabled].create-document-button:hover, [disabled].save-document-button:hover, [disabled].oauth-login:hover, .btn-primary[disabled]:focus, [disabled].action-button:focus, [disabled].login-button:focus, .home-feature [disabled].read-button:focus, .search-form [disabled].search-button:focus, [disabled].doc-support-button:focus, [disabled].create-document-button:focus, [disabled].save-document-button:focus, [disabled].oauth-login:focus:hover, .btn-primary[disabled].focus, [disabled].focus.action-button, [disabled].focus.login-button, .home-feature [disabled].focus.read-button, .search-form [disabled].focus.search-button, [disabled].focus.doc-support-button, [disabled].focus.create-document-button, [disabled].focus.save-document-button, [disabled].focus.oauth-login:hover, .btn-primary[disabled]:active, [disabled].action-button:active, [disabled].login-button:active, .home-feature [disabled].read-button:active, .search-form [disabled].search-button:active, [disabled].doc-support-button:active, [disabled].create-document-button:active, [disabled].save-document-button:active, [disabled].oauth-login:active:hover, .btn-primary[disabled].active, [disabled].active.action-button, [disabled].active.login-button, .home-feature [disabled].active.read-button, .search-form [disabled].active.search-button, [disabled].active.doc-support-button, [disabled].active.create-document-button, [disabled].active.save-document-button, [disabled].active.oauth-login:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .action-button, fieldset[disabled] .login-button, fieldset[disabled] .home-feature .read-button, .home-feature fieldset[disabled] .read-button, fieldset[disabled] .search-form .search-button, .search-form fieldset[disabled] .search-button, fieldset[disabled] .doc-support-button, fieldset[disabled] .create-document-button, fieldset[disabled] .save-document-button, fieldset[disabled] .oauth-login:hover, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .action-button:hover, fieldset[disabled] .login-button:hover, fieldset[disabled] .home-feature .read-button:hover, .home-feature fieldset[disabled] .read-button:hover, fieldset[disabled] .search-form .search-button:hover, .search-form fieldset[disabled] .search-button:hover, fieldset[disabled] .doc-support-button:hover, fieldset[disabled] .create-document-button:hover, fieldset[disabled] .save-document-button:hover, fieldset[disabled] .oauth-login:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .action-button:focus, fieldset[disabled] .login-button:focus, fieldset[disabled] .home-feature .read-button:focus, .home-feature fieldset[disabled] .read-button:focus, fieldset[disabled] .search-form .search-button:focus, .search-form fieldset[disabled] .search-button:focus, fieldset[disabled] .doc-support-button:focus, fieldset[disabled] .create-document-button:focus, fieldset[disabled] .save-document-button:focus, fieldset[disabled] .oauth-login:focus:hover, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .focus.action-button, fieldset[disabled] .focus.login-button, fieldset[disabled] .home-feature .focus.read-button, .home-feature fieldset[disabled] .focus.read-button, fieldset[disabled] .search-form .focus.search-button, .search-form fieldset[disabled] .focus.search-button, fieldset[disabled] .focus.doc-support-button, fieldset[disabled] .focus.create-document-button, fieldset[disabled] .focus.save-document-button, fieldset[disabled] .focus.oauth-login:hover, fieldset[disabled] .btn-primary:active, fieldset[disabled] .action-button:active, fieldset[disabled] .login-button:active, fieldset[disabled] .home-feature .read-button:active, .home-feature fieldset[disabled] .read-button:active, fieldset[disabled] .search-form .search-button:active, .search-form fieldset[disabled] .search-button:active, fieldset[disabled] .doc-support-button:active, fieldset[disabled] .create-document-button:active, fieldset[disabled] .save-document-button:active, fieldset[disabled] .oauth-login:active:hover, fieldset[disabled] .btn-primary.active, fieldset[disabled] .active.action-button, fieldset[disabled] .active.login-button, fieldset[disabled] .home-feature .active.read-button, .home-feature fieldset[disabled] .active.read-button, fieldset[disabled] .search-form .active.search-button, .search-form fieldset[disabled] .active.search-button, fieldset[disabled] .active.doc-support-button, fieldset[disabled] .active.create-document-button, fieldset[disabled] .active.save-document-button, fieldset[disabled] .active.oauth-login:hover {
+.btn-primary.disabled, .disabled.action-button, .disabled.login-button, .home-feature .disabled.read-button, .search-form .disabled.search-button, .disabled.doc-support-button, .disabled.create-document-button, .disabled.oauth-login:hover, .btn-primary.disabled:hover, .disabled.action-button:hover, .disabled.login-button:hover, .home-feature .disabled.read-button:hover, .search-form .disabled.search-button:hover, .disabled.doc-support-button:hover, .disabled.create-document-button:hover, .disabled.oauth-login:hover, .btn-primary.disabled:focus, .disabled.action-button:focus, .disabled.login-button:focus, .home-feature .disabled.read-button:focus, .search-form .disabled.search-button:focus, .disabled.doc-support-button:focus, .disabled.create-document-button:focus, .disabled.oauth-login:focus:hover, .btn-primary.disabled.focus, .disabled.focus.action-button, .disabled.focus.login-button, .home-feature .disabled.focus.read-button, .search-form .disabled.focus.search-button, .disabled.focus.doc-support-button, .disabled.focus.create-document-button, .disabled.focus.oauth-login:hover, .btn-primary.disabled:active, .disabled.action-button:active, .disabled.login-button:active, .home-feature .disabled.read-button:active, .search-form .disabled.search-button:active, .disabled.doc-support-button:active, .disabled.create-document-button:active, .disabled.oauth-login:active:hover, .btn-primary.disabled.active, .disabled.active.action-button, .disabled.active.login-button, .home-feature .disabled.active.read-button, .search-form .disabled.active.search-button, .disabled.active.doc-support-button, .disabled.active.create-document-button, .disabled.active.oauth-login:hover, .btn-primary[disabled], [disabled].action-button, [disabled].login-button, .home-feature [disabled].read-button, .search-form [disabled].search-button, [disabled].doc-support-button, [disabled].create-document-button, [disabled].oauth-login:hover, .btn-primary[disabled]:hover, [disabled].action-button:hover, [disabled].login-button:hover, .home-feature [disabled].read-button:hover, .search-form [disabled].search-button:hover, [disabled].doc-support-button:hover, [disabled].create-document-button:hover, [disabled].oauth-login:hover, .btn-primary[disabled]:focus, [disabled].action-button:focus, [disabled].login-button:focus, .home-feature [disabled].read-button:focus, .search-form [disabled].search-button:focus, [disabled].doc-support-button:focus, [disabled].create-document-button:focus, [disabled].oauth-login:focus:hover, .btn-primary[disabled].focus, [disabled].focus.action-button, [disabled].focus.login-button, .home-feature [disabled].focus.read-button, .search-form [disabled].focus.search-button, [disabled].focus.doc-support-button, [disabled].focus.create-document-button, [disabled].focus.oauth-login:hover, .btn-primary[disabled]:active, [disabled].action-button:active, [disabled].login-button:active, .home-feature [disabled].read-button:active, .search-form [disabled].search-button:active, [disabled].doc-support-button:active, [disabled].create-document-button:active, [disabled].oauth-login:active:hover, .btn-primary[disabled].active, [disabled].active.action-button, [disabled].active.login-button, .home-feature [disabled].active.read-button, .search-form [disabled].active.search-button, [disabled].active.doc-support-button, [disabled].active.create-document-button, [disabled].active.oauth-login:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .action-button, fieldset[disabled] .login-button, fieldset[disabled] .home-feature .read-button, .home-feature fieldset[disabled] .read-button, fieldset[disabled] .search-form .search-button, .search-form fieldset[disabled] .search-button, fieldset[disabled] .doc-support-button, fieldset[disabled] .create-document-button, fieldset[disabled] .oauth-login:hover, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .action-button:hover, fieldset[disabled] .login-button:hover, fieldset[disabled] .home-feature .read-button:hover, .home-feature fieldset[disabled] .read-button:hover, fieldset[disabled] .search-form .search-button:hover, .search-form fieldset[disabled] .search-button:hover, fieldset[disabled] .doc-support-button:hover, fieldset[disabled] .create-document-button:hover, fieldset[disabled] .oauth-login:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .action-button:focus, fieldset[disabled] .login-button:focus, fieldset[disabled] .home-feature .read-button:focus, .home-feature fieldset[disabled] .read-button:focus, fieldset[disabled] .search-form .search-button:focus, .search-form fieldset[disabled] .search-button:focus, fieldset[disabled] .doc-support-button:focus, fieldset[disabled] .create-document-button:focus, fieldset[disabled] .oauth-login:focus:hover, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .focus.action-button, fieldset[disabled] .focus.login-button, fieldset[disabled] .home-feature .focus.read-button, .home-feature fieldset[disabled] .focus.read-button, fieldset[disabled] .search-form .focus.search-button, .search-form fieldset[disabled] .focus.search-button, fieldset[disabled] .focus.doc-support-button, fieldset[disabled] .focus.create-document-button, fieldset[disabled] .focus.oauth-login:hover, fieldset[disabled] .btn-primary:active, fieldset[disabled] .action-button:active, fieldset[disabled] .login-button:active, fieldset[disabled] .home-feature .read-button:active, .home-feature fieldset[disabled] .read-button:active, fieldset[disabled] .search-form .search-button:active, .search-form fieldset[disabled] .search-button:active, fieldset[disabled] .doc-support-button:active, fieldset[disabled] .create-document-button:active, fieldset[disabled] .oauth-login:active:hover, fieldset[disabled] .btn-primary.active, fieldset[disabled] .active.action-button, fieldset[disabled] .active.login-button, fieldset[disabled] .home-feature .active.read-button, .home-feature fieldset[disabled] .active.read-button, fieldset[disabled] .search-form .active.search-button, .search-form fieldset[disabled] .active.search-button, fieldset[disabled] .active.doc-support-button, fieldset[disabled] .active.create-document-button, fieldset[disabled] .active.oauth-login:hover {
   background-color: #00cae5;
   border-color: transparent;
 }
 /* line 40, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-primary .badge, .action-button .badge, .login-button .badge, .home-feature .read-button .badge, .search-form .search-button .badge, .doc-support-button .badge, .create-document-button .badge, .save-document-button .badge, .oauth-login:hover .badge {
+.btn-primary .badge, .action-button .badge, .login-button .badge, .home-feature .read-button .badge, .search-form .search-button .badge, .doc-support-button .badge, .create-document-button .badge, .oauth-login:hover .badge {
   color: #00cae5;
   background-color: #fff;
 }
@@ -7216,7 +7195,7 @@ select[multiple].input-lg,
 }
 
 /* line 127, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .button, .btn-group-lg > .login-button, .home-feature .btn-group-lg > .read-button, .search-form .btn-group-lg > .search-button, .btn-group-lg > .create-document-button, .btn-group-lg > .save-document-button, .btn-group-lg > .button-delete, .btn-group-lg > .button-edit {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .button, .btn-group-lg > .login-button, .home-feature .btn-group-lg > .read-button, .search-form .btn-group-lg > .search-button, .btn-group-lg > .create-document-button, .btn-group-lg > .button-delete, .btn-group-lg > .button-edit {
   padding: 1rem 16px;
   font-size: 1.25rem;
   line-height: 2;
@@ -7224,7 +7203,7 @@ select[multiple].input-lg,
 }
 
 /* line 131, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button, .btn-group-sm > .login-button, .home-feature .btn-group-sm > .read-button, .search-form .btn-group-sm > .search-button, .btn-group-sm > .create-document-button, .btn-group-sm > .save-document-button, .btn-group-sm > .button-delete, .btn-group-sm > .button-edit, .document__delete .button-confirm, .document__delete .button-delete, .document__delete .button-cancel {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button, .btn-group-sm > .login-button, .home-feature .btn-group-sm > .read-button, .search-form .btn-group-sm > .search-button, .btn-group-sm > .create-document-button, .btn-group-sm > .button-delete, .btn-group-sm > .button-edit, .document__delete .button-confirm, .document__delete .button-delete, .document__delete .button-cancel {
   padding: 0.5rem 10px;
   font-size: 0.85rem;
   line-height: 2;
@@ -7232,7 +7211,7 @@ select[multiple].input-lg,
 }
 
 /* line 135, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-xs, .btn-group-xs > .btn, .btn-group-xs > .button, .btn-group-xs > .login-button, .home-feature .btn-group-xs > .read-button, .search-form .btn-group-xs > .search-button, .btn-group-xs > .create-document-button, .btn-group-xs > .save-document-button, .btn-group-xs > .button-delete, .btn-group-xs > .button-edit {
+.btn-xs, .btn-group-xs > .btn, .btn-group-xs > .button, .btn-group-xs > .login-button, .home-feature .btn-group-xs > .read-button, .search-form .btn-group-xs > .search-button, .btn-group-xs > .create-document-button, .btn-group-xs > .button-delete, .btn-group-xs > .button-edit {
   padding: 0rem 5px;
   font-size: 0.85rem;
   line-height: 2;
@@ -7481,28 +7460,26 @@ tbody.collapse.in, tbody.in.navbar-nav {
   vertical-align: middle;
 }
 /* line 11, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn, .btn-group > .button, .btn-group > .login-button, .home-feature .btn-group > .read-button, .search-form .btn-group > .search-button, .btn-group > .create-document-button, .btn-group > .save-document-button, .btn-group > .button-delete, .btn-group > .button-edit,
+.btn-group > .btn, .btn-group > .button, .btn-group > .login-button, .home-feature .btn-group > .read-button, .search-form .btn-group > .search-button, .btn-group > .create-document-button, .btn-group > .button-delete, .btn-group > .button-edit,
 .btn-group-vertical > .btn,
 .btn-group-vertical > .button,
 .btn-group-vertical > .login-button,
 .home-feature .btn-group-vertical > .read-button,
 .search-form .btn-group-vertical > .search-button,
 .btn-group-vertical > .create-document-button,
-.btn-group-vertical > .save-document-button,
 .btn-group-vertical > .button-delete,
 .btn-group-vertical > .button-edit {
   position: relative;
   float: left;
 }
 /* line 15, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:hover, .btn-group > .button:hover, .btn-group > .login-button:hover, .home-feature .btn-group > .read-button:hover, .search-form .btn-group > .search-button:hover, .btn-group > .create-document-button:hover, .btn-group > .save-document-button:hover, .btn-group > .button-delete:hover, .btn-group > .button-edit:hover, .btn-group > .btn:focus, .btn-group > .button:focus, .btn-group > .login-button:focus, .home-feature .btn-group > .read-button:focus, .search-form .btn-group > .search-button:focus, .btn-group > .create-document-button:focus, .btn-group > .save-document-button:focus, .btn-group > .button-delete:focus, .btn-group > .button-edit:focus, .btn-group > .btn:active, .btn-group > .button:active, .btn-group > .login-button:active, .home-feature .btn-group > .read-button:active, .search-form .btn-group > .search-button:active, .btn-group > .create-document-button:active, .btn-group > .save-document-button:active, .btn-group > .button-delete:active, .btn-group > .button-edit:active, .btn-group > .btn.active, .btn-group > .active.button, .btn-group > .active.login-button, .home-feature .btn-group > .active.read-button, .search-form .btn-group > .active.search-button, .btn-group > .active.create-document-button, .btn-group > .active.save-document-button, .btn-group > .active.button-delete, .btn-group > .active.button-edit,
+.btn-group > .btn:hover, .btn-group > .button:hover, .btn-group > .login-button:hover, .home-feature .btn-group > .read-button:hover, .search-form .btn-group > .search-button:hover, .btn-group > .create-document-button:hover, .btn-group > .button-delete:hover, .btn-group > .button-edit:hover, .btn-group > .btn:focus, .btn-group > .button:focus, .btn-group > .login-button:focus, .home-feature .btn-group > .read-button:focus, .search-form .btn-group > .search-button:focus, .btn-group > .create-document-button:focus, .btn-group > .button-delete:focus, .btn-group > .button-edit:focus, .btn-group > .btn:active, .btn-group > .button:active, .btn-group > .login-button:active, .home-feature .btn-group > .read-button:active, .search-form .btn-group > .search-button:active, .btn-group > .create-document-button:active, .btn-group > .button-delete:active, .btn-group > .button-edit:active, .btn-group > .btn.active, .btn-group > .active.button, .btn-group > .active.login-button, .home-feature .btn-group > .active.read-button, .search-form .btn-group > .active.search-button, .btn-group > .active.create-document-button, .btn-group > .active.button-delete, .btn-group > .active.button-edit,
 .btn-group-vertical > .btn:hover,
 .btn-group-vertical > .button:hover,
 .btn-group-vertical > .login-button:hover,
 .home-feature .btn-group-vertical > .read-button:hover,
 .search-form .btn-group-vertical > .search-button:hover,
 .btn-group-vertical > .create-document-button:hover,
-.btn-group-vertical > .save-document-button:hover,
 .btn-group-vertical > .button-delete:hover,
 .btn-group-vertical > .button-edit:hover,
 .btn-group-vertical > .btn:focus,
@@ -7511,7 +7488,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .btn-group-vertical > .read-button:focus,
 .search-form .btn-group-vertical > .search-button:focus,
 .btn-group-vertical > .create-document-button:focus,
-.btn-group-vertical > .save-document-button:focus,
 .btn-group-vertical > .button-delete:focus,
 .btn-group-vertical > .button-edit:focus,
 .btn-group-vertical > .btn:active,
@@ -7520,7 +7496,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .btn-group-vertical > .read-button:active,
 .search-form .btn-group-vertical > .search-button:active,
 .btn-group-vertical > .create-document-button:active,
-.btn-group-vertical > .save-document-button:active,
 .btn-group-vertical > .button-delete:active,
 .btn-group-vertical > .button-edit:active,
 .btn-group-vertical > .btn.active,
@@ -7529,14 +7504,13 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .btn-group-vertical > .active.read-button,
 .search-form .btn-group-vertical > .active.search-button,
 .btn-group-vertical > .active.create-document-button,
-.btn-group-vertical > .active.save-document-button,
 .btn-group-vertical > .active.button-delete,
 .btn-group-vertical > .active.button-edit {
   z-index: 2;
 }
 
 /* line 26, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group .btn + .btn, .btn-group .button + .btn, .btn-group .login-button + .btn, .btn-group .home-feature .read-button + .btn, .home-feature .btn-group .read-button + .btn, .btn-group .search-form .search-button + .btn, .search-form .btn-group .search-button + .btn, .btn-group .create-document-button + .btn, .btn-group .save-document-button + .btn, .btn-group .button-delete + .btn, .btn-group .button-edit + .btn, .btn-group .btn + .button, .btn-group .button + .button, .btn-group .login-button + .button, .btn-group .home-feature .read-button + .button, .home-feature .btn-group .read-button + .button, .btn-group .search-form .search-button + .button, .search-form .btn-group .search-button + .button, .btn-group .create-document-button + .button, .btn-group .save-document-button + .button, .btn-group .button-delete + .button, .btn-group .button-edit + .button, .btn-group .btn + .login-button, .btn-group .button + .login-button, .btn-group .login-button + .login-button, .btn-group .home-feature .read-button + .login-button, .home-feature .btn-group .read-button + .login-button, .btn-group .search-form .search-button + .login-button, .search-form .btn-group .search-button + .login-button, .btn-group .create-document-button + .login-button, .btn-group .save-document-button + .login-button, .btn-group .button-delete + .login-button, .btn-group .button-edit + .login-button, .btn-group .home-feature .btn + .read-button, .home-feature .btn-group .btn + .read-button, .btn-group .home-feature .button + .read-button, .home-feature .btn-group .button + .read-button, .btn-group .home-feature .login-button + .read-button, .home-feature .btn-group .login-button + .read-button, .btn-group .home-feature .read-button + .read-button, .home-feature .btn-group .read-button + .read-button, .btn-group .search-form .home-feature .search-button + .read-button, .home-feature .btn-group .search-form .search-button + .read-button, .search-form .btn-group .home-feature .search-button + .read-button, .home-feature .search-form .btn-group .search-button + .read-button, .btn-group .home-feature .create-document-button + .read-button, .home-feature .btn-group .create-document-button + .read-button, .btn-group .home-feature .save-document-button + .read-button, .home-feature .btn-group .save-document-button + .read-button, .btn-group .home-feature .button-delete + .read-button, .home-feature .btn-group .button-delete + .read-button, .btn-group .home-feature .button-edit + .read-button, .home-feature .btn-group .button-edit + .read-button, .btn-group .search-form .btn + .search-button, .search-form .btn-group .btn + .search-button, .btn-group .search-form .button + .search-button, .search-form .btn-group .button + .search-button, .btn-group .search-form .login-button + .search-button, .search-form .btn-group .login-button + .search-button, .btn-group .home-feature .search-form .read-button + .search-button, .search-form .btn-group .home-feature .read-button + .search-button, .home-feature .btn-group .search-form .read-button + .search-button, .search-form .home-feature .btn-group .read-button + .search-button, .btn-group .search-form .search-button + .search-button, .search-form .btn-group .search-button + .search-button, .btn-group .search-form .create-document-button + .search-button, .search-form .btn-group .create-document-button + .search-button, .btn-group .search-form .save-document-button + .search-button, .search-form .btn-group .save-document-button + .search-button, .btn-group .search-form .button-delete + .search-button, .search-form .btn-group .button-delete + .search-button, .btn-group .search-form .button-edit + .search-button, .search-form .btn-group .button-edit + .search-button, .btn-group .btn + .create-document-button, .btn-group .button + .create-document-button, .btn-group .login-button + .create-document-button, .btn-group .home-feature .read-button + .create-document-button, .home-feature .btn-group .read-button + .create-document-button, .btn-group .search-form .search-button + .create-document-button, .search-form .btn-group .search-button + .create-document-button, .btn-group .create-document-button + .create-document-button, .btn-group .save-document-button + .create-document-button, .btn-group .button-delete + .create-document-button, .btn-group .button-edit + .create-document-button, .btn-group .btn + .save-document-button, .btn-group .button + .save-document-button, .btn-group .login-button + .save-document-button, .btn-group .home-feature .read-button + .save-document-button, .home-feature .btn-group .read-button + .save-document-button, .btn-group .search-form .search-button + .save-document-button, .search-form .btn-group .search-button + .save-document-button, .btn-group .create-document-button + .save-document-button, .btn-group .save-document-button + .save-document-button, .btn-group .button-delete + .save-document-button, .btn-group .button-edit + .save-document-button, .btn-group .btn + .button-delete, .btn-group .button + .button-delete, .btn-group .login-button + .button-delete, .btn-group .home-feature .read-button + .button-delete, .home-feature .btn-group .read-button + .button-delete, .btn-group .search-form .search-button + .button-delete, .search-form .btn-group .search-button + .button-delete, .btn-group .create-document-button + .button-delete, .btn-group .save-document-button + .button-delete, .btn-group .button-delete + .button-delete, .btn-group .button-edit + .button-delete, .btn-group .btn + .button-edit, .btn-group .button + .button-edit, .btn-group .login-button + .button-edit, .btn-group .home-feature .read-button + .button-edit, .home-feature .btn-group .read-button + .button-edit, .btn-group .search-form .search-button + .button-edit, .search-form .btn-group .search-button + .button-edit, .btn-group .create-document-button + .button-edit, .btn-group .save-document-button + .button-edit, .btn-group .button-delete + .button-edit, .btn-group .button-edit + .button-edit,
+.btn-group .btn + .btn, .btn-group .button + .btn, .btn-group .login-button + .btn, .btn-group .home-feature .read-button + .btn, .home-feature .btn-group .read-button + .btn, .btn-group .search-form .search-button + .btn, .search-form .btn-group .search-button + .btn, .btn-group .create-document-button + .btn, .btn-group .button-delete + .btn, .btn-group .button-edit + .btn, .btn-group .btn + .button, .btn-group .button + .button, .btn-group .login-button + .button, .btn-group .home-feature .read-button + .button, .home-feature .btn-group .read-button + .button, .btn-group .search-form .search-button + .button, .search-form .btn-group .search-button + .button, .btn-group .create-document-button + .button, .btn-group .button-delete + .button, .btn-group .button-edit + .button, .btn-group .btn + .login-button, .btn-group .button + .login-button, .btn-group .login-button + .login-button, .btn-group .home-feature .read-button + .login-button, .home-feature .btn-group .read-button + .login-button, .btn-group .search-form .search-button + .login-button, .search-form .btn-group .search-button + .login-button, .btn-group .create-document-button + .login-button, .btn-group .button-delete + .login-button, .btn-group .button-edit + .login-button, .btn-group .home-feature .btn + .read-button, .home-feature .btn-group .btn + .read-button, .btn-group .home-feature .button + .read-button, .home-feature .btn-group .button + .read-button, .btn-group .home-feature .login-button + .read-button, .home-feature .btn-group .login-button + .read-button, .btn-group .home-feature .read-button + .read-button, .home-feature .btn-group .read-button + .read-button, .btn-group .search-form .home-feature .search-button + .read-button, .home-feature .btn-group .search-form .search-button + .read-button, .search-form .btn-group .home-feature .search-button + .read-button, .home-feature .search-form .btn-group .search-button + .read-button, .btn-group .home-feature .create-document-button + .read-button, .home-feature .btn-group .create-document-button + .read-button, .btn-group .home-feature .button-delete + .read-button, .home-feature .btn-group .button-delete + .read-button, .btn-group .home-feature .button-edit + .read-button, .home-feature .btn-group .button-edit + .read-button, .btn-group .search-form .btn + .search-button, .search-form .btn-group .btn + .search-button, .btn-group .search-form .button + .search-button, .search-form .btn-group .button + .search-button, .btn-group .search-form .login-button + .search-button, .search-form .btn-group .login-button + .search-button, .btn-group .home-feature .search-form .read-button + .search-button, .search-form .btn-group .home-feature .read-button + .search-button, .home-feature .btn-group .search-form .read-button + .search-button, .search-form .home-feature .btn-group .read-button + .search-button, .btn-group .search-form .search-button + .search-button, .search-form .btn-group .search-button + .search-button, .btn-group .search-form .create-document-button + .search-button, .search-form .btn-group .create-document-button + .search-button, .btn-group .search-form .button-delete + .search-button, .search-form .btn-group .button-delete + .search-button, .btn-group .search-form .button-edit + .search-button, .search-form .btn-group .button-edit + .search-button, .btn-group .btn + .create-document-button, .btn-group .button + .create-document-button, .btn-group .login-button + .create-document-button, .btn-group .home-feature .read-button + .create-document-button, .home-feature .btn-group .read-button + .create-document-button, .btn-group .search-form .search-button + .create-document-button, .search-form .btn-group .search-button + .create-document-button, .btn-group .create-document-button + .create-document-button, .btn-group .button-delete + .create-document-button, .btn-group .button-edit + .create-document-button, .btn-group .btn + .button-delete, .btn-group .button + .button-delete, .btn-group .login-button + .button-delete, .btn-group .home-feature .read-button + .button-delete, .home-feature .btn-group .read-button + .button-delete, .btn-group .search-form .search-button + .button-delete, .search-form .btn-group .search-button + .button-delete, .btn-group .create-document-button + .button-delete, .btn-group .button-delete + .button-delete, .btn-group .button-edit + .button-delete, .btn-group .btn + .button-edit, .btn-group .button + .button-edit, .btn-group .login-button + .button-edit, .btn-group .home-feature .read-button + .button-edit, .home-feature .btn-group .read-button + .button-edit, .btn-group .search-form .search-button + .button-edit, .search-form .btn-group .search-button + .button-edit, .btn-group .create-document-button + .button-edit, .btn-group .button-delete + .button-edit, .btn-group .button-edit + .button-edit,
 .btn-group .btn + .btn-group,
 .btn-group .button + .btn-group,
 .btn-group .login-button + .btn-group,
@@ -7545,7 +7519,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .btn-group .search-form .search-button + .btn-group,
 .search-form .btn-group .search-button + .btn-group,
 .btn-group .create-document-button + .btn-group,
-.btn-group .save-document-button + .btn-group,
 .btn-group .button-delete + .btn-group,
 .btn-group .button-edit + .btn-group,
 .btn-group .btn-group + .btn,
@@ -7556,7 +7529,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .btn-group .search-form .btn-group + .search-button,
 .search-form .btn-group .btn-group + .search-button,
 .btn-group .btn-group + .create-document-button,
-.btn-group .btn-group + .save-document-button,
 .btn-group .btn-group + .button-delete,
 .btn-group .btn-group + .button-edit,
 .btn-group .btn-group + .btn-group {
@@ -7582,29 +7554,29 @@ tbody.collapse.in, tbody.in.navbar-nav {
   float: left;
 }
 /* line 43, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-toolbar > .btn, .btn-toolbar > .button, .btn-toolbar > .login-button, .home-feature .btn-toolbar > .read-button, .search-form .btn-toolbar > .search-button, .btn-toolbar > .create-document-button, .btn-toolbar > .save-document-button, .btn-toolbar > .button-delete, .btn-toolbar > .button-edit,
+.btn-toolbar > .btn, .btn-toolbar > .button, .btn-toolbar > .login-button, .home-feature .btn-toolbar > .read-button, .search-form .btn-toolbar > .search-button, .btn-toolbar > .create-document-button, .btn-toolbar > .button-delete, .btn-toolbar > .button-edit,
 .btn-toolbar > .btn-group,
 .btn-toolbar > .input-group {
   margin-left: 5px;
 }
 
 /* line 50, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .login-button:not(:first-child):not(:last-child):not(.dropdown-toggle), .home-feature .btn-group > .read-button:not(:first-child):not(:last-child):not(.dropdown-toggle), .search-form .btn-group > .search-button:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .create-document-button:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .save-document-button:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button-delete:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button-edit:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .login-button:not(:first-child):not(:last-child):not(.dropdown-toggle), .home-feature .btn-group > .read-button:not(:first-child):not(:last-child):not(.dropdown-toggle), .search-form .btn-group > .search-button:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .create-document-button:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button-delete:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button-edit:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
 /* line 55, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child, .btn-group > .button:first-child, .btn-group > .login-button:first-child, .home-feature .btn-group > .read-button:first-child, .search-form .btn-group > .search-button:first-child, .btn-group > .create-document-button:first-child, .btn-group > .save-document-button:first-child, .btn-group > .button-delete:first-child, .btn-group > .button-edit:first-child {
+.btn-group > .btn:first-child, .btn-group > .button:first-child, .btn-group > .login-button:first-child, .home-feature .btn-group > .read-button:first-child, .search-form .btn-group > .search-button:first-child, .btn-group > .create-document-button:first-child, .btn-group > .button-delete:first-child, .btn-group > .button-edit:first-child {
   margin-left: 0;
 }
 /* line 57, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .login-button:first-child:not(:last-child):not(.dropdown-toggle), .home-feature .btn-group > .read-button:first-child:not(:last-child):not(.dropdown-toggle), .search-form .btn-group > .search-button:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .create-document-button:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .save-document-button:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button-delete:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button-edit:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .login-button:first-child:not(:last-child):not(.dropdown-toggle), .home-feature .btn-group > .read-button:first-child:not(:last-child):not(.dropdown-toggle), .search-form .btn-group > .search-button:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .create-document-button:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button-delete:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button-edit:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 /* line 62, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:last-child:not(:first-child), .btn-group > .button:last-child:not(:first-child), .btn-group > .login-button:last-child:not(:first-child), .home-feature .btn-group > .read-button:last-child:not(:first-child), .search-form .btn-group > .search-button:last-child:not(:first-child), .btn-group > .create-document-button:last-child:not(:first-child), .btn-group > .save-document-button:last-child:not(:first-child), .btn-group > .button-delete:last-child:not(:first-child), .btn-group > .button-edit:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .button:last-child:not(:first-child), .btn-group > .login-button:last-child:not(:first-child), .home-feature .btn-group > .read-button:last-child:not(:first-child), .search-form .btn-group > .search-button:last-child:not(:first-child), .btn-group > .create-document-button:last-child:not(:first-child), .btn-group > .button-delete:last-child:not(:first-child), .btn-group > .button-edit:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -7616,19 +7588,19 @@ tbody.collapse.in, tbody.in.navbar-nav {
 }
 
 /* line 71, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group > .btn-group:not(:first-child):not(:last-child) > .login-button, .home-feature .btn-group > .btn-group:not(:first-child):not(:last-child) > .read-button, .search-form .btn-group > .btn-group:not(:first-child):not(:last-child) > .search-button, .btn-group > .btn-group:not(:first-child):not(:last-child) > .create-document-button, .btn-group > .btn-group:not(:first-child):not(:last-child) > .save-document-button, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button-delete, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button-edit {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group > .btn-group:not(:first-child):not(:last-child) > .login-button, .home-feature .btn-group > .btn-group:not(:first-child):not(:last-child) > .read-button, .search-form .btn-group > .btn-group:not(:first-child):not(:last-child) > .search-button, .btn-group > .btn-group:not(:first-child):not(:last-child) > .create-document-button, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button-delete, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button-edit {
   border-radius: 0;
 }
 
 /* line 75, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .button:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .login-button:last-child, .home-feature .btn-group > .btn-group:first-child:not(:last-child) > .read-button:last-child, .search-form .btn-group > .btn-group:first-child:not(:last-child) > .search-button:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .create-document-button:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .save-document-button:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .button-delete:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .button-edit:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .button:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .login-button:last-child, .home-feature .btn-group > .btn-group:first-child:not(:last-child) > .read-button:last-child, .search-form .btn-group > .btn-group:first-child:not(:last-child) > .search-button:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .create-document-button:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .button-delete:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .button-edit:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 /* line 80, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .button:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .login-button:first-child, .home-feature .btn-group > .btn-group:last-child:not(:first-child) > .read-button:first-child, .search-form .btn-group > .btn-group:last-child:not(:first-child) > .search-button:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .create-document-button:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .save-document-button:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .button-delete:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .button-edit:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .button:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .login-button:first-child, .home-feature .btn-group > .btn-group:last-child:not(:first-child) > .read-button:first-child, .search-form .btn-group > .btn-group:last-child:not(:first-child) > .search-button:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .create-document-button:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .button-delete:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .button-edit:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -7640,13 +7612,13 @@ tbody.collapse.in, tbody.in.navbar-nav {
 }
 
 /* line 104, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn + .dropdown-toggle, .btn-group > .button + .dropdown-toggle, .btn-group > .login-button + .dropdown-toggle, .home-feature .btn-group > .read-button + .dropdown-toggle, .search-form .btn-group > .search-button + .dropdown-toggle, .btn-group > .create-document-button + .dropdown-toggle, .btn-group > .save-document-button + .dropdown-toggle, .btn-group > .button-delete + .dropdown-toggle, .btn-group > .button-edit + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, .btn-group > .button + .dropdown-toggle, .btn-group > .login-button + .dropdown-toggle, .home-feature .btn-group > .read-button + .dropdown-toggle, .search-form .btn-group > .search-button + .dropdown-toggle, .btn-group > .create-document-button + .dropdown-toggle, .btn-group > .button-delete + .dropdown-toggle, .btn-group > .button-edit + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
 }
 
 /* line 108, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .button + .dropdown-toggle, .btn-group-lg.btn-group > .login-button + .dropdown-toggle, .home-feature .btn-group-lg.btn-group > .read-button + .dropdown-toggle, .search-form .btn-group-lg.btn-group > .search-button + .dropdown-toggle, .btn-group-lg.btn-group > .create-document-button + .dropdown-toggle, .btn-group-lg.btn-group > .save-document-button + .dropdown-toggle, .btn-group-lg.btn-group > .button-delete + .dropdown-toggle, .btn-group-lg.btn-group > .button-edit + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .button + .dropdown-toggle, .btn-group-lg.btn-group > .login-button + .dropdown-toggle, .home-feature .btn-group-lg.btn-group > .read-button + .dropdown-toggle, .search-form .btn-group-lg.btn-group > .search-button + .dropdown-toggle, .btn-group-lg.btn-group > .create-document-button + .dropdown-toggle, .btn-group-lg.btn-group > .button-delete + .dropdown-toggle, .btn-group-lg.btn-group > .button-edit + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -7663,23 +7635,23 @@ tbody.collapse.in, tbody.in.navbar-nav {
 }
 
 /* line 126, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn .caret, .button .caret, .login-button .caret, .home-feature .read-button .caret, .search-form .search-button .caret, .create-document-button .caret, .save-document-button .caret, .button-delete .caret, .button-edit .caret {
+.btn .caret, .button .caret, .login-button .caret, .home-feature .read-button .caret, .search-form .search-button .caret, .create-document-button .caret, .button-delete .caret, .button-edit .caret {
   margin-left: 0;
 }
 
 /* line 130, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .button .caret, .btn-group-lg > .login-button .caret, .home-feature .btn-group-lg > .read-button .caret, .search-form .btn-group-lg > .search-button .caret, .btn-group-lg > .create-document-button .caret, .btn-group-lg > .save-document-button .caret, .btn-group-lg > .button-delete .caret, .btn-group-lg > .button-edit .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .button .caret, .btn-group-lg > .login-button .caret, .home-feature .btn-group-lg > .read-button .caret, .search-form .btn-group-lg > .search-button .caret, .btn-group-lg > .create-document-button .caret, .btn-group-lg > .button-delete .caret, .btn-group-lg > .button-edit .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0;
 }
 
 /* line 135, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .button .caret, .dropup .btn-group-lg > .login-button .caret, .dropup .home-feature .btn-group-lg > .read-button .caret, .home-feature .dropup .btn-group-lg > .read-button .caret, .dropup .search-form .btn-group-lg > .search-button .caret, .search-form .dropup .btn-group-lg > .search-button .caret, .dropup .btn-group-lg > .create-document-button .caret, .dropup .btn-group-lg > .save-document-button .caret, .dropup .btn-group-lg > .button-delete .caret, .dropup .btn-group-lg > .button-edit .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .button .caret, .dropup .btn-group-lg > .login-button .caret, .dropup .home-feature .btn-group-lg > .read-button .caret, .home-feature .dropup .btn-group-lg > .read-button .caret, .dropup .search-form .btn-group-lg > .search-button .caret, .search-form .dropup .btn-group-lg > .search-button .caret, .dropup .btn-group-lg > .create-document-button .caret, .dropup .btn-group-lg > .button-delete .caret, .dropup .btn-group-lg > .button-edit .caret {
   border-width: 0 5px 5px;
 }
 
 /* line 144, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn, .btn-group-vertical > .button, .btn-group-vertical > .login-button, .home-feature .btn-group-vertical > .read-button, .search-form .btn-group-vertical > .search-button, .btn-group-vertical > .create-document-button, .btn-group-vertical > .save-document-button, .btn-group-vertical > .button-delete, .btn-group-vertical > .button-edit,
+.btn-group-vertical > .btn, .btn-group-vertical > .button, .btn-group-vertical > .login-button, .home-feature .btn-group-vertical > .read-button, .search-form .btn-group-vertical > .search-button, .btn-group-vertical > .create-document-button, .btn-group-vertical > .button-delete, .btn-group-vertical > .button-edit,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn,
 .btn-group-vertical > .btn-group > .button,
@@ -7687,7 +7659,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .btn-group-vertical > .btn-group > .read-button,
 .search-form .btn-group-vertical > .btn-group > .search-button,
 .btn-group-vertical > .btn-group > .create-document-button,
-.btn-group-vertical > .btn-group > .save-document-button,
 .btn-group-vertical > .btn-group > .button-delete,
 .btn-group-vertical > .btn-group > .button-edit {
   display: block;
@@ -7705,18 +7676,17 @@ tbody.collapse.in, tbody.in.navbar-nav {
   clear: both;
 }
 /* line 156, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .button, .btn-group-vertical > .btn-group > .login-button, .home-feature .btn-group-vertical > .btn-group > .read-button, .search-form .btn-group-vertical > .btn-group > .search-button, .btn-group-vertical > .btn-group > .create-document-button, .btn-group-vertical > .btn-group > .save-document-button, .btn-group-vertical > .btn-group > .button-delete, .btn-group-vertical > .btn-group > .button-edit {
+.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .button, .btn-group-vertical > .btn-group > .login-button, .home-feature .btn-group-vertical > .btn-group > .read-button, .search-form .btn-group-vertical > .btn-group > .search-button, .btn-group-vertical > .btn-group > .create-document-button, .btn-group-vertical > .btn-group > .button-delete, .btn-group-vertical > .btn-group > .button-edit {
   float: none;
 }
 /* line 161, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn + .btn, .btn-group-vertical > .button + .btn, .btn-group-vertical > .login-button + .btn, .home-feature .btn-group-vertical > .read-button + .btn, .search-form .btn-group-vertical > .search-button + .btn, .btn-group-vertical > .create-document-button + .btn, .btn-group-vertical > .save-document-button + .btn, .btn-group-vertical > .button-delete + .btn, .btn-group-vertical > .button-edit + .btn, .btn-group-vertical > .btn + .button, .btn-group-vertical > .button + .button, .btn-group-vertical > .login-button + .button, .home-feature .btn-group-vertical > .read-button + .button, .search-form .btn-group-vertical > .search-button + .button, .btn-group-vertical > .create-document-button + .button, .btn-group-vertical > .save-document-button + .button, .btn-group-vertical > .button-delete + .button, .btn-group-vertical > .button-edit + .button, .btn-group-vertical > .btn + .login-button, .btn-group-vertical > .button + .login-button, .btn-group-vertical > .login-button + .login-button, .home-feature .btn-group-vertical > .read-button + .login-button, .search-form .btn-group-vertical > .search-button + .login-button, .btn-group-vertical > .create-document-button + .login-button, .btn-group-vertical > .save-document-button + .login-button, .btn-group-vertical > .button-delete + .login-button, .btn-group-vertical > .button-edit + .login-button, .home-feature .btn-group-vertical > .btn + .read-button, .home-feature .btn-group-vertical > .button + .read-button, .home-feature .btn-group-vertical > .login-button + .read-button, .home-feature .btn-group-vertical > .read-button + .read-button, .search-form .home-feature .btn-group-vertical > .search-button + .read-button, .home-feature .search-form .btn-group-vertical > .search-button + .read-button, .home-feature .btn-group-vertical > .create-document-button + .read-button, .home-feature .btn-group-vertical > .save-document-button + .read-button, .home-feature .btn-group-vertical > .button-delete + .read-button, .home-feature .btn-group-vertical > .button-edit + .read-button, .search-form .btn-group-vertical > .btn + .search-button, .search-form .btn-group-vertical > .button + .search-button, .search-form .btn-group-vertical > .login-button + .search-button, .home-feature .search-form .btn-group-vertical > .read-button + .search-button, .search-form .home-feature .btn-group-vertical > .read-button + .search-button, .search-form .btn-group-vertical > .search-button + .search-button, .search-form .btn-group-vertical > .create-document-button + .search-button, .search-form .btn-group-vertical > .save-document-button + .search-button, .search-form .btn-group-vertical > .button-delete + .search-button, .search-form .btn-group-vertical > .button-edit + .search-button, .btn-group-vertical > .btn + .create-document-button, .btn-group-vertical > .button + .create-document-button, .btn-group-vertical > .login-button + .create-document-button, .home-feature .btn-group-vertical > .read-button + .create-document-button, .search-form .btn-group-vertical > .search-button + .create-document-button, .btn-group-vertical > .create-document-button + .create-document-button, .btn-group-vertical > .save-document-button + .create-document-button, .btn-group-vertical > .button-delete + .create-document-button, .btn-group-vertical > .button-edit + .create-document-button, .btn-group-vertical > .btn + .save-document-button, .btn-group-vertical > .button + .save-document-button, .btn-group-vertical > .login-button + .save-document-button, .home-feature .btn-group-vertical > .read-button + .save-document-button, .search-form .btn-group-vertical > .search-button + .save-document-button, .btn-group-vertical > .create-document-button + .save-document-button, .btn-group-vertical > .save-document-button + .save-document-button, .btn-group-vertical > .button-delete + .save-document-button, .btn-group-vertical > .button-edit + .save-document-button, .btn-group-vertical > .btn + .button-delete, .btn-group-vertical > .button + .button-delete, .btn-group-vertical > .login-button + .button-delete, .home-feature .btn-group-vertical > .read-button + .button-delete, .search-form .btn-group-vertical > .search-button + .button-delete, .btn-group-vertical > .create-document-button + .button-delete, .btn-group-vertical > .save-document-button + .button-delete, .btn-group-vertical > .button-delete + .button-delete, .btn-group-vertical > .button-edit + .button-delete, .btn-group-vertical > .btn + .button-edit, .btn-group-vertical > .button + .button-edit, .btn-group-vertical > .login-button + .button-edit, .home-feature .btn-group-vertical > .read-button + .button-edit, .search-form .btn-group-vertical > .search-button + .button-edit, .btn-group-vertical > .create-document-button + .button-edit, .btn-group-vertical > .save-document-button + .button-edit, .btn-group-vertical > .button-delete + .button-edit, .btn-group-vertical > .button-edit + .button-edit,
+.btn-group-vertical > .btn + .btn, .btn-group-vertical > .button + .btn, .btn-group-vertical > .login-button + .btn, .home-feature .btn-group-vertical > .read-button + .btn, .search-form .btn-group-vertical > .search-button + .btn, .btn-group-vertical > .create-document-button + .btn, .btn-group-vertical > .button-delete + .btn, .btn-group-vertical > .button-edit + .btn, .btn-group-vertical > .btn + .button, .btn-group-vertical > .button + .button, .btn-group-vertical > .login-button + .button, .home-feature .btn-group-vertical > .read-button + .button, .search-form .btn-group-vertical > .search-button + .button, .btn-group-vertical > .create-document-button + .button, .btn-group-vertical > .button-delete + .button, .btn-group-vertical > .button-edit + .button, .btn-group-vertical > .btn + .login-button, .btn-group-vertical > .button + .login-button, .btn-group-vertical > .login-button + .login-button, .home-feature .btn-group-vertical > .read-button + .login-button, .search-form .btn-group-vertical > .search-button + .login-button, .btn-group-vertical > .create-document-button + .login-button, .btn-group-vertical > .button-delete + .login-button, .btn-group-vertical > .button-edit + .login-button, .home-feature .btn-group-vertical > .btn + .read-button, .home-feature .btn-group-vertical > .button + .read-button, .home-feature .btn-group-vertical > .login-button + .read-button, .home-feature .btn-group-vertical > .read-button + .read-button, .search-form .home-feature .btn-group-vertical > .search-button + .read-button, .home-feature .search-form .btn-group-vertical > .search-button + .read-button, .home-feature .btn-group-vertical > .create-document-button + .read-button, .home-feature .btn-group-vertical > .button-delete + .read-button, .home-feature .btn-group-vertical > .button-edit + .read-button, .search-form .btn-group-vertical > .btn + .search-button, .search-form .btn-group-vertical > .button + .search-button, .search-form .btn-group-vertical > .login-button + .search-button, .home-feature .search-form .btn-group-vertical > .read-button + .search-button, .search-form .home-feature .btn-group-vertical > .read-button + .search-button, .search-form .btn-group-vertical > .search-button + .search-button, .search-form .btn-group-vertical > .create-document-button + .search-button, .search-form .btn-group-vertical > .button-delete + .search-button, .search-form .btn-group-vertical > .button-edit + .search-button, .btn-group-vertical > .btn + .create-document-button, .btn-group-vertical > .button + .create-document-button, .btn-group-vertical > .login-button + .create-document-button, .home-feature .btn-group-vertical > .read-button + .create-document-button, .search-form .btn-group-vertical > .search-button + .create-document-button, .btn-group-vertical > .create-document-button + .create-document-button, .btn-group-vertical > .button-delete + .create-document-button, .btn-group-vertical > .button-edit + .create-document-button, .btn-group-vertical > .btn + .button-delete, .btn-group-vertical > .button + .button-delete, .btn-group-vertical > .login-button + .button-delete, .home-feature .btn-group-vertical > .read-button + .button-delete, .search-form .btn-group-vertical > .search-button + .button-delete, .btn-group-vertical > .create-document-button + .button-delete, .btn-group-vertical > .button-delete + .button-delete, .btn-group-vertical > .button-edit + .button-delete, .btn-group-vertical > .btn + .button-edit, .btn-group-vertical > .button + .button-edit, .btn-group-vertical > .login-button + .button-edit, .home-feature .btn-group-vertical > .read-button + .button-edit, .search-form .btn-group-vertical > .search-button + .button-edit, .btn-group-vertical > .create-document-button + .button-edit, .btn-group-vertical > .button-delete + .button-edit, .btn-group-vertical > .button-edit + .button-edit,
 .btn-group-vertical > .btn + .btn-group,
 .btn-group-vertical > .button + .btn-group,
 .btn-group-vertical > .login-button + .btn-group,
 .home-feature .btn-group-vertical > .read-button + .btn-group,
 .search-form .btn-group-vertical > .search-button + .btn-group,
 .btn-group-vertical > .create-document-button + .btn-group,
-.btn-group-vertical > .save-document-button + .btn-group,
 .btn-group-vertical > .button-delete + .btn-group,
 .btn-group-vertical > .button-edit + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
@@ -7725,7 +7695,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .btn-group-vertical > .btn-group + .read-button,
 .search-form .btn-group-vertical > .btn-group + .search-button,
 .btn-group-vertical > .btn-group + .create-document-button,
-.btn-group-vertical > .btn-group + .save-document-button,
 .btn-group-vertical > .btn-group + .button-delete,
 .btn-group-vertical > .btn-group + .button-edit,
 .btn-group-vertical > .btn-group + .btn-group {
@@ -7734,36 +7703,36 @@ tbody.collapse.in, tbody.in.navbar-nav {
 }
 
 /* line 171, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .button:not(:first-child):not(:last-child), .btn-group-vertical > .login-button:not(:first-child):not(:last-child), .home-feature .btn-group-vertical > .read-button:not(:first-child):not(:last-child), .search-form .btn-group-vertical > .search-button:not(:first-child):not(:last-child), .btn-group-vertical > .create-document-button:not(:first-child):not(:last-child), .btn-group-vertical > .save-document-button:not(:first-child):not(:last-child), .btn-group-vertical > .button-delete:not(:first-child):not(:last-child), .btn-group-vertical > .button-edit:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .button:not(:first-child):not(:last-child), .btn-group-vertical > .login-button:not(:first-child):not(:last-child), .home-feature .btn-group-vertical > .read-button:not(:first-child):not(:last-child), .search-form .btn-group-vertical > .search-button:not(:first-child):not(:last-child), .btn-group-vertical > .create-document-button:not(:first-child):not(:last-child), .btn-group-vertical > .button-delete:not(:first-child):not(:last-child), .btn-group-vertical > .button-edit:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 /* line 174, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .button:first-child:not(:last-child), .btn-group-vertical > .login-button:first-child:not(:last-child), .home-feature .btn-group-vertical > .read-button:first-child:not(:last-child), .search-form .btn-group-vertical > .search-button:first-child:not(:last-child), .btn-group-vertical > .create-document-button:first-child:not(:last-child), .btn-group-vertical > .save-document-button:first-child:not(:last-child), .btn-group-vertical > .button-delete:first-child:not(:last-child), .btn-group-vertical > .button-edit:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .button:first-child:not(:last-child), .btn-group-vertical > .login-button:first-child:not(:last-child), .home-feature .btn-group-vertical > .read-button:first-child:not(:last-child), .search-form .btn-group-vertical > .search-button:first-child:not(:last-child), .btn-group-vertical > .create-document-button:first-child:not(:last-child), .btn-group-vertical > .button-delete:first-child:not(:last-child), .btn-group-vertical > .button-edit:first-child:not(:last-child) {
   border-top-right-radius: 7px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 /* line 178, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .button:last-child:not(:first-child), .btn-group-vertical > .login-button:last-child:not(:first-child), .home-feature .btn-group-vertical > .read-button:last-child:not(:first-child), .search-form .btn-group-vertical > .search-button:last-child:not(:first-child), .btn-group-vertical > .create-document-button:last-child:not(:first-child), .btn-group-vertical > .save-document-button:last-child:not(:first-child), .btn-group-vertical > .button-delete:last-child:not(:first-child), .btn-group-vertical > .button-edit:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .button:last-child:not(:first-child), .btn-group-vertical > .login-button:last-child:not(:first-child), .home-feature .btn-group-vertical > .read-button:last-child:not(:first-child), .search-form .btn-group-vertical > .search-button:last-child:not(:first-child), .btn-group-vertical > .create-document-button:last-child:not(:first-child), .btn-group-vertical > .button-delete:last-child:not(:first-child), .btn-group-vertical > .button-edit:last-child:not(:first-child) {
   border-bottom-left-radius: 7px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
 /* line 183, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .login-button, .home-feature .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .read-button, .search-form .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .search-button, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .create-document-button, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .save-document-button, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button-delete, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button-edit {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .login-button, .home-feature .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .read-button, .search-form .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .search-button, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .create-document-button, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button-delete, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button-edit {
   border-radius: 0;
 }
 
 /* line 187, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .login-button:last-child, .home-feature .btn-group-vertical > .btn-group:first-child:not(:last-child) > .read-button:last-child, .search-form .btn-group-vertical > .btn-group:first-child:not(:last-child) > .search-button:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .create-document-button:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .save-document-button:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button-delete:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button-edit:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .login-button:last-child, .home-feature .btn-group-vertical > .btn-group:first-child:not(:last-child) > .read-button:last-child, .search-form .btn-group-vertical > .btn-group:first-child:not(:last-child) > .search-button:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .create-document-button:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button-delete:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button-edit:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 /* line 192, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .login-button:first-child, .home-feature .btn-group-vertical > .btn-group:last-child:not(:first-child) > .read-button:first-child, .search-form .btn-group-vertical > .btn-group:last-child:not(:first-child) > .search-button:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .create-document-button:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .save-document-button:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button-delete:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button-edit:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .login-button:first-child, .home-feature .btn-group-vertical > .btn-group:last-child:not(:first-child) > .read-button:first-child, .search-form .btn-group-vertical > .btn-group:last-child:not(:first-child) > .search-button:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .create-document-button:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button-delete:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button-edit:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -7776,14 +7745,14 @@ tbody.collapse.in, tbody.in.navbar-nav {
   border-collapse: separate;
 }
 /* line 205, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-justified > .btn, .btn-group-justified > .button, .btn-group-justified > .login-button, .home-feature .btn-group-justified > .read-button, .search-form .btn-group-justified > .search-button, .btn-group-justified > .create-document-button, .btn-group-justified > .save-document-button, .btn-group-justified > .button-delete, .btn-group-justified > .button-edit,
+.btn-group-justified > .btn, .btn-group-justified > .button, .btn-group-justified > .login-button, .home-feature .btn-group-justified > .read-button, .search-form .btn-group-justified > .search-button, .btn-group-justified > .create-document-button, .btn-group-justified > .button-delete, .btn-group-justified > .button-edit,
 .btn-group-justified > .btn-group {
   float: none;
   display: table-cell;
   width: 1%;
 }
 /* line 211, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .button, .btn-group-justified > .btn-group .login-button, .btn-group-justified > .btn-group .home-feature .read-button, .home-feature .btn-group-justified > .btn-group .read-button, .btn-group-justified > .btn-group .search-form .search-button, .search-form .btn-group-justified > .btn-group .search-button, .btn-group-justified > .btn-group .create-document-button, .btn-group-justified > .btn-group .save-document-button, .btn-group-justified > .btn-group .button-delete, .btn-group-justified > .btn-group .button-edit {
+.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .button, .btn-group-justified > .btn-group .login-button, .btn-group-justified > .btn-group .home-feature .read-button, .home-feature .btn-group-justified > .btn-group .read-button, .btn-group-justified > .btn-group .search-form .search-button, .search-form .btn-group-justified > .btn-group .search-button, .btn-group-justified > .btn-group .create-document-button, .btn-group-justified > .btn-group .button-delete, .btn-group-justified > .btn-group .button-edit {
   width: 100%;
 }
 /* line 215, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
@@ -7792,14 +7761,13 @@ tbody.collapse.in, tbody.in.navbar-nav {
 }
 
 /* line 236, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_button-groups.scss */
-[data-toggle="buttons"] > .btn input[type="radio"], [data-toggle="buttons"] > .button input[type="radio"], [data-toggle="buttons"] > .login-button input[type="radio"], .home-feature [data-toggle="buttons"] > .read-button input[type="radio"], .search-form [data-toggle="buttons"] > .search-button input[type="radio"], [data-toggle="buttons"] > .create-document-button input[type="radio"], [data-toggle="buttons"] > .save-document-button input[type="radio"], [data-toggle="buttons"] > .button-delete input[type="radio"], [data-toggle="buttons"] > .button-edit input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="radio"], [data-toggle="buttons"] > .button input[type="radio"], [data-toggle="buttons"] > .login-button input[type="radio"], .home-feature [data-toggle="buttons"] > .read-button input[type="radio"], .search-form [data-toggle="buttons"] > .search-button input[type="radio"], [data-toggle="buttons"] > .create-document-button input[type="radio"], [data-toggle="buttons"] > .button-delete input[type="radio"], [data-toggle="buttons"] > .button-edit input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
 [data-toggle="buttons"] > .button input[type="checkbox"],
 [data-toggle="buttons"] > .login-button input[type="checkbox"],
 .home-feature [data-toggle="buttons"] > .read-button input[type="checkbox"],
 .search-form [data-toggle="buttons"] > .search-button input[type="checkbox"],
 [data-toggle="buttons"] > .create-document-button input[type="checkbox"],
-[data-toggle="buttons"] > .save-document-button input[type="checkbox"],
 [data-toggle="buttons"] > .button-delete input[type="checkbox"],
 [data-toggle="buttons"] > .button-edit input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
@@ -7808,7 +7776,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature [data-toggle="buttons"] > .btn-group > .read-button input[type="radio"],
 .search-form [data-toggle="buttons"] > .btn-group > .search-button input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .create-document-button input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .save-document-button input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .button-delete input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .button-edit input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
@@ -7817,7 +7784,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature [data-toggle="buttons"] > .btn-group > .read-button input[type="checkbox"],
 .search-form [data-toggle="buttons"] > .btn-group > .search-button input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .create-document-button input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .save-document-button input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .button-delete input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .button-edit input[type="checkbox"] {
   position: absolute;
@@ -7888,7 +7854,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .input-group-sm > .input-group-btn > .input-group-addon.read-button,
 .search-form .input-group-sm > .input-group-btn > .input-group-addon.search-button,
 .input-group-sm > .input-group-btn > .input-group-addon.create-document-button,
-.input-group-sm > .input-group-btn > .input-group-addon.save-document-button,
 .input-group-sm > .input-group-btn > .input-group-addon.button-delete,
 .input-group-sm > .input-group-btn > .input-group-addon.button-edit {
   padding: 0.5rem 10px;
@@ -7904,7 +7869,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .input-group-lg > .input-group-btn > .input-group-addon.read-button,
 .search-form .input-group-lg > .input-group-btn > .input-group-addon.search-button,
 .input-group-lg > .input-group-btn > .input-group-addon.create-document-button,
-.input-group-lg > .input-group-btn > .input-group-addon.save-document-button,
 .input-group-lg > .input-group-btn > .input-group-addon.button-delete,
 .input-group-lg > .input-group-btn > .input-group-addon.button-edit {
   padding: 1rem 16px;
@@ -7926,7 +7890,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .input-group-btn:first-child > .read-button,
 .search-form .input-group-btn:first-child > .search-button,
 .input-group-btn:first-child > .create-document-button,
-.input-group-btn:first-child > .save-document-button,
 .input-group-btn:first-child > .button-delete,
 .input-group-btn:first-child > .button-edit,
 .input-group-btn:first-child > .btn-group > .btn,
@@ -7935,7 +7898,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .input-group-btn:first-child > .btn-group > .read-button,
 .search-form .input-group-btn:first-child > .btn-group > .search-button,
 .input-group-btn:first-child > .btn-group > .create-document-button,
-.input-group-btn:first-child > .btn-group > .save-document-button,
 .input-group-btn:first-child > .btn-group > .button-delete,
 .input-group-btn:first-child > .btn-group > .button-edit,
 .input-group-btn:first-child > .dropdown-toggle,
@@ -7945,7 +7907,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .input-group-btn:last-child > .read-button:not(:last-child):not(.dropdown-toggle),
 .search-form .input-group-btn:last-child > .search-button:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .create-document-button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .save-document-button:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .button-delete:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .button-edit:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
@@ -7954,7 +7915,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .input-group-btn:last-child > .btn-group:not(:last-child) > .read-button,
 .search-form .input-group-btn:last-child > .btn-group:not(:last-child) > .search-button,
 .input-group-btn:last-child > .btn-group:not(:last-child) > .create-document-button,
-.input-group-btn:last-child > .btn-group:not(:last-child) > .save-document-button,
 .input-group-btn:last-child > .btn-group:not(:last-child) > .button-delete,
 .input-group-btn:last-child > .btn-group:not(:last-child) > .button-edit {
   border-bottom-right-radius: 0;
@@ -7975,7 +7935,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .input-group-btn:last-child > .read-button,
 .search-form .input-group-btn:last-child > .search-button,
 .input-group-btn:last-child > .create-document-button,
-.input-group-btn:last-child > .save-document-button,
 .input-group-btn:last-child > .button-delete,
 .input-group-btn:last-child > .button-edit,
 .input-group-btn:last-child > .btn-group > .btn,
@@ -7984,7 +7943,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .input-group-btn:last-child > .btn-group > .read-button,
 .search-form .input-group-btn:last-child > .btn-group > .search-button,
 .input-group-btn:last-child > .btn-group > .create-document-button,
-.input-group-btn:last-child > .btn-group > .save-document-button,
 .input-group-btn:last-child > .btn-group > .button-delete,
 .input-group-btn:last-child > .btn-group > .button-edit,
 .input-group-btn:last-child > .dropdown-toggle,
@@ -7994,7 +7952,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .input-group-btn:first-child > .read-button:not(:first-child),
 .search-form .input-group-btn:first-child > .search-button:not(:first-child),
 .input-group-btn:first-child > .create-document-button:not(:first-child),
-.input-group-btn:first-child > .save-document-button:not(:first-child),
 .input-group-btn:first-child > .button-delete:not(:first-child),
 .input-group-btn:first-child > .button-edit:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
@@ -8003,7 +7960,6 @@ tbody.collapse.in, tbody.in.navbar-nav {
 .home-feature .input-group-btn:first-child > .btn-group:not(:first-child) > .read-button,
 .search-form .input-group-btn:first-child > .btn-group:not(:first-child) > .search-button,
 .input-group-btn:first-child > .btn-group:not(:first-child) > .create-document-button,
-.input-group-btn:first-child > .btn-group:not(:first-child) > .save-document-button,
 .input-group-btn:first-child > .btn-group:not(:first-child) > .button-delete,
 .input-group-btn:first-child > .btn-group:not(:first-child) > .button-edit {
   border-bottom-left-radius: 0;
@@ -8022,24 +7978,24 @@ tbody.collapse.in, tbody.in.navbar-nav {
   white-space: nowrap;
 }
 /* line 140, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn, .input-group-btn > .button, .input-group-btn > .login-button, .home-feature .input-group-btn > .read-button, .search-form .input-group-btn > .search-button, .input-group-btn > .create-document-button, .input-group-btn > .save-document-button, .input-group-btn > .button-delete, .input-group-btn > .button-edit {
+.input-group-btn > .btn, .input-group-btn > .button, .input-group-btn > .login-button, .home-feature .input-group-btn > .read-button, .search-form .input-group-btn > .search-button, .input-group-btn > .create-document-button, .input-group-btn > .button-delete, .input-group-btn > .button-edit {
   position: relative;
 }
 /* line 142, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn + .btn, .input-group-btn > .button + .btn, .input-group-btn > .login-button + .btn, .home-feature .input-group-btn > .read-button + .btn, .search-form .input-group-btn > .search-button + .btn, .input-group-btn > .create-document-button + .btn, .input-group-btn > .save-document-button + .btn, .input-group-btn > .button-delete + .btn, .input-group-btn > .button-edit + .btn, .input-group-btn > .btn + .button, .input-group-btn > .button + .button, .input-group-btn > .login-button + .button, .home-feature .input-group-btn > .read-button + .button, .search-form .input-group-btn > .search-button + .button, .input-group-btn > .create-document-button + .button, .input-group-btn > .save-document-button + .button, .input-group-btn > .button-delete + .button, .input-group-btn > .button-edit + .button, .input-group-btn > .btn + .login-button, .input-group-btn > .button + .login-button, .input-group-btn > .login-button + .login-button, .home-feature .input-group-btn > .read-button + .login-button, .search-form .input-group-btn > .search-button + .login-button, .input-group-btn > .create-document-button + .login-button, .input-group-btn > .save-document-button + .login-button, .input-group-btn > .button-delete + .login-button, .input-group-btn > .button-edit + .login-button, .home-feature .input-group-btn > .btn + .read-button, .home-feature .input-group-btn > .button + .read-button, .home-feature .input-group-btn > .login-button + .read-button, .home-feature .input-group-btn > .read-button + .read-button, .search-form .home-feature .input-group-btn > .search-button + .read-button, .home-feature .search-form .input-group-btn > .search-button + .read-button, .home-feature .input-group-btn > .create-document-button + .read-button, .home-feature .input-group-btn > .save-document-button + .read-button, .home-feature .input-group-btn > .button-delete + .read-button, .home-feature .input-group-btn > .button-edit + .read-button, .search-form .input-group-btn > .btn + .search-button, .search-form .input-group-btn > .button + .search-button, .search-form .input-group-btn > .login-button + .search-button, .home-feature .search-form .input-group-btn > .read-button + .search-button, .search-form .home-feature .input-group-btn > .read-button + .search-button, .search-form .input-group-btn > .search-button + .search-button, .search-form .input-group-btn > .create-document-button + .search-button, .search-form .input-group-btn > .save-document-button + .search-button, .search-form .input-group-btn > .button-delete + .search-button, .search-form .input-group-btn > .button-edit + .search-button, .input-group-btn > .btn + .create-document-button, .input-group-btn > .button + .create-document-button, .input-group-btn > .login-button + .create-document-button, .home-feature .input-group-btn > .read-button + .create-document-button, .search-form .input-group-btn > .search-button + .create-document-button, .input-group-btn > .create-document-button + .create-document-button, .input-group-btn > .save-document-button + .create-document-button, .input-group-btn > .button-delete + .create-document-button, .input-group-btn > .button-edit + .create-document-button, .input-group-btn > .btn + .save-document-button, .input-group-btn > .button + .save-document-button, .input-group-btn > .login-button + .save-document-button, .home-feature .input-group-btn > .read-button + .save-document-button, .search-form .input-group-btn > .search-button + .save-document-button, .input-group-btn > .create-document-button + .save-document-button, .input-group-btn > .save-document-button + .save-document-button, .input-group-btn > .button-delete + .save-document-button, .input-group-btn > .button-edit + .save-document-button, .input-group-btn > .btn + .button-delete, .input-group-btn > .button + .button-delete, .input-group-btn > .login-button + .button-delete, .home-feature .input-group-btn > .read-button + .button-delete, .search-form .input-group-btn > .search-button + .button-delete, .input-group-btn > .create-document-button + .button-delete, .input-group-btn > .save-document-button + .button-delete, .input-group-btn > .button-delete + .button-delete, .input-group-btn > .button-edit + .button-delete, .input-group-btn > .btn + .button-edit, .input-group-btn > .button + .button-edit, .input-group-btn > .login-button + .button-edit, .home-feature .input-group-btn > .read-button + .button-edit, .search-form .input-group-btn > .search-button + .button-edit, .input-group-btn > .create-document-button + .button-edit, .input-group-btn > .save-document-button + .button-edit, .input-group-btn > .button-delete + .button-edit, .input-group-btn > .button-edit + .button-edit {
+.input-group-btn > .btn + .btn, .input-group-btn > .button + .btn, .input-group-btn > .login-button + .btn, .home-feature .input-group-btn > .read-button + .btn, .search-form .input-group-btn > .search-button + .btn, .input-group-btn > .create-document-button + .btn, .input-group-btn > .button-delete + .btn, .input-group-btn > .button-edit + .btn, .input-group-btn > .btn + .button, .input-group-btn > .button + .button, .input-group-btn > .login-button + .button, .home-feature .input-group-btn > .read-button + .button, .search-form .input-group-btn > .search-button + .button, .input-group-btn > .create-document-button + .button, .input-group-btn > .button-delete + .button, .input-group-btn > .button-edit + .button, .input-group-btn > .btn + .login-button, .input-group-btn > .button + .login-button, .input-group-btn > .login-button + .login-button, .home-feature .input-group-btn > .read-button + .login-button, .search-form .input-group-btn > .search-button + .login-button, .input-group-btn > .create-document-button + .login-button, .input-group-btn > .button-delete + .login-button, .input-group-btn > .button-edit + .login-button, .home-feature .input-group-btn > .btn + .read-button, .home-feature .input-group-btn > .button + .read-button, .home-feature .input-group-btn > .login-button + .read-button, .home-feature .input-group-btn > .read-button + .read-button, .search-form .home-feature .input-group-btn > .search-button + .read-button, .home-feature .search-form .input-group-btn > .search-button + .read-button, .home-feature .input-group-btn > .create-document-button + .read-button, .home-feature .input-group-btn > .button-delete + .read-button, .home-feature .input-group-btn > .button-edit + .read-button, .search-form .input-group-btn > .btn + .search-button, .search-form .input-group-btn > .button + .search-button, .search-form .input-group-btn > .login-button + .search-button, .home-feature .search-form .input-group-btn > .read-button + .search-button, .search-form .home-feature .input-group-btn > .read-button + .search-button, .search-form .input-group-btn > .search-button + .search-button, .search-form .input-group-btn > .create-document-button + .search-button, .search-form .input-group-btn > .button-delete + .search-button, .search-form .input-group-btn > .button-edit + .search-button, .input-group-btn > .btn + .create-document-button, .input-group-btn > .button + .create-document-button, .input-group-btn > .login-button + .create-document-button, .home-feature .input-group-btn > .read-button + .create-document-button, .search-form .input-group-btn > .search-button + .create-document-button, .input-group-btn > .create-document-button + .create-document-button, .input-group-btn > .button-delete + .create-document-button, .input-group-btn > .button-edit + .create-document-button, .input-group-btn > .btn + .button-delete, .input-group-btn > .button + .button-delete, .input-group-btn > .login-button + .button-delete, .home-feature .input-group-btn > .read-button + .button-delete, .search-form .input-group-btn > .search-button + .button-delete, .input-group-btn > .create-document-button + .button-delete, .input-group-btn > .button-delete + .button-delete, .input-group-btn > .button-edit + .button-delete, .input-group-btn > .btn + .button-edit, .input-group-btn > .button + .button-edit, .input-group-btn > .login-button + .button-edit, .home-feature .input-group-btn > .read-button + .button-edit, .search-form .input-group-btn > .search-button + .button-edit, .input-group-btn > .create-document-button + .button-edit, .input-group-btn > .button-delete + .button-edit, .input-group-btn > .button-edit + .button-edit {
   margin-left: -1px;
 }
 /* line 146, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn:hover, .input-group-btn > .button:hover, .input-group-btn > .login-button:hover, .home-feature .input-group-btn > .read-button:hover, .search-form .input-group-btn > .search-button:hover, .input-group-btn > .create-document-button:hover, .input-group-btn > .save-document-button:hover, .input-group-btn > .button-delete:hover, .input-group-btn > .button-edit:hover, .input-group-btn > .btn:focus, .input-group-btn > .button:focus, .input-group-btn > .login-button:focus, .home-feature .input-group-btn > .read-button:focus, .search-form .input-group-btn > .search-button:focus, .input-group-btn > .create-document-button:focus, .input-group-btn > .save-document-button:focus, .input-group-btn > .button-delete:focus, .input-group-btn > .button-edit:focus, .input-group-btn > .btn:active, .input-group-btn > .button:active, .input-group-btn > .login-button:active, .home-feature .input-group-btn > .read-button:active, .search-form .input-group-btn > .search-button:active, .input-group-btn > .create-document-button:active, .input-group-btn > .save-document-button:active, .input-group-btn > .button-delete:active, .input-group-btn > .button-edit:active {
+.input-group-btn > .btn:hover, .input-group-btn > .button:hover, .input-group-btn > .login-button:hover, .home-feature .input-group-btn > .read-button:hover, .search-form .input-group-btn > .search-button:hover, .input-group-btn > .create-document-button:hover, .input-group-btn > .button-delete:hover, .input-group-btn > .button-edit:hover, .input-group-btn > .btn:focus, .input-group-btn > .button:focus, .input-group-btn > .login-button:focus, .home-feature .input-group-btn > .read-button:focus, .search-form .input-group-btn > .search-button:focus, .input-group-btn > .create-document-button:focus, .input-group-btn > .button-delete:focus, .input-group-btn > .button-edit:focus, .input-group-btn > .btn:active, .input-group-btn > .button:active, .input-group-btn > .login-button:active, .home-feature .input-group-btn > .read-button:active, .search-form .input-group-btn > .search-button:active, .input-group-btn > .create-document-button:active, .input-group-btn > .button-delete:active, .input-group-btn > .button-edit:active {
   z-index: 2;
 }
 /* line 155, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn:first-child > .btn, .input-group-btn:first-child > .button, .input-group-btn:first-child > .login-button, .home-feature .input-group-btn:first-child > .read-button, .search-form .input-group-btn:first-child > .search-button, .input-group-btn:first-child > .create-document-button, .input-group-btn:first-child > .save-document-button, .input-group-btn:first-child > .button-delete, .input-group-btn:first-child > .button-edit,
+.input-group-btn:first-child > .btn, .input-group-btn:first-child > .button, .input-group-btn:first-child > .login-button, .home-feature .input-group-btn:first-child > .read-button, .search-form .input-group-btn:first-child > .search-button, .input-group-btn:first-child > .create-document-button, .input-group-btn:first-child > .button-delete, .input-group-btn:first-child > .button-edit,
 .input-group-btn:first-child > .btn-group {
   margin-right: -1px;
 }
 /* line 161, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn:last-child > .btn, .input-group-btn:last-child > .button, .input-group-btn:last-child > .login-button, .home-feature .input-group-btn:last-child > .read-button, .search-form .input-group-btn:last-child > .search-button, .input-group-btn:last-child > .create-document-button, .input-group-btn:last-child > .save-document-button, .input-group-btn:last-child > .button-delete, .input-group-btn:last-child > .button-edit,
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .button, .input-group-btn:last-child > .login-button, .home-feature .input-group-btn:last-child > .read-button, .search-form .input-group-btn:last-child > .search-button, .input-group-btn:last-child > .create-document-button, .input-group-btn:last-child > .button-delete, .input-group-btn:last-child > .button-edit,
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
 }
@@ -8636,12 +8592,12 @@ tbody.collapse.in, tbody.in.navbar-nav {
   margin-bottom: 0.3125rem;
 }
 /* line 347, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.button, .btn-group-sm > .navbar-btn.login-button, .home-feature .btn-group-sm > .navbar-btn.read-button, .search-form .btn-group-sm > .navbar-btn.search-button, .btn-group-sm > .navbar-btn.create-document-button, .btn-group-sm > .navbar-btn.save-document-button, .btn-group-sm > .navbar-btn.button-delete, .btn-group-sm > .navbar-btn.button-edit, .document__delete .navbar-btn.button-confirm, .document__delete .navbar-btn.button-delete, .document__delete .navbar-btn.button-cancel {
+.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.button, .btn-group-sm > .navbar-btn.login-button, .home-feature .btn-group-sm > .navbar-btn.read-button, .search-form .btn-group-sm > .navbar-btn.search-button, .btn-group-sm > .navbar-btn.create-document-button, .btn-group-sm > .navbar-btn.button-delete, .btn-group-sm > .navbar-btn.button-edit, .document__delete .navbar-btn.button-confirm, .document__delete .navbar-btn.button-delete, .document__delete .navbar-btn.button-cancel {
   margin-top: 0.625rem;
   margin-bottom: 0.625rem;
 }
 /* line 350, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .btn-group-xs > .navbar-btn.button, .btn-group-xs > .navbar-btn.login-button, .home-feature .btn-group-xs > .navbar-btn.read-button, .search-form .btn-group-xs > .navbar-btn.search-button, .btn-group-xs > .navbar-btn.create-document-button, .btn-group-xs > .navbar-btn.save-document-button, .btn-group-xs > .navbar-btn.button-delete, .btn-group-xs > .navbar-btn.button-edit {
+.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .btn-group-xs > .navbar-btn.button, .btn-group-xs > .navbar-btn.login-button, .home-feature .btn-group-xs > .navbar-btn.read-button, .search-form .btn-group-xs > .navbar-btn.search-button, .btn-group-xs > .navbar-btn.create-document-button, .btn-group-xs > .navbar-btn.button-delete, .btn-group-xs > .navbar-btn.button-edit {
   margin-top: -9.375rem;
   margin-bottom: -9.375rem;
 }
@@ -9089,7 +9045,7 @@ tbody.collapse.in, tbody.in.navbar-nav {
   display: none;
 }
 /* line 25, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_labels.scss */
-.btn .label, .button .label, .login-button .label, .home-feature .read-button .label, .search-form .search-button .label, .create-document-button .label, .save-document-button .label, .button-delete .label, .button-edit .label {
+.btn .label, .button .label, .login-button .label, .home-feature .read-button .label, .search-form .search-button .label, .create-document-button .label, .button-delete .label, .button-edit .label {
   position: relative;
   top: -1px;
 }
@@ -9175,12 +9131,12 @@ a.label:hover, a.label:focus {
   display: none;
 }
 /* line 27, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_badges.scss */
-.btn .badge, .button .badge, .login-button .badge, .home-feature .read-button .badge, .search-form .search-button .badge, .create-document-button .badge, .save-document-button .badge, .button-delete .badge, .button-edit .badge {
+.btn .badge, .button .badge, .login-button .badge, .home-feature .read-button .badge, .search-form .search-button .badge, .create-document-button .badge, .button-delete .badge, .button-edit .badge {
   position: relative;
   top: -1px;
 }
 /* line 32, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_badges.scss */
-.btn-xs .badge, .btn-group-xs > .btn .badge, .btn-group-xs > .button .badge, .btn-group-xs > .login-button .badge, .home-feature .btn-group-xs > .read-button .badge, .search-form .btn-group-xs > .search-button .badge, .btn-group-xs > .create-document-button .badge, .btn-group-xs > .save-document-button .badge, .btn-group-xs > .button-delete .badge, .btn-group-xs > .button-edit .badge {
+.btn-xs .badge, .btn-group-xs > .btn .badge, .btn-group-xs > .button .badge, .btn-group-xs > .login-button .badge, .home-feature .btn-group-xs > .read-button .badge, .search-form .btn-group-xs > .search-button .badge, .btn-group-xs > .create-document-button .badge, .btn-group-xs > .button-delete .badge, .btn-group-xs > .button-edit .badge {
   top: 0;
   padding: 1px 5px;
 }
@@ -10443,12 +10399,12 @@ button.close {
   clear: both;
 }
 /* line 108, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_modals.scss */
-.modal-footer .btn + .btn, .modal-footer .button + .btn, .modal-footer .login-button + .btn, .modal-footer .home-feature .read-button + .btn, .home-feature .modal-footer .read-button + .btn, .modal-footer .search-form .search-button + .btn, .search-form .modal-footer .search-button + .btn, .modal-footer .create-document-button + .btn, .modal-footer .save-document-button + .btn, .modal-footer .button-delete + .btn, .modal-footer .button-edit + .btn, .modal-footer .btn + .button, .modal-footer .button + .button, .modal-footer .login-button + .button, .modal-footer .home-feature .read-button + .button, .home-feature .modal-footer .read-button + .button, .modal-footer .search-form .search-button + .button, .search-form .modal-footer .search-button + .button, .modal-footer .create-document-button + .button, .modal-footer .save-document-button + .button, .modal-footer .button-delete + .button, .modal-footer .button-edit + .button, .modal-footer .btn + .login-button, .modal-footer .button + .login-button, .modal-footer .login-button + .login-button, .modal-footer .home-feature .read-button + .login-button, .home-feature .modal-footer .read-button + .login-button, .modal-footer .search-form .search-button + .login-button, .search-form .modal-footer .search-button + .login-button, .modal-footer .create-document-button + .login-button, .modal-footer .save-document-button + .login-button, .modal-footer .button-delete + .login-button, .modal-footer .button-edit + .login-button, .modal-footer .home-feature .btn + .read-button, .home-feature .modal-footer .btn + .read-button, .modal-footer .home-feature .button + .read-button, .home-feature .modal-footer .button + .read-button, .modal-footer .home-feature .login-button + .read-button, .home-feature .modal-footer .login-button + .read-button, .modal-footer .home-feature .read-button + .read-button, .home-feature .modal-footer .read-button + .read-button, .modal-footer .search-form .home-feature .search-button + .read-button, .home-feature .modal-footer .search-form .search-button + .read-button, .search-form .modal-footer .home-feature .search-button + .read-button, .home-feature .search-form .modal-footer .search-button + .read-button, .modal-footer .home-feature .create-document-button + .read-button, .home-feature .modal-footer .create-document-button + .read-button, .modal-footer .home-feature .save-document-button + .read-button, .home-feature .modal-footer .save-document-button + .read-button, .modal-footer .home-feature .button-delete + .read-button, .home-feature .modal-footer .button-delete + .read-button, .modal-footer .home-feature .button-edit + .read-button, .home-feature .modal-footer .button-edit + .read-button, .modal-footer .search-form .btn + .search-button, .search-form .modal-footer .btn + .search-button, .modal-footer .search-form .button + .search-button, .search-form .modal-footer .button + .search-button, .modal-footer .search-form .login-button + .search-button, .search-form .modal-footer .login-button + .search-button, .modal-footer .home-feature .search-form .read-button + .search-button, .search-form .modal-footer .home-feature .read-button + .search-button, .home-feature .modal-footer .search-form .read-button + .search-button, .search-form .home-feature .modal-footer .read-button + .search-button, .modal-footer .search-form .search-button + .search-button, .search-form .modal-footer .search-button + .search-button, .modal-footer .search-form .create-document-button + .search-button, .search-form .modal-footer .create-document-button + .search-button, .modal-footer .search-form .save-document-button + .search-button, .search-form .modal-footer .save-document-button + .search-button, .modal-footer .search-form .button-delete + .search-button, .search-form .modal-footer .button-delete + .search-button, .modal-footer .search-form .button-edit + .search-button, .search-form .modal-footer .button-edit + .search-button, .modal-footer .btn + .create-document-button, .modal-footer .button + .create-document-button, .modal-footer .login-button + .create-document-button, .modal-footer .home-feature .read-button + .create-document-button, .home-feature .modal-footer .read-button + .create-document-button, .modal-footer .search-form .search-button + .create-document-button, .search-form .modal-footer .search-button + .create-document-button, .modal-footer .create-document-button + .create-document-button, .modal-footer .save-document-button + .create-document-button, .modal-footer .button-delete + .create-document-button, .modal-footer .button-edit + .create-document-button, .modal-footer .btn + .save-document-button, .modal-footer .button + .save-document-button, .modal-footer .login-button + .save-document-button, .modal-footer .home-feature .read-button + .save-document-button, .home-feature .modal-footer .read-button + .save-document-button, .modal-footer .search-form .search-button + .save-document-button, .search-form .modal-footer .search-button + .save-document-button, .modal-footer .create-document-button + .save-document-button, .modal-footer .save-document-button + .save-document-button, .modal-footer .button-delete + .save-document-button, .modal-footer .button-edit + .save-document-button, .modal-footer .btn + .button-delete, .modal-footer .button + .button-delete, .modal-footer .login-button + .button-delete, .modal-footer .home-feature .read-button + .button-delete, .home-feature .modal-footer .read-button + .button-delete, .modal-footer .search-form .search-button + .button-delete, .search-form .modal-footer .search-button + .button-delete, .modal-footer .create-document-button + .button-delete, .modal-footer .save-document-button + .button-delete, .modal-footer .button-delete + .button-delete, .modal-footer .button-edit + .button-delete, .modal-footer .btn + .button-edit, .modal-footer .button + .button-edit, .modal-footer .login-button + .button-edit, .modal-footer .home-feature .read-button + .button-edit, .home-feature .modal-footer .read-button + .button-edit, .modal-footer .search-form .search-button + .button-edit, .search-form .modal-footer .search-button + .button-edit, .modal-footer .create-document-button + .button-edit, .modal-footer .save-document-button + .button-edit, .modal-footer .button-delete + .button-edit, .modal-footer .button-edit + .button-edit {
+.modal-footer .btn + .btn, .modal-footer .button + .btn, .modal-footer .login-button + .btn, .modal-footer .home-feature .read-button + .btn, .home-feature .modal-footer .read-button + .btn, .modal-footer .search-form .search-button + .btn, .search-form .modal-footer .search-button + .btn, .modal-footer .create-document-button + .btn, .modal-footer .button-delete + .btn, .modal-footer .button-edit + .btn, .modal-footer .btn + .button, .modal-footer .button + .button, .modal-footer .login-button + .button, .modal-footer .home-feature .read-button + .button, .home-feature .modal-footer .read-button + .button, .modal-footer .search-form .search-button + .button, .search-form .modal-footer .search-button + .button, .modal-footer .create-document-button + .button, .modal-footer .button-delete + .button, .modal-footer .button-edit + .button, .modal-footer .btn + .login-button, .modal-footer .button + .login-button, .modal-footer .login-button + .login-button, .modal-footer .home-feature .read-button + .login-button, .home-feature .modal-footer .read-button + .login-button, .modal-footer .search-form .search-button + .login-button, .search-form .modal-footer .search-button + .login-button, .modal-footer .create-document-button + .login-button, .modal-footer .button-delete + .login-button, .modal-footer .button-edit + .login-button, .modal-footer .home-feature .btn + .read-button, .home-feature .modal-footer .btn + .read-button, .modal-footer .home-feature .button + .read-button, .home-feature .modal-footer .button + .read-button, .modal-footer .home-feature .login-button + .read-button, .home-feature .modal-footer .login-button + .read-button, .modal-footer .home-feature .read-button + .read-button, .home-feature .modal-footer .read-button + .read-button, .modal-footer .search-form .home-feature .search-button + .read-button, .home-feature .modal-footer .search-form .search-button + .read-button, .search-form .modal-footer .home-feature .search-button + .read-button, .home-feature .search-form .modal-footer .search-button + .read-button, .modal-footer .home-feature .create-document-button + .read-button, .home-feature .modal-footer .create-document-button + .read-button, .modal-footer .home-feature .button-delete + .read-button, .home-feature .modal-footer .button-delete + .read-button, .modal-footer .home-feature .button-edit + .read-button, .home-feature .modal-footer .button-edit + .read-button, .modal-footer .search-form .btn + .search-button, .search-form .modal-footer .btn + .search-button, .modal-footer .search-form .button + .search-button, .search-form .modal-footer .button + .search-button, .modal-footer .search-form .login-button + .search-button, .search-form .modal-footer .login-button + .search-button, .modal-footer .home-feature .search-form .read-button + .search-button, .search-form .modal-footer .home-feature .read-button + .search-button, .home-feature .modal-footer .search-form .read-button + .search-button, .search-form .home-feature .modal-footer .read-button + .search-button, .modal-footer .search-form .search-button + .search-button, .search-form .modal-footer .search-button + .search-button, .modal-footer .search-form .create-document-button + .search-button, .search-form .modal-footer .create-document-button + .search-button, .modal-footer .search-form .button-delete + .search-button, .search-form .modal-footer .button-delete + .search-button, .modal-footer .search-form .button-edit + .search-button, .search-form .modal-footer .button-edit + .search-button, .modal-footer .btn + .create-document-button, .modal-footer .button + .create-document-button, .modal-footer .login-button + .create-document-button, .modal-footer .home-feature .read-button + .create-document-button, .home-feature .modal-footer .read-button + .create-document-button, .modal-footer .search-form .search-button + .create-document-button, .search-form .modal-footer .search-button + .create-document-button, .modal-footer .create-document-button + .create-document-button, .modal-footer .button-delete + .create-document-button, .modal-footer .button-edit + .create-document-button, .modal-footer .btn + .button-delete, .modal-footer .button + .button-delete, .modal-footer .login-button + .button-delete, .modal-footer .home-feature .read-button + .button-delete, .home-feature .modal-footer .read-button + .button-delete, .modal-footer .search-form .search-button + .button-delete, .search-form .modal-footer .search-button + .button-delete, .modal-footer .create-document-button + .button-delete, .modal-footer .button-delete + .button-delete, .modal-footer .button-edit + .button-delete, .modal-footer .btn + .button-edit, .modal-footer .button + .button-edit, .modal-footer .login-button + .button-edit, .modal-footer .home-feature .read-button + .button-edit, .home-feature .modal-footer .read-button + .button-edit, .modal-footer .search-form .search-button + .button-edit, .search-form .modal-footer .search-button + .button-edit, .modal-footer .create-document-button + .button-edit, .modal-footer .button-delete + .button-edit, .modal-footer .button-edit + .button-edit {
   margin-left: 5px;
   margin-bottom: 0;
 }
 /* line 113, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_modals.scss */
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .button + .btn, .modal-footer .btn-group .login-button + .btn, .modal-footer .btn-group .home-feature .read-button + .btn, .home-feature .modal-footer .btn-group .read-button + .btn, .modal-footer .btn-group .search-form .search-button + .btn, .search-form .modal-footer .btn-group .search-button + .btn, .modal-footer .btn-group .create-document-button + .btn, .modal-footer .btn-group .save-document-button + .btn, .modal-footer .btn-group .button-delete + .btn, .modal-footer .btn-group .button-edit + .btn, .modal-footer .btn-group .btn + .button, .modal-footer .btn-group .button + .button, .modal-footer .btn-group .login-button + .button, .modal-footer .btn-group .home-feature .read-button + .button, .home-feature .modal-footer .btn-group .read-button + .button, .modal-footer .btn-group .search-form .search-button + .button, .search-form .modal-footer .btn-group .search-button + .button, .modal-footer .btn-group .create-document-button + .button, .modal-footer .btn-group .save-document-button + .button, .modal-footer .btn-group .button-delete + .button, .modal-footer .btn-group .button-edit + .button, .modal-footer .btn-group .btn + .login-button, .modal-footer .btn-group .button + .login-button, .modal-footer .btn-group .login-button + .login-button, .modal-footer .btn-group .home-feature .read-button + .login-button, .home-feature .modal-footer .btn-group .read-button + .login-button, .modal-footer .btn-group .search-form .search-button + .login-button, .search-form .modal-footer .btn-group .search-button + .login-button, .modal-footer .btn-group .create-document-button + .login-button, .modal-footer .btn-group .save-document-button + .login-button, .modal-footer .btn-group .button-delete + .login-button, .modal-footer .btn-group .button-edit + .login-button, .modal-footer .btn-group .home-feature .btn + .read-button, .home-feature .modal-footer .btn-group .btn + .read-button, .modal-footer .btn-group .home-feature .button + .read-button, .home-feature .modal-footer .btn-group .button + .read-button, .modal-footer .btn-group .home-feature .login-button + .read-button, .home-feature .modal-footer .btn-group .login-button + .read-button, .modal-footer .btn-group .home-feature .read-button + .read-button, .home-feature .modal-footer .btn-group .read-button + .read-button, .modal-footer .btn-group .search-form .home-feature .search-button + .read-button, .home-feature .modal-footer .btn-group .search-form .search-button + .read-button, .search-form .modal-footer .btn-group .home-feature .search-button + .read-button, .home-feature .search-form .modal-footer .btn-group .search-button + .read-button, .modal-footer .btn-group .home-feature .create-document-button + .read-button, .home-feature .modal-footer .btn-group .create-document-button + .read-button, .modal-footer .btn-group .home-feature .save-document-button + .read-button, .home-feature .modal-footer .btn-group .save-document-button + .read-button, .modal-footer .btn-group .home-feature .button-delete + .read-button, .home-feature .modal-footer .btn-group .button-delete + .read-button, .modal-footer .btn-group .home-feature .button-edit + .read-button, .home-feature .modal-footer .btn-group .button-edit + .read-button, .modal-footer .btn-group .search-form .btn + .search-button, .search-form .modal-footer .btn-group .btn + .search-button, .modal-footer .btn-group .search-form .button + .search-button, .search-form .modal-footer .btn-group .button + .search-button, .modal-footer .btn-group .search-form .login-button + .search-button, .search-form .modal-footer .btn-group .login-button + .search-button, .modal-footer .btn-group .home-feature .search-form .read-button + .search-button, .search-form .modal-footer .btn-group .home-feature .read-button + .search-button, .home-feature .modal-footer .btn-group .search-form .read-button + .search-button, .search-form .home-feature .modal-footer .btn-group .read-button + .search-button, .modal-footer .btn-group .search-form .search-button + .search-button, .search-form .modal-footer .btn-group .search-button + .search-button, .modal-footer .btn-group .search-form .create-document-button + .search-button, .search-form .modal-footer .btn-group .create-document-button + .search-button, .modal-footer .btn-group .search-form .save-document-button + .search-button, .search-form .modal-footer .btn-group .save-document-button + .search-button, .modal-footer .btn-group .search-form .button-delete + .search-button, .search-form .modal-footer .btn-group .button-delete + .search-button, .modal-footer .btn-group .search-form .button-edit + .search-button, .search-form .modal-footer .btn-group .button-edit + .search-button, .modal-footer .btn-group .btn + .create-document-button, .modal-footer .btn-group .button + .create-document-button, .modal-footer .btn-group .login-button + .create-document-button, .modal-footer .btn-group .home-feature .read-button + .create-document-button, .home-feature .modal-footer .btn-group .read-button + .create-document-button, .modal-footer .btn-group .search-form .search-button + .create-document-button, .search-form .modal-footer .btn-group .search-button + .create-document-button, .modal-footer .btn-group .create-document-button + .create-document-button, .modal-footer .btn-group .save-document-button + .create-document-button, .modal-footer .btn-group .button-delete + .create-document-button, .modal-footer .btn-group .button-edit + .create-document-button, .modal-footer .btn-group .btn + .save-document-button, .modal-footer .btn-group .button + .save-document-button, .modal-footer .btn-group .login-button + .save-document-button, .modal-footer .btn-group .home-feature .read-button + .save-document-button, .home-feature .modal-footer .btn-group .read-button + .save-document-button, .modal-footer .btn-group .search-form .search-button + .save-document-button, .search-form .modal-footer .btn-group .search-button + .save-document-button, .modal-footer .btn-group .create-document-button + .save-document-button, .modal-footer .btn-group .save-document-button + .save-document-button, .modal-footer .btn-group .button-delete + .save-document-button, .modal-footer .btn-group .button-edit + .save-document-button, .modal-footer .btn-group .btn + .button-delete, .modal-footer .btn-group .button + .button-delete, .modal-footer .btn-group .login-button + .button-delete, .modal-footer .btn-group .home-feature .read-button + .button-delete, .home-feature .modal-footer .btn-group .read-button + .button-delete, .modal-footer .btn-group .search-form .search-button + .button-delete, .search-form .modal-footer .btn-group .search-button + .button-delete, .modal-footer .btn-group .create-document-button + .button-delete, .modal-footer .btn-group .save-document-button + .button-delete, .modal-footer .btn-group .button-delete + .button-delete, .modal-footer .btn-group .button-edit + .button-delete, .modal-footer .btn-group .btn + .button-edit, .modal-footer .btn-group .button + .button-edit, .modal-footer .btn-group .login-button + .button-edit, .modal-footer .btn-group .home-feature .read-button + .button-edit, .home-feature .modal-footer .btn-group .read-button + .button-edit, .modal-footer .btn-group .search-form .search-button + .button-edit, .search-form .modal-footer .btn-group .search-button + .button-edit, .modal-footer .btn-group .create-document-button + .button-edit, .modal-footer .btn-group .save-document-button + .button-edit, .modal-footer .btn-group .button-delete + .button-edit, .modal-footer .btn-group .button-edit + .button-edit {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .button + .btn, .modal-footer .btn-group .login-button + .btn, .modal-footer .btn-group .home-feature .read-button + .btn, .home-feature .modal-footer .btn-group .read-button + .btn, .modal-footer .btn-group .search-form .search-button + .btn, .search-form .modal-footer .btn-group .search-button + .btn, .modal-footer .btn-group .create-document-button + .btn, .modal-footer .btn-group .button-delete + .btn, .modal-footer .btn-group .button-edit + .btn, .modal-footer .btn-group .btn + .button, .modal-footer .btn-group .button + .button, .modal-footer .btn-group .login-button + .button, .modal-footer .btn-group .home-feature .read-button + .button, .home-feature .modal-footer .btn-group .read-button + .button, .modal-footer .btn-group .search-form .search-button + .button, .search-form .modal-footer .btn-group .search-button + .button, .modal-footer .btn-group .create-document-button + .button, .modal-footer .btn-group .button-delete + .button, .modal-footer .btn-group .button-edit + .button, .modal-footer .btn-group .btn + .login-button, .modal-footer .btn-group .button + .login-button, .modal-footer .btn-group .login-button + .login-button, .modal-footer .btn-group .home-feature .read-button + .login-button, .home-feature .modal-footer .btn-group .read-button + .login-button, .modal-footer .btn-group .search-form .search-button + .login-button, .search-form .modal-footer .btn-group .search-button + .login-button, .modal-footer .btn-group .create-document-button + .login-button, .modal-footer .btn-group .button-delete + .login-button, .modal-footer .btn-group .button-edit + .login-button, .modal-footer .btn-group .home-feature .btn + .read-button, .home-feature .modal-footer .btn-group .btn + .read-button, .modal-footer .btn-group .home-feature .button + .read-button, .home-feature .modal-footer .btn-group .button + .read-button, .modal-footer .btn-group .home-feature .login-button + .read-button, .home-feature .modal-footer .btn-group .login-button + .read-button, .modal-footer .btn-group .home-feature .read-button + .read-button, .home-feature .modal-footer .btn-group .read-button + .read-button, .modal-footer .btn-group .search-form .home-feature .search-button + .read-button, .home-feature .modal-footer .btn-group .search-form .search-button + .read-button, .search-form .modal-footer .btn-group .home-feature .search-button + .read-button, .home-feature .search-form .modal-footer .btn-group .search-button + .read-button, .modal-footer .btn-group .home-feature .create-document-button + .read-button, .home-feature .modal-footer .btn-group .create-document-button + .read-button, .modal-footer .btn-group .home-feature .button-delete + .read-button, .home-feature .modal-footer .btn-group .button-delete + .read-button, .modal-footer .btn-group .home-feature .button-edit + .read-button, .home-feature .modal-footer .btn-group .button-edit + .read-button, .modal-footer .btn-group .search-form .btn + .search-button, .search-form .modal-footer .btn-group .btn + .search-button, .modal-footer .btn-group .search-form .button + .search-button, .search-form .modal-footer .btn-group .button + .search-button, .modal-footer .btn-group .search-form .login-button + .search-button, .search-form .modal-footer .btn-group .login-button + .search-button, .modal-footer .btn-group .home-feature .search-form .read-button + .search-button, .search-form .modal-footer .btn-group .home-feature .read-button + .search-button, .home-feature .modal-footer .btn-group .search-form .read-button + .search-button, .search-form .home-feature .modal-footer .btn-group .read-button + .search-button, .modal-footer .btn-group .search-form .search-button + .search-button, .search-form .modal-footer .btn-group .search-button + .search-button, .modal-footer .btn-group .search-form .create-document-button + .search-button, .search-form .modal-footer .btn-group .create-document-button + .search-button, .modal-footer .btn-group .search-form .button-delete + .search-button, .search-form .modal-footer .btn-group .button-delete + .search-button, .modal-footer .btn-group .search-form .button-edit + .search-button, .search-form .modal-footer .btn-group .button-edit + .search-button, .modal-footer .btn-group .btn + .create-document-button, .modal-footer .btn-group .button + .create-document-button, .modal-footer .btn-group .login-button + .create-document-button, .modal-footer .btn-group .home-feature .read-button + .create-document-button, .home-feature .modal-footer .btn-group .read-button + .create-document-button, .modal-footer .btn-group .search-form .search-button + .create-document-button, .search-form .modal-footer .btn-group .search-button + .create-document-button, .modal-footer .btn-group .create-document-button + .create-document-button, .modal-footer .btn-group .button-delete + .create-document-button, .modal-footer .btn-group .button-edit + .create-document-button, .modal-footer .btn-group .btn + .button-delete, .modal-footer .btn-group .button + .button-delete, .modal-footer .btn-group .login-button + .button-delete, .modal-footer .btn-group .home-feature .read-button + .button-delete, .home-feature .modal-footer .btn-group .read-button + .button-delete, .modal-footer .btn-group .search-form .search-button + .button-delete, .search-form .modal-footer .btn-group .search-button + .button-delete, .modal-footer .btn-group .create-document-button + .button-delete, .modal-footer .btn-group .button-delete + .button-delete, .modal-footer .btn-group .button-edit + .button-delete, .modal-footer .btn-group .btn + .button-edit, .modal-footer .btn-group .button + .button-edit, .modal-footer .btn-group .login-button + .button-edit, .modal-footer .btn-group .home-feature .read-button + .button-edit, .home-feature .modal-footer .btn-group .read-button + .button-edit, .modal-footer .btn-group .search-form .search-button + .button-edit, .search-form .modal-footer .btn-group .search-button + .button-edit, .modal-footer .btn-group .create-document-button + .button-edit, .modal-footer .btn-group .button-delete + .button-edit, .modal-footer .btn-group .button-edit + .button-edit {
   margin-left: -1px;
 }
 /* line 117, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_modals.scss */
@@ -10901,7 +10857,7 @@ code {
   }
 }
 /* line 53, ../scss/mixins/_bootstrap-overrides.scss */
-.btn, .button, .login-button, .home-feature .read-button, .search-form .search-button, .create-document-button, .save-document-button, .button-delete, .button-edit {
+.btn, .button, .login-button, .home-feature .read-button, .search-form .search-button, .create-document-button, .button-delete, .button-edit {
   padding-top: calc(0.40625rem - 1px);
   padding-bottom: calc(0.40625rem - 1px);
   line-height: 1.625rem;
@@ -10949,7 +10905,7 @@ hr {
 }
 
 /* line 104, ../scss/mixins/_bootstrap-overrides.scss */
-.navbar-form .btn, .navbar-form .button, .navbar-form .login-button, .navbar-form .home-feature .read-button, .home-feature .navbar-form .read-button, .navbar-form .search-form .search-button, .search-form .navbar-form .search-button, .navbar-form .create-document-button, .navbar-form .save-document-button, .navbar-form .button-delete, .navbar-form .button-edit,
+.navbar-form .btn, .navbar-form .button, .navbar-form .login-button, .navbar-form .home-feature .read-button, .home-feature .navbar-form .read-button, .navbar-form .search-form .search-button, .search-form .navbar-form .search-button, .navbar-form .create-document-button, .navbar-form .button-delete, .navbar-form .button-edit,
 .navbar-form input {
   margin-top: 0;
   margin-bottom: 0;
@@ -10973,7 +10929,7 @@ hr {
 }
 
 /* line 124, ../scss/mixins/_bootstrap-overrides.scss */
-.navbar .btn, .navbar .button, .navbar .login-button, .navbar .home-feature .read-button, .home-feature .navbar .read-button, .navbar .search-form .search-button, .search-form .navbar .search-button, .navbar .create-document-button, .navbar .save-document-button, .navbar .button-delete, .navbar .button-edit {
+.navbar .btn, .navbar .button, .navbar .login-button, .navbar .home-feature .read-button, .home-feature .navbar .read-button, .navbar .search-form .search-button, .search-form .navbar .search-button, .navbar .create-document-button, .navbar .button-delete, .navbar .button-edit {
   margin-top: calc(0.40625rem - 1px);
   margin-bottom: calc(0.40625rem - 1px);
 }
@@ -11189,7 +11145,7 @@ h1 a, h2 a, h3 a, .previous-features .message a, .doc-content h1 a, .doc-content
 }
 
 /* line 113, ../scss/modules/_global.scss */
-.screen-hidden, .button span, .login-button span, .home-feature .read-button span, .search-form .search-button span, .create-document-button span, .save-document-button span, .chart-stat .chart-label {
+.screen-hidden, .button span, .login-button span, .home-feature .read-button span, .search-form .search-button span, .create-document-button span, .chart-stat .chart-label {
   position: absolute;
   left: -10000px;
   top: auto;
@@ -11199,7 +11155,7 @@ h1 a, h2 a, h3 a, .previous-features .message a, .doc-content h1 a, .doc-content
 }
 
 /* line 124, ../scss/modules/_global.scss */
-.go-button:after, .login-button:after, .home-feature .read-button:after, .search-form .search-button:after, .read-action .action-button:after, .read-action .login-button:after, .read-action .doc-support-button:after, .read-action .create-document-button:after, .read-action .save-document-button:after, .back-link a:after, .create-document-button:after, .save-document-button:after {
+.go-button:after, .login-button:after, .home-feature .read-button:after, .search-form .search-button:after, .read-action .action-button:after, .read-action .login-button:after, .read-action .doc-support-button:after, .read-action .create-document-button:after, .back-link a:after, .create-document-button:after {
   content: ' »';
 }
 
@@ -11214,14 +11170,33 @@ h1 a, h2 a, h3 a, .previous-features .message a, .doc-content h1 a, .doc-content
   box-shadow: 0px 0px 5px 0px #000000;
 }
 
+@keyframes bounce {
+  0%, 10%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+/* Animation */
+/* From https://github.com/l-lin/font-awesome-animation */
 /* Debugging */
-/* line 150, ../scss/modules/_global.scss */
+/* line 177, ../scss/modules/_global.scss */
 .BETA {
   color: #f00 !important;
   background-color: rgba(255, 0, 0, 0.05) !important;
 }
 
-/* line 155, ../scss/modules/_global.scss */
+/* line 182, ../scss/modules/_global.scss */
 .TYPE-DEBUG {
   position: absolute;
   top: 0;
@@ -11483,18 +11458,18 @@ label {
 }
 
 /* line 59, ../scss/modules/_forms.scss */
-.button, .login-button, .home-feature .read-button, .search-form .search-button, .create-document-button, .save-document-button {
+.button, .login-button, .home-feature .read-button, .search-form .search-button, .create-document-button {
   border: none;
 }
 
 /* line 68, ../scss/modules/_forms.scss */
-td .button, td .login-button, td .home-feature .read-button, .home-feature td .read-button, td .search-form .search-button, .search-form td .search-button, td .create-document-button, td .save-document-button {
+td .button, td .login-button, td .home-feature .read-button, .home-feature td .read-button, td .search-form .search-button, .search-form td .search-button, td .create-document-button {
   margin-top: 0;
   margin-bottom: 0;
 }
 
 /* line 73, ../scss/modules/_forms.scss */
-.action-button, .login-button, .home-feature .read-button, .search-form .search-button, .doc-support-button, .create-document-button, .save-document-button {
+.action-button, .login-button, .home-feature .read-button, .search-form .search-button, .doc-support-button, .create-document-button {
   text-transform: uppercase;
 }
 
@@ -11517,6 +11492,53 @@ td .button, td .login-button, td .home-feature .read-button, .home-feature td .r
 /* line 104, ../scss/modules/_forms.scss */
 .button-edit {
   overflow: hidden;
+}
+
+/* line 140, ../scss/modules/_forms.scss */
+.save-status .icon {
+  font-size: 1.5rem;
+}
+/* line 145, ../scss/modules/_forms.scss */
+.save-status .saved {
+  left: -26px;
+  position: relative;
+}
+/* line 152, ../scss/modules/_forms.scss */
+.save-status .saved:before {
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  margin-right: 10px;
+}
+/* line 161, ../scss/modules/_forms.scss */
+.save-status .saving {
+  left: -26px;
+  position: relative;
+}
+/* line 168, ../scss/modules/_forms.scss */
+.save-status .saving:before {
+  position: relative;
+  top: -2px;
+  left: 3px;
+  display: inline-block;
+  margin-right: 14px;
+  font-size: 0.8rem;
+  -webkit-animation: bounce 2s linear infinite;
+  -o-animation: bounce 2s linear infinite;
+  animation: bounce 2s linear infinite;
+}
+/* line 180, ../scss/modules/_forms.scss */
+.save-status .unsaved {
+  left: -26px;
+  position: relative;
+}
+/* line 187, ../scss/modules/_forms.scss */
+.save-status .unsaved:before {
+  position: relative;
+  top: -2px;
+  left: 6px;
+  display: inline-block;
+  margin-right: 19px;
 }
 
 /* line 6, ../scss/modules/_imageUpload.scss */
@@ -12034,7 +12056,7 @@ td .button, td .login-button, td .home-feature .read-button, .home-feature td .r
   padding-right: 15px;
 }
 /* line 263, ../scss/pages/_home.scss */
-.read-action .action-button, .read-action .login-button, .read-action .home-feature .read-button, .home-feature .read-action .read-button, .read-action .search-form .search-button, .search-form .read-action .search-button, .read-action .doc-support-button, .read-action .create-document-button, .read-action .save-document-button {
+.read-action .action-button, .read-action .login-button, .read-action .home-feature .read-button, .home-feature .read-action .read-button, .read-action .search-form .search-button, .search-form .read-action .search-button, .read-action .doc-support-button, .read-action .create-document-button {
   margin-left: -15px;
   margin-right: 15px;
   display: block;
@@ -12113,7 +12135,7 @@ td .button, td .login-button, td .home-feature .read-button, .home-feature td .r
   float: left;
 }
 /* line 39, ../scss/pages/_document.scss */
-.single-doc .doc-info .button, .single-doc .doc-info .login-button, .single-doc .doc-info .home-feature .read-button, .home-feature .single-doc .doc-info .read-button, .single-doc .doc-info .search-form .search-button, .search-form .single-doc .doc-info .search-button, .single-doc .doc-info .create-document-button, .single-doc .doc-info .save-document-button {
+.single-doc .doc-info .button, .single-doc .doc-info .login-button, .single-doc .doc-info .home-feature .read-button, .home-feature .single-doc .doc-info .read-button, .single-doc .doc-info .search-form .search-button, .search-form .single-doc .doc-info .search-button, .single-doc .doc-info .create-document-button {
   padding: 0 15px;
   margin-right: 10px;
 }
@@ -12545,6 +12567,41 @@ section.login {
   margin-bottom: 1.625rem;
 }
 
+/* line 41, ../scss/pages/_document-list.scss */
+.document-types {
+  border: 2px solid #d7d7d7;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  padding: 10px 20px 20px;
+}
+
+/* line 48, ../scss/pages/_document-list.scss */
+.document-type {
+  display: inline-block;
+  text-align: center;
+  width: 130px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: 4px solid transparent;
+  -webkit-transition: all 0.25s cubic-bezier(0.62, 0.28, 0.23, 0.99);
+  -o-transition: all 0.25s cubic-bezier(0.62, 0.28, 0.23, 0.99);
+  transition: all 0.25s cubic-bezier(0.62, 0.28, 0.23, 0.99);
+  color: #000000;
+}
+/* line 60, ../scss/pages/_document-list.scss */
+.document-type:hover {
+  background-color: rgba(0, 202, 229, 0.1);
+  border-color: #00cae5;
+}
+
+/* line 65, ../scss/pages/_document-list.scss */
+.document-type__icon {
+  display: block;
+  text-align: center;
+  font-size: 3.25rem;
+  margin-bottom: 10px;
+}
+
 /* line 1, ../scss/pages/_edit-document.scss */
 .public-link {
   float: right;
@@ -12594,20 +12651,24 @@ section.login {
 }
 
 /* line 59, ../scss/pages/_edit-document.scss */
-.save-document-button {
-  top: -3px;
-  position: relative;
+.doc-meta {
+  padding: 0.8125rem;
 }
 
 /* line 74, ../scss/pages/_edit-document.scss */
+.save-status {
+  float: right;
+}
+
+/* line 82, ../scss/pages/_edit-document.scss */
 .document-dates {
   margin-top: 4.875rem;
 }
-/* line 91, ../scss/pages/_edit-document.scss */
+/* line 99, ../scss/pages/_edit-document.scss */
 .document-dates .datetimepicker {
   background: #d7d7d7;
 }
-/* line 94, ../scss/pages/_edit-document.scss */
+/* line 102, ../scss/pages/_edit-document.scss */
 .document-dates .datetimepicker table {
   width: 100%;
 }

@@ -2,16 +2,23 @@
 <h1>{{ "menu.nav.documents" | translate }}</h1>
 
 <div ng-controller="DocumentListController" ng-cloak>
-  <div class="create-document">
+  <section class="create-document">
     <button
       ng-click="showCreateForm()"
       ng-show="!showForm">{{ "documents.list.create" | translate }}</button>
-    <form ng-submit="createDocument()"
-      ng-show="showForm">
-      <input type="text" name="title" ng-model="title" />
-      <button name="submit"/>{{ "documents.list.go" | translate }}</button>
-    </form>
-  </div>
+    <div class="document-types" ng-show="showForm">
+      <header>
+      <h3>{{ "documents.list.create" | translate }}</h3>
+      </header>
+
+      <!-- Temporarily hardcoding these -->
+      <a class="document-type document-type--resolution" ng-click="createDocument('resolution')">
+        <span class="document-type__icon resolution__icon"></span>
+        <span class="document-type__title">{{ "documents.list.new" | translate }} Resolution</span>
+      </a>
+
+    </div>
+  </section>
 
   <table class="documents-list">
     <thead>
