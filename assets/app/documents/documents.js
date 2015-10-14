@@ -83,7 +83,7 @@ app.controller("DocumentDetailController",
     $scope.form = {
       errors: {}
     };
-    $scope.dirty = false;
+    $scope.status = 'saved';
 
     // Does the actual saving.
     var saveUpdates = function(newDocument, b, c) {
@@ -91,12 +91,13 @@ app.controller("DocumentDetailController",
       $http.put("/api/docs/" + $scope.document.id, {document: newDocument})
         .success(function (data) {
           if(data.error) {
+            $scope.status = 'unsaved';
             $scope.form.errors = parseErrors(data.error);
 
             console.log($scope.form.errors);
           }
           else {
-            $scope.dirty = false;
+            $scope.status = 'saved';
           }
         })
         .error(function (data) {
@@ -138,7 +139,7 @@ app.controller("DocumentDetailController",
       if (newDocument !== oldDocument) {
         console.log('changed doc', newDocument);
 
-        $scope.dirty = true;
+        $scope.status = 'saving';
         console.log('timeout', timeout);
         if (timeout) {
           $timeout.cancel(timeout)

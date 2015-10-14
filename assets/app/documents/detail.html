@@ -1,8 +1,12 @@
 <div ng-controller="DocumentDetailController" ng-cloak class="document-detail">
   <header class="doc-meta">
 
-    <div ng-if="dirty">{{ "form.state.unsaved" | translate }}</div>
-    <div ng-if="!dirty">{{ "form.state.saved" | translate }}</div>
+    <div class="save-status">
+      <span class="icon"></span>
+      <span ng-if="status == 'saved'" class="saved">{{ "form.state.saved" | translate }}</span>
+      <span ng-if="status == 'saving'" class="saving">{{ "form.state.saving" | translate }}</span>
+      <span ng-if="status == 'unsaved'" class="unsaved">{{ "form.state.unsaved" | translate }}</span>
+    </div>
 
     <div class="error" ng-show="form.errors.general">
       {{ form.errors.general }}

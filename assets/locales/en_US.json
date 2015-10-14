@@ -4,9 +4,11 @@
   "menu.nav.logout": "Logout",
 
   "form.state.saved": "Saved",
+  "form.state.saving": "Saving",
   "form.state.unsaved": "Unsaved",
   "form.action.save": "Save",
   "form.action.cancel": "Cancel",
+  "form.action.go": "Go",
   "form.action.delete": "Delete",
   "form.action.confirm_message": "Are you sure?",
 

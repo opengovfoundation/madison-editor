@@ -56,16 +56,24 @@
 
 }
 
-.save-document-button {
-    @extend .button;
-    @extend .go-button;
-    @extend .action-button;
-
-    //This really shouldn't be necessary.  Not sure why it isn't lining up.
-    top:-3px;
-    position:relative;
+.doc-meta {
+  padding: $line-height-computed / 2;
 }
 
+// We auto-save now, so this isn't used.
+// .save-document-button {
+//     @extend .button;
+//     @extend .go-button;
+//     @extend .action-button;
+
+//     //This really shouldn't be necessary.  Not sure why it isn't lining up.
+//     top:-3px;
+//     position:relative;
+// }
+
+.save-status {
+  float: right;
+}
 
 .document-information {
     @extend .col-md-14;
