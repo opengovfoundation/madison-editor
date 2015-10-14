@@ -44,7 +44,7 @@ module.exports = {
 
   findByUser: function(userId, page, limit) {
 
-    var query = 'SELECT *, docs.id as id FROM ' + this.tableName +
+    var query = 'SELECT docs.* FROM ' + this.tableName +
       ' LEFT JOIN doc_user ON docs.id = doc_user.doc_id' +
       ' LEFT JOIN doc_group ON docs.id = doc_group.doc_id' +
       ' LEFT JOIN group_members ON group_members.group_id = doc_group.group_id' +
