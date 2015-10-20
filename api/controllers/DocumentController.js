@@ -8,14 +8,17 @@ module.exports = {
       return res.badRequest('Unauthorized.');
     }
 
-    var page=req.param('page',1);
-    var limit=req.param('limit',null);
+    var page=req.param('page', 1);
+    var limit=req.param('limit', null);
+    var filters = {
+      'is_template': req.param('is_template', 0)
+    };
 
     // Use a promise to get both queries in parallel.
     // We return the promise so we can test this.
     return Promise.all([
-      Document.findByUser(req.session.user.id, page, limit),
-      Document.countByUser(req.session.user.id)
+      Document.findByUser(req.session.user.id, page, limit, filters),
+      Document.countByUser(req.session.user.id, filters)
     ]).spread(function(documents, count) {
       // Get all of our results.
       return res.json({

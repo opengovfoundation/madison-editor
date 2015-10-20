@@ -88,6 +88,7 @@ app.controller("DocumentDetailController",
     $scope.form = {
       errors: {}
     };
+    $scope.document = {};
     $scope.status = 'saved';
 
     // Does the actual saving.

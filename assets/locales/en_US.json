@@ -15,10 +15,11 @@
   "documents.list.heading.title": "Title",
   "documents.list.heading.updated": "Last Updated",
   "documents.list.heading.delete": "Delete",
-  "documents.list.create": "Create Document",
+  "documents.list.create": "Create New Document",
   "documents.list.new": "New",
   "documents.list.delete": "Delete Document",
   "documents.list.go": "Go",
+
 
   "form.document.labels.title": "Title",
   "form.document.errors.title.required": "This field is required.",
@@ -26,5 +27,9 @@
   "form.document.labels.url": "URL",
   "form.document.errors.slug.required": "This field is required.",
   "form.document.errors.slug.unique": "The URL must be unique, and this url is already in use.",
-  "form.document.errors.slug.alphanumericdashed": "The URL may only contain letters, numbers, and hyphens."
+  "form.document.errors.slug.alphanumericdashed": "The URL may only contain letters, numbers, and hyphens.",
+
+  "form.document.labels.private": "Keep Private",
+
+  "form.document.labels.is_template": "Make Template Document"
 }

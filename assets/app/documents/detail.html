@@ -22,6 +22,18 @@
       https://mymadison.io/docs/<input ng-model="document.slug" />
       <span class="error" ng-show="form.errors.slug">{{ form.errors.slug | translate }}</span>
     </fieldset>
+    <fieldset>
+      <label for="doc.private">{{ "form.document.labels.private" | translate }}</label>
+      <input type="checkbox" name="private" id="private"
+        ng-model="document.private" ng-checked="document.private" />
+      <span class="error" ng-show="form.errors.private">{{ form.errors.private | translate }}</span>
+    </fieldset>
+    <fieldset>
+      <label for="doc.is_template">{{ "form.document.labels.is_template" | translate }}</label>
+      <input type="checkbox" name="is_template" id="is_template"
+          ng-model="document.is_template" ng-checked="document.is_template" />
+      <span class="error" ng-show="form.errors.is_template">{{ form.errors.is_template | translate }}</span>
+    </fieldset>
   </header>
 
 	<iframe src="{{ document.id | etherpadUrl }}" style="width: 100%; height: 600px;"></iframe>
