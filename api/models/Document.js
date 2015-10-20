@@ -36,9 +36,9 @@ module.exports = {
   autoCreatedAt: false,
   autoUpdatedAt: false,
 
-  //Resonsible for actually updating the 'updateDate' property.
+  //Resonsible for actually updating the 'updated_at' property.
   beforeUpdate:function(values,next) {
-      values.updateDate= new Date();
+      values.updated_at= new Date();
       next();
   },
 
