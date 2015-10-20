@@ -43,6 +43,14 @@
   border-radius: 5px;
   background-color: $lightest-grey;
   padding: 10px 20px 20px;
+
+  h2 {
+    @extend h4;
+  }
+
+  header {
+    margin-bottom: $line-height-computed;
+  }
 }
 
 .document-type {
@@ -58,6 +66,8 @@
   color: $black;
 
   &:hover {
+    color: $black;
+    text-decoration: none;
     background-color: rgba($blue, 0.1);
     border-color: $blue;
   }

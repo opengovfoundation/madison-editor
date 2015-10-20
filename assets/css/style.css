@@ -3214,7 +3214,7 @@ hr {
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_type.scss */
-h1, h2, h3, .previous-features .message, .doc-content h1, .doc-content h2, h4, .doc-content h3, .doc-content .previous-features .message, .previous-features .doc-content .message, .doc-content h1, .doc-content h2, .doc-content h4, h5, h6,
+h1, h2, h3, .previous-features .message, .doc-content h1, .doc-content h2, h4, .doc-content h3, .doc-content .previous-features .message, .previous-features .doc-content .message, .doc-content h1, .doc-content h2, .doc-content h4, .document-types h2, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
@@ -3228,13 +3228,14 @@ h2 .small, h3 small, .previous-features .message small, .doc-content h1 small, .
 h3 .small,
 .previous-features .message .small,
 .doc-content h1 .small,
-.doc-content h2 .small, h4 small, .doc-content h3 small, .doc-content .previous-features .message small, .previous-features .doc-content .message small, .doc-content h1 small, .doc-content h2 small, .doc-content h4 small,
+.doc-content h2 .small, h4 small, .doc-content h3 small, .doc-content .previous-features .message small, .previous-features .doc-content .message small, .doc-content h1 small, .doc-content h2 small, .doc-content h4 small, .document-types h2 small,
 h4 .small,
 .doc-content h3 .small,
 .doc-content .previous-features .message .small,
 .previous-features .doc-content .message .small,
 .doc-content h1 .small,
-.doc-content h2 .small, h5 small,
+.doc-content h2 .small,
+.document-types h2 .small, h5 small,
 h5 .small, h6 small,
 h6 .small,
 .h1 small,
@@ -3279,20 +3280,21 @@ h3 .small,
 }
 
 /* line 35, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_type.scss */
-h4, .doc-content h3, .doc-content .previous-features .message, .previous-features .doc-content .message, .doc-content h1, .doc-content h2, .doc-content h4, .h4,
+h4, .doc-content h3, .doc-content .previous-features .message, .previous-features .doc-content .message, .doc-content h1, .doc-content h2, .doc-content h4, .document-types h2, .h4,
 h5, .h5,
 h6, .h6 {
   margin-top: 0.8125rem;
   margin-bottom: 0.8125rem;
 }
 /* line 41, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_type.scss */
-h4 small, .doc-content h3 small, .doc-content .previous-features .message small, .previous-features .doc-content .message small, .doc-content h1 small, .doc-content h2 small, .doc-content h4 small,
+h4 small, .doc-content h3 small, .doc-content .previous-features .message small, .previous-features .doc-content .message small, .doc-content h1 small, .doc-content h2 small, .doc-content h4 small, .document-types h2 small,
 h4 .small,
 .doc-content h3 .small,
 .doc-content .previous-features .message .small,
 .previous-features .doc-content .message .small,
 .doc-content h1 .small,
-.doc-content h2 .small, .h4 small,
+.doc-content h2 .small,
+.document-types h2 .small, .h4 small,
 .h4 .small,
 h5 small,
 h5 .small, .h5 small,
@@ -3319,7 +3321,7 @@ h3, .previous-features .message, .doc-content h1, .doc-content h2, .h3 {
 }
 
 /* line 50, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_type.scss */
-h4, .doc-content h3, .doc-content .previous-features .message, .previous-features .doc-content .message, .doc-content h1, .doc-content h2, .doc-content h4, .h4 {
+h4, .doc-content h3, .doc-content .previous-features .message, .previous-features .doc-content .message, .doc-content h1, .doc-content h2, .doc-content h4, .document-types h2, .h4 {
   font-size: 1.25rem;
 }
 
@@ -9255,7 +9257,7 @@ a.thumbnail.active {
   border-radius: 7px;
 }
 /* line 16, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_alerts.scss */
-.alert h4, .alert .doc-content h3, .doc-content .alert h3, .alert .doc-content .previous-features .message, .doc-content .previous-features .alert .message, .alert .previous-features .doc-content .message, .previous-features .doc-content .alert .message, .alert .doc-content h1, .doc-content .alert h1, .alert .doc-content h2, .doc-content .alert h2 {
+.alert h4, .alert .doc-content h3, .doc-content .alert h3, .alert .doc-content .previous-features .message, .doc-content .previous-features .alert .message, .alert .previous-features .doc-content .message, .previous-features .doc-content .alert .message, .alert .doc-content h1, .doc-content .alert h1, .alert .doc-content h2, .doc-content .alert h2, .alert .document-types h2, .document-types .alert h2 {
   margin-top: 0;
   color: inherit;
 }
@@ -11066,7 +11068,7 @@ h3, .previous-features .message, .doc-content h1, .doc-content h2, .medium-headi
 }
 
 /* line 36, ../scss/modules/_global.scss */
-h4, .doc-content h3, .doc-content .previous-features .message, .previous-features .doc-content .message, .doc-content h1, .doc-content h2, .doc-content h4, .small-heading {
+h4, .doc-content h3, .doc-content .previous-features .message, .previous-features .doc-content .message, .doc-content h1, .doc-content h2, .doc-content h4, .document-types h2, .small-heading {
   font-size: 1.5rem;
   line-height: 1.625rem;
   margin-top: 0rem;
@@ -11100,7 +11102,7 @@ dt, dd {
 }
 
 /* line 67, ../scss/modules/_global.scss */
-h1 a, h2 a, h3 a, .previous-features .message a, .doc-content h1 a, .doc-content h2 a, h4 a, .doc-content h3 a, .doc-content .previous-features .message a, .previous-features .doc-content .message a, .doc-content h1 a, .doc-content h2 a, .doc-content h4 a, h5 a, h6 a, .normal-title a, .recent-activity h2 a, .most-active h2 a {
+h1 a, h2 a, h3 a, .previous-features .message a, .doc-content h1 a, .doc-content h2 a, h4 a, .doc-content h3 a, .doc-content .previous-features .message a, .previous-features .doc-content .message a, .doc-content h1 a, .doc-content h2 a, .doc-content h4 a, .document-types h2 a, h5 a, h6 a, .normal-title a, .recent-activity h2 a, .most-active h2 a {
   color: #000000;
 }
 
@@ -11131,7 +11133,7 @@ h1 a, h2 a, h3 a, .previous-features .message a, .doc-content h1 a, .doc-content
 }
 
 /* line 99, ../scss/modules/_global.scss */
-.small-caps, .annotation-pane h2, .subcomment-form h4, .subcomment-form .doc-content h3, .doc-content .subcomment-form h3, .subcomment-form .doc-content .previous-features .message, .doc-content .previous-features .subcomment-form .message, .subcomment-form .previous-features .doc-content .message, .previous-features .doc-content .subcomment-form .message, .subcomment-form .doc-content h1, .doc-content .subcomment-form h1, .subcomment-form .doc-content h2, .doc-content .subcomment-form h2, .search-list .normal-title, .search-list .recent-activity h2, .recent-activity .search-list h2, .search-list .most-active h2, .most-active .search-list h2, .doc-list-item .category span, .doc-list-item .date, .doc-list-item .stats .stats-name, .back-link a, .single-doc .nav-tabs li a, .stats .stat-label, .chart-title, .toc-header .normal-title span, .toc-header .recent-activity h2 span, .recent-activity .toc-header h2 span, .toc-header .most-active h2 span, .most-active .toc-header h2 span, .toc-title .toc-title-string, .toc-title .toc-close, .document-edit-tabs .nav-tabs li a {
+.small-caps, .annotation-pane h2, .subcomment-form h4, .subcomment-form .doc-content h3, .doc-content .subcomment-form h3, .subcomment-form .doc-content .previous-features .message, .doc-content .previous-features .subcomment-form .message, .subcomment-form .previous-features .doc-content .message, .previous-features .doc-content .subcomment-form .message, .subcomment-form .doc-content h1, .doc-content .subcomment-form h1, .subcomment-form .doc-content h2, .doc-content .subcomment-form h2, .subcomment-form .document-types h2, .document-types .subcomment-form h2, .search-list .normal-title, .search-list .recent-activity h2, .recent-activity .search-list h2, .search-list .most-active h2, .most-active .search-list h2, .doc-list-item .category span, .doc-list-item .date, .doc-list-item .stats .stats-name, .back-link a, .single-doc .nav-tabs li a, .stats .stat-label, .chart-title, .toc-header .normal-title span, .toc-header .recent-activity h2 span, .recent-activity .toc-header h2 span, .toc-header .most-active h2 span, .most-active .toc-header h2 span, .toc-title .toc-title-string, .toc-title .toc-close, .document-edit-tabs .nav-tabs li a {
   font-size: 0.813rem;
   line-height: 1.625rem;
   text-transform: uppercase;
@@ -11154,17 +11156,22 @@ h1 a, h2 a, h3 a, .previous-features .message a, .doc-content h1 a, .doc-content
   overflow: hidden;
 }
 
-/* line 124, ../scss/modules/_global.scss */
+/* line 123, ../scss/modules/_global.scss */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/* line 129, ../scss/modules/_global.scss */
 .go-button:after, .login-button:after, .home-feature .read-button:after, .search-form .search-button:after, .read-action .action-button:after, .read-action .login-button:after, .read-action .doc-support-button:after, .read-action .create-document-button:after, .back-link a:after, .create-document-button:after {
   content: ' »';
 }
 
-/* line 130, ../scss/modules/_global.scss */
+/* line 135, ../scss/modules/_global.scss */
 .loading {
   font-size: 1rem;
 }
 
-/* line 138, ../scss/modules/_global.scss */
+/* line 143, ../scss/modules/_global.scss */
 .annotation-pane, .toc-open .document-toc, .toc-open .document-toc .toc-header, .toc-header {
   -webkit-box-shadow: 0px 0px 5px 0px #000000;
   box-shadow: 0px 0px 5px 0px #000000;
@@ -11190,13 +11197,13 @@ h1 a, h2 a, h3 a, .previous-features .message a, .doc-content h1 a, .doc-content
 /* Animation */
 /* From https://github.com/l-lin/font-awesome-animation */
 /* Debugging */
-/* line 177, ../scss/modules/_global.scss */
+/* line 182, ../scss/modules/_global.scss */
 .BETA {
   color: #f00 !important;
   background-color: rgba(255, 0, 0, 0.05) !important;
 }
 
-/* line 182, ../scss/modules/_global.scss */
+/* line 187, ../scss/modules/_global.scss */
 .TYPE-DEBUG {
   position: absolute;
   top: 0;
@@ -12574,8 +12581,12 @@ section.login {
   background-color: #f9f9f9;
   padding: 10px 20px 20px;
 }
+/* line 51, ../scss/pages/_document-list.scss */
+.document-types header {
+  margin-bottom: 1.625rem;
+}
 
-/* line 48, ../scss/pages/_document-list.scss */
+/* line 56, ../scss/pages/_document-list.scss */
 .document-type {
   display: inline-block;
   text-align: center;
@@ -12588,13 +12599,15 @@ section.login {
   transition: all 0.25s cubic-bezier(0.62, 0.28, 0.23, 0.99);
   color: #000000;
 }
-/* line 60, ../scss/pages/_document-list.scss */
+/* line 68, ../scss/pages/_document-list.scss */
 .document-type:hover {
+  color: #000000;
+  text-decoration: none;
   background-color: rgba(0, 202, 229, 0.1);
   border-color: #00cae5;
 }
 
-/* line 65, ../scss/pages/_document-list.scss */
+/* line 75, ../scss/pages/_document-list.scss */
 .document-type__icon {
   display: block;
   text-align: center;
