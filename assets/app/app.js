@@ -12,6 +12,7 @@ angular.module('madisonEditor', [
   'madisonEditor.routes',
   'madisonEditor.translate',
   'madisonEditor.documents',
+  'madisonEditor.users',
   'madisonEditor.auth',
 ])
 

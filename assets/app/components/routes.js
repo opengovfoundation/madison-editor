@@ -19,6 +19,14 @@ angular.module('madisonEditor.routes', [])
     templateUrl: '/app/documents/detail.html',
     controller: 'DocumentDetailController'
   })
+  .when('/users', {
+    templateUrl: '/app/users/list.html',
+    controller: 'UserListController'
+  })
+  .when('/useres/:id', {
+    templateUrl: '/app/users/detail.html',
+    controller: 'UserDetailController'
+  })
   .otherwise({redirectTo: '/documents'});
 
   // use the HTML5 History API
