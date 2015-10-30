@@ -15,7 +15,7 @@ app.filter('etherpadUrl', ['$sce', 'config', function ($sce, config) {
   return function(slug, extraParams) {
     var url = config.etherpad.url + '/p/' + slug;
     if(extraParams['copy']) {
-      url = config.etherpad.url + '/p/copy?old=' + extraParams['copy'] + '&new=' + slug;
+      url = config.etherpad.url + '/copy?old=' + extraParams['copy'] + '&new=' + slug;
     }
     return $sce.trustAsResourceUrl(url);
   };
