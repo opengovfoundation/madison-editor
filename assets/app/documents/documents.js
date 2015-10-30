@@ -38,7 +38,7 @@ app.controller("DocumentListController", [
   $scope.newDocument = '';
   $scope.createDocument = function(copyDocument){
     var doc = {};
-    if(copyDocument.title) {
+    if(copyDocument && copyDocument.title) {
       doc.title = $translate.instant('documents.list.new', {title: copyDocument.title});
     }
     else {
