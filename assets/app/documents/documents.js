@@ -8,8 +8,8 @@ var app = angular.module("madisonEditor.documents", ['madisonEditor.config']);
 // }]);
 
 app.controller("DocumentListController", [
-  '$scope', '$http', '$routeParams', '$location', 'growl', 'growlMessages',
-  function ($scope, $http, $routeParams, $location, growl, growlMessages) {
+  '$scope', '$http', '$routeParams', '$location', '$translate', 'growl', 'growlMessages',
+  function ($scope, $http, $routeParams, $location, $translate, growl, growlMessages) {
 
   $scope.documents = [];
   $http.get("/api/docs/")
@@ -19,8 +19,13 @@ app.controller("DocumentListController", [
     .error(function (data) {
       alert('Houston, we got a problem!');
     });
-
-  $scope.title = 'Untitled Document';
+  $http.get("/api/docs/", {'params': {'is_template': 1}})
+    .success(function (data) {
+      $scope.templates = data.documents;
+    })
+    .error(function (data) {
+      alert('Houston, we got a problem!');
+    });
 
   $scope.showForm = false;
   $scope.showCreateForm = function(){
@@ -31,15 +36,25 @@ app.controller("DocumentListController", [
   };
 
   $scope.newDocument = '';
-  $scope.createDocument = function(type){
-    if(!$scope.title){
-      $scope.title = 'Untitled Document';
+  $scope.createDocument = function(copyDocument){
+    var doc = {};
+    if(copyDocument.title) {
+      doc.title = $translate.instant('documents.list.new', {title: copyDocument.title});
     }
-    var doc = {document: {'title': $scope.title, 'type': type}};
+    else {
+      doc.title = $translate.instant('documents.list.new.blank');
+    }
 
     $http.post("/api/docs/", doc)
       .success(function (data) {
-        $location.path('/documents/' + data.document.id);
+        if(copyDocument) {
+          $location.path('/documents/' + data.document.id)
+            .search({'copy': copyDocument.id});
+        }
+        else {
+          $location.path('/documents/' + data.document.id);
+        }
+
       })
       .error(function (data) {
         // TODO -
@@ -90,6 +105,10 @@ app.controller("DocumentDetailController",
     };
     $scope.document = {};
     $scope.status = 'saved';
+    $scope.copyId = null;
+    if($routeParams['copy']) {
+      $scope.copyId = $routeParams['copy'];
+    }
 
     // Does the actual saving.
     var saveUpdates = function(newDocument, b, c) {

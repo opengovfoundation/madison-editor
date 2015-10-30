@@ -7,5 +7,8 @@ angular.module('madisonEditor.translate', ['pascalprecht.translate'])
     prefix: '/locales/',
     suffix: '.json'
   });
+  // $translateProvider.addInterpolation('$translateMessageFormatInterpolation');
+  // $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
+  $translateProvider.usePostCompiling(true);
   $translateProvider.use('en_US');
 });

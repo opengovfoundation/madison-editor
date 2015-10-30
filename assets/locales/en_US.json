@@ -16,9 +16,11 @@
   "documents.list.heading.updated": "Last Updated",
   "documents.list.heading.delete": "Delete",
   "documents.list.create": "Create New Document",
-  "documents.list.new": "New",
+  "documents.list.new": "New {{title}}",
+  "documents.list.new.blank": "New Blank Document",
   "documents.list.delete": "Delete Document",
   "documents.list.go": "Go",
+  "documents.list.label.template": "Template",
 
 
   "form.document.labels.title": "Title",

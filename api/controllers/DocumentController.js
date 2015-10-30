@@ -1,4 +1,24 @@
 module.exports = {
+  checkErrors: function (fields, req) {
+    for(var name in fields) {
+      var field = fields[name];
+      var value = req.param(name);
+      if(field.type === 'numeric') {
+        if(
+          !/^\d+$/.test(value) ||
+          (field.optional == true && typeof value !== 'undefined')
+        ) {
+          var message = field.label || field.name;
+          message += 'is not valid, must be integer';
+          return message;
+        }
+      }
+      // Add more types here.
+    }
+
+    return false;
+  },
+
   /**
    * index() - list all documents.
    */
@@ -8,10 +28,32 @@ module.exports = {
       return res.badRequest('Unauthorized.');
     }
 
-    var page=req.param('page', 1);
-    var limit=req.param('limit', null);
+    var isNumeric = /^\d+$/;
+    if(!isNumeric.test(req.session.user.id) && !isNumeric.test(req.param('id'))) {
+      return res.badRequest('id is not valid, must be integer.');
+    }
+
+    var errors = module.exports.checkErrors({
+      'page': {
+        'type': 'numeric',
+        'optional': true
+      },
+      'limit': {
+        'type': 'numeric',
+        'optional': true
+      },
+      'is_template': {
+        'type': 'numeric',
+        'optional': true
+      }
+    }, req);
+
+    var page = req.param('page', 1);
+
+    var limit = req.param('limit', null);
+
     var filters = {
-      'is_template': req.param('is_template', 0)
+      'is_template': req.param('is_template', null)
     };
 
     // Use a promise to get both queries in parallel.

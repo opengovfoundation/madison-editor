@@ -42,15 +42,21 @@ module.exports = {
       next();
   },
 
-  findByUser: function(userId, page, limit) {
+  findByUser: function(userId, page, limit, filters) {
 
     var query = 'SELECT docs.* FROM ' + this.tableName +
       ' LEFT JOIN doc_user ON docs.id = doc_user.doc_id' +
       ' LEFT JOIN doc_group ON docs.id = doc_group.doc_id' +
       ' LEFT JOIN group_members ON group_members.group_id = doc_group.group_id' +
       ' WHERE (doc_user.user_id = ' + userId +
-      ' OR group_members.user_id = ' + userId + ')' +
-      ' ORDER BY docs.updated_at DESC';
+      ' OR group_members.user_id = ' + userId + ')';
+
+    var filterQuery = module.exports.parseFilters(filters);
+    if(filterQuery.length > 0) {
+      query += ' AND ' + filterQuery;
+    }
+
+    query += ' ORDER BY docs.updated_at DESC';
 
     if(limit && page) {
       var offset = limit * (page - 1);
@@ -61,7 +67,7 @@ module.exports = {
     return documentQuery(query);
   },
 
-  countByUser: function(userId)
+  countByUser: function(userId, filters)
   {
     var query = 'SELECT COUNT(*) AS count FROM ' + this.tableName +
       ' LEFT JOIN doc_user ON docs.id = doc_user.doc_id' +
@@ -69,6 +75,11 @@ module.exports = {
       ' LEFT JOIN group_members ON group_members.group_id = doc_group.group_id' +
       ' WHERE (doc_user.user_id = ' + userId +
       ' OR group_members.user_id = ' + userId + ')';
+
+    var filterQuery = module.exports.parseFilters(filters);
+    if(filterQuery.length > 0) {
+      query += ' AND ' + filterQuery;
+    }
 
     var countQuery = Promise.promisify(this.query);
 
@@ -87,5 +98,13 @@ module.exports = {
 
     var documentQuery = Promise.promisify(this.query);
     return documentQuery(query);
+  },
+
+  parseFilters: function(filters) {
+    var query = [];
+    if(typeof filters['is_template'] !== 'undefined' && filters['is_template'] !== null) {
+      query.push('is_template = ' + filters['is_template']);
+    }
+    return query.join(' AND ');
   }
 };

@@ -11,11 +11,19 @@
         <h2>{{ "documents.list.create" | translate }}</h2>
       </header>
 
-      <!-- Temporarily hardcoding these -->
-      <a class="document-type document-type--resolution" ng-click="createDocument('resolution')">
-        <span class="document-type__icon resolution__icon"></span>
-        <span class="document-type__title">{{ "documents.list.new" | translate }} Resolution</span>
-      </a>
+      <div ng-repeat="template in templates" class="document-type document-type--{{template.slug}}">
+        <a ng-click="createDocument(template)">
+          <span class="document-type__icon document-type__icon__{{template.slug}}"></span>
+          <span class="document-type__title">{{ "documents.list.new" | translate:'{title:template.title}' }} </span>
+        </a>
+      </div>
+
+      <div class="document-type document-type--blank">
+        <a ng-click="createDocument()">
+          <span class="document-type__icon resolution__icon"></span>
+          <span class="document-type__title">{{ "documents.list.new.blank" | translate }}</span>
+        </a>
+      </div>
 
     </div>
   </section>
@@ -32,6 +40,7 @@
       <tr ng-repeat="doc in documents" class="document">
         <td class="document__title">
           <a href="/documents/{{doc.id}}">{{doc.title}}</a>
+          <span class="document__template" ng-if="doc.is_template">{{ "documents.list.label.template" | translate }}</span>
         </td>
         <td class="document__date-updated">
              {{ doc.updated_at | date : 'medium' }}

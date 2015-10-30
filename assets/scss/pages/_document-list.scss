@@ -53,6 +53,11 @@
   }
 }
 
+.document__template {
+  font-size: 0.7 * $font-size-base;
+  text-transform: uppercase;
+}
+
 .document-type {
   display: inline-block;
   text-align: center;
@@ -72,11 +77,11 @@
     border-color: $blue;
   }
 }
-  .document-type__icon {
-    @extend .fa;
-    @extend .fa-file-text-o;
-    display: block;
-    text-align: center;
-    font-size: $line-height-computed * 2;
-    margin-bottom: 10px;
-  }
+.document-type__icon {
+  @extend .fa;
+  @extend .fa-file-text-o;
+  display: block;
+  text-align: center;
+  font-size: $line-height-computed * 2;
+  margin-bottom: 10px;
+}
