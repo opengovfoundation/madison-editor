@@ -28,6 +28,12 @@ module.exports = {
     },
     deleted_at: {
       type: 'datetime'
+    },
+    private: {
+      type: 'boolean'
+    },
+    is_template: {
+      type: 'boolean'
     }
   },
 
