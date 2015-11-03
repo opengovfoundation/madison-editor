@@ -12595,6 +12595,7 @@ section.login {
 /* line 61, ../scss/pages/_document-list.scss */
 .document-type {
   display: inline-block;
+  vertical-align: top;
   text-align: center;
   width: 130px;
   padding: 15px 10px;
@@ -12605,7 +12606,7 @@ section.login {
   transition: all 0.25s cubic-bezier(0.62, 0.28, 0.23, 0.99);
   color: #000000;
 }
-/* line 73, ../scss/pages/_document-list.scss */
+/* line 74, ../scss/pages/_document-list.scss */
 .document-type:hover {
   color: #000000;
   text-decoration: none;
@@ -12613,7 +12614,7 @@ section.login {
   border-color: #00cae5;
 }
 
-/* line 80, ../scss/pages/_document-list.scss */
+/* line 81, ../scss/pages/_document-list.scss */
 .document-type__icon {
   display: block;
   text-align: center;
