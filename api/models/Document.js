@@ -50,7 +50,7 @@ module.exports = {
 
   findByUser: function(userId, page, limit, filters) {
 
-    var query = 'SELECT docs.* FROM ' + this.tableName +
+    var query = 'SELECT DISTINCT docs.* FROM ' + this.tableName +
       ' LEFT JOIN doc_user ON docs.id = doc_user.doc_id' +
       ' LEFT JOIN doc_group ON docs.id = doc_group.doc_id' +
       ' LEFT JOIN group_members ON group_members.group_id = doc_group.group_id' +
@@ -75,7 +75,7 @@ module.exports = {
 
   countByUser: function(userId, filters)
   {
-    var query = 'SELECT COUNT(*) AS count FROM ' + this.tableName +
+    var query = 'SELECT COUNT(DISTINCT docs.id) AS count FROM ' + this.tableName +
       ' LEFT JOIN doc_user ON docs.id = doc_user.doc_id' +
       ' LEFT JOIN doc_group ON docs.id = doc_group.doc_id' +
       ' LEFT JOIN group_members ON group_members.group_id = doc_group.group_id' +
