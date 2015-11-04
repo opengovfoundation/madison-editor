@@ -73,9 +73,11 @@
 
   &:hover {
     color: $black;
-    text-decoration: none;
     background-color: rgba($blue, 0.1);
     border-color: $blue;
+  }
+  a:hover {
+    text-decoration: none;
   }
 }
 .document-type__icon {

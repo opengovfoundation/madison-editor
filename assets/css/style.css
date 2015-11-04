@@ -12609,12 +12609,15 @@ section.login {
 /* line 74, ../scss/pages/_document-list.scss */
 .document-type:hover {
   color: #000000;
-  text-decoration: none;
   background-color: rgba(0, 202, 229, 0.1);
   border-color: #00cae5;
 }
+/* line 79, ../scss/pages/_document-list.scss */
+.document-type a:hover {
+  text-decoration: none;
+}
 
-/* line 81, ../scss/pages/_document-list.scss */
+/* line 83, ../scss/pages/_document-list.scss */
 .document-type__icon {
   display: block;
   text-align: center;
