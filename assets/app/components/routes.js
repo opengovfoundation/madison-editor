@@ -23,7 +23,7 @@ angular.module('madisonEditor.routes', [])
     templateUrl: '/app/users/list.html',
     controller: 'UserListController'
   })
-  .when('/useres/:id', {
+  .when('/users/:id', {
     templateUrl: '/app/users/detail.html',
     controller: 'UserDetailController'
   })
