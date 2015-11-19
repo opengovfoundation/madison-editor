@@ -11,7 +11,7 @@
  */
 
 var express = require('../../node_modules/sails/node_modules/express'),
-MySQLSessionStore = require('connect-mysql-session');
+MySQLSessionStore = require('node-laravel-mysql-session');
 
 module.exports = {
 
