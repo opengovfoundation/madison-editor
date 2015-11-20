@@ -35,7 +35,7 @@ module.exports.session = {
 
   cookie: {
     maxAge: 24 * 60 * 60 * 1000,
-    domain: '.madison.localhost'
+    domain: '.mymadison.io'
   }
 
   /***************************************************************************
