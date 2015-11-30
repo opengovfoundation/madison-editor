@@ -123,7 +123,12 @@ module.exports = {
       User.findOne({ id: req.session.passport.user.id })
         .exec(function(error, user) {
         if(user) {
-          return res.ok(user.toJSON());
+          user.display_name = user.fname + ' ' + user.lname;
+
+          return res.json({
+            error: error,
+            user: user
+          });
         }
         else {
           return res.forbidden();
@@ -150,7 +155,10 @@ module.exports = {
           return res.forbidden();
       }
 
-      return res.json(req.session.passport.user);
+      return res.json({
+        user: req.session.passport.user,
+        error: false
+      });
     }
     else {
       return res.forbidden();
