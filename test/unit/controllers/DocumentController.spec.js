@@ -1,6 +1,9 @@
+require('../../bootstrap.test.js');
+
 var sinon = require('sinon');
 var assert = require('assert');
-var rewire = require("rewire");
+var rewire = require('rewire');
+
 global.Promise = require(path('services/Promise.js'));
 
 describe('DocumentController', function() {
@@ -23,10 +26,11 @@ describe('DocumentController', function() {
       // * We assume paginate() is chained onto find().
 
       global.Document = {
+        dummy: true,
         find: function() {
           return this;
         },
-        paginate: function() {
+        findByUser: function() {
           // store these promises for later.
           return new Promise(function(resolve, reject)
           {
@@ -41,29 +45,43 @@ describe('DocumentController', function() {
             countPromise.resolve = resolve;
             countPromise.reject = reject;
           });
+        },
+        countByUser: function() {
+          // store these promises for later.
+          return new Promise(function(resolve, reject)
+          {
+            countPromise.resolve = resolve;
+            countPromise.reject = reject;
+          });
         }
       }
 
-      // Setup our spies.
-      sinon.spy(global.Document, 'find');
-      sinon.spy(global.Document, 'count');
+
+      // Setup our model spies.
+      sinon.spy(Document, 'find');
+      sinon.spy(Document, 'count');
+      sinon.spy(Document, 'findByUser');
+      sinon.spy(Document, 'countByUser');
 
       // Mock our request and response objects.
       request = {
-        param: sinon.spy()
-      };
-      // The response calls done() when it's done.
-      response = {
-        badRequest: function() {
-        },
-        json: function() {
+        param: sinon.stub(),
+        session: {
+          user: {
+            id: 1
+          }
         }
       };
-      sinon.spy(response, 'badRequest');
-      sinon.spy(response, 'json');
+
+      response = {
+        json: sinon.stub(),
+        badRequest: sinon.stub()
+      };
 
       // Setup our controller for testing.
       DocumentController = require(path('/controllers/DocumentController'));
+      DocumentController.index(request, response);
+
     });
 
 
@@ -87,8 +105,8 @@ describe('DocumentController', function() {
 
       DocumentController.index(request, response)
         .finally(function(findResult, countResult) {
-        assert(Document.find.called, 'calls Document.find()');
-        assert(Document.count.called, 'calls Document.count()');
+        assert(Document.findByUser.called, 'calls Document.findByUser()');
+        assert(Document.countByUser.called, 'calls Document.countByUser()');
         assert(response.json.called, 'calls response.json');
         assert(response.json.args[0][0].count === countTestResult,
           'Gets the right count');
@@ -99,13 +117,13 @@ describe('DocumentController', function() {
       });
 
       findPromise.resolve(findTestResult);
-      countPromise.resolve(countTestResult);
+      countPromise.resolve({count: countTestResult});
     });
 
     it('should send a badRequest on find error', function (done) {
       DocumentController.index(request, response).finally(function() {
-        assert(Document.find.called, 'calls Document.find()');
-        assert(Document.count.called, 'calls Document.count()');
+        assert(Document.findByUser.called, 'calls Document.findByUser()');
+        assert(Document.countByUser.called, 'calls Document.countByUser()');
         assert(response.badRequest.called, 'calls response.badRequest');
         done();
       });
@@ -116,8 +134,8 @@ describe('DocumentController', function() {
 
     it('should send a badRequest on count error', function (done) {
       DocumentController.index(request, response).finally(function() {
-        assert(Document.find.called, 'calls Document.find()');
-        assert(Document.count.called, 'calls Document.count()');
+        assert(Document.findByUser.called, 'calls Document.findByUser()');
+        assert(Document.countByUser.called, 'calls Document.countByUser()');
         assert(response.badRequest.called, 'calls response.badRequest');
         done();
       });
