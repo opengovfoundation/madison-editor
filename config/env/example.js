@@ -37,7 +37,7 @@ module.exports = {
   session: {
     cookie: {
       domain: '.mymadison.io'
-    }
+    },
     store: new (MySQLSessionStore(express))('database', 'username',
       'password', { host: 'localhost'})
   }
