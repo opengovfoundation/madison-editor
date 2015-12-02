@@ -2,7 +2,11 @@
   "browser": true,
   "esnext": true,
   "globals": {
-    "module": true
+    "module": true,
+    "require": true,
+    "console": true,
+    "__dirname": true,
+    "global": true
   },
   "globalstrict": false,
   "quotmark": true,
