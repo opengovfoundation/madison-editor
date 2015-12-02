@@ -8,3 +8,4 @@ node_js:
   - "iojs"
 before_script:
   - npm install grunt-cli -g
+sudo: false
