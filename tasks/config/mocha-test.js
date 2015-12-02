@@ -11,7 +11,7 @@
  */
 
 module.exports = function (grunt) {
-	
+
 	grunt.config.set('mochaTest', {
 		dev: {
 			// options: {
