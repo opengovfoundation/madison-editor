@@ -13,6 +13,11 @@
 var express = require('../../node_modules/sails/node_modules/express'),
 MySQLSessionStore = require('node-laravel-mysql-session');
 
+var database  = 'database',
+    user      = 'user',
+    password  = 'password',
+    port      = 3306;
+
 module.exports = {
 
   /***************************************************************************
@@ -24,9 +29,9 @@ module.exports = {
     mysqlServer: {
       adapter: 'sails-mysql',
       host: 'localhost',
-      database: 'database',
-      user: 'username',
-      password: 'password'
+      database: database,
+      user: user,
+      password: password
     },
     etherpad: {
       apikey: 'apikey',
@@ -38,8 +43,7 @@ module.exports = {
     cookie: {
       domain: '.mymadison.io'
     },
-    store: new (MySQLSessionStore(express))('database', 'username',
-      'password', { host: 'localhost'})
+    store: new (MySQLSessionStore(express))(database, user,
+      password, { host: 'localhost', port: port, connectionLimit: 0, pool: false})
   }
-
 };
