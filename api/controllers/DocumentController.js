@@ -48,6 +48,8 @@ module.exports = {
       }
     }, req);
 
+    // TODO: Send bad request on errors.
+
     var page = req.param('page', 1);
 
     var limit = req.param('limit', null);
@@ -83,12 +85,13 @@ module.exports = {
       return res.badRequest('Unauthorized.');
     }
 
+    // TODO: use error check function here instead.
     var isNumeric = /^\d+$/;
     if(!isNumeric.test(req.session.user.id) || !isNumeric.test(req.param('id'))) {
       return res.badRequest('Id is not valid.');
     }
 
-    Document.getByUser(req.param('id'), req.session.user.id).then(function(document) {
+    return Document.getByUser(req.param('id'), req.session.user.id).then(function(document) {
       return res.json({
         error: false,
         document: document[0]
@@ -110,25 +113,36 @@ module.exports = {
     }
     // We need a slug.
     if(!doc.slug){
-        doc.slug = Uuid.v4();
+      doc.slug = Uuid.v4();
     }
 
-    Document.create(doc, function(error, document) {
-      DocUser.create({
-        user_id: req.session.user.id,
-        doc_id: document.id
-      }, function(error, doc_user) {
-        // Create the etherpad for this document.
-        EtherpadService.createPad({padID: document.id});
+    // Create a new promise to resolve when everything is created.
+    var promise = new Promise(function(resolve, reject) {
+      Document.create(doc).then(function(document) {
+        DocUser.create({
+          user_id: req.session.user.id,
+          doc_id: document.id
+        }).then(function(error, doc_user) {
+          // Create the etherpad for this document.
+          EtherpadService.createPad({padID: document.id});
 
-        return res.json({
-          error: error,
-          document: document
+          res.json({
+            error: null,
+            document: document
+          });
+
+          resolve();
+        }).catch(function(error) {
+          res.badRequest(error);
+          reject(error + ' Unable to create document owner');
         });
+      }).catch(function(error) {
+        res.badRequest(error);
+        reject(error + ' Unable to create document');
       });
-
-
     });
+
+    return promise;
   },
   /**
    * update() - edit a document.
