@@ -36,6 +36,7 @@
     "validator": "^3.27.0"
   },
   "devDependencies": {
+    "grunt-mocha-test": "^0.12.7",
     "istanbul": "~0.3.5",
     "mocha": "~2.1.0",
     "rewire": "~2.1.4",
