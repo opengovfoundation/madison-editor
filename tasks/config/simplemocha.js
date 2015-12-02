@@ -1,25 +1,27 @@
 /**
- * Mocha **server-side** test runner
+ * SimpleMocha **server-side** test runner
  *
  * ---------------------------------------------------------------
  *
  * Run the mocha test runner for our test suite
  *
  * For usage docs see:
- * 		https://github.com/pghalliday/grunt-mocha-test
+ * 		https://github.com/yaymukund/grunt-simple-mocha
  *
  */
 
 module.exports = function (grunt) {
 	
-	grunt.config.set('mochaTest', {
+	grunt.config.set('simplemocha', {
 		dev: {
 			// options: {
 			// 	reporter: 'spec'
 			// },
-			src: ['test/**/*']
+			all: {
+				src: ['test/**/*']
+			}
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-mocha-test');
+	grunt.loadNpmTasks('grunt-simple-mocha');
 };
