@@ -1,0 +1,11 @@
+{
+  "browser": true,
+  "esnext": true,
+  "globals": {
+    "module": true
+  },
+  "globalstrict": false,
+  "quotmark": true,
+  "undef": true,
+  "unused": true
+}
