@@ -22,46 +22,27 @@ describe('DocumentController', function() {
       // * We must mock the Document object to make sure
       //   it's being called properly.
       // * Wolfpack doesn't work.
-      // * We need to return promises.
-      // * We assume paginate() is chained onto find().
+      // * We need to return promises to resolve after the
+      //   main controller method is run.
+      // * We want to spy on the methods.
+
 
       global.Document = {
         dummy: true,
-        find: function() {
-          return this;
-        },
-        findByUser: function() {
-          // store these promises for later.
-          return new Promise(function(resolve, reject)
-          {
+        findByUser: sinon.stub().returns(
+          new Promise(function(resolve, reject) {
             findPromise.resolve = resolve;
             findPromise.reject = reject;
-          });
-        },
-        count: function() {
-          // store these promises for later.
-          return new Promise(function(resolve, reject)
-          {
+          })
+        ),
+        countByUser: sinon.stub().returns(
+          new Promise(function(resolve, reject) {
             countPromise.resolve = resolve;
             countPromise.reject = reject;
-          });
-        },
-        countByUser: function() {
-          // store these promises for later.
-          return new Promise(function(resolve, reject)
-          {
-            countPromise.resolve = resolve;
-            countPromise.reject = reject;
-          });
-        }
+          })
+        )
       }
 
-
-      // Setup our model spies.
-      sinon.spy(Document, 'find');
-      sinon.spy(Document, 'count');
-      sinon.spy(Document, 'findByUser');
-      sinon.spy(Document, 'countByUser');
 
       // Mock our request and response objects.
       request = {
@@ -80,7 +61,6 @@ describe('DocumentController', function() {
 
       // Setup our controller for testing.
       DocumentController = require(path('/controllers/DocumentController'));
-      DocumentController.index(request, response);
 
     });
 
@@ -95,14 +75,17 @@ describe('DocumentController', function() {
         done();
       });
 
+      // Resolve with no values, we don't care about pass or fail here.
       findPromise.resolve();
       countPromise.resolve();
     });
 
     it('should call find & count', function (done) {
+      // Set our expected values.
       var countTestResult = Math.floor((Math.random() * 10));
       var findTestResult = Math.floor((Math.random() * 10));
 
+      // Make sure our values are passed through.
       DocumentController.index(request, response)
         .finally(function(findResult, countResult) {
         assert(Document.findByUser.called, 'calls Document.findByUser()');
@@ -116,6 +99,7 @@ describe('DocumentController', function() {
         done();
       });
 
+      // Resolve with the values we set previously.
       findPromise.resolve(findTestResult);
       countPromise.resolve({count: countTestResult});
     });
@@ -128,6 +112,7 @@ describe('DocumentController', function() {
         done();
       });
 
+      // Reject the find, which is an error.
       findPromise.reject();
       countPromise.resolve();
     });
@@ -140,6 +125,7 @@ describe('DocumentController', function() {
         done();
       });
 
+      // Reject the count, which is an error.
       findPromise.resolve();
       countPromise.reject();
     });
