@@ -149,28 +149,30 @@ module.exports = {
    */
   update: function(req, res) {
 
-    Document.findOne({id: req.param('id')}).exec(function(error, document) {
-      if(document){
-        // Todo: error checking.
-        var newDoc = req.param('document');
+    var promise = new Promise(function(resolve, reject) {
+      Document.findOne({id: req.param('id')}).then(function(document) {
 
-        for(param in newDoc) {
-          document[param] = newDoc[param];
-        }
-        document.save(function(error, result) {
-          res.json({
-            error: error,
-            result: result
+          // Todo: error checking.
+          var newDoc = req.param('document');
+
+          for(param in newDoc) {
+            document[param] = newDoc[param];
+          }
+          document.save(function(error, result) {
+            res.json({
+              error: error,
+              document: document
+            });
+
+            resolve();
           });
-        });
-      }
-      else {
-        return res.json({
-          error: error,
-          document: document
-        });
-      }
+      }).catch(function(error) {
+        res.badRequest(error);
+        reject(error);
+      });
     });
+
+    return promise;
   },
   /**
    * destroy() - remove a document.

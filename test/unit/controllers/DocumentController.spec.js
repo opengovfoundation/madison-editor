@@ -38,6 +38,7 @@ describe('DocumentController', function() {
       this.countByUser = sinon.stub().returns( newPromise('count') );
       this.getByUser = sinon.stub().returns( newPromise('get') );
       this.create = sinon.stub().returns( newPromise('create') );
+      this.findOne = sinon.stub().returns( newPromise('findOne') );
     };
     global.Document = new Document();
 
@@ -239,11 +240,50 @@ describe('DocumentController', function() {
       var testDoc = 'document';
 
       DocumentController.create(request, response).finally(function() {
+        assert(Document.create.called, 'calls Document.create()');
+        assert(DocUser.create.called, 'calls DocUser.create()');
+        assert(EtherpadService.createPad.called, 'creates an Etherpad pad');
+        assert(response.json.called, 'calls response.json');
+        assert(response.json.args[0][0].document === testDoc,
+          'sends a response document.');
         done();
       });
 
-      global.Document.promises.create.resolve(true);
+      global.Document.promises.create.resolve(testDoc);
       global.DocUser.promises.create.resolve(true);
+    });
+
+    it('should send a badRequest on Document.create error', function (done) {
+      DocumentController.create(request, response).catch(function() {
+        // Do nothing.
+      }).finally(function() {
+        assert(Document.create.called, 'calls Document.create()');
+        assert(!DocUser.create.called, 'doesn\'t call DocUser.create()');
+        assert(!EtherpadService.createPad.called, 'doesn\'t create a pad');
+        assert(response.badRequest.called, 'calls response.badRequest');
+        done();
+      });
+
+      // Reject the find, which is an error.
+      global.Document.promises.create.reject(false);
+    });
+
+    it('should send a badRequest on DocUser.create error', function (done) {
+      var testDoc = 'document';
+
+      DocumentController.create(request, response).catch(function() {
+        // Do nothing.
+      }).finally(function() {
+        assert(Document.create.called, 'calls Document.create()');
+        assert(DocUser.create.called, 'calls DocUser.create()');
+        assert(!EtherpadService.createPad.called, 'doesn\'t create a pad');
+        assert(response.badRequest.called, 'calls response.badRequest');
+        done();
+      });
+
+      // Reject the count, which is an error.
+      global.Document.promises.create.resolve(testDoc);
+      global.DocUser.promises.create.reject(false);
     });
   });
 });
