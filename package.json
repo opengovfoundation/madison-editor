@@ -20,6 +20,7 @@
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-uglify": "~0.4.0",
     "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-test": "^0.12.7",
     "grunt-sails-linker": "~0.9.5",
     "grunt-sync": "~0.0.4",
     "include-all": "~0.1.3",

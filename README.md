@@ -1,6 +1,8 @@
 # Madison Editor
 
-The Madison Editor is our main document drafting platform for [Madison](https://github.com/opengovfoundation/madison).  It allows lawmakers to create new legislation and share it for collaboration with their partners, before publishing it on the main Madison site.  
+[![Build Status](https://travis-ci.org/opengovfoundation/madison-editor.svg?branch=issue48)](https://travis-ci.org/opengovfoundation/madison-editor)
+
+The Madison Editor is our main document drafting platform for [Madison](https://github.com/opengovfoundation/madison).  It allows lawmakers to create new legislation and share it for collaboration with their partners, before publishing it on the main Madison site.
 
 This is a [Node](https://nodejs.org/en/) + [Sails.js](http://sailsjs.org/) application with [AngularJS](https://angularjs.org/) on the frontend, running [Etherpad](https://github.com/ether/etherpad-lite) as the main editing tool.
 
