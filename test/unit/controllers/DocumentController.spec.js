@@ -314,17 +314,21 @@ describe('DocumentController', function() {
   });
 
   describe('update()', function() {
+    var documentInstance, testDoc;
 
-    it('should send OK for a good request', function (done) {
-      var documentInstance = new StubObject(['save']);
+    beforeEach(function() {
+      documentInstance = new StubObject(['save']);
 
       request.param.withArgs('id').returns(17);
 
-      var testDoc = {
+      testDoc = {
         title: 'Our New Title',
         slug: 'my-test-slug'
       };
       request.param.withArgs('document').returns(testDoc);
+    });
+
+    it('should send OK for a good request', function (done) {
 
       DocumentController.update(request, response).finally(function() {
         assert(Document.findOne.called, 'calls Document.create()');
@@ -348,6 +352,37 @@ describe('DocumentController', function() {
       global.Document.promises.findOne.resolve(documentInstance);
       documentInstance.promises.save.resolve();
     });
+/////// TODO:
 
+    it('should send a badRequest on Document.findOne error', function (done) {
+      DocumentController.update(request, response).catch(function() {
+        // Do nothing.  We need this here to catch the rejection though.
+      }).finally(function() {
+        assert(Document.findOne.called, 'calls Document.findOne()');
+        assert(!documentInstance.save.called, 'doesn\'t save');
+        assert(response.badRequest.called, 'calls response.badRequest');
+        done();
+      });
+
+      // Reject the document update, which is an error.
+      global.Document.promises.findOne.reject(documentInstance);
+    });
+
+    it('should send a badRequest on DocUser.create error', function (done) {
+      var testDoc = 'document';
+
+      DocumentController.update(request, response).catch(function() {
+        // Do nothing.  We need this here to catch the rejection though
+      }).finally(function() {
+        assert(Document.findOne.called, 'calls Document.findOne()');
+        assert(documentInstance.promises.save, 'tries to save');
+        assert(response.badRequest.called, 'calls response.badRequest');
+        done();
+      });
+
+      // Reject the document save, which is an error.
+      global.Document.promises.findOne.resolve(documentInstance);
+      documentInstance.promises.save.reject();
+    });
   });
 });

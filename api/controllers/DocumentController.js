@@ -152,26 +152,25 @@ module.exports = {
     var promise = new Promise(function(resolve, reject) {
       // TODO: getByUser instead of findOne
       Document.findOne({id: req.param('id')}).then(function(document) {
+        // Todo: error checking.
+        var newDoc = req.param('document');
 
-          // Todo: error checking.
-          var newDoc = req.param('document');
+        for(param in newDoc) {
+          document[param] = newDoc[param];
+        }
 
-          for(param in newDoc) {
-            document[param] = newDoc[param];
-          }
+        document.save().then(function() {
 
-          document.save().then(function() {
-
-            res.json({
-              error: null,
-              document: document
-            });
-
-            resolve();
-          }).catch(function(error) {
-            res.badRequest(error);
-            reject(error);
+          res.json({
+            error: null,
+            document: document
           });
+
+          resolve();
+        }).catch(function(error) {
+          res.badRequest(error);
+          reject(error);
+        });
       }).catch(function(error) {
         res.badRequest(error);
         reject(error);
