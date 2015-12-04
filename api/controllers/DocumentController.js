@@ -148,8 +148,9 @@ module.exports = {
    * update() - edit a document.
    */
   update: function(req, res) {
-
+    // TODO: Error checking
     var promise = new Promise(function(resolve, reject) {
+      // TODO: getByUser instead of findOne
       Document.findOne({id: req.param('id')}).then(function(document) {
 
           // Todo: error checking.
@@ -158,13 +159,18 @@ module.exports = {
           for(param in newDoc) {
             document[param] = newDoc[param];
           }
-          document.save(function(error, result) {
+
+          document.save().then(function() {
+
             res.json({
-              error: error,
+              error: null,
               document: document
             });
 
             resolve();
+          }).catch(function(error) {
+            res.badRequest(error);
+            reject(error);
           });
       }).catch(function(error) {
         res.badRequest(error);
