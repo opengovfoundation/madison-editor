@@ -3,9 +3,9 @@
 
     <div class="save-status">
       <span class="icon"></span>
-      <span ng-if="status == 'saved'" class="saved">{{ "form.state.saved" | translate }}</span>
-      <span ng-if="status == 'saving'" class="saving">{{ "form.state.saving" | translate }}</span>
-      <span ng-if="status == 'unsaved'" class="unsaved">{{ "form.state.unsaved" | translate }}</span>
+      <span ng-if="status == 'saved'" class="saved" translate="admin.form.state.saved"></span>
+      <span ng-if="status == 'saving'" class="saving" translate="admin.form.state.saving"></span>
+      <span ng-if="status == 'unsaved'" class="unsaved" translate="admin.form.state.unsaved"></span>
     </div>
 
     <div class="error" ng-show="form.errors.general">
@@ -13,23 +13,23 @@
     </div>
 
     <fieldset>
-      <label for="doc.title">{{ "form.document.labels.title" | translate }}</label>
+      <label for="doc.title" translate="admin.form.document.labels.title"></label>
       <input id="doc.title" ng-model="document.title" />
       <span class="error" ng-show="form.errors.title">{{ form.errors.title | translate }}</span>
     </fieldset>
     <fieldset>
-      <label for="doc.slug">{{ "form.document.labels.url" | translate }}</label>
+      <label for="doc.slug" translate="admin.form.document.labels.url"></label>
       https://mymadison.io/docs/<input ng-model="document.slug" />
       <span class="error" ng-show="form.errors.slug">{{ form.errors.slug | translate }}</span>
     </fieldset>
     <fieldset>
-      <label for="doc.private">{{ "form.document.labels.private" | translate }}</label>
+      <label for="doc.private" translate="admin.form.document.labels.private"></label>
       <input type="checkbox" name="private" id="private"
         ng-model="document.private" ng-checked="document.private" />
       <span class="error" ng-show="form.errors.private">{{ form.errors.private | translate }}</span>
     </fieldset>
     <fieldset>
-      <label for="doc.is_template">{{ "form.document.labels.is_template" | translate }}</label>
+      <label for="doc.is_template" translate="admin.form.document.labels.is_template"></label>
       <input type="checkbox" name="is_template" id="is_template"
           ng-model="document.is_template" ng-checked="document.is_template" />
       <span class="error" ng-show="form.errors.is_template">{{ form.errors.is_template | translate }}</span>

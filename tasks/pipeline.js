@@ -41,6 +41,8 @@ var jsFilesToInject = [
   'bower_components/angular-growl-v2/build/angular-growl.min.js',
   'bower_components/angular-translate/angular-translate.min.js',
   'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
+  '/bower_components/messageformat/messageformat.js',
+  '/bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.min.js',
   'app/**/*.js',
 ];
 
