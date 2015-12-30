@@ -11,17 +11,24 @@
         <h2 translate="admin.documents.list.create"></h2>
       </header>
 
-      <div ng-repeat="template in templates" class="document-type document-type--{{template.slug}}">
+      <div ng-repeat="template in templates"
+        class="document-type document-type--{{template.slug}}">
         <a ng-click="createDocument(template)">
-          <span class="document-type__icon document-type__icon__{{template.slug}}"></span>
-          <span class="document-type__title">{{ "documents.list.new" | translate:'{title:template.title}' }} </span>
+          <span
+           class="document-type__icon document-type__icon__{{template.slug}}"
+          ></span>
+          <span class="document-type__title"
+            translate="admin.documents.list.new"
+            translate-values="{title:template.title}"
+            translate-interpolation="messageformat""></span>
         </a>
       </div>
 
       <div class="document-type document-type--blank">
         <a ng-click="createDocument()">
           <span class="document-type__icon resolution__icon"></span>
-          <span class="document-type__title" translate="admin.documents.list.new.blank"></span>
+          <span class="document-type__title"
+            translate="admin.documents.list.new.blank"></span>
         </a>
       </div>
 
@@ -31,23 +38,29 @@
   <table class="documents-list">
     <thead>
       <tr>
-        <th class="document__title" translate="admin.documents.list.heading.title"></th>
-        <th class="document__date-updated" translate="admin.documents.list.heading.updated"></th>
-        <th class="document__delete" translate="admin.documents.list.heading.delete"></th>
+        <th class="document__title"
+          translate="admin.documents.list.heading.title"></th>
+        <th class="document__date-updated"
+          translate="admin.documents.list.heading.updated"></th>
+        <th class="document__delete"
+          translate="admin.documents.list.heading.delete"></th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="doc in documents" class="document">
         <td class="document__title">
           <a href="/documents/{{doc.id}}">{{doc.title}}</a>
-          <span class="document__template" ng-if="doc.is_template" translate="admin.documents.list.label.template"></span>
+          <span class="document__template" ng-if="doc.is_template"
+            translate="admin.documents.list.label.template"></span>
         </td>
         <td class="document__date-updated">
              {{ doc.updated_at | date : 'medium' }}
         </td>
-        <td class="document__delete" ng-class="{open: deleteConfirmOpen[doc.id]}">
+        <td class="document__delete"
+          ng-class="{open: deleteConfirmOpen[doc.id]}">
           <button type="button" class="button button-delete"
-            ng-click="openDeleteConfirm(doc)"><span translate="admin.documents.list.delete"></span></button>
+            ng-click="openDeleteConfirm(doc)"
+            ><span translate="admin.documents.list.delete"></span></button>
           <div class="confirm-delete">
             {{ "form.action.confirm_message" | translate }}
             <button class="button button-confirm" type="submit"

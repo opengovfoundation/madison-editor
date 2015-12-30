@@ -14,27 +14,27 @@
 
     <fieldset>
       <label for="doc.title" translate="admin.form.document.labels.title"></label>
-      <input id="doc.title" ng-model="document.title" />
+      <input id="doc.title" ng-model="model.title" />
       <span class="error" ng-show="form.errors.title">{{ form.errors.title | translate }}</span>
     </fieldset>
     <fieldset>
       <label for="doc.slug" translate="admin.form.document.labels.url"></label>
-      https://mymadison.io/docs/<input ng-model="document.slug" />
+      https://mymadison.io/docs/<input ng-model="model.slug" />
       <span class="error" ng-show="form.errors.slug">{{ form.errors.slug | translate }}</span>
     </fieldset>
     <fieldset>
       <label for="doc.private" translate="admin.form.document.labels.private"></label>
       <input type="checkbox" name="private" id="private"
-        ng-model="document.private" ng-checked="document.private" />
+        ng-model="model.private" ng-checked="model.private" />
       <span class="error" ng-show="form.errors.private">{{ form.errors.private | translate }}</span>
     </fieldset>
     <fieldset>
       <label for="doc.is_template" translate="admin.form.document.labels.is_template"></label>
       <input type="checkbox" name="is_template" id="is_template"
-          ng-model="document.is_template" ng-checked="document.is_template" />
+          ng-model="model.is_template" ng-checked="model.is_template" />
       <span class="error" ng-show="form.errors.is_template">{{ form.errors.is_template | translate }}</span>
     </fieldset>
   </header>
 
-	<iframe src="{{ document.id | etherpadUrl:{copy:copyId} }}" style="width: 100%; height: 600px;"></iframe>
+	<iframe src="{{ model.id | etherpadUrl:{copy:copyId} }}" style="width: 100%; height: 600px;"></iframe>
 </div>

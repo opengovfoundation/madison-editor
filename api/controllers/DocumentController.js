@@ -92,10 +92,7 @@ module.exports = {
     }
 
     return Document.getByUser(req.param('id'), req.session.user.id).then(function(document) {
-      return res.json({
-        error: false,
-        document: document[0]
-      });
+      return res.json(document[0]);
     }).catch(function(error) {
       return res.badRequest(error);
     });
@@ -104,7 +101,7 @@ module.exports = {
    * create() - create a new document.
    */
   create: function(req, res) {
-    var doc = req.param('document');
+    var doc = req.body;
     if(!doc)
     {
       doc = {
@@ -153,18 +150,17 @@ module.exports = {
       // TODO: getByUser instead of findOne
       Document.findOne({id: req.param('id')}).then(function(document) {
         // Todo: error checking.
-        var newDoc = req.param('document');
+        var newDoc = req.body;
 
+        // Don't allow overriding the id.
+        delete newDoc.id;
         for(param in newDoc) {
           document[param] = newDoc[param];
         }
 
         document.save().then(function() {
 
-          res.json({
-            error: null,
-            document: document
-          });
+          res.json(document);
 
           resolve();
         }).catch(function(error) {

@@ -12,19 +12,19 @@ angular.module('madisonEditor.routes', [])
     controller: 'AuthLogoutController'
   })
   .when('/documents', {
-    templateUrl: '/app/documents/list.html',
+    templateUrl: '/app/templates/documents/list.html',
     controller: 'DocumentListController'
   })
   .when('/documents/:id', {
-    templateUrl: '/app/documents/detail.html',
+    templateUrl: '/app/templates/documents/detail.html',
     controller: 'DocumentDetailController'
   })
   .when('/doc-types', {
-    templateUrl: '/app/doctypes/list.html',
+    templateUrl: '/app/templates/doctypes/list.html',
     controller: 'DocTypeListController'
   })
   .when('/doc-types/:id', {
-    templateUrl: '/app/doctypes/detail.html',
+    templateUrl: '/app/templates/doctypes/detail.html',
     controller: 'DocTypeDetailController'
   })
   .when('/users', {

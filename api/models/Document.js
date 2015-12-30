@@ -44,7 +44,7 @@ module.exports = {
 
   //Resonsible for actually updating the 'updated_at' property.
   beforeUpdate:function(values,next) {
-      values.updated_at= new Date();
+      values.updated_at = new Date();
       next();
   },
 
