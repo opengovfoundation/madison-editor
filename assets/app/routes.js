@@ -19,6 +19,14 @@ angular.module('madisonEditor.routes', [])
     templateUrl: '/app/documents/detail.html',
     controller: 'DocumentDetailController'
   })
+  .when('/doc-types', {
+    templateUrl: '/app/doctypes/list.html',
+    controller: 'DocTypeListController'
+  })
+  .when('/doc-types/:id', {
+    templateUrl: '/app/doctypes/detail.html',
+    controller: 'DocTypeDetailController'
+  })
   .when('/users', {
     templateUrl: '/app/users/list.html',
     controller: 'UserListController'
