@@ -34,6 +34,9 @@ module.exports = {
     },
     is_template: {
       type: 'boolean'
+    },
+    type_id: {
+      model: 'DocTypes'
     }
   },
 

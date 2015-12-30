@@ -10,9 +10,9 @@ angular.module('madisonEditor', [
   'ngRoute',
   // 'ngResource',
   'madisonEditor.config',
+  'madisonEditor.controllers',
   'madisonEditor.routes',
   'madisonEditor.translate',
-  'madisonEditor.controllers',
   'madisonEditor.users',
   'madisonEditor.auth',
 ])

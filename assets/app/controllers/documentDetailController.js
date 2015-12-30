@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module("madisonEditor.controllers", ['madisonEditor.config']);
+var app = angular.module('madisonEditor.controllers');
 
 function DocumentDetailController($scope, $http, $routeParams, $location,
   $timeout, $filter, growl, growlMessages) {
@@ -31,6 +31,6 @@ function DocumentDetailController($scope, $http, $routeParams, $location,
 
 DocumentDetailController.prototype = Object.create(FormController.prototype);
 
-app.controller("DocumentDetailController",
+app.controller('DocumentDetailController',
   ['$scope', '$http', '$routeParams', '$location', '$timeout', '$filter',
     'growl', 'growlMessages', DocumentDetailController]);

@@ -1,13 +1,13 @@
 'use strict';
 
-var app = angular.module("madisonEditor.controllers", ['madisonEditor.config']);
+var app = angular.module('madisonEditor.controllers');
 
 //OPTIONAL! Set socket URL!
 // app.config(['$sailsProvider', function ($sailsProvider) {
 //     $sailsProvider.url = 'http://localhost:1337';
 // }]);
 
-app.controller("DocumentListController", [
+app.controller('DocumentListController', [
   '$scope', '$http', '$routeParams', '$location', '$translate', 'growl', 'growlMessages',
   function ($scope, $http, $routeParams, $location, $translate, growl, growlMessages) {
 

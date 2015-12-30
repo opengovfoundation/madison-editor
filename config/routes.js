@@ -76,6 +76,18 @@ module.exports.routes = {
   'put /api/docs/:id': 'DocumentController.update',
   'delete /api/docs/:id': 'DocumentController.destroy',
 
+  /**
+   * Doc Types
+   */
+  'get /api/doc-types/': 'DocumentTypeController.index',
+  'get /api/doc-types/:id': 'DocumentTypeController.find',
+  'post /api/doc-types/': 'DocumentTypeController.create',
+  'put /api/doc-types/:id': 'DocumentTypeController.update',
+  'delete /api/doc-types/:id': 'DocumentTypeController.destroy',
+
+  /**
+   * Catchall
+   */
   'get /*': {
     skipAssets: true,
     view: 'homepage'
