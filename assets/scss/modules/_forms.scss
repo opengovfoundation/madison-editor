@@ -137,6 +137,8 @@ td .button {
 
 // For auto-save status.
 .save-status {
+  float: right;
+
   .icon {
     @extend .fa;
     @extend .fa-cloud;

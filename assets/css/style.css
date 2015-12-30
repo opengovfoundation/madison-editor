@@ -3068,13 +3068,14 @@ th {
   }
 
   /* line 91, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_print.scss */
-  .table, .documents-list {
+  .table, .documents-list, .type-list {
     border-collapse: collapse !important;
   }
   /* line 94, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_print.scss */
-  .table td, .documents-list td,
+  .table td, .documents-list td, .type-list td,
   .table th,
-  .documents-list th {
+  .documents-list th,
+  .type-list th {
     background-color: #fff !important;
   }
 
@@ -3814,7 +3815,7 @@ pre code {
 }
 
 /* line 11, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .social-login .oauth-login, .admin-document-list .doc-filter, .admin-document-list .doc-date-sort, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .document-dates, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .annotation-pane, .doc-secondary-content, .doc-secondary-content .stats-number, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .home-feature, .search-list, .recent-activity, .most-active, .chart-stat, .admin-document-list .doc-search, .col-lg-12, .col-xs-13, .col-sm-13, .col-md-13, .col-lg-13, .col-xs-14, .col-sm-14, .col-md-14, .document-information, .col-lg-14, .col-xs-15, .col-sm-15, .col-md-15, .col-lg-15, .col-xs-16, .col-sm-16, .col-md-16, .doc-info-container, .doc-content, .col-lg-16, .col-xs-17, .col-sm-17, .col-md-17, .col-lg-17, .col-xs-18, .col-sm-18, .col-md-18, .col-lg-18, .col-xs-19, .col-sm-19, .col-md-19, .col-lg-19, .col-xs-20, .col-sm-20, .col-md-20, .col-lg-20, .col-xs-21, .col-sm-21, .col-md-21, .col-lg-21, .col-xs-22, .col-sm-22, .col-md-22, .col-lg-22, .col-xs-23, .col-sm-23, .col-md-23, .col-lg-23, .col-xs-24, .col-sm-24, .doc-info, .col-md-24, .back-link, .documents-list, .col-lg-24 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .social-login .oauth-login, .admin-document-list .doc-filter, .admin-document-list .doc-date-sort, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .document-dates, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .annotation-pane, .doc-secondary-content, .doc-secondary-content .stats-number, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .home-feature, .search-list, .recent-activity, .most-active, .chart-stat, .admin-document-list .doc-search, .col-lg-12, .col-xs-13, .col-sm-13, .col-md-13, .col-lg-13, .col-xs-14, .col-sm-14, .col-md-14, .document-information, .col-lg-14, .col-xs-15, .col-sm-15, .col-md-15, .col-lg-15, .col-xs-16, .col-sm-16, .col-md-16, .doc-info-container, .doc-content, .col-lg-16, .col-xs-17, .col-sm-17, .col-md-17, .col-lg-17, .col-xs-18, .col-sm-18, .col-md-18, .col-lg-18, .col-xs-19, .col-sm-19, .col-md-19, .col-lg-19, .col-xs-20, .col-sm-20, .col-md-20, .col-lg-20, .col-xs-21, .col-sm-21, .col-md-21, .col-lg-21, .col-xs-22, .col-sm-22, .col-md-22, .col-lg-22, .col-xs-23, .col-sm-23, .col-md-23, .col-lg-23, .col-xs-24, .col-sm-24, .doc-info, .col-md-24, .back-link, .documents-list, .type-list, .col-lg-24 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -4824,7 +4825,7 @@ pre code {
 }
 @media (min-width: 992px) {
   /* line 27, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .social-login .oauth-login, .admin-document-list .doc-filter, .admin-document-list .doc-date-sort, .col-md-7, .document-dates, .col-md-8, .annotation-pane, .doc-secondary-content, .doc-secondary-content .stats-number, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .home-feature, .search-list, .recent-activity, .most-active, .chart-stat, .admin-document-list .doc-search, .col-md-13, .col-md-14, .document-information, .col-md-15, .col-md-16, .doc-info-container, .doc-content, .col-md-17, .col-md-18, .col-md-19, .col-md-20, .col-md-21, .col-md-22, .col-md-23, .col-md-24, .back-link, .documents-list {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .social-login .oauth-login, .admin-document-list .doc-filter, .admin-document-list .doc-date-sort, .col-md-7, .document-dates, .col-md-8, .annotation-pane, .doc-secondary-content, .doc-secondary-content .stats-number, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .home-feature, .search-list, .recent-activity, .most-active, .chart-stat, .admin-document-list .doc-search, .col-md-13, .col-md-14, .document-information, .col-md-15, .col-md-16, .doc-info-container, .doc-content, .col-md-17, .col-md-18, .col-md-19, .col-md-20, .col-md-21, .col-md-22, .col-md-23, .col-md-24, .back-link, .documents-list, .type-list {
     float: left;
   }
 
@@ -4944,7 +4945,7 @@ pre code {
   }
 
   /* line 35, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-md-24, .back-link, .documents-list {
+  .col-md-24, .back-link, .documents-list, .type-list {
     width: 100%;
   }
 
@@ -5843,53 +5844,63 @@ th {
 }
 
 /* line 22, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table, .documents-list {
+.table, .documents-list, .type-list {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1.625rem;
 }
 /* line 31, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table > thead > tr > th, .documents-list > thead > tr > th,
+.table > thead > tr > th, .documents-list > thead > tr > th, .type-list > thead > tr > th,
 .table > thead > tr > td,
 .documents-list > thead > tr > td,
+.type-list > thead > tr > td,
 .table > tbody > tr > th,
 .documents-list > tbody > tr > th,
+.type-list > tbody > tr > th,
 .table > tbody > tr > td,
 .documents-list > tbody > tr > td,
+.type-list > tbody > tr > td,
 .table > tfoot > tr > th,
 .documents-list > tfoot > tr > th,
+.type-list > tfoot > tr > th,
 .table > tfoot > tr > td,
-.documents-list > tfoot > tr > td {
+.documents-list > tfoot > tr > td,
+.type-list > tfoot > tr > td {
   padding: 1rem;
   line-height: 1.625;
   vertical-align: top;
   border-top: 1px solid #ddd;
 }
 /* line 41, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table > thead > tr > th, .documents-list > thead > tr > th {
+.table > thead > tr > th, .documents-list > thead > tr > th, .type-list > thead > tr > th {
   vertical-align: bottom;
   border-bottom: 2px solid #ddd;
 }
 /* line 50, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table > caption + thead > tr:first-child > th, .documents-list > caption + thead > tr:first-child > th,
+.table > caption + thead > tr:first-child > th, .documents-list > caption + thead > tr:first-child > th, .type-list > caption + thead > tr:first-child > th,
 .table > caption + thead > tr:first-child > td,
 .documents-list > caption + thead > tr:first-child > td,
+.type-list > caption + thead > tr:first-child > td,
 .table > colgroup + thead > tr:first-child > th,
 .documents-list > colgroup + thead > tr:first-child > th,
+.type-list > colgroup + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > td,
 .documents-list > colgroup + thead > tr:first-child > td,
+.type-list > colgroup + thead > tr:first-child > td,
 .table > thead:first-child > tr:first-child > th,
 .documents-list > thead:first-child > tr:first-child > th,
+.type-list > thead:first-child > tr:first-child > th,
 .table > thead:first-child > tr:first-child > td,
-.documents-list > thead:first-child > tr:first-child > td {
+.documents-list > thead:first-child > tr:first-child > td,
+.type-list > thead:first-child > tr:first-child > td {
   border-top: 0;
 }
 /* line 57, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table > tbody + tbody, .documents-list > tbody + tbody {
+.table > tbody + tbody, .documents-list > tbody + tbody, .type-list > tbody + tbody {
   border-top: 2px solid #ddd;
 }
 /* line 62, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table .table, .documents-list .table, .table .documents-list, .documents-list .documents-list {
+.table .table, .documents-list .table, .type-list .table, .table .documents-list, .documents-list .documents-list, .type-list .documents-list, .table .type-list, .documents-list .type-list, .type-list .type-list {
   background-color: #fff;
 }
 
@@ -5923,7 +5934,7 @@ th {
 }
 
 /* line 114, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-.table-striped > tbody > tr:nth-of-type(odd), .documents-list > tbody > tr:nth-of-type(odd) {
+.table-striped > tbody > tr:nth-of-type(odd), .documents-list > tbody > tr:nth-of-type(odd), .type-list > tbody > tr:nth-of-type(odd) {
   background-color: #f9f9f9;
 }
 
@@ -5948,25 +5959,34 @@ table th[class*="col-"] {
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_table-row.scss */
-.table > thead > tr > td.active, .documents-list > thead > tr > td.active,
+.table > thead > tr > td.active, .documents-list > thead > tr > td.active, .type-list > thead > tr > td.active,
 .table > thead > tr > th.active,
-.documents-list > thead > tr > th.active, .table > thead > tr.active > td, .documents-list > thead > tr.active > td, .table > thead > tr.active > th, .documents-list > thead > tr.active > th,
+.documents-list > thead > tr > th.active,
+.type-list > thead > tr > th.active, .table > thead > tr.active > td, .documents-list > thead > tr.active > td, .type-list > thead > tr.active > td, .table > thead > tr.active > th, .documents-list > thead > tr.active > th, .type-list > thead > tr.active > th,
 .table > tbody > tr > td.active,
 .documents-list > tbody > tr > td.active,
+.type-list > tbody > tr > td.active,
 .table > tbody > tr > th.active,
 .documents-list > tbody > tr > th.active,
+.type-list > tbody > tr > th.active,
 .table > tbody > tr.active > td,
 .documents-list > tbody > tr.active > td,
+.type-list > tbody > tr.active > td,
 .table > tbody > tr.active > th,
 .documents-list > tbody > tr.active > th,
+.type-list > tbody > tr.active > th,
 .table > tfoot > tr > td.active,
 .documents-list > tfoot > tr > td.active,
+.type-list > tfoot > tr > td.active,
 .table > tfoot > tr > th.active,
 .documents-list > tfoot > tr > th.active,
+.type-list > tfoot > tr > th.active,
 .table > tfoot > tr.active > td,
 .documents-list > tfoot > tr.active > td,
+.type-list > tfoot > tr.active > td,
 .table > tfoot > tr.active > th,
-.documents-list > tfoot > tr.active > th {
+.documents-list > tfoot > tr.active > th,
+.type-list > tfoot > tr.active > th {
   background-color: #f5f5f5;
 }
 
@@ -5977,25 +5997,34 @@ table th[class*="col-"] {
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_table-row.scss */
-.table > thead > tr > td.success, .documents-list > thead > tr > td.success,
+.table > thead > tr > td.success, .documents-list > thead > tr > td.success, .type-list > thead > tr > td.success,
 .table > thead > tr > th.success,
-.documents-list > thead > tr > th.success, .table > thead > tr.success > td, .documents-list > thead > tr.success > td, .table > thead > tr.success > th, .documents-list > thead > tr.success > th,
+.documents-list > thead > tr > th.success,
+.type-list > thead > tr > th.success, .table > thead > tr.success > td, .documents-list > thead > tr.success > td, .type-list > thead > tr.success > td, .table > thead > tr.success > th, .documents-list > thead > tr.success > th, .type-list > thead > tr.success > th,
 .table > tbody > tr > td.success,
 .documents-list > tbody > tr > td.success,
+.type-list > tbody > tr > td.success,
 .table > tbody > tr > th.success,
 .documents-list > tbody > tr > th.success,
+.type-list > tbody > tr > th.success,
 .table > tbody > tr.success > td,
 .documents-list > tbody > tr.success > td,
+.type-list > tbody > tr.success > td,
 .table > tbody > tr.success > th,
 .documents-list > tbody > tr.success > th,
+.type-list > tbody > tr.success > th,
 .table > tfoot > tr > td.success,
 .documents-list > tfoot > tr > td.success,
+.type-list > tfoot > tr > td.success,
 .table > tfoot > tr > th.success,
 .documents-list > tfoot > tr > th.success,
+.type-list > tfoot > tr > th.success,
 .table > tfoot > tr.success > td,
 .documents-list > tfoot > tr.success > td,
+.type-list > tfoot > tr.success > td,
 .table > tfoot > tr.success > th,
-.documents-list > tfoot > tr.success > th {
+.documents-list > tfoot > tr.success > th,
+.type-list > tfoot > tr.success > th {
   background-color: #dff0d8;
 }
 
@@ -6006,25 +6035,34 @@ table th[class*="col-"] {
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_table-row.scss */
-.table > thead > tr > td.info, .documents-list > thead > tr > td.info,
+.table > thead > tr > td.info, .documents-list > thead > tr > td.info, .type-list > thead > tr > td.info,
 .table > thead > tr > th.info,
-.documents-list > thead > tr > th.info, .table > thead > tr.info > td, .documents-list > thead > tr.info > td, .table > thead > tr.info > th, .documents-list > thead > tr.info > th,
+.documents-list > thead > tr > th.info,
+.type-list > thead > tr > th.info, .table > thead > tr.info > td, .documents-list > thead > tr.info > td, .type-list > thead > tr.info > td, .table > thead > tr.info > th, .documents-list > thead > tr.info > th, .type-list > thead > tr.info > th,
 .table > tbody > tr > td.info,
 .documents-list > tbody > tr > td.info,
+.type-list > tbody > tr > td.info,
 .table > tbody > tr > th.info,
 .documents-list > tbody > tr > th.info,
+.type-list > tbody > tr > th.info,
 .table > tbody > tr.info > td,
 .documents-list > tbody > tr.info > td,
+.type-list > tbody > tr.info > td,
 .table > tbody > tr.info > th,
 .documents-list > tbody > tr.info > th,
+.type-list > tbody > tr.info > th,
 .table > tfoot > tr > td.info,
 .documents-list > tfoot > tr > td.info,
+.type-list > tfoot > tr > td.info,
 .table > tfoot > tr > th.info,
 .documents-list > tfoot > tr > th.info,
+.type-list > tfoot > tr > th.info,
 .table > tfoot > tr.info > td,
 .documents-list > tfoot > tr.info > td,
+.type-list > tfoot > tr.info > td,
 .table > tfoot > tr.info > th,
-.documents-list > tfoot > tr.info > th {
+.documents-list > tfoot > tr.info > th,
+.type-list > tfoot > tr.info > th {
   background-color: #d9edf7;
 }
 
@@ -6035,25 +6073,34 @@ table th[class*="col-"] {
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_table-row.scss */
-.table > thead > tr > td.warning, .documents-list > thead > tr > td.warning,
+.table > thead > tr > td.warning, .documents-list > thead > tr > td.warning, .type-list > thead > tr > td.warning,
 .table > thead > tr > th.warning,
-.documents-list > thead > tr > th.warning, .table > thead > tr.warning > td, .documents-list > thead > tr.warning > td, .table > thead > tr.warning > th, .documents-list > thead > tr.warning > th,
+.documents-list > thead > tr > th.warning,
+.type-list > thead > tr > th.warning, .table > thead > tr.warning > td, .documents-list > thead > tr.warning > td, .type-list > thead > tr.warning > td, .table > thead > tr.warning > th, .documents-list > thead > tr.warning > th, .type-list > thead > tr.warning > th,
 .table > tbody > tr > td.warning,
 .documents-list > tbody > tr > td.warning,
+.type-list > tbody > tr > td.warning,
 .table > tbody > tr > th.warning,
 .documents-list > tbody > tr > th.warning,
+.type-list > tbody > tr > th.warning,
 .table > tbody > tr.warning > td,
 .documents-list > tbody > tr.warning > td,
+.type-list > tbody > tr.warning > td,
 .table > tbody > tr.warning > th,
 .documents-list > tbody > tr.warning > th,
+.type-list > tbody > tr.warning > th,
 .table > tfoot > tr > td.warning,
 .documents-list > tfoot > tr > td.warning,
+.type-list > tfoot > tr > td.warning,
 .table > tfoot > tr > th.warning,
 .documents-list > tfoot > tr > th.warning,
+.type-list > tfoot > tr > th.warning,
 .table > tfoot > tr.warning > td,
 .documents-list > tfoot > tr.warning > td,
+.type-list > tfoot > tr.warning > td,
 .table > tfoot > tr.warning > th,
-.documents-list > tfoot > tr.warning > th {
+.documents-list > tfoot > tr.warning > th,
+.type-list > tfoot > tr.warning > th {
   background-color: #fcf8e3;
 }
 
@@ -6064,25 +6111,34 @@ table th[class*="col-"] {
 }
 
 /* line 9, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_table-row.scss */
-.table > thead > tr > td.danger, .documents-list > thead > tr > td.danger,
+.table > thead > tr > td.danger, .documents-list > thead > tr > td.danger, .type-list > thead > tr > td.danger,
 .table > thead > tr > th.danger,
-.documents-list > thead > tr > th.danger, .table > thead > tr.danger > td, .documents-list > thead > tr.danger > td, .table > thead > tr.danger > th, .documents-list > thead > tr.danger > th,
+.documents-list > thead > tr > th.danger,
+.type-list > thead > tr > th.danger, .table > thead > tr.danger > td, .documents-list > thead > tr.danger > td, .type-list > thead > tr.danger > td, .table > thead > tr.danger > th, .documents-list > thead > tr.danger > th, .type-list > thead > tr.danger > th,
 .table > tbody > tr > td.danger,
 .documents-list > tbody > tr > td.danger,
+.type-list > tbody > tr > td.danger,
 .table > tbody > tr > th.danger,
 .documents-list > tbody > tr > th.danger,
+.type-list > tbody > tr > th.danger,
 .table > tbody > tr.danger > td,
 .documents-list > tbody > tr.danger > td,
+.type-list > tbody > tr.danger > td,
 .table > tbody > tr.danger > th,
 .documents-list > tbody > tr.danger > th,
+.type-list > tbody > tr.danger > th,
 .table > tfoot > tr > td.danger,
 .documents-list > tfoot > tr > td.danger,
+.type-list > tfoot > tr > td.danger,
 .table > tfoot > tr > th.danger,
 .documents-list > tfoot > tr > th.danger,
+.type-list > tfoot > tr > th.danger,
 .table > tfoot > tr.danger > td,
 .documents-list > tfoot > tr.danger > td,
+.type-list > tfoot > tr.danger > td,
 .table > tfoot > tr.danger > th,
-.documents-list > tfoot > tr.danger > th {
+.documents-list > tfoot > tr.danger > th,
+.type-list > tfoot > tr.danger > th {
   background-color: #f2dede;
 }
 
@@ -6107,21 +6163,26 @@ table th[class*="col-"] {
     border: 1px solid #ddd;
   }
   /* line 183, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-  .table-responsive > .table, .table-responsive > .documents-list {
+  .table-responsive > .table, .table-responsive > .documents-list, .table-responsive > .type-list {
     margin-bottom: 0;
   }
   /* line 191, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
-  .table-responsive > .table > thead > tr > th, .table-responsive > .documents-list > thead > tr > th,
+  .table-responsive > .table > thead > tr > th, .table-responsive > .documents-list > thead > tr > th, .table-responsive > .type-list > thead > tr > th,
   .table-responsive > .table > thead > tr > td,
   .table-responsive > .documents-list > thead > tr > td,
+  .table-responsive > .type-list > thead > tr > td,
   .table-responsive > .table > tbody > tr > th,
   .table-responsive > .documents-list > tbody > tr > th,
+  .table-responsive > .type-list > tbody > tr > th,
   .table-responsive > .table > tbody > tr > td,
   .table-responsive > .documents-list > tbody > tr > td,
+  .table-responsive > .type-list > tbody > tr > td,
   .table-responsive > .table > tfoot > tr > th,
   .table-responsive > .documents-list > tfoot > tr > th,
+  .table-responsive > .type-list > tfoot > tr > th,
   .table-responsive > .table > tfoot > tr > td,
-  .table-responsive > .documents-list > tfoot > tr > td {
+  .table-responsive > .documents-list > tfoot > tr > td,
+  .table-responsive > .type-list > tfoot > tr > td {
     white-space: nowrap;
   }
   /* line 200, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_tables.scss */
@@ -6235,7 +6296,7 @@ output {
 }
 
 /* line 115, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-.form-control {
+.form-control, .type-form textarea, .type-form input {
   display: block;
   width: 100%;
   height: 2.625rem;
@@ -6254,34 +6315,34 @@ output {
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 /* line 57, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.form-control:focus {
+.form-control:focus, .type-form textarea:focus, .type-form input:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 /* line 103, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_vendor-prefixes.scss */
-.form-control::-moz-placeholder {
+.form-control::-moz-placeholder, .type-form textarea::-moz-placeholder, .type-form input::-moz-placeholder {
   color: #999;
   opacity: 1;
 }
 /* line 107, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_vendor-prefixes.scss */
-.form-control:-ms-input-placeholder {
+.form-control:-ms-input-placeholder, .type-form textarea:-ms-input-placeholder, .type-form input:-ms-input-placeholder {
   color: #999;
 }
 /* line 108, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_vendor-prefixes.scss */
-.form-control::-webkit-input-placeholder {
+.form-control::-webkit-input-placeholder, .type-form textarea::-webkit-input-placeholder, .type-form input::-webkit-input-placeholder {
   color: #999;
 }
 /* line 141, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+.form-control[disabled], .type-form textarea[disabled], .type-form input[disabled], .form-control[readonly], .type-form textarea[readonly], .type-form input[readonly], fieldset[disabled] .form-control, fieldset[disabled] .type-form textarea, .type-form fieldset[disabled] textarea, fieldset[disabled] .type-form input, .type-form fieldset[disabled] input {
   cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
 }
 
 /* line 153, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-textarea.form-control {
+textarea.form-control, .type-form textarea {
   height: auto;
 }
 
@@ -6299,7 +6360,7 @@ input[type="search"] {
     line-height: 2.625rem;
   }
   /* line 184, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-  input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control,
+  input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control, .type-form .input-group-sm > input[type="date"],
   .input-group-sm > input[type="date"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="date"].btn,
   .input-group-sm > .input-group-btn > input[type="date"].button,
@@ -6311,6 +6372,7 @@ input[type="search"] {
   .input-group-sm > .input-group-btn > input[type="date"].button-edit, .input-group-sm input[type="date"],
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
+  .type-form .input-group-sm > input[type="time"],
   .input-group-sm > input[type="time"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="time"].btn,
   .input-group-sm > .input-group-btn > input[type="time"].button,
@@ -6323,6 +6385,7 @@ input[type="search"] {
   input[type="time"],
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
+  .type-form .input-group-sm > input[type="datetime-local"],
   .input-group-sm > input[type="datetime-local"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].button,
@@ -6335,6 +6398,7 @@ input[type="search"] {
   input[type="datetime-local"],
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
+  .type-form .input-group-sm > input[type="month"],
   .input-group-sm > input[type="month"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="month"].btn,
   .input-group-sm > .input-group-btn > input[type="month"].button,
@@ -6348,7 +6412,7 @@ input[type="search"] {
     line-height: 2rem;
   }
   /* line 189, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-  input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control,
+  input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control, .type-form .input-group-lg > input[type="date"],
   .input-group-lg > input[type="date"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="date"].btn,
   .input-group-lg > .input-group-btn > input[type="date"].button,
@@ -6360,6 +6424,7 @@ input[type="search"] {
   .input-group-lg > .input-group-btn > input[type="date"].button-edit, .input-group-lg input[type="date"],
   input[type="time"].input-lg,
   .input-group-lg > input[type="time"].form-control,
+  .type-form .input-group-lg > input[type="time"],
   .input-group-lg > input[type="time"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="time"].btn,
   .input-group-lg > .input-group-btn > input[type="time"].button,
@@ -6372,6 +6437,7 @@ input[type="search"] {
   input[type="time"],
   input[type="datetime-local"].input-lg,
   .input-group-lg > input[type="datetime-local"].form-control,
+  .type-form .input-group-lg > input[type="datetime-local"],
   .input-group-lg > input[type="datetime-local"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].button,
@@ -6384,6 +6450,7 @@ input[type="search"] {
   input[type="datetime-local"],
   input[type="month"].input-lg,
   .input-group-lg > input[type="month"].form-control,
+  .type-form .input-group-lg > input[type="month"],
   .input-group-lg > input[type="month"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="month"].btn,
   .input-group-lg > .input-group-btn > input[type="month"].button,
@@ -6398,7 +6465,7 @@ input[type="search"] {
   }
 }
 /* line 202, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-.form-group {
+.form-group, .type-form .fieldset {
   margin-bottom: 15px;
 }
 
@@ -6483,7 +6550,7 @@ input[type="checkbox"] {
   margin-bottom: 0;
 }
 /* line 300, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-.form-control-static.input-lg, .input-group-lg > .form-control-static.form-control,
+.form-control-static.input-lg, .input-group-lg > .form-control-static.form-control, .type-form .input-group-lg > textarea.form-control-static, .type-form .input-group-lg > input.form-control-static,
 .input-group-lg > .form-control-static.input-group-addon,
 .input-group-lg > .input-group-btn > .form-control-static.btn,
 .input-group-lg > .input-group-btn > .form-control-static.button,
@@ -6492,7 +6559,7 @@ input[type="checkbox"] {
 .search-form .input-group-lg > .input-group-btn > .form-control-static.search-button,
 .input-group-lg > .input-group-btn > .form-control-static.create-document-button,
 .input-group-lg > .input-group-btn > .form-control-static.button-delete,
-.input-group-lg > .input-group-btn > .form-control-static.button-edit, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
+.input-group-lg > .input-group-btn > .form-control-static.button-edit, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control, .type-form .input-group-sm > textarea.form-control-static, .type-form .input-group-sm > input.form-control-static,
 .input-group-sm > .form-control-static.input-group-addon,
 .input-group-sm > .input-group-btn > .form-control-static.btn,
 .input-group-sm > .input-group-btn > .form-control-static.button,
@@ -6507,7 +6574,7 @@ input[type="checkbox"] {
 }
 
 /* line 71, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.input-sm, .input-group-sm > .form-control,
+.input-sm, .input-group-sm > .form-control, .type-form .input-group-sm > textarea, .type-form .input-group-sm > input,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
 .input-group-sm > .input-group-btn > .button,
@@ -6540,7 +6607,7 @@ select.input-sm, .input-group-sm > select.form-control,
 }
 
 /* line 84, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-textarea.input-sm, .input-group-sm > textarea.form-control,
+textarea.input-sm, .input-group-sm > textarea.form-control, .type-form .input-group-sm > textarea,
 .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-btn > textarea.btn,
 .input-group-sm > .input-group-btn > textarea.button,
@@ -6565,7 +6632,7 @@ select[multiple].input-sm,
 }
 
 /* line 71, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.form-group-sm .form-control {
+.form-group-sm .form-control, .form-group-sm .type-form textarea, .type-form .form-group-sm textarea, .form-group-sm .type-form input, .type-form .form-group-sm input {
   height: 2rem;
   padding: 0.5rem 10px;
   font-size: 0.85rem;
@@ -6578,7 +6645,7 @@ select[multiple].input-sm,
   line-height: 2rem;
 }
 /* line 84, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.form-group-sm textarea.form-control,
+.form-group-sm textarea.form-control, .form-group-sm .type-form textarea, .type-form .form-group-sm textarea,
 .form-group-sm select[multiple].form-control {
   height: auto;
 }
@@ -6591,7 +6658,7 @@ select[multiple].input-sm,
 }
 
 /* line 71, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.input-lg, .input-group-lg > .form-control,
+.input-lg, .input-group-lg > .form-control, .type-form .input-group-lg > textarea, .type-form .input-group-lg > input,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
 .input-group-lg > .input-group-btn > .button,
@@ -6624,7 +6691,7 @@ select.input-lg, .input-group-lg > select.form-control,
 }
 
 /* line 84, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-textarea.input-lg, .input-group-lg > textarea.form-control,
+textarea.input-lg, .input-group-lg > textarea.form-control, .type-form .input-group-lg > textarea,
 .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-btn > textarea.btn,
 .input-group-lg > .input-group-btn > textarea.button,
@@ -6649,7 +6716,7 @@ select[multiple].input-lg,
 }
 
 /* line 71, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.form-group-lg .form-control {
+.form-group-lg .form-control, .form-group-lg .type-form textarea, .type-form .form-group-lg textarea, .form-group-lg .type-form input, .type-form .form-group-lg input {
   height: 5rem;
   padding: 1rem 16px;
   font-size: 1.25rem;
@@ -6662,7 +6729,7 @@ select[multiple].input-lg,
   line-height: 5rem;
 }
 /* line 84, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.form-group-lg textarea.form-control,
+.form-group-lg textarea.form-control, .form-group-lg .type-form textarea, .type-form .form-group-lg textarea,
 .form-group-lg select[multiple].form-control {
   height: auto;
 }
@@ -6679,7 +6746,7 @@ select[multiple].input-lg,
   position: relative;
 }
 /* line 352, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-.has-feedback .form-control {
+.has-feedback .form-control, .has-feedback .type-form textarea, .type-form .has-feedback textarea, .has-feedback .type-form input, .type-form .has-feedback input {
   padding-right: 3.28125rem;
 }
 
@@ -6698,7 +6765,7 @@ select[multiple].input-lg,
 }
 
 /* line 369, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-.input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback,
+.input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback, .type-form .input-group-lg > textarea + .form-control-feedback, .type-form .input-group-lg > input + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 .input-group-lg > .input-group-btn > .button + .form-control-feedback,
@@ -6714,7 +6781,7 @@ select[multiple].input-lg,
 }
 
 /* line 374, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-.input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
+.input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback, .type-form .input-group-sm > textarea + .form-control-feedback, .type-form .input-group-sm > input + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 .input-group-sm > .input-group-btn > .button + .form-control-feedback,
@@ -6739,13 +6806,13 @@ select[multiple].input-lg,
   color: #3c763d;
 }
 /* line 21, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.has-success .form-control {
+.has-success .form-control, .has-success .type-form textarea, .type-form .has-success textarea, .has-success .type-form input, .type-form .has-success input {
   border-color: #3c763d;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* line 24, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.has-success .form-control:focus {
+.has-success .form-control:focus, .has-success .type-form textarea:focus, .type-form .has-success textarea:focus, .has-success .type-form input:focus, .type-form .has-success input:focus {
   border-color: #2b542c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
@@ -6771,13 +6838,13 @@ select[multiple].input-lg,
   color: #8a6d3b;
 }
 /* line 21, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.has-warning .form-control {
+.has-warning .form-control, .has-warning .type-form textarea, .type-form .has-warning textarea, .has-warning .type-form input, .type-form .has-warning input {
   border-color: #8a6d3b;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* line 24, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.has-warning .form-control:focus {
+.has-warning .form-control:focus, .has-warning .type-form textarea:focus, .type-form .has-warning textarea:focus, .has-warning .type-form input:focus, .type-form .has-warning input:focus {
   border-color: #66512c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
@@ -6803,13 +6870,13 @@ select[multiple].input-lg,
   color: #a94442;
 }
 /* line 21, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.has-error .form-control {
+.has-error .form-control, .has-error .type-form textarea, .type-form .has-error textarea, .has-error .type-form input, .type-form .has-error input {
   border-color: #a94442;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* line 24, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
-.has-error .form-control:focus {
+.has-error .form-control:focus, .has-error .type-form textarea:focus, .type-form .has-error textarea:focus, .has-error .type-form input:focus, .type-form .has-error input:focus {
   border-color: #843534;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
@@ -6844,13 +6911,13 @@ select[multiple].input-lg,
 
 @media (min-width: 768px) {
   /* line 433, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-  .form-inline .form-group {
+  .form-inline .form-group, .form-inline .type-form .fieldset, .type-form .form-inline .fieldset {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
   }
   /* line 440, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-  .form-inline .form-control {
+  .form-inline .form-control, .form-inline .type-form textarea, .type-form .form-inline textarea, .form-inline .type-form input, .type-form .form-inline input {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -6867,11 +6934,15 @@ select[multiple].input-lg,
   /* line 455, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
   .form-inline .input-group .input-group-addon,
   .form-inline .input-group .input-group-btn,
-  .form-inline .input-group .form-control {
+  .form-inline .input-group .form-control,
+  .form-inline .input-group .type-form textarea,
+  .type-form .form-inline .input-group textarea,
+  .form-inline .input-group .type-form input,
+  .type-form .form-inline .input-group input {
     width: auto;
   }
   /* line 463, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-  .form-inline .input-group > .form-control {
+  .form-inline .input-group > .form-control, .form-inline .type-form .input-group > textarea, .type-form .form-inline .input-group > textarea, .form-inline .type-form .input-group > input, .type-form .form-inline .input-group > input {
     width: 100%;
   }
   /* line 467, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
@@ -6905,54 +6976,58 @@ select[multiple].input-lg,
 }
 
 /* line 514, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-.form-horizontal .radio,
+.form-horizontal .radio, .type-form .radio,
 .form-horizontal .checkbox,
+.type-form .checkbox,
 .form-horizontal .radio-inline,
-.form-horizontal .checkbox-inline {
+.type-form .radio-inline,
+.form-horizontal .checkbox-inline,
+.type-form .checkbox-inline {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 1.5rem;
 }
 /* line 524, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-.form-horizontal .radio,
-.form-horizontal .checkbox {
+.form-horizontal .radio, .type-form .radio,
+.form-horizontal .checkbox,
+.type-form .checkbox {
   min-height: 3.125rem;
 }
 /* line 530, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-.form-horizontal .form-group {
+.form-horizontal .form-group, .type-form .form-group, .type-form .fieldset {
   margin-left: -15px;
   margin-right: -15px;
 }
 /* line 14, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.form-horizontal .form-group:before, .form-horizontal .form-group:after {
+.form-horizontal .form-group:before, .type-form .form-group:before, .type-form .fieldset:before, .form-horizontal .form-group:after, .type-form .form-group:after, .type-form .fieldset:after {
   content: " ";
   display: table;
 }
 /* line 19, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.form-horizontal .form-group:after {
+.form-horizontal .form-group:after, .type-form .form-group:after, .type-form .fieldset:after {
   clear: both;
 }
 @media (min-width: 768px) {
   /* line 537, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-  .form-horizontal .control-label {
+  .form-horizontal .control-label, .type-form .control-label {
     text-align: right;
     margin-bottom: 0;
     padding-top: 1.5rem;
   }
 }
 /* line 548, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-.form-horizontal .has-feedback .form-control-feedback {
+.form-horizontal .has-feedback .form-control-feedback, .type-form .has-feedback .form-control-feedback {
   right: 15px;
 }
 @media (min-width: 768px) {
   /* line 558, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-  .form-horizontal .form-group-lg .control-label {
+  .form-horizontal .form-group-lg .control-label, .type-form .form-group-lg .control-label {
     padding-top: 3rem;
   }
 }
 @media (min-width: 768px) {
   /* line 565, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-  .form-horizontal .form-group-sm .control-label {
+  .form-horizontal .form-group-sm .control-label, .type-form .form-group-sm .control-label {
     padding-top: 1.5rem;
   }
 }
@@ -7205,7 +7280,7 @@ select[multiple].input-lg,
 }
 
 /* line 131, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button, .btn-group-sm > .login-button, .home-feature .btn-group-sm > .read-button, .search-form .btn-group-sm > .search-button, .btn-group-sm > .create-document-button, .btn-group-sm > .button-delete, .btn-group-sm > .button-edit, .document__delete .button-confirm, .document__delete .button-delete, .document__delete .button-cancel {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button, .btn-group-sm > .login-button, .home-feature .btn-group-sm > .read-button, .search-form .btn-group-sm > .search-button, .btn-group-sm > .create-document-button, .btn-group-sm > .button-delete, .btn-group-sm > .button-edit, .document__delete .button-confirm, .document__delete .button-delete, .document__delete .button-cancel, .type__delete .button-confirm, .type__delete .button-delete, .type__delete .button-cancel {
   padding: 0.5rem 10px;
   font-size: 0.85rem;
   line-height: 2;
@@ -7806,7 +7881,7 @@ tbody.collapse.in, tbody.in.navbar-nav {
   padding-right: 0;
 }
 /* line 19, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group .form-control {
+.input-group .form-control, .input-group .type-form textarea, .type-form .input-group textarea, .input-group .type-form input, .type-form .input-group input {
   position: relative;
   z-index: 2;
   float: left;
@@ -7817,13 +7892,21 @@ tbody.collapse.in, tbody.in.navbar-nav {
 /* line 54, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
 .input-group-addon,
 .input-group-btn,
-.input-group .form-control {
+.input-group .form-control,
+.input-group .type-form textarea,
+.type-form .input-group textarea,
+.input-group .type-form input,
+.type-form .input-group input {
   display: table-cell;
 }
 /* line 59, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),
-.input-group .form-control:not(:first-child):not(:last-child) {
+.input-group .form-control:not(:first-child):not(:last-child),
+.input-group .type-form textarea:not(:first-child):not(:last-child),
+.type-form .input-group textarea:not(:first-child):not(:last-child),
+.input-group .type-form input:not(:first-child):not(:last-child),
+.type-form .input-group input:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 
@@ -7848,7 +7931,7 @@ tbody.collapse.in, tbody.in.navbar-nav {
   border-radius: 7px;
 }
 /* line 85, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-addon.input-sm,
+.input-group-addon.input-sm, .type-form .input-group-sm > textarea.input-group-addon, .type-form .input-group-sm > input.input-group-addon,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .input-group-addon.btn,
 .input-group-sm > .input-group-btn > .input-group-addon.button,
@@ -7863,7 +7946,7 @@ tbody.collapse.in, tbody.in.navbar-nav {
   border-radius: 3px;
 }
 /* line 90, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-addon.input-lg,
+.input-group-addon.input-lg, .type-form .input-group-lg > textarea.input-group-addon, .type-form .input-group-lg > input.input-group-addon,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .input-group-addon.btn,
 .input-group-lg > .input-group-btn > .input-group-addon.button,
@@ -7884,7 +7967,7 @@ tbody.collapse.in, tbody.in.navbar-nav {
 }
 
 /* line 104, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group .form-control:first-child,
+.input-group .form-control:first-child, .input-group .type-form textarea:first-child, .type-form .input-group textarea:first-child, .input-group .type-form input:first-child, .type-form .input-group input:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .button,
@@ -7929,7 +8012,7 @@ tbody.collapse.in, tbody.in.navbar-nav {
 }
 
 /* line 116, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group .form-control:last-child,
+.input-group .form-control:last-child, .input-group .type-form textarea:last-child, .type-form .input-group textarea:last-child, .input-group .type-form input:last-child, .type-form .input-group input:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .button,
@@ -8489,13 +8572,13 @@ tbody.collapse.in, tbody.in.navbar-nav {
 }
 @media (min-width: 768px) {
   /* line 433, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-  .navbar-form .form-group {
+  .navbar-form .form-group, .navbar-form .type-form .fieldset, .type-form .navbar-form .fieldset {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
   }
   /* line 440, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-  .navbar-form .form-control {
+  .navbar-form .form-control, .navbar-form .type-form textarea, .type-form .navbar-form textarea, .navbar-form .type-form input, .type-form .navbar-form input {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -8512,11 +8595,15 @@ tbody.collapse.in, tbody.in.navbar-nav {
   /* line 455, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
   .navbar-form .input-group .input-group-addon,
   .navbar-form .input-group .input-group-btn,
-  .navbar-form .input-group .form-control {
+  .navbar-form .input-group .form-control,
+  .navbar-form .input-group .type-form textarea,
+  .type-form .navbar-form .input-group textarea,
+  .navbar-form .input-group .type-form input,
+  .type-form .navbar-form .input-group input {
     width: auto;
   }
   /* line 463, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
-  .navbar-form .input-group > .form-control {
+  .navbar-form .input-group > .form-control, .navbar-form .type-form .input-group > textarea, .type-form .navbar-form .input-group > textarea, .navbar-form .type-form .input-group > input, .type-form .navbar-form .input-group > input {
     width: 100%;
   }
   /* line 467, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
@@ -8550,11 +8637,11 @@ tbody.collapse.in, tbody.in.navbar-nav {
 }
 @media (max-width: 767px) {
   /* line 299, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-form .form-group {
+  .navbar-form .form-group, .navbar-form .type-form .fieldset, .type-form .navbar-form .fieldset {
     margin-bottom: 5px;
   }
   /* line 303, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar-form .form-group:last-child {
+  .navbar-form .form-group:last-child, .navbar-form .type-form .fieldset:last-child, .type-form .navbar-form .fieldset:last-child {
     margin-bottom: 0;
   }
 }
@@ -8594,7 +8681,7 @@ tbody.collapse.in, tbody.in.navbar-nav {
   margin-bottom: 0.3125rem;
 }
 /* line 347, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.button, .btn-group-sm > .navbar-btn.login-button, .home-feature .btn-group-sm > .navbar-btn.read-button, .search-form .btn-group-sm > .navbar-btn.search-button, .btn-group-sm > .navbar-btn.create-document-button, .btn-group-sm > .navbar-btn.button-delete, .btn-group-sm > .navbar-btn.button-edit, .document__delete .navbar-btn.button-confirm, .document__delete .navbar-btn.button-delete, .document__delete .navbar-btn.button-cancel {
+.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.button, .btn-group-sm > .navbar-btn.login-button, .home-feature .btn-group-sm > .navbar-btn.read-button, .search-form .btn-group-sm > .navbar-btn.search-button, .btn-group-sm > .navbar-btn.create-document-button, .btn-group-sm > .navbar-btn.button-delete, .btn-group-sm > .navbar-btn.button-edit, .document__delete .navbar-btn.button-confirm, .document__delete .navbar-btn.button-delete, .document__delete .navbar-btn.button-cancel, .type__delete .navbar-btn.button-confirm, .type__delete .navbar-btn.button-delete, .type__delete .navbar-btn.button-cancel {
   margin-top: 0.625rem;
   margin-bottom: 0.625rem;
 }
@@ -9814,142 +9901,184 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 
 /* line 104, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table, .panel > .documents-list,
+.panel > .table, .panel > .documents-list, .panel > .type-list,
 .panel > .table-responsive > .table,
 .panel > .table-responsive > .documents-list,
+.panel > .table-responsive > .type-list,
 .panel > .panel-collapse > .table,
-.panel > .panel-collapse > .documents-list {
+.panel > .panel-collapse > .documents-list,
+.panel > .panel-collapse > .type-list {
   margin-bottom: 0;
 }
 /* line 109, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table caption, .panel > .documents-list caption,
+.panel > .table caption, .panel > .documents-list caption, .panel > .type-list caption,
 .panel > .table-responsive > .table caption,
 .panel > .table-responsive > .documents-list caption,
+.panel > .table-responsive > .type-list caption,
 .panel > .panel-collapse > .table caption,
-.panel > .panel-collapse > .documents-list caption {
+.panel > .panel-collapse > .documents-list caption,
+.panel > .panel-collapse > .type-list caption {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 /* line 115, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child, .panel > .documents-list:first-child,
+.panel > .table:first-child, .panel > .documents-list:first-child, .panel > .type-list:first-child,
 .panel > .table-responsive:first-child > .table:first-child,
-.panel > .table-responsive:first-child > .documents-list:first-child {
+.panel > .table-responsive:first-child > .documents-list:first-child,
+.panel > .table-responsive:first-child > .type-list:first-child {
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
 }
 /* line 121, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child > thead:first-child > tr:first-child, .panel > .documents-list:first-child > thead:first-child > tr:first-child,
+.panel > .table:first-child > thead:first-child > tr:first-child, .panel > .documents-list:first-child > thead:first-child > tr:first-child, .panel > .type-list:first-child > thead:first-child > tr:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child,
 .panel > .documents-list:first-child > tbody:first-child > tr:first-child,
+.panel > .type-list:first-child > tbody:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .documents-list:first-child > thead:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .type-list:first-child > thead:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child,
-.panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child {
+.panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .type-list:first-child > tbody:first-child > tr:first-child {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 /* line 125, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child > thead:first-child > tr:first-child td:first-child, .panel > .documents-list:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > thead:first-child > tr:first-child td:first-child, .panel > .documents-list:first-child > thead:first-child > tr:first-child td:first-child, .panel > .type-list:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .documents-list:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .type-list:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
 .panel > .documents-list:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .type-list:first-child > tbody:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
 .panel > .documents-list:first-child > tbody:first-child > tr:first-child th:first-child,
+.panel > .type-list:first-child > tbody:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .documents-list:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .type-list:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .documents-list:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .type-list:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .type-list:first-child > tbody:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child,
-.panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child th:first-child {
+.panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .type-list:first-child > tbody:first-child > tr:first-child th:first-child {
   border-top-left-radius: 6px;
 }
 /* line 129, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:first-child > thead:first-child > tr:first-child td:last-child, .panel > .documents-list:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > thead:first-child > tr:first-child td:last-child, .panel > .documents-list:first-child > thead:first-child > tr:first-child td:last-child, .panel > .type-list:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .documents-list:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .type-list:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
 .panel > .documents-list:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .type-list:first-child > tbody:first-child > tr:first-child td:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
 .panel > .documents-list:first-child > tbody:first-child > tr:first-child th:last-child,
+.panel > .type-list:first-child > tbody:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .documents-list:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .type-list:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .documents-list:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .type-list:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .type-list:first-child > tbody:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child,
-.panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child th:last-child {
+.panel > .table-responsive:first-child > .documents-list:first-child > tbody:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .type-list:first-child > tbody:first-child > tr:first-child th:last-child {
   border-top-right-radius: 6px;
 }
 /* line 137, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child, .panel > .documents-list:last-child,
+.panel > .table:last-child, .panel > .documents-list:last-child, .panel > .type-list:last-child,
 .panel > .table-responsive:last-child > .table:last-child,
-.panel > .table-responsive:last-child > .documents-list:last-child {
+.panel > .table-responsive:last-child > .documents-list:last-child,
+.panel > .table-responsive:last-child > .type-list:last-child {
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
 }
 /* line 143, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child > tbody:last-child > tr:last-child, .panel > .documents-list:last-child > tbody:last-child > tr:last-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child, .panel > .documents-list:last-child > tbody:last-child > tr:last-child, .panel > .type-list:last-child > tbody:last-child > tr:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child,
 .panel > .documents-list:last-child > tfoot:last-child > tr:last-child,
+.panel > .type-list:last-child > tfoot:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .documents-list:last-child > tbody:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .type-list:last-child > tbody:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child,
-.panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child {
+.panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .type-list:last-child > tfoot:last-child > tr:last-child {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 /* line 147, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child, .panel > .documents-list:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child, .panel > .documents-list:last-child > tbody:last-child > tr:last-child td:first-child, .panel > .type-list:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .documents-list:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .type-list:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
 .panel > .documents-list:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .type-list:last-child > tfoot:last-child > tr:last-child td:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
 .panel > .documents-list:last-child > tfoot:last-child > tr:last-child th:first-child,
+.panel > .type-list:last-child > tfoot:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .documents-list:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .type-list:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .documents-list:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .type-list:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .type-list:last-child > tfoot:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
-.panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child th:first-child {
+.panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .type-list:last-child > tfoot:last-child > tr:last-child th:first-child {
   border-bottom-left-radius: 6px;
 }
 /* line 151, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child, .panel > .documents-list:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child, .panel > .documents-list:last-child > tbody:last-child > tr:last-child td:last-child, .panel > .type-list:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .documents-list:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .type-list:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
 .panel > .documents-list:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .type-list:last-child > tfoot:last-child > tr:last-child td:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
 .panel > .documents-list:last-child > tfoot:last-child > tr:last-child th:last-child,
+.panel > .type-list:last-child > tfoot:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .documents-list:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .type-list:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .documents-list:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .type-list:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .type-list:last-child > tfoot:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
-.panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child th:last-child {
+.panel > .table-responsive:last-child > .documents-list:last-child > tfoot:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .type-list:last-child > tfoot:last-child > tr:last-child th:last-child {
   border-bottom-right-radius: 6px;
 }
 /* line 158, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .panel-body + .table, .panel > .panel-body + .documents-list,
+.panel > .panel-body + .table, .panel > .panel-body + .documents-list, .panel > .panel-body + .type-list,
 .panel > .panel-body + .table-responsive,
 .panel > .table + .panel-body,
 .panel > .documents-list + .panel-body,
+.panel > .type-list + .panel-body,
 .panel > .table-responsive + .panel-body {
   border-top: 1px solid #ddd;
 }
 /* line 164, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .table > tbody:first-child > tr:first-child th, .panel > .documents-list > tbody:first-child > tr:first-child th,
+.panel > .table > tbody:first-child > tr:first-child th, .panel > .documents-list > tbody:first-child > tr:first-child th, .panel > .type-list > tbody:first-child > tr:first-child th,
 .panel > .table > tbody:first-child > tr:first-child td,
-.panel > .documents-list > tbody:first-child > tr:first-child td {
+.panel > .documents-list > tbody:first-child > tr:first-child td,
+.panel > .type-list > tbody:first-child > tr:first-child td {
   border-top: 0;
 }
 /* line 168, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_panels.scss */
@@ -10874,17 +11003,22 @@ hr {
 }
 
 /* line 75, ../scss/mixins/_bootstrap-overrides.scss */
-.table > thead > tr > th, .documents-list > thead > tr > th,
+.table > thead > tr > th, .documents-list > thead > tr > th, .type-list > thead > tr > th,
 .table > thead > tr > td,
 .documents-list > thead > tr > td,
+.type-list > thead > tr > td,
 .table > tbody > tr > th,
 .documents-list > tbody > tr > th,
+.type-list > tbody > tr > th,
 .table > tbody > tr > td,
 .documents-list > tbody > tr > td,
+.type-list > tbody > tr > td,
 .table > tfoot > tr > th,
 .documents-list > tfoot > tr > th,
+.type-list > tfoot > tr > th,
 .table > tfoot > tr > td,
-.documents-list > tfoot > tr > td {
+.documents-list > tfoot > tr > td,
+.type-list > tfoot > tr > td {
   padding: 0 1rem;
   line-height: calc(1.625rem - 1px);
   font-size: 0.85rem;
@@ -10983,7 +11117,7 @@ hr {
 }
 
 /* line 175, ../scss/mixins/_bootstrap-overrides.scss */
-textarea.form-control {
+textarea.form-control, .type-form textarea {
   height: 4.875rem;
 }
 
@@ -11417,17 +11551,17 @@ label {
 }
 
 /* line 10, ../scss/modules/_forms.scss */
-.form-control {
+.form-control, .type-form textarea, .type-form input {
   height: 1.625rem;
 }
 
 /* line 14, ../scss/modules/_forms.scss */
-.form-group {
+.form-group, .type-form .fieldset {
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
 /* line 18, ../scss/modules/_forms.scss */
-.form-group button {
+.form-group button, .type-form .fieldset button {
   margin-top: 1rem;
 }
 
@@ -11501,28 +11635,32 @@ td .button, td .login-button, td .home-feature .read-button, .home-feature td .r
   overflow: hidden;
 }
 
-/* line 140, ../scss/modules/_forms.scss */
+/* line 139, ../scss/modules/_forms.scss */
+.save-status {
+  float: right;
+}
+/* line 142, ../scss/modules/_forms.scss */
 .save-status .icon {
   font-size: 1.5rem;
 }
-/* line 145, ../scss/modules/_forms.scss */
+/* line 147, ../scss/modules/_forms.scss */
 .save-status .saved {
   left: -26px;
   position: relative;
 }
-/* line 152, ../scss/modules/_forms.scss */
+/* line 154, ../scss/modules/_forms.scss */
 .save-status .saved:before {
   position: relative;
   top: -2px;
   display: inline-block;
   margin-right: 10px;
 }
-/* line 161, ../scss/modules/_forms.scss */
+/* line 163, ../scss/modules/_forms.scss */
 .save-status .saving {
   left: -26px;
   position: relative;
 }
-/* line 168, ../scss/modules/_forms.scss */
+/* line 170, ../scss/modules/_forms.scss */
 .save-status .saving:before {
   position: relative;
   top: -2px;
@@ -11534,12 +11672,12 @@ td .button, td .login-button, td .home-feature .read-button, .home-feature td .r
   -o-animation: bounce 2s linear infinite;
   animation: bounce 2s linear infinite;
 }
-/* line 180, ../scss/modules/_forms.scss */
+/* line 182, ../scss/modules/_forms.scss */
 .save-status .unsaved {
   left: -26px;
   position: relative;
 }
-/* line 187, ../scss/modules/_forms.scss */
+/* line 189, ../scss/modules/_forms.scss */
 .save-status .unsaved:before {
   position: relative;
   top: -2px;
@@ -12678,22 +12816,73 @@ section.login {
   padding: 0.8125rem;
 }
 
-/* line 74, ../scss/pages/_edit-document.scss */
-.save-status {
-  float: right;
-}
-
-/* line 82, ../scss/pages/_edit-document.scss */
+/* line 78, ../scss/pages/_edit-document.scss */
 .document-dates {
   margin-top: 4.875rem;
 }
-/* line 99, ../scss/pages/_edit-document.scss */
+/* line 95, ../scss/pages/_edit-document.scss */
 .document-dates .datetimepicker {
   background: #d7d7d7;
 }
-/* line 102, ../scss/pages/_edit-document.scss */
+/* line 98, ../scss/pages/_edit-document.scss */
 .document-dates .datetimepicker table {
   width: 100%;
+}
+
+/* line 1, ../scss/pages/_type-list.scss */
+.type-list {
+  display: flexbox;
+  display: flex;
+}
+/* line 9, ../scss/pages/_type-list.scss */
+.type-list .type__name {
+  flex-basis: 100%;
+  vertical-align: middle;
+}
+/* line 14, ../scss/pages/_type-list.scss */
+.type-list .type__delete {
+  flex-basis: auto;
+}
+
+/* line 114, ../scss/modules/_forms.scss */
+.type__delete .confirm-delete {
+  -webkit-transition: all 0.4s cubic-bezier(0.62, 0.28, 0.23, 0.99);
+  -o-transition: all 0.4s cubic-bezier(0.62, 0.28, 0.23, 0.99);
+  transition: all 0.4s cubic-bezier(0.62, 0.28, 0.23, 0.99);
+  overflow: hidden;
+  max-width: 0;
+  white-space: nowrap;
+  margin-left: 6px;
+  display: inline-block;
+}
+/* line 123, ../scss/modules/_forms.scss */
+.type__delete .button-delete {
+  vertical-align: top;
+}
+/* line 128, ../scss/modules/_forms.scss */
+.type__delete.open .confirm-delete {
+  display: inline-block;
+  max-width: 300px;
+}
+/* line 132, ../scss/modules/_forms.scss */
+.type__delete.open .button-delete {
+  display: none;
+}
+/* line 23, ../scss/pages/_type-list.scss */
+.type__delete .button-confirm, .type__delete .button-delete, .type__delete .button-cancel {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1.2rem;
+}
+/* line 31, ../scss/pages/_type-list.scss */
+.type__delete .button-delete {
+  font-size: 1.2rem;
+}
+
+/* line 12, ../scss/pages/_edit-type.scss */
+.type-form textarea {
+  min-height: 16.25rem;
 }
 
 /* line 2, ../scss/pages/_site-settings.scss */
