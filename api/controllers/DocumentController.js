@@ -78,7 +78,7 @@ module.exports = {
     });
   },
   /**
-   * find() - find a single document by its slug.
+   * find() - find a single document by its id.
    */
   find: function(req, res) {
     if(!req.session || !req.session.user || !req.session.user.id) {
