@@ -5,6 +5,7 @@ var user;
 // Declare app level module which depends on views, and components
 angular.module('madisonEditor', [
   'angular-growl',
+  'ngSanitize',
   'pascalprecht.translate',
   'ngRoute',
   // 'ngResource',
