@@ -29,8 +29,9 @@ module.exports = {
     deleted_at: {
       type: 'datetime'
     },
-    private: {
-      type: 'boolean'
+    publish_state: {
+      type: 'string',
+      required: true
     },
     is_template: {
       type: 'boolean'

@@ -76,6 +76,9 @@ module.exports.routes = {
   'put /api/docs/:id': 'DocumentController.update',
   'delete /api/docs/:id': 'DocumentController.destroy',
 
+  // Context for document
+  'get /api/docs/:id/context': 'DocumentController.findContext',
+
   /**
    * Doc Types
    */

@@ -3,7 +3,7 @@
 var app = angular.module('madisonEditor.controllers');
 
 function DocumentDetailController($scope, $http, $routeParams, $location,
-  $timeout, $filter, growl, growlMessages) {
+  $timeout, $filter, $translate, growl, growlMessages) {
 
   $scope.form = {
     errors: {}
@@ -11,10 +11,22 @@ function DocumentDetailController($scope, $http, $routeParams, $location,
   $scope.model = {};
   $scope.status = 'saved';
   $scope.copyId = null;
-  if($routeParams['copy']) {
-    $scope.copyId = $routeParams['copy'];
+  $scope.types = [];
+  $scope.publishStates = [];
+
+  // We are hardcoding statuses for now.  In the future, get this via endpoint.
+  var rawStates = ['published', 'private', 'unpublished'];
+  for(var i in rawStates) {
+    $scope.publishStates.push({
+      'value': rawStates[i],
+      'name': $translate.instant('form.document.publishstate.' + rawStates[i])
+    });
   }
-  var self = this;
+
+  if($routeParams.copy) {
+    $scope.copyId = $routeParams.copy;
+  }
+
   this.$scope = $scope;
   this.$timeout = $timeout;
 
@@ -26,6 +38,10 @@ function DocumentDetailController($scope, $http, $routeParams, $location,
     return $http.put('/api/docs/' + $scope.model.id, newObject);
   };
 
+  $http.get('/api/doc-types/').then(function(data) {
+    $scope.types = data.data.types;
+  });
+
   this.init();
 }
 
@@ -33,4 +49,4 @@ DocumentDetailController.prototype = Object.create(FormController.prototype);
 
 app.controller('DocumentDetailController',
   ['$scope', '$http', '$routeParams', '$location', '$timeout', '$filter',
-    'growl', 'growlMessages', DocumentDetailController]);
+    '$translate', 'growl', 'growlMessages', DocumentDetailController]);

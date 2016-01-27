@@ -188,6 +188,44 @@ module.exports = {
           error: error
         });
     });
+  },
+  /**
+   * findContext() - find a single document by its id and return its context.
+   */
+  findContext: function(req, res) {
+    if(!req.session || !req.session.user || !req.session.user.id) {
+      return res.badRequest('Unauthorized.');
+    }
+
+    // TODO: use error check function here instead.
+    var isNumeric = /^\d+$/;
+    if(!isNumeric.test(req.session.user.id) || !isNumeric.test(req.param('id'))) {
+      return res.badRequest('Id is not valid.');
+    }
+
+    return promise = new Promise(function(resolve, reject) {
+      Document.getByUser(req.param('id'), req.session.user.id).then(function(document) {
+        if(document.type_id) {
+          DocTypes.findOne({'id': document.type_id}).then(function(docType) {
+            // Context is JSON, in theory.
+            docType.context = JSON.parse(docType.context);
+
+            return res.json(docType);
+            resolve();
+          }).catch(function(error) {
+            return res.badRequest(error);
+            resolve();
+          });
+        }
+        else {
+          return res.json({});
+          resolve();
+        }
+      }).catch(function(error) {
+        return res.badRequest(error);
+        resolve();
+      });
+    });
   }
 
 };

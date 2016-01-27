@@ -16,6 +16,7 @@
         <ul class="nav navbar-nav">
           <li><a href="#">{{ "menu.nav.about" | translate }}</a></li>
           <li ng-hide="!user" ng-cloak><a href="/documents">{{ "menu.nav.documents" | translate }}</a></li>
+          <li ng-hide="!user" ng-cloak><a href="/doc-types">{{ "admin.menu.nav.types" | translate }}</a></li>
           <li ng-hide="!user" ng-cloak><a href="/logout">{{ "menu.nav.logout" | translate }}</a></li>
         </ul>
       </nav><!--/.navbar-collapse -->

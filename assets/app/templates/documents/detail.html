@@ -23,10 +23,20 @@
       <span class="error" ng-show="form.errors.slug">{{ form.errors.slug | translate }}</span>
     </fieldset>
     <fieldset>
-      <label for="doc.private" translate="admin.form.document.labels.private"></label>
-      <input type="checkbox" name="private" id="private"
-        ng-model="model.private" ng-checked="model.private" />
-      <span class="error" ng-show="form.errors.private">{{ form.errors.private | translate }}</span>
+      <label for="doc.type_id" translate="admin.form.document.labels.doctype"></label>
+      <select ng-model="model.type_id"
+          ng-options="type.id as type.name for type in types">
+        <option value=""></option>
+      </select>
+      <span class="error" ng-show="form.errors.type_id">{{ form.errors.type_id | translate }}</span>
+    </fieldset>
+    <fieldset>
+      <label for="doc.publish_state" translate="admin.form.document.labels.publishstate"></label>
+      <select ng-model="model.publish_state"
+          ng-options="state.value as state.name for state in publishStates">
+        <option value=""></option>
+      </select>
+      <span class="error" ng-show="form.errors.publish_state">{{ form.errors.publish_state | translate }}</span>
     </fieldset>
     <fieldset>
       <label for="doc.is_template" translate="admin.form.document.labels.is_template"></label>
