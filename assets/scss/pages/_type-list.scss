@@ -1,0 +1,34 @@
+.type-list {
+  @extend .col-md-24;
+  @extend .table;
+  @extend .table-striped;
+
+  display: flexbox;
+  display: flex;
+
+  .type__name {
+    flex-basis: 100%;
+    vertical-align: middle;
+  }
+
+  .type__delete {
+    flex-basis: auto;
+  }
+}
+
+
+.type__delete {
+  @include button-confirm-delete;
+
+  .button-confirm, .button-delete, .button-cancel {
+    @extend .btn-sm;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    line-height: 1.2rem;
+  }
+
+  .button-delete {
+    font-size: 1.2rem;
+  }
+}

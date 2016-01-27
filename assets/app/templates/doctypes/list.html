@@ -1,0 +1,51 @@
+
+<h1 translate="admin.menu.nav.types"></h1>
+
+<div ng-controller="DocTypeListController" ng-cloak>
+  <section class="create-document">
+    <button
+      ng-click="showCreateForm()"
+      ng-show="!showForm" translate="admin.types.list.create"></button>
+    <div class="types" ng-show="showForm">
+      <header>
+        <h2 translate="admin.types.list.create"></h2>
+      </header>
+
+      <fieldset>
+        <label for="type.name" translate="admin.form.type.labels.name"></label>
+        <input id="type.name" ng-model="newType.name" />
+      </fieldset>
+
+      <button translate="admin.form.action.go" ng-click="createType()"></button>
+    </div>
+  </section>
+
+  <table class="types-list" ng-if="types.length > 0">
+    <thead>
+      <tr>
+        <th class="type__name" translate="admin.types.list.heading.name"></th>
+        <th class="type__delete" translate="admin.form.action.delete"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="type in types" class="type">
+        <td class="type__name">
+          <a href="/doc-types/{{type.id}}">{{type.name}}</a>
+        </td>
+        <td class="type__delete" ng-class="{open: deleteConfirmOpen[type.id]}">
+          <button type="button" class="button button-delete"
+            ng-click="openDeleteConfirm(type)"><span translate="admin.types.list.delete"></span></button>
+          <div class="confirm-delete">
+            {{ "form.action.confirm_message" | translate }}
+            <button class="button button-confirm" type="submit"
+              ng-click="deleteType(type)" title="delete type">
+              <span translate="admin.form.action.delete"></span></button>
+            <button class="button button-cancel" type="button"
+              ng-click="closeDeleteConfirm(type)" title="cancel">
+              <span translate="admin.form.action.cancel"></span></button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
