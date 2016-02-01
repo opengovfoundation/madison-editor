@@ -205,24 +205,24 @@ module.exports = {
 
     return promise = new Promise(function(resolve, reject) {
       Document.getByUser(req.param('id'), req.session.user.id).then(function(document) {
-        if(document.type_id) {
-          DocTypes.findOne({'id': document.type_id}).then(function(docType) {
+        if(document && document[0] && document[0].type_id) {
+          DocTypes.findOne({'id': document[0].type_id}).then(function(docType) {
             // Context is JSON, in theory.
             docType.context = JSON.parse(docType.context);
 
-            return res.json(docType);
-            resolve();
+            res.json(docType);
+            resolve(docType);
           }).catch(function(error) {
-            return res.badRequest(error);
+            res.badRequest(error);
             resolve();
           });
         }
         else {
-          return res.json({});
+          res.json({});
           resolve();
         }
       }).catch(function(error) {
-        return res.badRequest(error);
+        res.badRequest(error);
         resolve();
       });
     });
