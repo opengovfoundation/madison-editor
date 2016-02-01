@@ -64,8 +64,15 @@ module.exports.routes = {
    * Users
    */
 
+
   'get /api/users/current': 'UserController.findCurrent',
   'put /api/users/current': 'UserController.updateCurrent',
+
+  'get /api/users/': 'UserController.index',
+  'post /api/users/': 'UserController.create',
+  'get /api/users/:id': 'UserController.find',
+  'put /api/users/:id': 'UserController.update',
+  'delete /api/users/:id': 'UserController.destroy',
 
   /**
    * Docs

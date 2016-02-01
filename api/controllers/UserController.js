@@ -47,10 +47,7 @@ module.exports = {
     }
 
     User.findOne({'id': req.param('id')}).then(function(user) {
-      return res.json({
-        error: false,
-        user: user
-      });
+      return res.json(user);
     }).catch(function(error) {
       return res.badRequest(error);
     });
@@ -62,19 +59,19 @@ module.exports = {
     var user = req.param('user');
 
     // Todo: Do user setup here.
-
     User.create(user, function(error, user) {
-        return res.json({
-          error: error,
-          user: user
-        });
+      if(error) {
+        res.badRequest(error);
+      }
+      else {
+        res.json(user);
+      }
     });
   },
   /**
    * update() - edit a user.
    */
   update: function(req, res) {
-
     User.findOne({id: req.param('id')}).exec(function(error, user) {
       if(user){
         // Todo: error checking.
@@ -85,17 +82,16 @@ module.exports = {
           user[param] = newUser[param];
         }
         user.save(function(error, result) {
-          res.json({
-            error: error,
-            result: result
-          });
+          if(error) {
+            res.badRequest(error);
+          }
+          else {
+            res.json(result);
+          }
         });
       }
       else {
-        return res.json({
-          error: error,
-          user: user
-        });
+        res.badRequest(error);
       }
     });
   },
@@ -105,12 +101,15 @@ module.exports = {
   destroy: function(req, res) {
     // Todo: error checking.
     User.destroy({id: req.param('id')}).exec(function(error) {
-        // Delete the etherpad for this user.
-        EtherpadService.deletePad({padID: req.param('id')});
+      // Delete the etherpad for this user.
+      EtherpadService.deletePad({padID: req.param('id')});
 
-        return res.json({
-          error: error
-        });
+      if(error) {
+        res.badRequest(error);
+      }
+      else {
+        res.ok();
+      }
     });
   },
 
@@ -125,13 +124,10 @@ module.exports = {
         if(user) {
           user.display_name = user.fname + ' ' + user.lname;
 
-          return res.json({
-            error: error,
-            user: user
-          });
+          return res.json(user);
         }
         else {
-          return res.forbidden();
+          return res.badRequest(error);
         }
       });
     }
@@ -145,20 +141,20 @@ module.exports = {
    */
   updateCurrent: function(req, res) {
     if(req.session && req.session.passport && req.session.passport.user) {
+      // TODO: Find user
+
       if(user) {
         var newUser = req.param('user');
         for(param in newUser) {
           user[param] = newUser[param];
         }
+        // TODO: Update user
+
+        return res.json(req.session.passport.user);
       }
       else {
-          return res.forbidden();
+          return res.badRequest();
       }
-
-      return res.json({
-        user: req.session.passport.user,
-        error: false
-      });
     }
     else {
       return res.forbidden();

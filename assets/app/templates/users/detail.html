@@ -1,0 +1,34 @@
+<div ng-controller="DocTypeDetailController" ng-cloak class="type-form">
+  <section class="doc-type">
+
+    <div class="save-status">
+      <span class="icon"></span>
+      <span ng-if="status == 'saved'" class="saved" translate="admin.form.state.saved"></span>
+      <span ng-if="status == 'saving'" class="saving" translate="admin.form.state.saving"></span>
+      <span ng-if="status == 'unsaved'" class="unsaved" translate="admin.form.state.unsaved"></span>
+    </div>
+
+    <div class="error" ng-show="form.errors.general">
+      {{ form.errors.general }}
+    </div>
+
+    <fieldset class="fieldset type-form__name">
+      <label for="type.name" translate="admin.form.type.labels.name"></label>
+      <input id="type.name" ng-model="model.name" />
+      <span class="error" ng-show="form.errors.name">{{ form.errors.name | translate }}</span>
+    </fieldset>
+
+    <fieldset class="fieldset type-form__style">
+      <label for="type.style" translate="admin.form.type.labels.style"></label>
+      <textarea id="type.style" ng-model="model.style"></textarea>
+      <span class="error" ng-show="form.errors.style">{{ form.errors.style | translate }}</span>
+    </fieldset>
+
+    <fieldset class="fieldset type-form__context">
+      <label for="type.context" translate="admin.form.type.labels.context"></label>
+      <textarea id="type.context" ng-model="model.context"></textarea>
+      <span class="error" ng-show="form.errors.context">{{ form.errors.context | translate }}</span>
+    </fieldset>
+
+
+</div>
