@@ -22,18 +22,6 @@ FormController.prototype.save = function(newObject) {
  * Does the initial get for data.
  */
 FormController.prototype.init = function(obj) {
-  setInterval(function() {
-    $('iframe')[0].contentWindow.postMessage(JSON.stringify({
-      callbackKey: '1234',
-      method: 'getDocHeight'
-    }), '*');
-  }, 1000);
-
-  window.addEventListener('message', function(event) {
-    var data = JSON.parse(event.data);
-    if (data && data.callbackKey === '1234') $('iframe').height(data.data + 167);
-  });
-
   var self = this;
   this.get()
     .success(function (data) {
