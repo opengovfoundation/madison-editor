@@ -43,6 +43,22 @@ function DocumentDetailController($scope, $http, $routeParams, $location,
   });
 
   this.init();
+
+  /**
+   * Relies on the `ep_post_message` plugin returning a `postMessage` with the
+   * result of `getDocHeight` so we can set the height of the iframe.
+   */
+  setInterval(function() {
+    $('iframe')[0].contentWindow.postMessage(JSON.stringify({
+      callbackKey: '1234',
+      method: 'getDocHeight'
+    }), '*');
+  }, 1000);
+
+  window.addEventListener('message', function(event) {
+    var data = JSON.parse(event.data);
+    if (data && data.callbackKey === '1234') $('iframe').height(data.data + 167);
+  });
 }
 
 DocumentDetailController.prototype = Object.create(FormController.prototype);
